@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="Dalamud.Plugin.Bootstrap.targets"/>
+
+    <PropertyGroup>
+        <Authors>Olaren</Authors>
+        <Company></Company>
+        <Version>0.0.1</Version>
+        <Description>Search for FFXIV translations right from the game!</Description>
+        <Copyright></Copyright>
+        <PackageProjectUrl>https://github.com/Olaren15/ffxiv-easy-translate</PackageProjectUrl>
+        <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
+        <IsPackable>false</IsPackable>
+        <RootNamespace>EasyTranslate</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Content Include="..\Data\goat.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <Visible>false</Visible>
+        </Content>
+    </ItemGroup>
+</Project>

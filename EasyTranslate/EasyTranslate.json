@@ -1,0 +1,15 @@
+{
+    "Author": "Olaren",
+    "Name": "Easy Translate",
+    "Punchline": "Translate anything!",
+    "Description": "Search anything and get the translations in other languages. /trans to open the ui",
+    "ApplicableVersion": "any",
+    "Tags": [
+        "translate",
+        "translation",
+        "english",
+        "french",
+        "german",
+        "japanese"
+    ]
+}
