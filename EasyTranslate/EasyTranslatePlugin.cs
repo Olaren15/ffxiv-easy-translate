@@ -32,7 +32,7 @@ public sealed class EasyTranslatePlugin : IDalamudPlugin
             }
         );
 
-        PluginInterface.UiBuilder.Draw += DrawUi;
+        PluginInterface.UiBuilder.Draw += WindowSystem.Draw;
         PluginInterface.UiBuilder.OpenMainUi += OpenSearchWindow;
     }
 
@@ -42,7 +42,7 @@ public sealed class EasyTranslatePlugin : IDalamudPlugin
 
     public void Dispose()
     {
-        PluginInterface.UiBuilder.Draw -= DrawUi;
+        PluginInterface.UiBuilder.Draw -= WindowSystem.Draw;
         PluginInterface.UiBuilder.OpenMainUi -= OpenSearchWindow;
         WindowSystem.RemoveAllWindows();
         CommandManager.RemoveHandler(CommandName);
@@ -51,11 +51,6 @@ public sealed class EasyTranslatePlugin : IDalamudPlugin
     private void OnSearchCommand(string command, string args)
     {
         OpenSearchWindow();
-    }
-
-    private void DrawUi()
-    {
-        WindowSystem.Draw();
     }
 
     private void OpenSearchWindow()

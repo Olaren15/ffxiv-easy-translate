@@ -6,6 +6,9 @@ using ImGuiNET;
 
 public class SearchWindow : Window
 {
+    private string searchText = "";
+    private string? searchResults;
+
     public SearchWindow() : base("Search", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
     {
         SizeConstraints = new WindowSizeConstraints
@@ -15,8 +18,23 @@ public class SearchWindow : Window
         };
     }
 
+    public override void OnOpen()
+    {
+        base.OnOpen();
+        searchText = "";
+        searchResults = null;
+    }
+
     public override void Draw()
     {
-        ImGui.Text("Show a search bar here"); // TODO
+        if (ImGui.InputText("Search", ref searchText, 100, ImGuiInputTextFlags.EnterReturnsTrue))
+        {
+            searchResults = searchText;
+        }
+
+        if (searchResults is not null)
+        {
+            ImGui.Text(searchResults);
+        }
     }
 }
