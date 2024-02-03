@@ -13,4 +13,9 @@
         <IsPackable>false</IsPackable>
         <RootNamespace>EasyTranslate</RootNamespace>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\EasyTranslate.Domain\EasyTranslate.Domain.csproj" />
+      <ProjectReference Include="..\EasyTranslate.UseCase\EasyTranslate.UseCase.csproj" />
+    </ItemGroup>
 </Project>
