@@ -11,11 +11,12 @@
         <PackageProjectUrl>https://github.com/Olaren15/ffxiv-easy-translate</PackageProjectUrl>
         <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
         <IsPackable>false</IsPackable>
-        <RootNamespace>EasyTranslate</RootNamespace>
+        <RootNamespace>EasyTranslate.DalamudPlugin</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\EasyTranslate.Domain\EasyTranslate.Domain.csproj"/>
+        <ProjectReference Include="..\EasyTranslate.Infrastructure\EasyTranslate.Infrastructure.csproj"/>
         <ProjectReference Include="..\EasyTranslate.UseCase\EasyTranslate.UseCase.csproj"/>
     </ItemGroup>
 

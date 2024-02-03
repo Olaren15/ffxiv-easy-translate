@@ -1,60 +1,35 @@
-﻿namespace EasyTranslate;
+﻿namespace EasyTranslate.DalamudPlugin;
 
-using Dalamud.Game.Command;
+using System;
+using Dalamud.Interface;
 using Dalamud.Interface.Windowing;
 using Dalamud.IoC;
 using Dalamud.Plugin;
-using Dalamud.Plugin.Services;
-using EasyTranslate.Windows;
+using EasyTranslate.DalamudPlugin.Commands;
+using EasyTranslate.DalamudPlugin.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 // ReSharper disable once UnusedType.Global
 public sealed class EasyTranslatePlugin : IDalamudPlugin
 {
-    private const string CommandName = "/trans";
-    public readonly WindowSystem WindowSystem = new("EasyTranslate");
+    private readonly IServiceProvider serviceProvider;
+    private readonly UiBuilder uiBuilder;
+    private readonly WindowSystem windowSystem;
 
-    public EasyTranslatePlugin(
-        [RequiredVersion("1.0")] DalamudPluginInterface pluginInterface,
-        [RequiredVersion("1.0")] ICommandManager commandManager
-    )
+    public EasyTranslatePlugin([RequiredVersion("1.0")] DalamudPluginInterface pluginInterface)
     {
-        PluginInterface = pluginInterface;
-        CommandManager = commandManager;
+        serviceProvider = DalamudPluginModule.CreateServiceProvider(pluginInterface);
+        windowSystem = serviceProvider.GetService<WindowSystem>()!;
+        uiBuilder = serviceProvider.GetService<UiBuilder>()!;
 
-        SearchWindow = new SearchWindow();
-        WindowSystem.AddWindow(SearchWindow);
+        uiBuilder.Draw += windowSystem.Draw;
 
-        CommandManager.AddHandler(
-            CommandName,
-            new CommandInfo(OnSearchCommand)
-            {
-                HelpMessage = "Open the item search window",
-            }
-        );
-
-        PluginInterface.UiBuilder.Draw += WindowSystem.Draw;
-        PluginInterface.UiBuilder.OpenMainUi += OpenSearchWindow;
+        // We need to manually trigger the instantiation of our plugin classes
+        ActivatorUtilities.CreateInstance<OpenSearchCommand>(serviceProvider);
     }
-
-    private DalamudPluginInterface PluginInterface { get; init; }
-    private ICommandManager CommandManager { get; init; }
-    private SearchWindow SearchWindow { get; init; }
 
     public void Dispose()
     {
-        PluginInterface.UiBuilder.Draw -= WindowSystem.Draw;
-        PluginInterface.UiBuilder.OpenMainUi -= OpenSearchWindow;
-        WindowSystem.RemoveAllWindows();
-        CommandManager.RemoveHandler(CommandName);
-    }
-
-    private void OnSearchCommand(string command, string args)
-    {
-        OpenSearchWindow();
-    }
-
-    private void OpenSearchWindow()
-    {
-        SearchWindow.IsOpen = true;
+        uiBuilder.Draw -= windowSystem.Draw;
     }
 }
