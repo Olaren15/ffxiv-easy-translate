@@ -6,8 +6,8 @@ using ImGuiNET;
 
 public class SearchWindow : Window
 {
-    private string searchText = "";
     private string? searchResults;
+    private string searchText = "";
 
     public SearchWindow() : base("Search", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
     {

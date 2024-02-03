@@ -4,5 +4,5 @@ using EasyTranslate.Domain.Entities;
 
 public interface IItemRepository
 {
-    public IEnumerable<Item> SearchForItems(ItemSearchQuery query);
+    public Task<IEnumerable<Item>> SearchByName(string name, Language searchLanguage);
 }

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTranslate.UseCase", "Ea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTranslate.Standalone", "EasyTranslate.Standalone\EasyTranslate.Standalone.csproj", "{61CD90BE-9C6A-4902-BC3D-9839D72EBD8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTranslate.Infrastructure", "EasyTranslate.Infrastructure\EasyTranslate.Infrastructure.csproj", "{4C9ADF6F-F897-4FD6-8901-02644AF344E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -37,6 +39,10 @@ Global
 		{61CD90BE-9C6A-4902-BC3D-9839D72EBD8C}.Debug|x64.Build.0 = Debug|Any CPU
 		{61CD90BE-9C6A-4902-BC3D-9839D72EBD8C}.Release|x64.ActiveCfg = Release|Any CPU
 		{61CD90BE-9C6A-4902-BC3D-9839D72EBD8C}.Release|x64.Build.0 = Release|Any CPU
+		{4C9ADF6F-F897-4FD6-8901-02644AF344E5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4C9ADF6F-F897-4FD6-8901-02644AF344E5}.Debug|x64.Build.0 = Debug|Any CPU
+		{4C9ADF6F-F897-4FD6-8901-02644AF344E5}.Release|x64.ActiveCfg = Release|Any CPU
+		{4C9ADF6F-F897-4FD6-8901-02644AF344E5}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
