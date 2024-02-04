@@ -7,7 +7,7 @@ using EasyTranslate.DalamudPlugin.Search;
 
 public class OpenSearchCommand : IDisposable
 {
-    private const string TextCommand = "/trans";
+    private const string TextCommand = "/et";
     private const string HelpMessage = "Open the item search window";
 
     private readonly ICommandManager commandManager;

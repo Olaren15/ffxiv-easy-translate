@@ -2,7 +2,7 @@
     "Author": "Olaren",
     "Name": "Easy Translate",
     "Punchline": "Translate anything!",
-    "Description": "Search anything and get the translations in other languages. /trans to open the ui",
+    "Description": "Search anything and get the translations in other languages. Use /et to open the ui",
     "ApplicableVersion": "any",
     "Tags": [
         "translate",
