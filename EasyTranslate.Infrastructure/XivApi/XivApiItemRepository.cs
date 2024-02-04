@@ -39,7 +39,7 @@ public class XivApiItemRepository : IItemRepository
                                                    Language.Japanese => "NameCombined_ja",
                                                    var _ => "NameCombined_en",
                                                },
-                                               $"*{name}*"
+                                               $"*{name.ToLowerInvariant()}*"
                                            },
                                        },
                                    },
