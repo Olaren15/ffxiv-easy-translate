@@ -3,7 +3,7 @@
 using System;
 using Dalamud.Game.Command;
 using Dalamud.Plugin.Services;
-using EasyTranslate.DalamudPlugin.Windows;
+using EasyTranslate.DalamudPlugin.Search;
 
 public class OpenSearchCommand : IDisposable
 {
@@ -11,12 +11,12 @@ public class OpenSearchCommand : IDisposable
     private const string HelpMessage = "Open the item search window";
 
     private readonly ICommandManager commandManager;
-    private readonly SearchWindow searchWindow;
+    private readonly SearchView searchView;
 
-    public OpenSearchCommand(ICommandManager commandManager, SearchWindow searchWindow)
+    public OpenSearchCommand(ICommandManager commandManager, SearchView searchView)
     {
         this.commandManager = commandManager;
-        this.searchWindow = searchWindow;
+        this.searchView = searchView;
         commandManager.AddHandler(
             TextCommand,
             new CommandInfo(HandleCommand)
@@ -34,6 +34,6 @@ public class OpenSearchCommand : IDisposable
 
     public void HandleCommand(string command, string args)
     {
-        searchWindow.Show();
+        searchView.Show();
     }
 }

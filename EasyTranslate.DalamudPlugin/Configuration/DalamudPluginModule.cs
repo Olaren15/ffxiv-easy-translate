@@ -4,7 +4,7 @@ using System;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
 using EasyTranslate.DalamudPlugin.Commands;
-using EasyTranslate.DalamudPlugin.Windows;
+using EasyTranslate.DalamudPlugin.Search;
 using EasyTranslate.Infrastructure.XivApi.Configuration;
 using EasyTranslate.UseCase.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,7 +37,8 @@ public static class DalamudPluginModule
     {
         return serviceCollection
                .AddSingleton<WindowSystem>(_ => new WindowSystem("EasyTranslate"))
-               .AddSingleton<SearchWindow>()
+               .AddSingleton<SearchView>()
+               .AddTransient<SearchViewModel>()
                .AddSingleton<OpenSearchCommand>();
     }
 

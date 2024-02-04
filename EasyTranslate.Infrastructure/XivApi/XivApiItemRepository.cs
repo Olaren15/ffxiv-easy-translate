@@ -16,7 +16,11 @@ public class XivApiItemRepository : IItemRepository
         httpClient = httpClientFactory.CreateClient(HttpClientName);
     }
 
-    public async Task<IEnumerable<Item>> SearchByName(string name, Language searchLanguage)
+    public async Task<IEnumerable<Item>> SearchByName(
+        string name,
+        Language searchLanguage,
+        CancellationToken cancellationToken
+    )
     {
         var response = await httpClient.PostAsJsonAsync(
                            SearchEndpoint,
@@ -44,10 +48,12 @@ public class XivApiItemRepository : IItemRepository
                                        },
                                    },
                                },
-                           }
+                           },
+                           cancellationToken
                        );
         response.EnsureSuccessStatusCode();
-        var parsedResponse = await response.Content.ReadFromJsonAsync<SearchResponse>();
+        var parsedResponse =
+            await response.Content.ReadFromJsonAsync<SearchResponse>(cancellationToken: cancellationToken);
 
         return parsedResponse!.Results.Select(
             result => new Item(

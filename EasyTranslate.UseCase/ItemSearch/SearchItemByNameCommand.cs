@@ -12,8 +12,12 @@ public class SearchItemByNameCommand
         this.itemRepository = itemRepository;
     }
 
-    public async Task<IEnumerable<Item>> SearchItemByName(string name, Language nameLanguage)
+    public async Task<IEnumerable<Item>> SearchItemByName(
+        string name,
+        Language nameLanguage,
+        CancellationToken cancellationToken = default
+    )
     {
-        return await itemRepository.SearchByName(name, nameLanguage);
+        return await itemRepository.SearchByName(name, nameLanguage, cancellationToken);
     }
 }
