@@ -5,6 +5,7 @@ using System.Linq;
 using System.Numerics;
 using Dalamud.Interface;
 using Dalamud.Interface.Windowing;
+using EasyTranslate.Domain.Entities;
 using ImGuiNET;
 
 public class SearchView : Window, IDisposable
@@ -41,14 +42,12 @@ public class SearchView : Window, IDisposable
     public override void OnOpen()
     {
         base.OnOpen();
-        searchViewModel.ResetSearch();
         windowJustOpened = true;
     }
 
     public override void Draw()
     {
         DrawSearchBar();
-        ImGui.Separator();
         DrawSearchResults();
         windowJustOpened = false;
     }
@@ -56,12 +55,18 @@ public class SearchView : Window, IDisposable
     private void DrawSearchBar()
     {
         var searchText = searchViewModel.SearchText;
-        var enterPressed = ImGui.InputText("", ref searchText, 100, ImGuiInputTextFlags.EnterReturnsTrue);
+        var enterPressed = ImGui.InputText(
+            "",
+            ref searchText,
+            100,
+            ImGuiInputTextFlags.EnterReturnsTrue | ImGuiInputTextFlags.AutoSelectAll
+        );
+        searchViewModel.SearchText = searchText;
+
         if (enterPressed || windowJustOpened)
         {
             ImGui.SetKeyboardFocusHere(-1);
         }
-        searchViewModel.SearchText = searchText;
 
         ImGui.SameLine();
         var searchButtonPressed = ImGui.Button("Search");
@@ -81,8 +86,57 @@ public class SearchView : Window, IDisposable
 
         if (searchViewModel.SearchResults is not null)
         {
-            ImGui.Text(searchViewModel.SearchResults.Any() ? "We got something uwu" : "We didn't find anything qwq");
-            // TODO: Actual UI
+            if (searchViewModel.SearchResults.Any())
+            {
+                ImGui.BeginTable(
+                    "SearchResults",
+                    2,
+                    ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit
+                );
+                foreach (var searchResult in searchViewModel.SearchResults)
+                {
+                    ImGui.TableNextColumn();
+                    if (searchResult.IconTexture is not null)
+                    {
+                        ImGui.Image(searchResult.IconTexture.ImGuiHandle, new Vector2(88, 88));
+                    }
+
+                    ImGui.TableNextColumn();
+                    ImGui.BeginTable("Item", 2);
+                    ImGui.TableNextRow();
+
+                    ImGui.TableNextColumn();
+                    ImGui.Text("English name:");
+                    ImGui.TableNextColumn();
+                    ImGui.Text(searchResult.LocalisedNames[Language.English]);
+
+                    ImGui.TableNextRow();
+                    ImGui.TableNextColumn();
+                    ImGui.Text("French name:");
+                    ImGui.TableNextColumn();
+                    ImGui.Text(searchResult.LocalisedNames[Language.French]);
+
+                    ImGui.TableNextRow();
+                    ImGui.TableNextColumn();
+                    ImGui.Text("German name:");
+                    ImGui.TableNextColumn();
+                    ImGui.Text(searchResult.LocalisedNames[Language.German]);
+
+                    ImGui.TableNextRow();
+                    ImGui.TableNextColumn();
+                    ImGui.Text("Japanese name:");
+                    ImGui.TableNextColumn();
+                    ImGui.Text(searchResult.LocalisedNames[Language.Japanese]);
+
+                    ImGui.EndTable();
+                }
+
+                ImGui.EndTable();
+            }
+            else
+            {
+                ImGui.Text("No results");
+            }
         }
     }
 

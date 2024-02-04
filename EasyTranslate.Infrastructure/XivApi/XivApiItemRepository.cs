@@ -27,7 +27,7 @@ public class XivApiItemRepository : IItemRepository
                            new
                            {
                                indexes = "",
-                               columns = "ID,Icon,Url,Name_en,Name_fr,Name_de,Name_ja",
+                               columns = "ID,Icon,IconID,Url,Name_en,Name_fr,Name_de,Name_ja",
                                body = new
                                {
                                    query = new
@@ -59,6 +59,7 @@ public class XivApiItemRepository : IItemRepository
             result => new Item(
                 result.Id,
                 result.IconUrl,
+                result.IconId,
                 new Dictionary<Language, string>
                 {
                     { Language.English, result.EnglishName },

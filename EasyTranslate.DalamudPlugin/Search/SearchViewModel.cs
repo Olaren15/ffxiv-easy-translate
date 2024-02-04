@@ -7,15 +7,38 @@ using System.Threading.Tasks;
 using EasyTranslate.Domain.Entities;
 using EasyTranslate.UseCase.ItemSearch;
 
-public class SearchViewModel(SearchItemByNameCommand searchItemByNameCommand) : IDisposable
+public class SearchViewModel(SearchItemByNameCommand searchItemByNameCommand, ItemMapper itemMapper) : IDisposable
 {
     private Task<IEnumerable<Item>>? currentSearchTask;
     private CancellationTokenSource? searchCancellationToken;
+    private IEnumerable<PresentableItem>? searchResults;
     public Language SearchLanguage { get; set; } = Language.English;
     public string SearchText { get; set; } = "";
 
-    public IEnumerable<Item>? SearchResults =>
-        currentSearchTask is { IsCompletedSuccessfully: true } ? currentSearchTask.Result : null;
+    public IEnumerable<PresentableItem>? SearchResults
+    {
+        get
+        {
+            if (searchResults is not null)
+            {
+                return searchResults;
+            }
+
+            if (currentSearchTask is { IsCompletedSuccessfully: true })
+            {
+                searchResults = itemMapper.ConvertToPresentableItems(currentSearchTask.Result);
+
+                searchCancellationToken?.Dispose();
+                searchCancellationToken = null;
+                currentSearchTask?.Dispose();
+                currentSearchTask = null;
+
+                return searchResults;
+            }
+
+            return null;
+        }
+    }
 
     public bool SearchResultsAreLoading => currentSearchTask is { IsCompleted: false };
 
@@ -28,21 +51,12 @@ public class SearchViewModel(SearchItemByNameCommand searchItemByNameCommand) : 
 
     public void ExecuteSearch()
     {
+        searchResults = null;
         searchCancellationToken = new CancellationTokenSource();
         currentSearchTask = searchItemByNameCommand.SearchItemByName(
             SearchText,
             SearchLanguage,
             searchCancellationToken.Token
         );
-    }
-
-    public void ResetSearch()
-    {
-        SearchText = "";
-        searchCancellationToken?.Cancel();
-        searchCancellationToken?.Dispose();
-        searchCancellationToken = null;
-        currentSearchTask?.Dispose();
-        currentSearchTask = null;
     }
 }

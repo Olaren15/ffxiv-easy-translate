@@ -30,7 +30,8 @@ public static class DalamudPluginModule
         return serviceCollection
                .AddExisting(pluginInterface)
                .AddExisting(pluginInterface.UiBuilder)
-               .AddExisting(dalamudServices.CommandManager);
+               .AddExisting(dalamudServices.CommandManager)
+               .AddExisting(dalamudServices.TextureProvider);
     }
 
     public static IServiceCollection AddPluginServices(this IServiceCollection serviceCollection)
@@ -39,6 +40,7 @@ public static class DalamudPluginModule
                .AddSingleton<WindowSystem>(_ => new WindowSystem("EasyTranslate"))
                .AddSingleton<SearchView>()
                .AddTransient<SearchViewModel>()
+               .AddSingleton<ItemMapper>()
                .AddSingleton<OpenSearchCommand>();
     }
 

@@ -11,4 +11,8 @@ public class DalamudServices
     [PluginService]
     [RequiredVersion("1.0")]
     public ICommandManager CommandManager { get; init; }
+
+    [PluginService]
+    [RequiredVersion("1.0")]
+    public ITextureProvider TextureProvider { get; init; }
 }

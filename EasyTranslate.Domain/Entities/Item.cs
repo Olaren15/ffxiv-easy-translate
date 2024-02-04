@@ -1,3 +1,3 @@
 ﻿namespace EasyTranslate.Domain.Entities;
 
-public record Item(int Id, string IconUrl, IDictionary<Language, string> LocalisedNames, string DetailsUrl);
+public record Item(int Id, string IconUrl, uint? IconId, IDictionary<Language, string> LocalisedNames, string DetailsUrl);
