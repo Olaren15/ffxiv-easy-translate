@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 public record Result(
     [property: JsonPropertyName("ID")] int Id,
-    [property: JsonPropertyName("Icon")] string IconUrl,
+    [property: JsonPropertyName("IconHD")] string IconUrl,
     [property: JsonPropertyName("IconID")] uint? IconId,
     [property: JsonPropertyName("Name_en")]
     string EnglishName,

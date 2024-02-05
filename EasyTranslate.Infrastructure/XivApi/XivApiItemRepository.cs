@@ -27,7 +27,7 @@ public class XivApiItemRepository : IItemRepository
                            new
                            {
                                indexes = "",
-                               columns = "ID,Icon,IconID,Url,Name_en,Name_fr,Name_de,Name_ja",
+                               columns = "ID,IconHD,IconID,Url,Name_en,Name_fr,Name_de,Name_ja",
                                body = new
                                {
                                    query = new
