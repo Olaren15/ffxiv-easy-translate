@@ -47,6 +47,7 @@ public class XivApiItemRepository : IItemRepository
                                            },
                                        },
                                    },
+                                   size = 50,
                                },
                            },
                            cancellationToken
