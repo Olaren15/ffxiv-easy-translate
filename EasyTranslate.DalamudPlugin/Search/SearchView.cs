@@ -27,7 +27,7 @@ public class SearchView : Window, IDisposable
 
         SizeConstraints = new WindowSizeConstraints
         {
-            MinimumSize = new Vector2(375, 330),
+            MinimumSize = new Vector2(300, 200),
             MaximumSize = new Vector2(float.MaxValue, float.MaxValue),
         };
     }
@@ -93,42 +93,28 @@ public class SearchView : Window, IDisposable
                     2,
                     ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit
                 );
+                ImGui.TableSetupColumn("Icon");
+                ImGui.TableSetupColumn("Names");
+                ImGui.TableHeadersRow();
                 foreach (var searchResult in searchViewModel.SearchResults)
                 {
                     ImGui.TableNextColumn();
                     if (searchResult.IconTexture is not null)
                     {
-                        ImGui.Image(searchResult.IconTexture.ImGuiHandle, new Vector2(88, 88));
+                        ImGui.Image(
+                            searchResult.IconTexture.ImGuiHandle,
+                            new Vector2(searchResult.IconTexture.Width, searchResult.IconTexture.Height)
+                        );
                     }
 
                     ImGui.TableNextColumn();
-                    ImGui.BeginTable("Item", 2);
-                    ImGui.TableNextRow();
-
-                    ImGui.TableNextColumn();
-                    ImGui.Text("English name:");
-                    ImGui.TableNextColumn();
-                    ImGui.Text(searchResult.LocalisedNames[Language.English]);
-
-                    ImGui.TableNextRow();
-                    ImGui.TableNextColumn();
-                    ImGui.Text("French name:");
-                    ImGui.TableNextColumn();
-                    ImGui.Text(searchResult.LocalisedNames[Language.French]);
-
-                    ImGui.TableNextRow();
-                    ImGui.TableNextColumn();
-                    ImGui.Text("German name:");
-                    ImGui.TableNextColumn();
-                    ImGui.Text(searchResult.LocalisedNames[Language.German]);
-
-                    ImGui.TableNextRow();
-                    ImGui.TableNextColumn();
-                    ImGui.Text("Japanese name:");
-                    ImGui.TableNextColumn();
-                    ImGui.Text(searchResult.LocalisedNames[Language.Japanese]);
-
-                    ImGui.EndTable();
+                    ImGui.Text("English:\nFrench:\nGerman:\nJapanese:\n");
+                    ImGui.SameLine();
+                    ImGui.Text(
+                        $"{searchResult.LocalisedNames[Language.English]}\n{searchResult.LocalisedNames[Language.French]
+                        }\n{searchResult.LocalisedNames[Language.German]}\n{
+                            searchResult.LocalisedNames[Language.Japanese]}"
+                    );
                 }
 
                 ImGui.EndTable();
