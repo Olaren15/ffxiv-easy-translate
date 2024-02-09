@@ -3,21 +3,21 @@
 using System;
 using Dalamud.Game.Command;
 using Dalamud.Plugin.Services;
-using EasyTranslate.DalamudPlugin.Search;
+using EasyTranslate.DalamudPlugin.preferences;
 
-public class OpenSearchCommand : IDisposable
+public class OpenSettingsCommand : IDisposable
 {
-    private const string TextCommand = "/et";
-    private const string HelpMessage = "Open the item search window";
+    private const string TextCommand = "/ets";
+    private const string HelpMessage = "Open the settings window";
 
     private readonly ICommandManager commandManager;
-    private readonly SearchView searchView;
+    private readonly SettingsView settingsView;
 
-    public OpenSearchCommand(ICommandManager commandManager, SearchView searchView)
+    public OpenSettingsCommand(ICommandManager commandManager, SettingsView settingsView)
     {
         this.commandManager = commandManager;
-        this.searchView = searchView;
-        commandManager.AddHandler(
+        this.settingsView = settingsView;
+        this.commandManager.AddHandler(
             TextCommand,
             new CommandInfo(HandleCommand)
             {
@@ -34,6 +34,6 @@ public class OpenSearchCommand : IDisposable
 
     private void HandleCommand(string command, string args)
     {
-        searchView.Show();
+        settingsView.Show();
     }
 }

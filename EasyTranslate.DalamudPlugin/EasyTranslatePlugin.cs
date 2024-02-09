@@ -26,6 +26,7 @@ public sealed class EasyTranslatePlugin : IDalamudPlugin
 
         // We need to manually trigger the instantiation of our plugin classes
         ActivatorUtilities.CreateInstance<OpenSearchCommand>(serviceProvider);
+        ActivatorUtilities.CreateInstance<OpenSettingsCommand>(serviceProvider);
     }
 
     public void Dispose()

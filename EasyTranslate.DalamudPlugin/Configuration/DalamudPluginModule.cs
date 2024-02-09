@@ -4,6 +4,7 @@ using System;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
 using EasyTranslate.DalamudPlugin.Commands;
+using EasyTranslate.DalamudPlugin.preferences;
 using EasyTranslate.DalamudPlugin.Search;
 using EasyTranslate.Infrastructure.XivApi.Configuration;
 using EasyTranslate.UseCase.Configuration;
@@ -41,7 +42,10 @@ public static class DalamudPluginModule
                .AddSingleton<SearchView>()
                .AddTransient<SearchViewModel>()
                .AddSingleton<ItemMapper>()
-               .AddSingleton<OpenSearchCommand>();
+               .AddSingleton<OpenSearchCommand>()
+               .AddSingleton<UserPreferencesRepository>()
+               .AddSingleton<SettingsView>()
+               .AddTransient<SettingsViewModel>();
     }
 
     public static IServiceCollection AddExisting<T>(this IServiceCollection serviceCollection, T service)
