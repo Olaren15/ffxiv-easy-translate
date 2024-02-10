@@ -1,6 +1,20 @@
 # Easy Translate
 
+Easy Translate is a [Dalamud](https://github.com/goatcorp/Dalamud) plugin that allows you to search the translations for almost anything in Final Fantasy XIV!
+It's really useful when you are playing with people who have the game in another language.
+
 ## How To Use
+
+> ⚠️ This plugin is currently under development and therefore is not yet available on the official Dalamud plugin source. You will have to add it manually. ⚠️
+
+1. Open the dalamud settings via the in-game UI or by entering `/xlsettings` in the chat window.
+2. Head over to the "Experimental" tab
+3. Scroll all the way down to the "Custom Plugin Repositories" section.
+4. Copy and paste the following link into the first free text input field: `https://raw.githubusercontent.com/Olaren15/ffxiv-easy-translate/master/repo.json`
+5. Click on the "+" button on the right hand side and make sure the repo is enabled with a checkmark.
+6. **Click on the save icon in the bottom right corner**
+
+## For developers
 
 ### Prerequisites
 
