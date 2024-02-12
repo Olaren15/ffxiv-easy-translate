@@ -34,6 +34,13 @@ public class OpenSearchCommand : IDisposable
 
     private void HandleCommand(string command, string args)
     {
-        searchView.Show();
+        if (string.IsNullOrWhiteSpace(args))
+        {
+            searchView.Show();
+        }
+        else
+        {
+            searchView.ShowAndSearch(args);
+        }
     }
 }

@@ -52,6 +52,18 @@ public class SearchView : Window, IDisposable
         windowJustOpened = false;
     }
 
+    public void Show()
+    {
+        IsOpen = true;
+    }
+
+    public void ShowAndSearch(string searchText)
+    {
+        IsOpen = true;
+        searchViewModel.SearchText = searchText;
+        searchViewModel.ExecuteSearch();
+    }
+
     private void DrawSearchBar()
     {
         var searchText = searchViewModel.SearchText;
@@ -124,10 +136,5 @@ public class SearchView : Window, IDisposable
                 ImGui.Text("No results");
             }
         }
-    }
-
-    public void Show()
-    {
-        IsOpen = true;
     }
 }
