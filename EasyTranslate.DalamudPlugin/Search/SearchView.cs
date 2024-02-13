@@ -4,12 +4,14 @@ using System;
 using System.Linq;
 using System.Numerics;
 using Dalamud.Interface;
+using Dalamud.Interface.Internal;
 using Dalamud.Interface.Windowing;
 using EasyTranslate.Domain.Entities;
 using ImGuiNET;
 
 public class SearchView : Window, IDisposable
 {
+    private const int MaxImageSize = 80;
     private readonly SearchViewModel searchViewModel;
     private readonly UiBuilder uiBuilder;
     private readonly WindowSystem windowSystem;
@@ -113,10 +115,7 @@ public class SearchView : Window, IDisposable
                     ImGui.TableNextColumn();
                     if (searchResult.IconTexture is not null)
                     {
-                        ImGui.Image(
-                            searchResult.IconTexture.ImGuiHandle,
-                            new Vector2(searchResult.IconTexture.Width, searchResult.IconTexture.Height)
-                        );
+                        ImGui.Image(searchResult.IconTexture.ImGuiHandle, CalculateImageSize(searchResult.IconTexture));
                     }
 
                     ImGui.TableNextColumn();
@@ -136,5 +135,11 @@ public class SearchView : Window, IDisposable
                 ImGui.Text("No results");
             }
         }
+    }
+
+    private static Vector2 CalculateImageSize(IDalamudTextureWrap image)
+    {
+        var scaleRatio = Math.Min(MaxImageSize / (float)image.Width, MaxImageSize / (float)image.Height);
+        return new Vector2(image.Width * scaleRatio, image.Height * scaleRatio);
     }
 }
