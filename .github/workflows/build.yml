@@ -1,33 +1,31 @@
 name: Dalamud plugin build
 
 on:
-    push:
-        branches: ['*']
-    pull_request:
-        branches: [ "*" ]
+  push:
+    branches: [ '*' ]
+  pull_request:
+    branches: [ "*" ]
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v4
-            - name: Setup .NET
-              uses: actions/setup-dotnet@v4
-              with:
-                  dotnet-version: 8.x.x
-            - name: Restore dependencies
-              run: dotnet restore
-            - name: Download Dalamud
-              run: |
-                  wget https://goatcorp.github.io/dalamud-distrib/latest.zip
-                  mkdir -p $HOME/.xlcore/dalamud/Hooks/dev
-                  unzip latest.zip -d $HOME/.xlcore/dalamud/Hooks/dev
-            - name: Build
-              run: dotnet build --no-restore --configuration Release --nologo
-            - name: Archive
-              run: zip -j EasyTranslate.DalamudPlugin.zip EasyTranslate.DalamudPlugin/bin/x64/Release/*
-            - name: Upload a Build Artifact
-              uses: actions/upload-artifact@v4
-              with:
-                  path: EasyTranslate.DalamudPlugin.zip
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.x.x
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Download Dalamud
+        run: |
+          wget https://goatcorp.github.io/dalamud-distrib/latest.zip
+          mkdir -p $HOME/.xlcore/dalamud/Hooks/dev
+          unzip latest.zip -d $HOME/.xlcore/dalamud/Hooks/dev
+      - name: Build
+        run: dotnet build --no-restore --configuration Release --nologo
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: ./EasyTranslate.DalamudPlugin/bin/x64/Release/*
