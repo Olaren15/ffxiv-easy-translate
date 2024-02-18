@@ -4,8 +4,8 @@
         "Name": "Easy Translate",
         "InternalName": "EasyTranslate.DalamudPlugin",
         "Description": "Search anything and get the translations in other languages. use /et to open the ui",
-        "AssemblyVersion": "0.0.1.0",
-        "TestingAssemblyVersion": "0.0.1.0",
+        "AssemblyVersion": "0.0.2.0",
+        "TestingAssemblyVersion": "0.0.2.0",
         "RepoUrl": "https://github.com/Olaren15/ffxiv-easy-translate",
         "ApplicableVersion": "any",
         "DalamudApiLevel": 9,
@@ -16,9 +16,9 @@
         "LoadPriority": 0,
         "LoadRequiredState": 0,
         "LoadSync": false,
-        "DownloadLinkInstall": "https://github.com/Olaren15/ffxiv-easy-translate/releases/download/0.0.1.0/EasyTranslate.DalamudPlugin.zip",
-        "DownloadLinkTesting": "https://github.com/Olaren15/ffxiv-easy-translate/releases/download/0.0.1.0/EasyTranslate.DalamudPlugin.zip",
-        "DownloadLinkUpdate": "https://github.com/Olaren15/ffxiv-easy-translate/releases/download/0.0.1.0/EasyTranslate.DalamudPlugin.zip",
+        "DownloadLinkInstall": "https://github.com/Olaren15/ffxiv-easy-translate/releases/download/0.0.2.0/EasyTranslate.DalamudPlugin.zip",
+        "DownloadLinkTesting": "https://github.com/Olaren15/ffxiv-easy-translate/releases/download/0.0.2.0/EasyTranslate.DalamudPlugin.zip",
+        "DownloadLinkUpdate": "https://github.com/Olaren15/ffxiv-easy-translate/releases/download/0.0.2.0/EasyTranslate.DalamudPlugin.zip",
         "IconUrl": "https://raw.githubusercontent.com/Olaren15/ffxiv-easy-translate/master/images/icon.png"
     }
 ]
