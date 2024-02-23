@@ -15,4 +15,8 @@ public class DalamudServices
     [PluginService]
     [RequiredVersion("1.0")]
     public ITextureProvider TextureProvider { get; init; }
+
+    [PluginService]
+    [RequiredVersion("1.0")]
+    public IDataManager DataManager { get; init; }
 }

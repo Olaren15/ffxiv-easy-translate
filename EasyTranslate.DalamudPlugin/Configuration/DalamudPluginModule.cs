@@ -32,7 +32,8 @@ public static class DalamudPluginModule
                .AddExisting(pluginInterface)
                .AddExisting(pluginInterface.UiBuilder)
                .AddExisting(dalamudServices.CommandManager)
-               .AddExisting(dalamudServices.TextureProvider);
+               .AddExisting(dalamudServices.TextureProvider)
+               .AddExisting(dalamudServices.DataManager);
     }
 
     public static IServiceCollection AddPluginServices(this IServiceCollection serviceCollection)
@@ -45,7 +46,8 @@ public static class DalamudPluginModule
                .AddSingleton<OpenSearchCommand>()
                .AddSingleton<UserPreferencesRepository>()
                .AddSingleton<SettingsView>()
-               .AddTransient<SettingsViewModel>();
+               .AddTransient<SettingsViewModel>()
+               .AddSingleton<SearchFromContextMenuCommand>();
     }
 
     public static IServiceCollection AddExisting<T>(this IServiceCollection serviceCollection, T service)
