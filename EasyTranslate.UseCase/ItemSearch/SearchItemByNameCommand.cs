@@ -3,21 +3,20 @@
 using EasyTranslate.Domain.Entities;
 using EasyTranslate.Domain.Repositories;
 
-public class SearchItemByNameCommand
+public class SearchItemByNameCommand(IItemRepository itemRepository)
 {
-    private readonly IItemRepository itemRepository;
-
-    public SearchItemByNameCommand(IItemRepository itemRepository)
-    {
-        this.itemRepository = itemRepository;
-    }
-
     public async Task<IEnumerable<Item>> SearchItemByName(
-        string name,
-        Language nameLanguage,
+        string itemName,
+        Language searchLanguage,
         CancellationToken cancellationToken = default
     )
     {
-        return await itemRepository.SearchByName(name, nameLanguage, cancellationToken);
+        if (string.IsNullOrWhiteSpace(itemName))
+        {
+            // Don't need to search for nothing
+            return Enumerable.Empty<Item>();
+        }
+
+        return await itemRepository.SearchByName(itemName, searchLanguage, cancellationToken);
     }
 }
