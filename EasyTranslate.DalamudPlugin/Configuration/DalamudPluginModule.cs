@@ -4,7 +4,7 @@ using System;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
 using EasyTranslate.DalamudPlugin.Commands;
-using EasyTranslate.DalamudPlugin.preferences;
+using EasyTranslate.DalamudPlugin.Preferences;
 using EasyTranslate.DalamudPlugin.Search;
 using EasyTranslate.Infrastructure.XivApi.Configuration;
 using EasyTranslate.UseCase.Configuration;

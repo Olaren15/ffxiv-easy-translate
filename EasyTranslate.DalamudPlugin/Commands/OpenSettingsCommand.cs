@@ -3,7 +3,7 @@
 using System;
 using Dalamud.Game.Command;
 using Dalamud.Plugin.Services;
-using EasyTranslate.DalamudPlugin.preferences;
+using EasyTranslate.DalamudPlugin.Preferences;
 
 public class OpenSettingsCommand : IDisposable
 {

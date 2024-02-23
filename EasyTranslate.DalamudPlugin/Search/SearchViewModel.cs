@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using EasyTranslate.DalamudPlugin.preferences;
+using EasyTranslate.DalamudPlugin.Preferences;
 using EasyTranslate.Domain.Entities;
 using EasyTranslate.UseCase.ItemSearch;
 

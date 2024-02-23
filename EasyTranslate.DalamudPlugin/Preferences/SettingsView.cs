@@ -1,4 +1,4 @@
-﻿namespace EasyTranslate.DalamudPlugin.preferences;
+﻿namespace EasyTranslate.DalamudPlugin.Preferences;
 
 using System;
 using System.Numerics;

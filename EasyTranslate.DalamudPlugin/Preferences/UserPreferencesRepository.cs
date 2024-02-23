@@ -1,4 +1,4 @@
-﻿namespace EasyTranslate.DalamudPlugin.preferences;
+﻿namespace EasyTranslate.DalamudPlugin.Preferences;
 
 using Dalamud.Plugin;
 using EasyTranslate.Domain.Parsers;
@@ -32,7 +32,7 @@ public class UserPreferencesRepository
             Version = 1,
             DefaultSearchLanguage = LanguageParser.FromIsoCode(pluginInterface.UiLanguage),
         };
-        this.Save(newPreferences);
+        Save(newPreferences);
 
         return newPreferences;
     }
