@@ -2,6 +2,7 @@
 
 using System.Text.Json.Serialization;
 
+// ReSharper disable once ClassNeverInstantiated.Global
 public record Result(
     [property: JsonPropertyName("ID")] int Id,
     [property: JsonPropertyName("IconHD")] string IconUrl,

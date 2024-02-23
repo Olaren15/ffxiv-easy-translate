@@ -4,28 +4,21 @@ using System;
 using Dalamud.ContextMenu;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Game.Text.SeStringHandling.Payloads;
-using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
 using Dalamud.Utility;
 using EasyTranslate.DalamudPlugin.Search;
 using Lumina.Excel;
 using Lumina.Excel.GeneratedSheets2;
 
-public class SearchFromContextMenuCommand
+public sealed class SearchFromContextMenuCommand
 {
     private readonly IDataManager dataManager;
     private readonly SearchView searchView;
 
-    public SearchFromContextMenuCommand(
-        DalamudPluginInterface pluginInterface,
-        IDataManager dataManager,
-        SearchView searchView
-    )
+    public SearchFromContextMenuCommand(DalamudContextMenu contextMenu, IDataManager dataManager, SearchView searchView)
     {
         this.dataManager = dataManager;
         this.searchView = searchView;
-
-        var contextMenu = new DalamudContextMenu(pluginInterface);
 
         var inventoryContextMenuItem = new InventoryContextMenuItem(
             new SeString(new TextPayload("Search translations")),

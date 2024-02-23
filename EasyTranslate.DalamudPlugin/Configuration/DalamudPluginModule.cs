@@ -1,24 +1,36 @@
 ﻿namespace EasyTranslate.DalamudPlugin.Configuration;
 
-using System;
+using System.Collections.Generic;
+using Dalamud.ContextMenu;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
+using Dalamud.Plugin.Services;
 using EasyTranslate.DalamudPlugin.Commands;
 using EasyTranslate.DalamudPlugin.Preferences;
 using EasyTranslate.DalamudPlugin.Search;
 using EasyTranslate.Infrastructure.XivApi.Configuration;
 using EasyTranslate.UseCase.Configuration;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 public static class DalamudPluginModule
 {
-    public static IServiceProvider CreateServiceProvider(DalamudPluginInterface pluginInterface)
+    public static ServiceProvider CreateServiceProvider(DalamudPluginInterface pluginInterface)
     {
+        var config = new ConfigurationBuilder()
+                     .AddInMemoryCollection(
+                         new Dictionary<string, string?>
+                         {
+                             [InfrastructureModule.XivApiUrlConfigName] = "https://xivapi.com",
+                         }
+                     )
+                     .Build();
+
         return new ServiceCollection()
+               .AddUseCaseServices()
                .AddDalamudServices(pluginInterface)
                .AddPluginServices()
-               .AddInfrastructureServices()
-               .AddUseCaseServices()
+               .AddInfrastructureServices(config)
                .BuildServiceProvider();
     }
 
@@ -27,13 +39,15 @@ public static class DalamudPluginModule
         DalamudPluginInterface pluginInterface
     )
     {
-        var dalamudServices = pluginInterface.Create<DalamudServices>()!;
         return serviceCollection
                .AddExisting(pluginInterface)
                .AddExisting(pluginInterface.UiBuilder)
-               .AddExisting(dalamudServices.CommandManager)
-               .AddExisting(dalamudServices.TextureProvider)
-               .AddExisting(dalamudServices.DataManager);
+               .AddDalamudService<ICommandManager>()
+               .AddDalamudService<ITextureProvider>()
+               .AddDalamudService<IDataManager>()
+               .AddSingleton(
+                   serviceProvider => new DalamudContextMenu(serviceProvider.GetService<DalamudPluginInterface>())
+               );
     }
 
     public static IServiceCollection AddPluginServices(this IServiceCollection serviceCollection)
@@ -53,6 +67,19 @@ public static class DalamudPluginModule
     public static IServiceCollection AddExisting<T>(this IServiceCollection serviceCollection, T service)
         where T : class
     {
-        return serviceCollection.AddSingleton<T>(_ => service);
+        return serviceCollection.AddSingleton(service);
+    }
+
+    private static IServiceCollection AddDalamudService<T>(this IServiceCollection serviceCollection) where T : class
+    {
+        serviceCollection.AddSingleton(
+            serviceProvider =>
+            {
+                var pluginInterface = serviceProvider.GetService<DalamudPluginInterface>();
+                var wrapper = new DalamudServiceWrapper<T>(pluginInterface!);
+                return wrapper.Service;
+            }
+        );
+        return serviceCollection;
     }
 }

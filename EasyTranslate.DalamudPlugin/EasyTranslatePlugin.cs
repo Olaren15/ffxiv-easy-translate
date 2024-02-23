@@ -12,7 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 // ReSharper disable once UnusedType.Global
 public sealed class EasyTranslatePlugin : IDalamudPlugin
 {
-    private readonly IServiceProvider serviceProvider;
+    private readonly ServiceProvider serviceProvider;
     private readonly UiBuilder uiBuilder;
     private readonly WindowSystem windowSystem;
 
@@ -33,5 +33,12 @@ public sealed class EasyTranslatePlugin : IDalamudPlugin
     public void Dispose()
     {
         uiBuilder.Draw -= windowSystem.Draw;
+        serviceProvider.Dispose();
+        GC.SuppressFinalize(this);
+    }
+
+    ~EasyTranslatePlugin()
+    {
+        Dispose();
     }
 }
