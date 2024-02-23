@@ -9,7 +9,7 @@ using Dalamud.Interface.Windowing;
 using EasyTranslate.Domain.Entities;
 using ImGuiNET;
 
-public class SearchView : Window, IDisposable
+public sealed class SearchView : Window, IDisposable
 {
     private const int MaxImageSize = 80;
     private readonly SearchViewModel searchViewModel;
@@ -141,5 +141,10 @@ public class SearchView : Window, IDisposable
     {
         var scaleRatio = Math.Min(MaxImageSize / (float)image.Width, MaxImageSize / (float)image.Height);
         return new Vector2(image.Width * scaleRatio, image.Height * scaleRatio);
+    }
+
+    ~SearchView()
+    {
+        Dispose();
     }
 }

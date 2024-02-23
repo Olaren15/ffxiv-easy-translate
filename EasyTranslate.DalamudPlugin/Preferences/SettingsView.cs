@@ -7,7 +7,7 @@ using Dalamud.Interface.Windowing;
 using EasyTranslate.Domain.Entities;
 using ImGuiNET;
 
-public class SettingsView : Window, IDisposable
+public sealed class SettingsView : Window, IDisposable
 {
     private readonly SettingsViewModel settingsViewModel;
     private readonly UiBuilder uiBuilder;
@@ -68,5 +68,10 @@ public class SettingsView : Window, IDisposable
     public void Show()
     {
         IsOpen = true;
+    }
+
+    ~SettingsView()
+    {
+        Dispose();
     }
 }

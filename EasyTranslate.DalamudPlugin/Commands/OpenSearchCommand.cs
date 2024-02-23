@@ -5,7 +5,7 @@ using Dalamud.Game.Command;
 using Dalamud.Plugin.Services;
 using EasyTranslate.DalamudPlugin.Search;
 
-public class OpenSearchCommand : IDisposable
+public sealed class OpenSearchCommand : IDisposable
 {
     private const string TextCommand = "/et";
     private const string HelpMessage = "Open the item search window";
@@ -28,7 +28,11 @@ public class OpenSearchCommand : IDisposable
 
     public void Dispose()
     {
-        commandManager.RemoveHandler(TextCommand);
+        if (commandManager.Commands.ContainsKey(TextCommand))
+        {
+            commandManager.RemoveHandler(TextCommand);
+        }
+
         GC.SuppressFinalize(this);
     }
 
@@ -42,5 +46,10 @@ public class OpenSearchCommand : IDisposable
         {
             searchView.ShowAndSearch(args);
         }
+    }
+
+    ~OpenSearchCommand()
+    {
+        Dispose();
     }
 }

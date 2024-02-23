@@ -8,7 +8,7 @@ using EasyTranslate.DalamudPlugin.Preferences;
 using EasyTranslate.Domain.Entities;
 using EasyTranslate.UseCase.ItemSearch;
 
-public class SearchViewModel(
+public sealed class SearchViewModel(
     SearchItemByNameCommand searchItemByNameCommand,
     ItemMapper itemMapper,
     UserPreferencesRepository userPreferencesRepository
@@ -35,7 +35,7 @@ public class SearchViewModel(
 
                 searchCancellationToken?.Dispose();
                 searchCancellationToken = null;
-                currentSearchTask?.Dispose();
+                currentSearchTask.Dispose();
                 currentSearchTask = null;
 
                 return searchResults;
@@ -63,5 +63,10 @@ public class SearchViewModel(
             SearchLanguage,
             searchCancellationToken.Token
         );
+    }
+
+    ~SearchViewModel()
+    {
+        Dispose();
     }
 }
