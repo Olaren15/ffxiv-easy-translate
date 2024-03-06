@@ -1,4 +1,4 @@
-namespace EasyTranslate.DalamudPlugin.Commands;
+namespace EasyTranslate.DalamudPlugin.Search;
 
 using System;
 using Dalamud.ContextMenu;
@@ -8,7 +8,6 @@ using Dalamud.Plugin.Services;
 using Dalamud.Utility;
 using EasyTranslate.DalamudPlugin.Localisation;
 using EasyTranslate.DalamudPlugin.Resources;
-using EasyTranslate.DalamudPlugin.Search;
 using Lumina.Excel;
 using Lumina.Excel.GeneratedSheets2;
 

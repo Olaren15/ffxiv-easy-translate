@@ -5,8 +5,9 @@ using Dalamud.Interface;
 using Dalamud.Interface.Windowing;
 using Dalamud.IoC;
 using Dalamud.Plugin;
-using EasyTranslate.DalamudPlugin.Commands;
 using EasyTranslate.DalamudPlugin.Configuration;
+using EasyTranslate.DalamudPlugin.Search;
+using EasyTranslate.DalamudPlugin.Settings;
 using Microsoft.Extensions.DependencyInjection;
 
 // ReSharper disable once UnusedType.Global

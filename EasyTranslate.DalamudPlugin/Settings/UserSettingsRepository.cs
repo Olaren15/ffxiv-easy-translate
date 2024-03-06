@@ -1,4 +1,4 @@
-﻿namespace EasyTranslate.DalamudPlugin.Preferences;
+﻿namespace EasyTranslate.DalamudPlugin.Settings;
 
 using Dalamud;
 using Dalamud.Game.Config;
@@ -6,37 +6,37 @@ using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
 using EasyTranslate.Domain.Entities;
 
-public class UserPreferencesRepository
+public class UserSettingsRepository
 {
     private readonly IGameConfig gameConfig;
     private readonly DalamudPluginInterface pluginInterface;
 
-    private UserPreferences userPreferences;
+    private UserSettings userSettings;
 
-    public UserPreferencesRepository(DalamudPluginInterface pluginInterface, IGameConfig gameConfig)
+    public UserSettingsRepository(DalamudPluginInterface pluginInterface, IGameConfig gameConfig)
     {
         this.gameConfig = gameConfig;
         this.pluginInterface = pluginInterface;
-        userPreferences = this.pluginInterface.GetPluginConfig() as UserPreferences ?? CreateDefaultUserPreferences();
+        userSettings = this.pluginInterface.GetPluginConfig() as UserSettings ?? CreateDefaultUserPreferences();
     }
 
-    public UserPreferences Get()
+    public UserSettings Get()
     {
-        return userPreferences;
+        return userSettings;
     }
 
-    public void Save(UserPreferences newPreferences)
+    public void Save(UserSettings newSettings)
     {
-        userPreferences = newPreferences;
-        pluginInterface.SavePluginConfig(userPreferences);
+        userSettings = newSettings;
+        pluginInterface.SavePluginConfig(userSettings);
     }
 
-    private UserPreferences CreateDefaultUserPreferences()
+    private UserSettings CreateDefaultUserPreferences()
     {
         var success = gameConfig.TryGet(SystemConfigOption.Language, out uint gameLanguageCode);
         var gameLanguage = success ? (ClientLanguage)gameLanguageCode : ClientLanguage.English;
 
-        var newPreferences = new UserPreferences
+        var newPreferences = new UserSettings
         {
             Version = 1,
             DefaultSearchLanguage = gameLanguage switch

@@ -5,10 +5,9 @@ using Dalamud.ContextMenu;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
-using EasyTranslate.DalamudPlugin.Commands;
 using EasyTranslate.DalamudPlugin.Localisation;
-using EasyTranslate.DalamudPlugin.Preferences;
 using EasyTranslate.DalamudPlugin.Search;
+using EasyTranslate.DalamudPlugin.Settings;
 using EasyTranslate.Infrastructure.XivApi.Configuration;
 using EasyTranslate.UseCase.Configuration;
 using Microsoft.Extensions.Configuration;
@@ -61,7 +60,7 @@ public static class DalamudPluginModule
                .AddTransient<SearchViewModel>()
                .AddSingleton<ItemMapper>()
                .AddSingleton<OpenSearchCommand>()
-               .AddSingleton<UserPreferencesRepository>()
+               .AddSingleton<UserSettingsRepository>()
                .AddSingleton<SettingsView>()
                .AddTransient<SettingsViewModel>()
                .AddSingleton<SearchFromContextMenuCommand>();
