@@ -6,6 +6,8 @@ using System.Numerics;
 using Dalamud.Interface;
 using Dalamud.Interface.Internal;
 using Dalamud.Interface.Windowing;
+using EasyTranslate.DalamudPlugin.Localisation;
+using EasyTranslate.DalamudPlugin.Resources;
 using EasyTranslate.Domain.Entities;
 using ImGuiNET;
 
@@ -18,7 +20,12 @@ public sealed class SearchView : Window, IDisposable
 
     private bool windowJustOpened;
 
-    public SearchView(SearchViewModel searchViewModel, UiBuilder uiBuilder, WindowSystem windowSystem) : base("Search")
+    public SearchView(
+        SearchViewModel searchViewModel,
+        UiBuilder uiBuilder,
+        WindowSystem windowSystem,
+        LanguageSwitcher languageSwitcher
+    ) : base(Strings.SearchWindowTitle)
     {
         this.searchViewModel = searchViewModel;
         this.uiBuilder = uiBuilder;
@@ -26,6 +33,7 @@ public sealed class SearchView : Window, IDisposable
 
         this.windowSystem.AddWindow(this);
         this.uiBuilder.OpenMainUi += Show;
+        languageSwitcher.OnLanguageChangedEvent += (_, _) => WindowName = Strings.SearchWindowTitle;
 
         SizeConstraints = new WindowSizeConstraints
         {
@@ -83,7 +91,7 @@ public sealed class SearchView : Window, IDisposable
         }
 
         ImGui.SameLine();
-        var searchButtonPressed = ImGui.Button("Search");
+        var searchButtonPressed = ImGui.Button(Strings.Search);
 
         if (enterPressed || searchButtonPressed)
         {
@@ -95,7 +103,7 @@ public sealed class SearchView : Window, IDisposable
     {
         if (searchViewModel.SearchResultsAreLoading)
         {
-            ImGui.Text("Loading...");
+            ImGui.Text(Strings.Loading);
         }
 
         if (searchViewModel.SearchResults is not null)
@@ -107,8 +115,8 @@ public sealed class SearchView : Window, IDisposable
                     2,
                     ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit
                 );
-                ImGui.TableSetupColumn("Icon");
-                ImGui.TableSetupColumn("Names");
+                ImGui.TableSetupColumn(Strings.Icon);
+                ImGui.TableSetupColumn(Strings.Names);
                 ImGui.TableHeadersRow();
                 foreach (var searchResult in searchViewModel.SearchResults)
                 {
@@ -119,7 +127,7 @@ public sealed class SearchView : Window, IDisposable
                     }
 
                     ImGui.TableNextColumn();
-                    ImGui.Text("English:\nFrench:\nGerman:\nJapanese:\n");
+                    ImGui.Text($"{Strings.English}:\n{Strings.French}:\n{Strings.German}:\n{Strings.Japanese}:\n");
                     ImGui.SameLine();
                     ImGui.Text(
                         $"{searchResult.LocalisedNames[Language.English]}\n{searchResult.LocalisedNames[Language.French]
@@ -132,7 +140,7 @@ public sealed class SearchView : Window, IDisposable
             }
             else
             {
-                ImGui.Text("No results");
+                ImGui.Text(Strings.NoResults);
             }
         }
     }

@@ -4,11 +4,10 @@ using System;
 using Dalamud.Game.Command;
 using Dalamud.Plugin.Services;
 using EasyTranslate.DalamudPlugin.Preferences;
+using EasyTranslate.DalamudPlugin.Resources;
 
 public sealed class OpenSettingsCommand : IDisposable
 {
-    private const string TextCommand = "/ets";
-    private const string HelpMessage = "Open the settings window";
 
     private readonly ICommandManager commandManager;
     private readonly SettingsView settingsView;
@@ -18,19 +17,19 @@ public sealed class OpenSettingsCommand : IDisposable
         this.commandManager = commandManager;
         this.settingsView = settingsView;
         this.commandManager.AddHandler(
-            TextCommand,
+            Strings.SettingsCommand,
             new CommandInfo(HandleCommand)
             {
-                HelpMessage = HelpMessage,
+                HelpMessage = Strings.SettingsCommandDescription,
             }
         );
     }
 
     public void Dispose()
     {
-        if (commandManager.Commands.ContainsKey(TextCommand))
+        if (commandManager.Commands.ContainsKey(Strings.SettingsCommand))
         {
-            commandManager.RemoveHandler(TextCommand);
+            commandManager.RemoveHandler(Strings.SettingsCommand);
         }
 
         GC.SuppressFinalize(this);

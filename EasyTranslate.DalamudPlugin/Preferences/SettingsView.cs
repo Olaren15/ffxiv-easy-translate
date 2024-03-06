@@ -4,6 +4,8 @@ using System;
 using System.Numerics;
 using Dalamud.Interface;
 using Dalamud.Interface.Windowing;
+using EasyTranslate.DalamudPlugin.Localisation;
+using EasyTranslate.DalamudPlugin.Resources;
 using EasyTranslate.Domain.Entities;
 using ImGuiNET;
 
@@ -13,9 +15,12 @@ public sealed class SettingsView : Window, IDisposable
     private readonly UiBuilder uiBuilder;
     private readonly WindowSystem windowSystem;
 
-    public SettingsView(SettingsViewModel settingsViewModel, UiBuilder uiBuilder, WindowSystem windowSystem) : base(
-        "EasyTranslate Settings"
-    )
+    public SettingsView(
+        SettingsViewModel settingsViewModel,
+        UiBuilder uiBuilder,
+        WindowSystem windowSystem,
+        LanguageSwitcher languageSwitcher
+    ) : base(Strings.SettingsWindowTitle)
     {
         this.settingsViewModel = settingsViewModel;
         this.uiBuilder = uiBuilder;
@@ -23,6 +28,7 @@ public sealed class SettingsView : Window, IDisposable
 
         this.windowSystem.AddWindow(this);
         this.uiBuilder.OpenConfigUi += Show;
+        languageSwitcher.OnLanguageChangedEvent += (_, _) => WindowName = Strings.SettingsWindowTitle;
 
         SizeConstraints = new WindowSizeConstraints
         {
@@ -40,26 +46,26 @@ public sealed class SettingsView : Window, IDisposable
 
     public override void Draw()
     {
-        ImGui.Text("Choose your search language:");
+        ImGui.Text(Strings.ChooseSearchLanguage);
 
         var currentLanguage = settingsViewModel.PreferredLanguage;
 
-        if (ImGui.RadioButton("English", currentLanguage == Language.English))
+        if (ImGui.RadioButton(Strings.English, currentLanguage == Language.English))
         {
             settingsViewModel.SetPreferredLanguage(Language.English);
         }
 
-        if (ImGui.RadioButton("French", currentLanguage == Language.French))
+        if (ImGui.RadioButton(Strings.French, currentLanguage == Language.French))
         {
             settingsViewModel.SetPreferredLanguage(Language.French);
         }
 
-        if (ImGui.RadioButton("German", currentLanguage == Language.German))
+        if (ImGui.RadioButton(Strings.German, currentLanguage == Language.German))
         {
             settingsViewModel.SetPreferredLanguage(Language.German);
         }
 
-        if (ImGui.RadioButton("Japanese", currentLanguage == Language.Japanese))
+        if (ImGui.RadioButton(Strings.Japanese, currentLanguage == Language.Japanese))
         {
             settingsViewModel.SetPreferredLanguage(Language.Japanese);
         }

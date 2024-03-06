@@ -6,6 +6,7 @@ using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
 using EasyTranslate.DalamudPlugin.Commands;
+using EasyTranslate.DalamudPlugin.Localisation;
 using EasyTranslate.DalamudPlugin.Preferences;
 using EasyTranslate.DalamudPlugin.Search;
 using EasyTranslate.Infrastructure.XivApi.Configuration;
@@ -27,9 +28,9 @@ public static class DalamudPluginModule
                      .Build();
 
         return new ServiceCollection()
-               .AddUseCaseServices()
                .AddDalamudServices(pluginInterface)
                .AddPluginServices()
+               .AddUseCaseServices()
                .AddInfrastructureServices(config)
                .BuildServiceProvider();
     }
@@ -45,6 +46,7 @@ public static class DalamudPluginModule
                .AddDalamudService<ICommandManager>()
                .AddDalamudService<ITextureProvider>()
                .AddDalamudService<IDataManager>()
+               .AddDalamudService<IGameConfig>()
                .AddSingleton(
                    serviceProvider => new DalamudContextMenu(serviceProvider.GetService<DalamudPluginInterface>())
                );
@@ -53,6 +55,7 @@ public static class DalamudPluginModule
     public static IServiceCollection AddPluginServices(this IServiceCollection serviceCollection)
     {
         return serviceCollection
+               .AddSingleton<LanguageSwitcher>()
                .AddSingleton<WindowSystem>(_ => new WindowSystem("EasyTranslate"))
                .AddSingleton<SearchView>()
                .AddTransient<SearchViewModel>()
