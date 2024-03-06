@@ -61,9 +61,10 @@ public static class DalamudPluginModule
                .AddSingleton<ItemMapper>()
                .AddSingleton<OpenSearchCommand>()
                .AddSingleton<UserSettingsRepository>()
+               .AddSingleton<OpenSettingsCommand>()
                .AddSingleton<SettingsView>()
                .AddTransient<SettingsViewModel>()
-               .AddSingleton<SearchFromContextMenuCommand>();
+               .AddSingleton<SearchContextMenuItem>();
     }
 
     public static IServiceCollection AddExisting<T>(this IServiceCollection serviceCollection, T service)

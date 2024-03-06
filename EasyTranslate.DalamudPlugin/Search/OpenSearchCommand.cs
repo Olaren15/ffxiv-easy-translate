@@ -3,8 +3,10 @@
 using System;
 using Dalamud.Game.Command;
 using Dalamud.Plugin.Services;
+using EasyTranslate.DalamudPlugin.Attributes;
 using EasyTranslate.DalamudPlugin.Resources;
 
+[EntryPoint]
 public sealed class OpenSearchCommand : IDisposable
 {
     private readonly ICommandManager commandManager;
