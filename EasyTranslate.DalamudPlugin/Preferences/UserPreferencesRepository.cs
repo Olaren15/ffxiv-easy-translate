@@ -1,15 +1,21 @@
 ﻿namespace EasyTranslate.DalamudPlugin.Preferences;
 
+using Dalamud;
+using Dalamud.Game.Config;
 using Dalamud.Plugin;
-using EasyTranslate.Domain.Parsers;
+using Dalamud.Plugin.Services;
+using EasyTranslate.Domain.Entities;
 
 public class UserPreferencesRepository
 {
+    private readonly IGameConfig gameConfig;
     private readonly DalamudPluginInterface pluginInterface;
+
     private UserPreferences userPreferences;
 
-    public UserPreferencesRepository(DalamudPluginInterface pluginInterface)
+    public UserPreferencesRepository(DalamudPluginInterface pluginInterface, IGameConfig gameConfig)
     {
+        this.gameConfig = gameConfig;
         this.pluginInterface = pluginInterface;
         userPreferences = this.pluginInterface.GetPluginConfig() as UserPreferences ?? CreateDefaultUserPreferences();
     }
@@ -27,10 +33,20 @@ public class UserPreferencesRepository
 
     private UserPreferences CreateDefaultUserPreferences()
     {
+        var success = gameConfig.TryGet(SystemConfigOption.Language, out uint gameLanguageCode);
+        var gameLanguage = success ? (ClientLanguage)gameLanguageCode : ClientLanguage.English;
+
         var newPreferences = new UserPreferences
         {
             Version = 1,
-            DefaultSearchLanguage = LanguageParser.FromIsoCode(pluginInterface.UiLanguage),
+            DefaultSearchLanguage = gameLanguage switch
+            {
+                ClientLanguage.Japanese => Language.Japanese,
+                ClientLanguage.English => Language.English,
+                ClientLanguage.German => Language.German,
+                ClientLanguage.French => Language.French,
+                var _ => Language.English,
+            },
         };
         Save(newPreferences);
 
