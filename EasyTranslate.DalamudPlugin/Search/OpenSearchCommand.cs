@@ -1,14 +1,14 @@
-﻿namespace EasyTranslate.DalamudPlugin.Commands;
+﻿namespace EasyTranslate.DalamudPlugin.Search;
 
 using System;
 using Dalamud.Game.Command;
 using Dalamud.Plugin.Services;
+using EasyTranslate.DalamudPlugin.Attributes;
 using EasyTranslate.DalamudPlugin.Resources;
-using EasyTranslate.DalamudPlugin.Search;
 
+[EntryPoint]
 public sealed class OpenSearchCommand : IDisposable
 {
-
     private readonly ICommandManager commandManager;
     private readonly SearchView searchView;
 

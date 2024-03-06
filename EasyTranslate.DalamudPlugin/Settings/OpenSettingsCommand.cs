@@ -1,14 +1,14 @@
-﻿namespace EasyTranslate.DalamudPlugin.Commands;
+﻿namespace EasyTranslate.DalamudPlugin.Settings;
 
 using System;
 using Dalamud.Game.Command;
 using Dalamud.Plugin.Services;
-using EasyTranslate.DalamudPlugin.Preferences;
+using EasyTranslate.DalamudPlugin.Attributes;
 using EasyTranslate.DalamudPlugin.Resources;
 
+[EntryPoint]
 public sealed class OpenSettingsCommand : IDisposable
 {
-
     private readonly ICommandManager commandManager;
     private readonly SettingsView settingsView;
 

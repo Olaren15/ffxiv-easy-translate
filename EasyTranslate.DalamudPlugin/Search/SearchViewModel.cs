@@ -4,20 +4,20 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using EasyTranslate.DalamudPlugin.Preferences;
+using EasyTranslate.DalamudPlugin.Settings;
 using EasyTranslate.Domain.Entities;
 using EasyTranslate.UseCase.ItemSearch;
 
 public sealed class SearchViewModel(
     SearchItemByNameCommand searchItemByNameCommand,
     ItemMapper itemMapper,
-    UserPreferencesRepository userPreferencesRepository
+    UserSettingsRepository userSettingsRepository
 ) : IDisposable
 {
     private Task<IEnumerable<Item>>? currentSearchTask;
     private CancellationTokenSource? searchCancellationToken;
     private IEnumerable<PresentableItem>? searchResults;
-    private Language SearchLanguage => userPreferencesRepository.Get().DefaultSearchLanguage;
+    private Language SearchLanguage => userSettingsRepository.Get().DefaultSearchLanguage;
     public string SearchText { get; set; } = "";
 
     public IEnumerable<PresentableItem>? SearchResults
