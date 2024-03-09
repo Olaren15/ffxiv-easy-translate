@@ -16,9 +16,9 @@
         "LoadPriority": 0,
         "LoadRequiredState": 0,
         "LoadSync": false,
-        "DownloadLinkInstall": "https://github.com/Olaren15/ffxiv-easy-translate/releases/download/0.0.3.0/EasyTranslate.DalamudPlugin.zip",
-        "DownloadLinkTesting": "https://github.com/Olaren15/ffxiv-easy-translate/releases/download/0.0.3.0/EasyTranslate.DalamudPlugin.zip",
-        "DownloadLinkUpdate": "https://github.com/Olaren15/ffxiv-easy-translate/releases/download/0.0.3.0/EasyTranslate.DalamudPlugin.zip",
+        "DownloadLinkInstall": "https://github.com/Olaren15/ffxiv-easy-translate/releases/download/1.0.0.0/EasyTranslate.DalamudPlugin.zip",
+        "DownloadLinkTesting": "https://github.com/Olaren15/ffxiv-easy-translate/releases/download/1.0.0.0/EasyTranslate.DalamudPlugin.zip",
+        "DownloadLinkUpdate": "https://github.com/Olaren15/ffxiv-easy-translate/releases/download/1.0.0.0/EasyTranslate.DalamudPlugin.zip",
         "IconUrl": "https://raw.githubusercontent.com/Olaren15/ffxiv-easy-translate/master/images/icon.png"
     }
 ]
