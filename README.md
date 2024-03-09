@@ -3,7 +3,13 @@
 Easy Translate is a [Dalamud](https://github.com/goatcorp/Dalamud) plugin that allows you to search the translations for almost anything in Final Fantasy XIV!
 It's really useful when you are playing with people who have the game in another language.
 
-## How To Use
+You can open a search window by entering `/et` in the chat window. You will now be able to search translations for many in-game elements!
+
+![A search window displaying the translation search results for "popoto"](doc/search-popoto.png)
+
+You can also right-click an item in your inventory to open a search window with the item's name pre-populated!
+
+## How To Install
 
 > ⚠️ This plugin is currently under development and therefore is not yet available on the official Dalamud plugin source. You will have to add it manually. ⚠️
 
