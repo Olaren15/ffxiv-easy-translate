@@ -14,6 +14,7 @@
         <RootNamespace>EasyTranslate.DalamudPlugin</RootNamespace>
         <TargetFramework>net7.0-windows</TargetFramework>
         <NeutralLanguage>en</NeutralLanguage>
+        <LangVersion>11</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>

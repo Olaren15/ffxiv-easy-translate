@@ -5,11 +5,16 @@ using EasyTranslate.Domain.Entities;
 using EasyTranslate.Domain.Repositories;
 using EasyTranslate.Infrastructure.XivApi.Search;
 
-public class XivApiItemRepository(IHttpClientFactory httpClientFactory) : IItemRepository
+public class XivApiItemRepository : IItemRepository
 {
     public const string HttpClientName = "XivApi";
     private const string SearchEndpoint = "/search";
-    private readonly HttpClient httpClient = httpClientFactory.CreateClient(HttpClientName);
+    private readonly HttpClient httpClient;
+
+    public XivApiItemRepository(IHttpClientFactory httpClientFactory)
+    {
+        httpClient = httpClientFactory.CreateClient(HttpClientName);
+    }
 
     public async Task<IEnumerable<Item>> SearchByName(
         string name,

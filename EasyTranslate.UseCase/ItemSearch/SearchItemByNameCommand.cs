@@ -3,8 +3,15 @@
 using EasyTranslate.Domain.Entities;
 using EasyTranslate.Domain.Repositories;
 
-public class SearchItemByNameCommand(IItemRepository itemRepository)
+public class SearchItemByNameCommand
 {
+    private readonly IItemRepository itemRepository;
+
+    public SearchItemByNameCommand(IItemRepository itemRepository)
+    {
+        this.itemRepository = itemRepository;
+    }
+
     public async Task<IEnumerable<Item>> SearchItemByName(
         string itemName,
         Language searchLanguage,
