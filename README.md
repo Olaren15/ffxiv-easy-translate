@@ -11,14 +11,12 @@ You can also right-click an item in your inventory to open a search window with 
 
 ## How To Install
 
-> ⚠️ This plugin is currently under development and therefore is not yet available on the official Dalamud plugin source. You will have to add it manually. ⚠️
+> ⚠️ This plugin is currently under development and therefore is only available in Dalamud's testing repository. In order to use it, you will have to enable testing plugins. ⚠️
 
 1. Open the dalamud settings via the in-game UI or by entering `/xlsettings` in the chat window.
 2. Head over to the "Experimental" tab
-3. Scroll all the way down to the "Custom Plugin Repositories" section.
-4. Copy and paste the following link into the first free text input field: `https://raw.githubusercontent.com/Olaren15/ffxiv-easy-translate/master/repo.json`
-5. Click on the "+" button on the right hand side and make sure the repo is enabled with a checkmark.
-6. **Click on the save icon in the bottom right corner**
+3. Check the "Get plugin testing builds" box
+4. EasyTranslate should now be available to install via the plugin installer (`/xlplugins`)
 
 ## For developers
 
