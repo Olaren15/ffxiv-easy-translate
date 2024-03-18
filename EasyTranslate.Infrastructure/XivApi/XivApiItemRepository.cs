@@ -32,18 +32,37 @@ public class XivApiItemRepository : IItemRepository
                                {
                                    query = new
                                    {
-                                       wildcard = new Dictionary<string, string>
+                                       @bool = new
                                        {
+                                           must = new[]
                                            {
-                                               searchLanguage switch
+                                               new
                                                {
-                                                   Language.English => "NameCombined_en",
-                                                   Language.French => "NameCombined_fr",
-                                                   Language.German => "NameCombined_de",
-                                                   Language.Japanese => "NameCombined_ja",
-                                                   var _ => "NameCombined_en",
+                                                   wildcard = new Dictionary<string, string>
+                                                   {
+                                                       {
+                                                           GetSearchField(searchLanguage),
+                                                           $"*{name.ToLowerInvariant()}*"
+                                                       },
+                                                   },
                                                },
-                                               $"*{name.ToLowerInvariant()}*"
+                                           },
+                                           should = new[]
+                                           {
+                                               new
+                                               {
+                                                   term = new Dictionary<string, object>
+                                                   {
+                                                       {
+                                                           GetSearchField(searchLanguage),
+                                                           new
+                                                           {
+                                                               value = name.ToLowerInvariant(),
+                                                               boost = 10,
+                                                           }
+                                                       },
+                                                   },
+                                               },
                                            },
                                        },
                                    },
@@ -71,5 +90,17 @@ public class XivApiItemRepository : IItemRepository
                 result.DetailsUrl
             )
         );
+    }
+
+    private static string GetSearchField(Language searchLanguage)
+    {
+        return searchLanguage switch
+        {
+            Language.English => "NameCombined_en",
+            Language.French => "NameCombined_fr",
+            Language.German => "NameCombined_de",
+            Language.Japanese => "NameCombined_ja",
+            var _ => "NameCombined_en",
+        };
     }
 }
