@@ -8,25 +8,15 @@ using EasyTranslate.DalamudPlugin.Settings;
 using EasyTranslate.Domain.Entities;
 using EasyTranslate.UseCase.ItemSearch;
 
-public sealed class SearchViewModel : IDisposable
+public sealed class SearchViewModel(
+    SearchItemByNameCommand searchItemByNameCommand,
+    ItemMapper itemMapper,
+    UserSettingsRepository userSettingsRepository
+) : IDisposable
 {
-    private readonly ItemMapper itemMapper;
-    private readonly SearchItemByNameCommand searchItemByNameCommand;
-    private readonly UserSettingsRepository userSettingsRepository;
     private Task<IEnumerable<Item>>? currentSearchTask;
     private CancellationTokenSource? searchCancellationToken;
     private IEnumerable<PresentableItem>? searchResults;
-
-    public SearchViewModel(
-        SearchItemByNameCommand searchItemByNameCommand,
-        ItemMapper itemMapper,
-        UserSettingsRepository userSettingsRepository
-    )
-    {
-        this.searchItemByNameCommand = searchItemByNameCommand;
-        this.itemMapper = itemMapper;
-        this.userSettingsRepository = userSettingsRepository;
-    }
 
     private Language SearchLanguage => userSettingsRepository.Get().DefaultSearchLanguage;
     public string SearchText { get; set; } = "";

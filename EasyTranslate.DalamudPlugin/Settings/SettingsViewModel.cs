@@ -2,15 +2,8 @@
 
 using EasyTranslate.Domain.Entities;
 
-public class SettingsViewModel
+public class SettingsViewModel(UserSettingsRepository userSettingsRepository)
 {
-    private readonly UserSettingsRepository userSettingsRepository;
-
-    public SettingsViewModel(UserSettingsRepository userSettingsRepository)
-    {
-        this.userSettingsRepository = userSettingsRepository;
-    }
-
     public Language PreferredLanguage => userSettingsRepository.Get().DefaultSearchLanguage;
 
     public void SetPreferredLanguage(Language language)
