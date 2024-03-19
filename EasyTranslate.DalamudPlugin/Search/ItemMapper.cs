@@ -5,14 +5,8 @@ using System.Linq;
 using Dalamud.Plugin.Services;
 using EasyTranslate.Domain.Entities;
 
-public class ItemMapper
+public class ItemMapper(ITextureProvider textureProvider)
 {
-    private readonly ITextureProvider textureProvider;
-    public ItemMapper(ITextureProvider textureProvider)
-    {
-        this.textureProvider = textureProvider;
-    }
-
     public PresentableItem ConvertToPresentableItem(Item item)
     {
         return new PresentableItem(
