@@ -1,7 +1,6 @@
 ﻿namespace EasyTranslate.DalamudPlugin.Configuration;
 
 using System.Collections.Generic;
-using Dalamud.ContextMenu;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
@@ -46,9 +45,7 @@ public static class DalamudPluginModule
                .AddDalamudService<ITextureProvider>()
                .AddDalamudService<IDataManager>()
                .AddDalamudService<IGameConfig>()
-               .AddSingleton(
-                   serviceProvider => new DalamudContextMenu(serviceProvider.GetService<DalamudPluginInterface>())
-               );
+               .AddDalamudService<IContextMenu>();
     }
 
     public static IServiceCollection AddPluginServices(this IServiceCollection serviceCollection)

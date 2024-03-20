@@ -1,7 +1,8 @@
 namespace EasyTranslate.DalamudPlugin.Search;
 
 using System;
-using Dalamud.ContextMenu;
+using Dalamud.Game.Gui.ContextMenu;
+using Dalamud.Game.Text;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Plugin.Services;
@@ -17,45 +18,69 @@ public sealed class SearchContextMenuItem
 {
     private readonly IDataManager dataManager;
     private readonly SearchView searchView;
-    private InventoryContextMenuItem inventoryContextMenuItem;
+    private MenuItem menuItem;
 
     public SearchContextMenuItem(
-        DalamudContextMenu contextMenu,
         IDataManager dataManager,
         SearchView searchView,
-        LanguageSwitcher languageSwitcher
+        LanguageSwitcher languageSwitcher,
+        IContextMenu contextMenu
     )
     {
         this.dataManager = dataManager;
         this.searchView = searchView;
 
-        inventoryContextMenuItem = CreateInventoryContextMenuItem();
-        contextMenu.OnOpenInventoryContextMenu += args => args.AddCustomItem(inventoryContextMenuItem);
-        languageSwitcher.OnLanguageChangedEvent +=
-            (_, _) => inventoryContextMenuItem = CreateInventoryContextMenuItem();
+        menuItem = CreateMenuItem();
+        contextMenu.OnMenuOpened += args =>
+        {
+            if (args.MenuType == ContextMenuType.Inventory)
+            {
+                args.AddMenuItem(menuItem);
+            }
+        };
+        languageSwitcher.OnLanguageChangedEvent += (_, _) => menuItem = CreateMenuItem();
     }
 
-    private InventoryContextMenuItem CreateInventoryContextMenuItem()
+    private MenuItem CreateMenuItem()
     {
-        return new InventoryContextMenuItem(
-            new SeString(new TextPayload(Strings.SearchTranslations)),
-            args => SearchTranslations(args.ItemId),
-            true
-        );
+        return new MenuItem
+        {
+            IsEnabled = true,
+            IsReturn = false,
+            Name = new SeString(new TextPayload(Strings.SearchTranslations)),
+            IsSubmenu = false,
+            OnClicked = SearchTranslations,
+            Prefix = null,
+            PrefixChar = 'T',
+            PrefixColor = 1,
+            Priority = 10000,
+        };
     }
 
-    private void SearchTranslations(uint itemId)
+    private void SearchTranslations(MenuItemClickedArgs menuItemClickedArgs)
     {
+        if (menuItemClickedArgs.MenuType != ContextMenuType.Inventory)
+        {
+            // Only inventory menus are supported for now
+            return;
+        }
+
+        var itemId = (menuItemClickedArgs.Target as MenuTargetInventory)?.TargetItem?.ItemId;
+        if (itemId is null)
+        {
+            return;
+        }
+
         ExcelRow? item;
         if (itemId >= 2000000)
         {
             // Event items are stuff in the key items tab of inventory afaik
-            item = dataManager.Excel.GetSheet<EventItem>()?.GetRow(itemId);
+            item = dataManager.Excel.GetSheet<EventItem>()?.GetRow(itemId.Value);
         }
         else
         {
             // Not sure why we modulo by 500000, but I stole the code from simple tweaks so i'll trust it lol
-            item = dataManager.Excel.GetSheet<Item>()?.GetRow(itemId % 500000);
+            item = dataManager.Excel.GetSheet<Item>()?.GetRow(itemId.Value % 500000);
         }
 
         if (item is null)
