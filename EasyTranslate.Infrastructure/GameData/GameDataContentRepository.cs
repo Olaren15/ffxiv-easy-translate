@@ -6,7 +6,8 @@ using Lumina.Excel.GeneratedSheets2;
 
 public class GameDataContentRepository(
     SearchByNameQuery<Achievement> achievementsQuery,
-    SearchByNameQuery<Item> itemsQuery
+    SearchByNameQuery<Item> itemsQuery,
+    SearchByNameQuery<Title> titlesQuery
 ) : IContentRepository
 {
     public async Task<IEnumerable<Content>> SearchByName(
@@ -33,8 +34,9 @@ public class GameDataContentRepository(
          */
         var achievements = Task.Run(() => achievementsQuery.Execute(name, luminaSearchLanguage), cancellationToken);
         var items = Task.Run(() => itemsQuery.Execute(name, luminaSearchLanguage), cancellationToken);
+        var titles = Task.Run(() => titlesQuery.Execute(name, luminaSearchLanguage), cancellationToken);
 
         // TODO: Sort results by relevancy
-        return (await achievements).Concat(await items);
+        return (await achievements).Concat(await items).Concat(await titles);
     }
 }

@@ -10,7 +10,7 @@ using EasyTranslate.UseCase.ItemSearch;
 
 public sealed class SearchViewModel(
     SearchItemByNameCommand searchItemByNameCommand,
-    ItemMapper itemMapper,
+    ContentMapper contentMapper,
     UserSettingsRepository userSettingsRepository
 ) : IDisposable
 {
@@ -32,7 +32,7 @@ public sealed class SearchViewModel(
 
             if (currentSearchTask is { IsCompletedSuccessfully: true })
             {
-                searchResults = itemMapper.ConvertToPresentableItems(currentSearchTask.Result);
+                searchResults = contentMapper.ConvertToPresentableItems(currentSearchTask.Result);
 
                 searchCancellationToken?.Dispose();
                 searchCancellationToken = null;

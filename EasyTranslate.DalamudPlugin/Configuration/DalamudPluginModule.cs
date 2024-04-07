@@ -47,7 +47,7 @@ public static class DalamudPluginModule
                .AddSingleton<WindowSystem>(_ => new WindowSystem("EasyTranslate"))
                .AddSingleton<SearchView>()
                .AddTransient<SearchViewModel>()
-               .AddSingleton<ItemMapper>()
+               .AddSingleton<ContentMapper>()
                .AddSingleton<OpenSearchCommand>()
                .AddSingleton<UserSettingsRepository>()
                .AddSingleton<OpenSettingsCommand>()

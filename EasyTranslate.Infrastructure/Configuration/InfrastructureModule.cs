@@ -18,11 +18,17 @@ public static class InfrastructureModule
 
     private static IServiceCollection AddQueries(this IServiceCollection serviceCollection)
     {
-        return serviceCollection.AddSingleton<SearchByNameQuery<Achievement>>().AddSingleton<SearchByNameQuery<Item>>();
+        return serviceCollection
+               .AddSingleton<SearchByNameQuery<Achievement>>()
+               .AddSingleton<SearchByNameQuery<Item>>()
+               .AddSingleton<SearchByNameQuery<Title>>();
     }
 
     private static IServiceCollection AddAdapters(this IServiceCollection serviceCollection)
     {
-        return serviceCollection.AddSingleton<AchievementAdapter>().AddSingleton<ItemAdapter>();
+        return serviceCollection
+               .AddSingleton<IContentTypeAdapter<Achievement>, AchievementAdapter>()
+               .AddSingleton<IContentTypeAdapter<Item>, ItemAdapter>()
+               .AddSingleton<IContentTypeAdapter<Title>, TitleAdapter>();
     }
 }

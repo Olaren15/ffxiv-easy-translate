@@ -5,12 +5,13 @@ using System.Linq;
 using Dalamud.Plugin.Services;
 using EasyTranslate.Domain.Entities;
 
-public class ItemMapper(ITextureProvider textureProvider)
+public class ContentMapper(ITextureProvider textureProvider)
 {
     public PresentableContent ConvertToPresentableItem(Content content)
     {
         return new PresentableContent(
             content.Id,
+            content.Type,
             content.IconId,
             content.IconId.HasValue ? textureProvider.GetIcon(content.IconId.Value) : null,
             content.LocalisedNames

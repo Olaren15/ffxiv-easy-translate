@@ -3,6 +3,7 @@ namespace EasyTranslate.Infrastructure.GameData.Adapters;
 using EasyTranslate.Domain.Entities;
 using Lumina.Excel;
 using Lumina.Excel.GeneratedSheets2;
+using ContentType = EasyTranslate.Domain.Entities.ContentType;
 
 public class AchievementAdapter : IContentTypeAdapter<Achievement>
 {
@@ -20,6 +21,7 @@ public class AchievementAdapter : IContentTypeAdapter<Achievement>
     {
         return achievement => new Content(
             achievement.RowId,
+            ContentType.Achievement,
             achievement.Icon,
             new Dictionary<Language, string>
             {

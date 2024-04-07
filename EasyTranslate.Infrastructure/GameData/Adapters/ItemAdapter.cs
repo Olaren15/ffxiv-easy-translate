@@ -3,6 +3,7 @@ namespace EasyTranslate.Infrastructure.GameData.Adapters;
 using EasyTranslate.Domain.Entities;
 using Lumina.Excel;
 using Lumina.Excel.GeneratedSheets2;
+using ContentType = EasyTranslate.Domain.Entities.ContentType;
 
 public class ItemAdapter : IContentTypeAdapter<Item>
 {
@@ -20,6 +21,7 @@ public class ItemAdapter : IContentTypeAdapter<Item>
     {
         return item => new Content(
             item.RowId,
+            ContentType.Item,
             item.Icon,
             new Dictionary<Language, string>
             {
