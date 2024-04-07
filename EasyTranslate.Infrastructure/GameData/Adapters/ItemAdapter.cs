@@ -1,10 +1,10 @@
-using Item = Lumina.Excel.GeneratedSheets2.Item;
-
-namespace EasyTranslate.Infrastructure.Lumina.Sheets;
+namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
 using EasyTranslate.Domain.Entities;
+using Lumina.Excel;
+using Lumina.Excel.GeneratedSheets2;
 
-public class ItemSheetAdapter : ISheetQueryAdapter<Item>
+public class ItemAdapter : IContentTypeAdapter<Item>
 {
     public Func<Item, bool> WhereClause(string searchName)
     {

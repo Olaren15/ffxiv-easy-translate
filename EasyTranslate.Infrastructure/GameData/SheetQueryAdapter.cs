@@ -1,10 +1,9 @@
-using ExcelRow = Lumina.Excel.ExcelRow;
-
-namespace EasyTranslate.Infrastructure.Lumina;
+namespace EasyTranslate.Infrastructure.GameData;
 
 using EasyTranslate.Domain.Entities;
+using Lumina.Excel;
 
-public interface ISheetQueryAdapter<T> where T : ExcelRow
+public interface IContentTypeAdapter<T> where T : ExcelRow
 {
     public Func<T, bool> WhereClause(string searchName);
 

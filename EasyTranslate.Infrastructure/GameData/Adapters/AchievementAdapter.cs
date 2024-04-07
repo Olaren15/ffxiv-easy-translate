@@ -1,10 +1,10 @@
-using Achievement = Lumina.Excel.GeneratedSheets2.Achievement;
-
-namespace EasyTranslate.Infrastructure.Lumina.Sheets;
+namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
 using EasyTranslate.Domain.Entities;
+using Lumina.Excel;
+using Lumina.Excel.GeneratedSheets2;
 
-public class AchievementSheetAdapter : ISheetQueryAdapter<Achievement>
+public class AchievementAdapter : IContentTypeAdapter<Achievement>
 {
     public Func<Achievement, bool> WhereClause(string searchName)
     {

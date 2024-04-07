@@ -10,7 +10,7 @@
     <ItemGroup>
         <PackageReference Include="Lumina" Version="3.16.0"/>
         <PackageReference Include="Lumina.Excel" Version="6.5.2"/>
-        <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0"/>
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0"/>
         <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0"/>
     </ItemGroup>

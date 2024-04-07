@@ -2,17 +2,13 @@ using ExcelModule = Lumina.Excel.ExcelModule;
 using ExcelRow = Lumina.Excel.ExcelRow;
 using Lumina_Language = Lumina.Data.Language;
 
-namespace EasyTranslate.Infrastructure.Lumina;
+namespace EasyTranslate.Infrastructure.GameData;
 
 using EasyTranslate.Domain.Entities;
 
-public class SheetQuery(ExcelModule excelModule)
+public class SearchByNameQuery<T>(ExcelModule excelModule, IContentTypeAdapter<T> adapter) where T : ExcelRow
 {
-    public IEnumerable<Content> SearchByName<T>(
-        string searchName,
-        Lumina_Language searchLanguage,
-        ISheetQueryAdapter<T> adapter
-    ) where T : ExcelRow
+    public IEnumerable<Content> Execute(string searchName, Lumina_Language searchLanguage)
     {
         return excelModule
                .GetSheet<T>(searchLanguage)

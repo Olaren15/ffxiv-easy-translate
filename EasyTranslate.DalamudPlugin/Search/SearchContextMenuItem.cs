@@ -2,7 +2,6 @@ namespace EasyTranslate.DalamudPlugin.Search;
 
 using System;
 using Dalamud.Game.Gui.ContextMenu;
-using Dalamud.Game.Text;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Plugin.Services;
