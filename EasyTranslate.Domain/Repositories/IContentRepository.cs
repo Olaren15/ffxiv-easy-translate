@@ -2,9 +2,9 @@
 
 using EasyTranslate.Domain.Entities;
 
-public interface IItemRepository
+public interface IContentRepository
 {
-    public Task<IEnumerable<Item>> SearchByName(
+    public Task<IEnumerable<Content>> SearchByName(
         string name,
         Language searchLanguage,
         CancellationToken cancellationToken

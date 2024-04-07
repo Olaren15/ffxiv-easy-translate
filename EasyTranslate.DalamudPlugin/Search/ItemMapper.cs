@@ -7,19 +7,17 @@ using EasyTranslate.Domain.Entities;
 
 public class ItemMapper(ITextureProvider textureProvider)
 {
-    public PresentableItem ConvertToPresentableItem(Item item)
+    public PresentableContent ConvertToPresentableItem(Content content)
     {
-        return new PresentableItem(
-            item.Id,
-            item.IconUrl,
-            item.IconId,
-            item.IconId.HasValue ? textureProvider.GetIcon(item.IconId.Value) : null,
-            item.LocalisedNames,
-            item.DetailsUrl
+        return new PresentableContent(
+            content.Id,
+            content.IconId,
+            content.IconId.HasValue ? textureProvider.GetIcon(content.IconId.Value) : null,
+            content.LocalisedNames
         );
     }
 
-    public IEnumerable<PresentableItem> ConvertToPresentableItems(IEnumerable<Item> items)
+    public IEnumerable<PresentableContent> ConvertToPresentableItems(IEnumerable<Content> items)
     {
         return items.Select(ConvertToPresentableItem);
     }

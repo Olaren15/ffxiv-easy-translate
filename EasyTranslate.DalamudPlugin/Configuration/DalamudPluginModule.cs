@@ -1,35 +1,25 @@
 ﻿namespace EasyTranslate.DalamudPlugin.Configuration;
 
-using System.Collections.Generic;
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
 using EasyTranslate.DalamudPlugin.Localisation;
 using EasyTranslate.DalamudPlugin.Search;
 using EasyTranslate.DalamudPlugin.Settings;
-using EasyTranslate.Infrastructure.XivApi.Configuration;
+using EasyTranslate.Infrastructure.Configuration;
 using EasyTranslate.UseCase.Configuration;
-using Microsoft.Extensions.Configuration;
+using Lumina.Excel;
 using Microsoft.Extensions.DependencyInjection;
 
 public static class DalamudPluginModule
 {
     public static ServiceProvider CreateServiceProvider(DalamudPluginInterface pluginInterface)
     {
-        var config = new ConfigurationBuilder()
-                     .AddInMemoryCollection(
-                         new Dictionary<string, string?>
-                         {
-                             [InfrastructureModule.XivApiUrlConfigName] = "https://xivapi.com",
-                         }
-                     )
-                     .Build();
-
         return new ServiceCollection()
                .AddDalamudServices(pluginInterface)
                .AddPluginServices()
                .AddUseCaseServices()
-               .AddInfrastructureServices(config)
+               .AddInfrastructureServices()
                .BuildServiceProvider();
     }
 
@@ -45,7 +35,9 @@ public static class DalamudPluginModule
                .AddDalamudService<ITextureProvider>()
                .AddDalamudService<IDataManager>()
                .AddDalamudService<IGameConfig>()
-               .AddDalamudService<IContextMenu>();
+               .AddDalamudService<IContextMenu>()
+               .AddDalamudService<IDataManager>()
+               .AddSingleton<ExcelModule>(serviceProvider => serviceProvider.GetService<IDataManager>()!.Excel);
     }
 
     public static IServiceCollection AddPluginServices(this IServiceCollection serviceCollection)

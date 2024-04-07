@@ -3,9 +3,9 @@
 using EasyTranslate.Domain.Entities;
 using EasyTranslate.Domain.Repositories;
 
-public class SearchItemByNameCommand(IItemRepository itemRepository)
+public class SearchItemByNameCommand(IContentRepository contentRepository)
 {
-    public async Task<IEnumerable<Item>> SearchItemByName(
+    public async Task<IEnumerable<Content>> SearchItemByName(
         string itemName,
         Language searchLanguage,
         CancellationToken cancellationToken = default
@@ -13,10 +13,10 @@ public class SearchItemByNameCommand(IItemRepository itemRepository)
     {
         if (string.IsNullOrWhiteSpace(itemName))
         {
-            // Don't need to search for nothing
-            return Enumerable.Empty<Item>();
+            // Don't need to search for no reason
+            return Enumerable.Empty<Content>();
         }
 
-        return await itemRepository.SearchByName(itemName, searchLanguage, cancellationToken);
+        return await contentRepository.SearchByName(itemName, searchLanguage, cancellationToken);
     }
 }

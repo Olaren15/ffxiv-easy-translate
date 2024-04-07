@@ -1,22 +1,16 @@
 ﻿using System.Text.Json;
 using EasyTranslate.Domain.Entities;
-using EasyTranslate.Infrastructure.XivApi.Configuration;
+using EasyTranslate.Infrastructure.Configuration;
 using EasyTranslate.UseCase.Configuration;
 using EasyTranslate.UseCase.ItemSearch;
-using Microsoft.Extensions.Configuration;
+using Lumina;
 using Microsoft.Extensions.DependencyInjection;
 
-var config = new ConfigurationBuilder()
-             .AddInMemoryCollection(
-                 new Dictionary<string, string?>
-                 {
-                     [InfrastructureModule.XivApiUrlConfigName] = "https://xivapi.com",
-                 }
-             )
-             .Build();
+var lumina = new GameData("/home/cathgilbert/.xlcore/ffxiv/game/sqpack/");
 
 var serviceCollection = new ServiceCollection()
-                        .AddInfrastructureServices(config)
+                        .AddSingleton(lumina.Excel)
+                        .AddInfrastructureServices()
                         .AddUseCaseServices()
                         .BuildServiceProvider();
 var searchByName = serviceCollection.GetService<SearchItemByNameCommand>()!;
