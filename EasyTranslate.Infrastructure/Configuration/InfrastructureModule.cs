@@ -20,6 +20,7 @@ public static class InfrastructureModule
     {
         return serviceCollection
                .AddSingleton<SearchByNameQuery<Achievement>>()
+               .AddSingleton<SearchByNameQuery<Action>>()
                .AddSingleton<SearchByNameQuery<Item>>()
                .AddSingleton<SearchByNameQuery<Title>>();
     }
@@ -28,6 +29,7 @@ public static class InfrastructureModule
     {
         return serviceCollection
                .AddSingleton<IContentTypeAdapter<Achievement>, AchievementAdapter>()
+               .AddSingleton<IContentTypeAdapter<Action>, ActionAdapter>()
                .AddSingleton<IContentTypeAdapter<Item>, ItemAdapter>()
                .AddSingleton<IContentTypeAdapter<Title>, TitleAdapter>();
     }

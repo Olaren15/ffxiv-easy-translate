@@ -7,7 +7,7 @@ public static class UseCaseModule
 {
     public static IServiceCollection AddUseCaseServices(this IServiceCollection serviceCollection)
     {
-        serviceCollection.AddSingleton<SearchItemByNameCommand>();
+        serviceCollection.AddSingleton<SearchContentByNameCommand>();
         return serviceCollection;
     }
 }

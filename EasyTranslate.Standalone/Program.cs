@@ -24,7 +24,7 @@ var serviceCollection = new ServiceCollection()
                         .AddInfrastructureServices()
                         .AddUseCaseServices()
                         .BuildServiceProvider();
-var searchByName = serviceCollection.GetService<SearchItemByNameCommand>()!;
+var searchByName = serviceCollection.GetService<SearchContentByNameCommand>()!;
 
 var serializerOptions = new JsonSerializerOptions
 {
@@ -36,7 +36,7 @@ while (true)
 {
     Console.Write("Search anything: ");
     var search = Console.ReadLine() ?? "";
-    var results = await searchByName.SearchItemByName(search, Language.English);
+    var results = await searchByName.Execute(search, Language.English);
 
     Console.WriteLine(JsonSerializer.Serialize(results, serializerOptions));
 }

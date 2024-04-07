@@ -9,7 +9,7 @@ using EasyTranslate.Domain.Entities;
 using EasyTranslate.UseCase.ItemSearch;
 
 public sealed class SearchViewModel(
-    SearchItemByNameCommand searchItemByNameCommand,
+    SearchContentByNameCommand searchContentByNameCommand,
     ContentMapper contentMapper,
     UserSettingsRepository userSettingsRepository
 ) : IDisposable
@@ -59,7 +59,7 @@ public sealed class SearchViewModel(
     {
         searchResults = null;
         searchCancellationToken = new CancellationTokenSource();
-        currentSearchTask = searchItemByNameCommand.SearchItemByName(
+        currentSearchTask = searchContentByNameCommand.Execute(
             SearchText,
             SearchLanguage,
             searchCancellationToken.Token
