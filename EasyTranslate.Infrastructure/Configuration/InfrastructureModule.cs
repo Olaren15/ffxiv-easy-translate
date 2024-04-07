@@ -7,11 +7,14 @@ using Microsoft.Extensions.DependencyInjection;
 
 public static class InfrastructureModule
 {
-    public const string XivApiUrlConfigName = "XivApiUrl";
-
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection serviceCollection)
     {
-        serviceCollection.AddSingleton<IContentRepository, LuminaContentRepository>().AddSingleton<ItemSheet>();
+        serviceCollection
+            .AddSingleton<IContentRepository, LuminaContentRepository>()
+            .AddSingleton<SheetQuery>()
+            .AddSingleton<AchievementSheetAdapter>()
+            .AddSingleton<ItemSheetAdapter>();
+
         return serviceCollection;
     }
 }

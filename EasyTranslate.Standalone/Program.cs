@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Text.Encodings.Web;
+using System.Text.Json;
 using EasyTranslate.Domain.Entities;
 using EasyTranslate.Infrastructure.Configuration;
 using EasyTranslate.UseCase.Configuration;
@@ -15,7 +16,8 @@ var serviceCollection = new ServiceCollection()
                         .BuildServiceProvider();
 var searchByName = serviceCollection.GetService<SearchItemByNameCommand>()!;
 
-var serializerOptions = new JsonSerializerOptions { WriteIndented = true };
+var serializerOptions = new JsonSerializerOptions
+    { WriteIndented = true, Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
 
 while (true)
 {

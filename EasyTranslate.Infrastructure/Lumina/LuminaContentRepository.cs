@@ -6,9 +6,13 @@ using EasyTranslate.Domain.Entities;
 using EasyTranslate.Domain.Repositories;
 using EasyTranslate.Infrastructure.Lumina.Sheets;
 
-public class LuminaContentRepository(ItemSheet itemSheet) : IContentRepository
+public class LuminaContentRepository(
+    SheetQuery sheetQuery,
+    AchievementSheetAdapter achievementSheetAdapter,
+    ItemSheetAdapter itemSheetAdapter
+) : IContentRepository
 {
-    public Task<IEnumerable<Content>> SearchByName(
+    public async Task<IEnumerable<Content>> SearchByName(
         string name,
         Language searchLanguage,
         CancellationToken cancellationToken
@@ -23,6 +27,23 @@ public class LuminaContentRepository(ItemSheet itemSheet) : IContentRepository
             var _ => Lumina_Language.English,
         };
 
-        return Task.Run(() => itemSheet.SearchByName(name, luminaSearchLanguage, cancellationToken), cancellationToken);
+        /*
+         TODO: Achieve feature-parity with the previous XivApiContentRepository.
+         Missing fields:
+          Title, Action, CraftAction, Trait, PvPAction, PvPTrait, Status, BNpcName,
+          ENpcResident, Companion, Mount, Leve, Emote, InstanceContent, Recipe, Fate, Quest, ContentFinderCondition,
+          Balloon, BuddyEquip, Orchestrion, PlaceName, Weather, World, Map
+         */
+        var achievements = Task.Run(
+            () => sheetQuery.SearchByName(name, luminaSearchLanguage, achievementSheetAdapter),
+            cancellationToken
+        );
+        var items = Task.Run(
+            () => sheetQuery.SearchByName(name, luminaSearchLanguage, itemSheetAdapter),
+            cancellationToken
+        );
+
+        // TODO: Sort results by relevancy
+        return (await achievements).Concat(await items);
     }
 }
