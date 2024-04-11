@@ -11,7 +11,7 @@ public class GameDataContentRepository(
     SearchByNameQuery<Title> titlesQuery
 ) : IContentRepository
 {
-    public async Task<IEnumerable<Content>> SearchByName(
+    public Task<IEnumerable<Content>> SearchByName(
         string searchName,
         Language searchLanguage,
         CancellationToken cancellationToken
@@ -33,15 +33,12 @@ public class GameDataContentRepository(
           ENpcResident, Companion, Mount, Leve, Emote, InstanceContent, Recipe, Fate, Quest, ContentFinderCondition,
           Balloon, BuddyEquip, Orchestrion, PlaceName, Weather, World, Map
          */
-        var achievements = Task.Run(
-            () => achievementsQuery.Execute(searchName, luminaSearchLanguage),
-            cancellationToken
-        );
-        var actions = Task.Run(() => actionsQuery.Execute(searchName, luminaSearchLanguage), cancellationToken);
-        var items = Task.Run(() => itemsQuery.Execute(searchName, luminaSearchLanguage), cancellationToken);
-        var titles = Task.Run(() => titlesQuery.Execute(searchName, luminaSearchLanguage), cancellationToken);
 
         // TODO: Sort results by relevancy
-        return (await achievements).Concat(await actions).Concat(await items).Concat(await titles);
+        return Task.FromResult(achievementsQuery
+                               .Execute(searchName, luminaSearchLanguage)
+                               .Concat(actionsQuery.Execute(searchName, luminaSearchLanguage))
+                               .Concat(itemsQuery.Execute(searchName, luminaSearchLanguage))
+                               .Concat(titlesQuery.Execute(searchName, luminaSearchLanguage)));
     }
 }
