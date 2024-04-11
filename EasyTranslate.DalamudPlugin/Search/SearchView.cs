@@ -6,10 +6,10 @@ using System.Numerics;
 using Dalamud.Interface;
 using Dalamud.Interface.Internal;
 using Dalamud.Interface.Windowing;
-using EasyTranslate.DalamudPlugin.Localisation;
-using EasyTranslate.DalamudPlugin.Resources;
-using EasyTranslate.Domain.Entities;
+using Domain.Entities;
 using ImGuiNET;
+using Localisation;
+using Resources;
 
 public sealed class SearchView : Window, IDisposable
 {

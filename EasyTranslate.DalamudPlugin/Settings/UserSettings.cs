@@ -2,7 +2,7 @@
 
 using System;
 using Dalamud.Configuration;
-using EasyTranslate.Domain.Entities;
+using Domain.Entities;
 
 [Serializable]
 public class UserSettings : IPluginConfiguration

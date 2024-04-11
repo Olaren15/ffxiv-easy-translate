@@ -1,7 +1,7 @@
 ﻿namespace EasyTranslate.UseCase.ItemSearch;
 
-using EasyTranslate.Domain.Entities;
-using EasyTranslate.Domain.Repositories;
+using Domain.Entities;
+using Domain.Repositories;
 
 public class SearchContentByNameCommand(IContentRepository contentRepository)
 {

@@ -1,9 +1,9 @@
 namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
-using EasyTranslate.Domain.Entities;
+using Domain.Entities;
 using Lumina.Excel;
 using Lumina.Excel.GeneratedSheets2;
-using ContentType = EasyTranslate.Domain.Entities.ContentType;
+using ContentType = Domain.Entities.ContentType;
 
 public class ItemAdapter : IContentTypeAdapter<Item>
 {

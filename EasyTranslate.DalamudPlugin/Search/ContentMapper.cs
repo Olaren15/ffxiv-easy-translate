@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Dalamud.Plugin.Services;
-using EasyTranslate.Domain.Entities;
+using Domain.Entities;
 
 public class ContentMapper(ITextureProvider textureProvider)
 {

@@ -1,16 +1,16 @@
 namespace EasyTranslate.DalamudPlugin.Search;
 
 using System;
+using Attributes;
 using Dalamud.Game.Gui.ContextMenu;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Plugin.Services;
 using Dalamud.Utility;
-using EasyTranslate.DalamudPlugin.Attributes;
-using EasyTranslate.DalamudPlugin.Localisation;
-using EasyTranslate.DalamudPlugin.Resources;
+using Localisation;
 using Lumina.Excel;
 using Lumina.Excel.GeneratedSheets2;
+using Resources;
 
 [EntryPoint]
 public sealed class SearchContextMenuItem
@@ -91,7 +91,7 @@ public sealed class SearchContextMenuItem
         {
             Item item1 => item1.Name.ToDalamudString().TextValue,
             EventItem eventItem => eventItem.Name.ToDalamudString().TextValue,
-            var _ => throw new InvalidOperationException(),
+            _ => throw new InvalidOperationException(),
         };
 
         searchView.ShowAndSearch(itemName);

@@ -3,13 +3,13 @@
 using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
-using EasyTranslate.DalamudPlugin.Localisation;
-using EasyTranslate.DalamudPlugin.Search;
-using EasyTranslate.DalamudPlugin.Settings;
-using EasyTranslate.Infrastructure.Configuration;
-using EasyTranslate.UseCase.Configuration;
+using Infrastructure.Configuration;
+using Localisation;
 using Lumina.Excel;
 using Microsoft.Extensions.DependencyInjection;
+using Search;
+using Settings;
+using UseCase.Configuration;
 
 public static class DalamudPluginModule
 {

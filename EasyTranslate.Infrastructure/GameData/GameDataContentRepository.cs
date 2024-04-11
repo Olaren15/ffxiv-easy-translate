@@ -1,7 +1,7 @@
 namespace EasyTranslate.Infrastructure.GameData;
 
-using EasyTranslate.Domain.Entities;
-using EasyTranslate.Domain.Repositories;
+using Domain.Entities;
+using Domain.Repositories;
 using Lumina.Excel.GeneratedSheets2;
 
 public class GameDataContentRepository(
@@ -23,7 +23,7 @@ public class GameDataContentRepository(
             Language.French => Lumina.Data.Language.French,
             Language.German => Lumina.Data.Language.German,
             Language.Japanese => Lumina.Data.Language.Japanese,
-            var _ => Lumina.Data.Language.English,
+            _ => Lumina.Data.Language.English,
         };
 
         /*

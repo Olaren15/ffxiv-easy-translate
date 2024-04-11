@@ -1,6 +1,6 @@
 ﻿namespace EasyTranslate.UseCase.Configuration;
 
-using EasyTranslate.UseCase.ItemSearch;
+using ItemSearch;
 using Microsoft.Extensions.DependencyInjection;
 
 public static class UseCaseModule

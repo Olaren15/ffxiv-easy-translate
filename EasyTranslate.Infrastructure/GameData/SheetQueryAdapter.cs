@@ -1,6 +1,6 @@
 namespace EasyTranslate.Infrastructure.GameData;
 
-using EasyTranslate.Domain.Entities;
+using Domain.Entities;
 using Lumina.Excel;
 
 public interface IContentTypeAdapter<T> where T : ExcelRow

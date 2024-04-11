@@ -4,7 +4,7 @@ using Lumina_Language = Lumina.Data.Language;
 
 namespace EasyTranslate.Infrastructure.GameData;
 
-using EasyTranslate.Domain.Entities;
+using Domain.Entities;
 
 public class SearchByNameQuery<T>(ExcelModule excelModule, IContentTypeAdapter<T> adapter) where T : ExcelRow
 {

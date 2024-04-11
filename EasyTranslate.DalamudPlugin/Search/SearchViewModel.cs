@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using EasyTranslate.DalamudPlugin.Settings;
-using EasyTranslate.Domain.Entities;
-using EasyTranslate.UseCase.ItemSearch;
+using Domain.Entities;
+using Settings;
+using UseCase.ItemSearch;
 
 public sealed class SearchViewModel(
     SearchContentByNameCommand searchContentByNameCommand,

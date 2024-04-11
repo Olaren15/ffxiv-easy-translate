@@ -4,7 +4,7 @@ using Dalamud;
 using Dalamud.Game.Config;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
-using EasyTranslate.Domain.Entities;
+using Domain.Entities;
 
 public class UserSettingsRepository
 {
@@ -45,7 +45,7 @@ public class UserSettingsRepository
                 ClientLanguage.English => Language.English,
                 ClientLanguage.German => Language.German,
                 ClientLanguage.French => Language.French,
-                var _ => Language.English,
+                _ => Language.English,
             },
         };
         Save(newPreferences);

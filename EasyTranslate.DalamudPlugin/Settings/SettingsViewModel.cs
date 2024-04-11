@@ -1,6 +1,6 @@
 ﻿namespace EasyTranslate.DalamudPlugin.Settings;
 
-using EasyTranslate.Domain.Entities;
+using Domain.Entities;
 
 public class SettingsViewModel(UserSettingsRepository userSettingsRepository)
 {

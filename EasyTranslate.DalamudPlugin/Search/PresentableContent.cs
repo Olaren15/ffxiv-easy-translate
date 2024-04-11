@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 using Dalamud.Interface.Internal;
-using EasyTranslate.Domain.Entities;
+using Domain.Entities;
 
 public record PresentableContent(
     uint Id,

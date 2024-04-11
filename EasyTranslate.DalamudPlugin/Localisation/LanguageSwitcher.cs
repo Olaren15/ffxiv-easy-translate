@@ -3,7 +3,7 @@ namespace EasyTranslate.DalamudPlugin.Localisation;
 using System;
 using System.Globalization;
 using Dalamud.Plugin;
-using EasyTranslate.DalamudPlugin.Resources;
+using Resources;
 
 public sealed class LanguageSwitcher : IDisposable
 {

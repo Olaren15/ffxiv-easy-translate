@@ -3,12 +3,12 @@
 using System;
 using System.Linq;
 using System.Reflection;
+using Attributes;
+using Configuration;
 using Dalamud.Interface;
 using Dalamud.Interface.Windowing;
 using Dalamud.IoC;
 using Dalamud.Plugin;
-using EasyTranslate.DalamudPlugin.Attributes;
-using EasyTranslate.DalamudPlugin.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 // ReSharper disable once UnusedType.Global

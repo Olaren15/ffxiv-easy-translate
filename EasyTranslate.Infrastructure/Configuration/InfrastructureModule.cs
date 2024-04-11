@@ -1,8 +1,8 @@
 ﻿namespace EasyTranslate.Infrastructure.Configuration;
 
-using EasyTranslate.Domain.Repositories;
-using EasyTranslate.Infrastructure.GameData;
-using EasyTranslate.Infrastructure.GameData.Adapters;
+using Domain.Repositories;
+using GameData;
+using GameData.Adapters;
 using Lumina.Excel.GeneratedSheets2;
 using Microsoft.Extensions.DependencyInjection;
 
