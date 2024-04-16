@@ -21,6 +21,7 @@ public static class InfrastructureModule
         return serviceCollection
                .AddSingleton<SearchByNameQuery<Achievement>>()
                .AddSingleton<SearchByNameQuery<Action>>()
+               .AddSingleton<SearchByNameQuery<CraftAction>>()
                .AddSingleton<SearchByNameQuery<Item>>()
                .AddSingleton<SearchByNameQuery<Title>>();
     }
@@ -30,6 +31,7 @@ public static class InfrastructureModule
         return serviceCollection
                .AddSingleton<IContentTypeAdapter<Achievement>, AchievementAdapter>()
                .AddSingleton<IContentTypeAdapter<Action>, ActionAdapter>()
+               .AddSingleton<IContentTypeAdapter<CraftAction>, CraftActionAdapter>()
                .AddSingleton<IContentTypeAdapter<Item>, ItemAdapter>()
                .AddSingleton<IContentTypeAdapter<Title>, TitleAdapter>();
     }
