@@ -59,11 +59,13 @@ public sealed class SearchViewModel(
     {
         searchResults = null;
         searchCancellationToken = new CancellationTokenSource();
-        currentSearchTask = searchContentByNameCommand.Execute(
-            SearchText,
-            SearchLanguage,
-            searchCancellationToken.Token
-        );
+        currentSearchTask = Task.Run(
+            () => searchContentByNameCommand.Execute(
+                SearchText,
+                SearchLanguage,
+                searchCancellationToken.Token
+            ),
+            searchCancellationToken.Token);
     }
 
     ~SearchViewModel()
