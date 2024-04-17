@@ -9,7 +9,8 @@ public class ActionAdapter : IContentTypeAdapter<Action>
 {
     public Func<Action, bool> WhereClause(string searchName)
     {
-        return action => action.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
+        return action => action.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase)
+                         && action.ClassJob.Row != uint.MaxValue; // Filter non-player actions
     }
 
     public Func<Action, Content> MapToContent(
