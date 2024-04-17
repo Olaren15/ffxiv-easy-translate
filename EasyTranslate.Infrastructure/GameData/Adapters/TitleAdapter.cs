@@ -20,25 +20,24 @@ public class TitleAdapter : IContentTypeAdapter<Title>
         ExcelSheet<Title> japaneseSheet
     )
     {
-        return title =>
-        {
-            var englishTitle = englishSheet.GetRow(title.RowId)!;
-            var frenchTitle = frenchSheet.GetRow(title.RowId)!;
-            var germanTitle = germanSheet.GetRow(title.RowId)!;
-            var japaneseTitle = japaneseSheet.GetRow(title.RowId)!;
+        return title => new Content(
+            title.RowId,
+            ContentType.Title,
+            null,
+            new Dictionary<Language, string>
+            {
+                { Language.English, FormatTitle(englishSheet.GetRow(title.RowId)!) },
+                { Language.French, FormatTitle(frenchSheet.GetRow(title.RowId)!) },
+                { Language.German, FormatTitle(germanSheet.GetRow(title.RowId)!) },
+                { Language.Japanese, FormatTitle(japaneseSheet.GetRow(title.RowId)!) },
+            }
+        );
+    }
 
-            return new Content(
-                title.RowId,
-                ContentType.Title,
-                null,
-                new Dictionary<Language, string>
-                {
-                    { Language.English, $"{englishTitle.Masculine.RawString} / {englishTitle.Feminine}" },
-                    { Language.French, $"{frenchTitle.Masculine.RawString} / {frenchTitle.Feminine}" },
-                    { Language.German, $"{germanTitle.Masculine.RawString} / {germanTitle.Feminine}" },
-                    { Language.Japanese, $"{japaneseTitle.Masculine.RawString} / {japaneseTitle.Feminine}" },
-                }
-            );
-        };
+    private static string FormatTitle(Title title)
+    {
+        return title.Masculine.RawString == title.Feminine.RawString
+                   ? title.Feminine.RawString
+                   : $"{title.Masculine.RawString} / {title.Feminine.RawString}";
     }
 }
