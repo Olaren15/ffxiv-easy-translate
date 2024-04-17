@@ -23,7 +23,8 @@ public static class InfrastructureModule
                .AddSingleton<SearchByNameQuery<Action>>()
                .AddSingleton<SearchByNameQuery<CraftAction>>()
                .AddSingleton<SearchByNameQuery<Item>>()
-               .AddSingleton<SearchByNameQuery<Title>>();
+               .AddSingleton<SearchByNameQuery<Title>>()
+               .AddSingleton<SearchByNameQuery<Trait>>();
     }
 
     private static IServiceCollection AddAdapters(this IServiceCollection serviceCollection)
@@ -33,6 +34,7 @@ public static class InfrastructureModule
                .AddSingleton<IContentTypeAdapter<Action>, ActionAdapter>()
                .AddSingleton<IContentTypeAdapter<CraftAction>, CraftActionAdapter>()
                .AddSingleton<IContentTypeAdapter<Item>, ItemAdapter>()
-               .AddSingleton<IContentTypeAdapter<Title>, TitleAdapter>();
+               .AddSingleton<IContentTypeAdapter<Title>, TitleAdapter>()
+               .AddSingleton<IContentTypeAdapter<Trait>, TraitAdapter>();
     }
 }

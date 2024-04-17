@@ -6,4 +6,5 @@ public enum ContentType
     Action,
     Item,
     Title,
+    Trait,
 }

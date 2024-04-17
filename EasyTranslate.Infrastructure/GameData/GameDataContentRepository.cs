@@ -9,7 +9,8 @@ public class GameDataContentRepository(
     SearchByNameQuery<Action> actionsQuery,
     SearchByNameQuery<CraftAction> craftActionQuery,
     SearchByNameQuery<Item> itemsQuery,
-    SearchByNameQuery<Title> titlesQuery
+    SearchByNameQuery<Title> titlesQuery,
+    SearchByNameQuery<Trait> traitsQuery
 ) : IContentRepository
 {
     public Task<IEnumerable<Content>> SearchByName(
@@ -30,7 +31,7 @@ public class GameDataContentRepository(
         /*
          TODO: Achieve feature-parity with the previous XivApiContentRepository.
          Missing fields:
-          Trait, PvPAction, PvPTrait, Status, BNpcName,
+          PvPAction, PvPTrait, Status, BNpcName,
           ENpcResident, Companion, Mount, Leve, Emote, InstanceContent, Recipe, Fate, Quest, ContentFinderCondition,
           Balloon, BuddyEquip, Orchestrion, PlaceName, Weather, World, Map
          */
@@ -41,6 +42,7 @@ public class GameDataContentRepository(
                                .Concat(actionsQuery.Execute(searchName, luminaSearchLanguage))
                                .Concat(craftActionQuery.Execute(searchName, luminaSearchLanguage))
                                .Concat(itemsQuery.Execute(searchName, luminaSearchLanguage))
-                               .Concat(titlesQuery.Execute(searchName, luminaSearchLanguage)));
+                               .Concat(titlesQuery.Execute(searchName, luminaSearchLanguage))
+                               .Concat(traitsQuery.Execute(searchName, luminaSearchLanguage)));
     }
 }
