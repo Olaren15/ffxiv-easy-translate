@@ -23,7 +23,7 @@ public class GameDataContentRepository(IEnumerable<ISearchByNameQuery> searhQuer
         /*
          TODO: Achieve feature-parity with the previous XivApiContentRepository.
          Missing fields:
-          Companion, Mount, Leve, Emote, InstanceContent, Recipe, Fate, Quest, ContentFinderCondition,
+          Mount, Leve, Emote, InstanceContent, Recipe, Fate, Quest, ContentFinderCondition,
           Balloon, BuddyEquip, Orchestrion, PlaceName, Weather, World, Map
          */
 
