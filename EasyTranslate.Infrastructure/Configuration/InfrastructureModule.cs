@@ -23,6 +23,7 @@ public static class InfrastructureModule
                .AddSingleton<SearchByNameQuery<Action>>()
                .AddSingleton<SearchByNameQuery<CraftAction>>()
                .AddSingleton<SearchByNameQuery<Item>>()
+               .AddSingleton<SearchByNameQuery<Status>>()
                .AddSingleton<SearchByNameQuery<Title>>()
                .AddSingleton<SearchByNameQuery<Trait>>();
     }
@@ -34,6 +35,7 @@ public static class InfrastructureModule
                .AddSingleton<IContentTypeAdapter<Action>, ActionAdapter>()
                .AddSingleton<IContentTypeAdapter<CraftAction>, CraftActionAdapter>()
                .AddSingleton<IContentTypeAdapter<Item>, ItemAdapter>()
+               .AddSingleton<IContentTypeAdapter<Status>, StatusAdapter>()
                .AddSingleton<IContentTypeAdapter<Title>, TitleAdapter>()
                .AddSingleton<IContentTypeAdapter<Trait>, TraitAdapter>();
     }
