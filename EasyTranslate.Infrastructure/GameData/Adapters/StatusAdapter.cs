@@ -20,16 +20,12 @@ public class StatusAdapter : IContentTypeAdapter<Status>
     )
     {
         return status => new Content(
-            status.RowId,
             ContentType.Status,
             status.Icon,
-            new Dictionary<Language, string>
-            {
-                { Language.English, englishSheet.GetRow(status.RowId)!.Name.RawString },
-                { Language.French, frenchSheet.GetRow(status.RowId)!.Name.RawString },
-                { Language.German, germanSheet.GetRow(status.RowId)!.Name.RawString },
-                { Language.Japanese, japaneseSheet.GetRow(status.RowId)!.Name.RawString },
-            }
+            englishSheet.GetRow(status.RowId)!.Name.RawString,
+            frenchSheet.GetRow(status.RowId)!.Name.RawString,
+            germanSheet.GetRow(status.RowId)!.Name.RawString,
+            japaneseSheet.GetRow(status.RowId)!.Name.RawString
         );
     }
 }

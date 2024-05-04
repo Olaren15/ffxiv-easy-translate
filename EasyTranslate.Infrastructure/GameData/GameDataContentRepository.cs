@@ -30,6 +30,8 @@ public class GameDataContentRepository(IEnumerable<ISearchByNameQuery> searhQuer
         // TODO: Sort results by relevancy
         return Task.FromResult(
             searhQueries.SelectMany(searchQuery => searchQuery.Execute(searchName, luminaSearchLanguage))
-                        .ToList() as IEnumerable<Content>);
+                        .Distinct()
+                        .ToList()
+                as IEnumerable<Content>);
     }
 }

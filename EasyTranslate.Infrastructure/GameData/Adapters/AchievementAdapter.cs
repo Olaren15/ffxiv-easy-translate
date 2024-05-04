@@ -20,16 +20,12 @@ public class AchievementAdapter : IContentTypeAdapter<Achievement>
     )
     {
         return achievement => new Content(
-            achievement.RowId,
             ContentType.Achievement,
             achievement.Icon,
-            new Dictionary<Language, string>
-            {
-                { Language.English, englishSheet.GetRow(achievement.RowId)!.Name.RawString },
-                { Language.French, frenchSheet.GetRow(achievement.RowId)!.Name.RawString },
-                { Language.German, germanSheet.GetRow(achievement.RowId)!.Name.RawString },
-                { Language.Japanese, japaneseSheet.GetRow(achievement.RowId)!.Name.RawString },
-            }
+            englishSheet.GetRow(achievement.RowId)!.Name.RawString,
+            frenchSheet.GetRow(achievement.RowId)!.Name.RawString,
+            germanSheet.GetRow(achievement.RowId)!.Name.RawString,
+            japaneseSheet.GetRow(achievement.RowId)!.Name.RawString
         );
     }
 }

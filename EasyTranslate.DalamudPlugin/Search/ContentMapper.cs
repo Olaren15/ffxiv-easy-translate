@@ -10,11 +10,13 @@ public class ContentMapper(ITextureProvider textureProvider)
     public PresentableContent ConvertToPresentableItem(Content content)
     {
         return new PresentableContent(
-            content.Id,
             content.Type,
             content.IconId,
             content.IconId.HasValue ? textureProvider.GetIcon(content.IconId.Value) : null,
-            content.LocalisedNames
+            content.englishName,
+            content.frenchName,
+            content.germanName,
+            content.japaneseName
         );
     }
 

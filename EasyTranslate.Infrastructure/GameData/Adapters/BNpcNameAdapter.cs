@@ -20,16 +20,12 @@ public class BNpcNameAdapter : IContentTypeAdapter<BNpcName>
     )
     {
         return npcName => new Content(
-            npcName.RowId,
             ContentType.Npc,
             null,
-            new Dictionary<Language, string>
-            {
-                { Language.English, englishSheet.GetRow(npcName.RowId)!.Singular.RawString },
-                { Language.French, frenchSheet.GetRow(npcName.RowId)!.Singular.RawString },
-                { Language.German, germanSheet.GetRow(npcName.RowId)!.Singular.RawString },
-                { Language.Japanese, japaneseSheet.GetRow(npcName.RowId)!.Singular.RawString },
-            }
+            englishSheet.GetRow(npcName.RowId)!.Singular.RawString,
+            frenchSheet.GetRow(npcName.RowId)!.Singular.RawString,
+            germanSheet.GetRow(npcName.RowId)!.Singular.RawString,
+            japaneseSheet.GetRow(npcName.RowId)!.Singular.RawString
         );
     }
 }

@@ -21,16 +21,12 @@ public class TitleAdapter : IContentTypeAdapter<Title>
     )
     {
         return title => new Content(
-            title.RowId,
             ContentType.Title,
             null,
-            new Dictionary<Language, string>
-            {
-                { Language.English, FormatTitle(englishSheet.GetRow(title.RowId)!) },
-                { Language.French, FormatTitle(frenchSheet.GetRow(title.RowId)!) },
-                { Language.German, FormatTitle(germanSheet.GetRow(title.RowId)!) },
-                { Language.Japanese, FormatTitle(japaneseSheet.GetRow(title.RowId)!) },
-            }
+            FormatTitle(englishSheet.GetRow(title.RowId)!),
+            FormatTitle(frenchSheet.GetRow(title.RowId)!),
+            FormatTitle(germanSheet.GetRow(title.RowId)!),
+            FormatTitle(japaneseSheet.GetRow(title.RowId)!)
         );
     }
 

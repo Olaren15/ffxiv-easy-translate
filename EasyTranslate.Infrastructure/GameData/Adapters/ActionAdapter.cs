@@ -21,16 +21,12 @@ public class ActionAdapter : IContentTypeAdapter<Action>
     )
     {
         return action => new Content(
-            action.RowId,
             ContentType.Action,
             action.Icon,
-            new Dictionary<Language, string>
-            {
-                { Language.English, englishSheet.GetRow(action.RowId)!.Name.RawString },
-                { Language.French, frenchSheet.GetRow(action.RowId)!.Name.RawString },
-                { Language.German, germanSheet.GetRow(action.RowId)!.Name.RawString },
-                { Language.Japanese, japaneseSheet.GetRow(action.RowId)!.Name.RawString },
-            }
+            englishSheet.GetRow(action.RowId)!.Name.RawString,
+            frenchSheet.GetRow(action.RowId)!.Name.RawString,
+            germanSheet.GetRow(action.RowId)!.Name.RawString,
+            japaneseSheet.GetRow(action.RowId)!.Name.RawString
         );
     }
 }

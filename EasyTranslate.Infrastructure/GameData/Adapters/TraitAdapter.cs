@@ -21,24 +21,12 @@ public class TraitAdapter : IContentTypeAdapter<Trait>
     )
     {
         return trait => new Content(
-            trait.RowId,
             ContentType.Trait,
             (uint?)trait.Icon,
-            new Dictionary<Language, string>
-            {
-                {
-                    Language.English, englishSheet.GetRow(trait.RowId)!.Name.RawString
-                },
-                {
-                    Language.French, frenchSheet.GetRow(trait.RowId)!.Name.RawString
-                },
-                {
-                    Language.German, germanSheet.GetRow(trait.RowId)!.Name.RawString
-                },
-                {
-                    Language.Japanese, japaneseSheet.GetRow(trait.RowId)!.Name.RawString
-                },
-            }
+            englishSheet.GetRow(trait.RowId)!.Name.RawString,
+            frenchSheet.GetRow(trait.RowId)!.Name.RawString,
+            germanSheet.GetRow(trait.RowId)!.Name.RawString,
+            japaneseSheet.GetRow(trait.RowId)!.Name.RawString
         );
     }
 }

@@ -20,16 +20,12 @@ public class ItemAdapter : IContentTypeAdapter<Item>
     )
     {
         return item => new Content(
-            item.RowId,
             ContentType.Item,
             item.Icon,
-            new Dictionary<Language, string>
-            {
-                { Language.English, englishSheet.GetRow(item.RowId)!.Name.RawString },
-                { Language.French, frenchSheet.GetRow(item.RowId)!.Name.RawString },
-                { Language.German, germanSheet.GetRow(item.RowId)!.Name.RawString },
-                { Language.Japanese, japaneseSheet.GetRow(item.RowId)!.Name.RawString },
-            }
+            englishSheet.GetRow(item.RowId)!.Name.RawString,
+            frenchSheet.GetRow(item.RowId)!.Name.RawString,
+            germanSheet.GetRow(item.RowId)!.Name.RawString,
+            japaneseSheet.GetRow(item.RowId)!.Name.RawString
         );
     }
 }

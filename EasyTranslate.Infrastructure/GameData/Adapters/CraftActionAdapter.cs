@@ -21,16 +21,12 @@ public class CraftActionAdapter : IContentTypeAdapter<CraftAction>
     )
     {
         return craftAction => new Content(
-            craftAction.RowId,
             ContentType.Action,
             craftAction.Icon,
-            new Dictionary<Language, string>
-            {
-                { Language.English, englishSheet.GetRow(craftAction.RowId)!.Name.RawString },
-                { Language.French, frenchSheet.GetRow(craftAction.RowId)!.Name.RawString },
-                { Language.German, germanSheet.GetRow(craftAction.RowId)!.Name.RawString },
-                { Language.Japanese, japaneseSheet.GetRow(craftAction.RowId)!.Name.RawString },
-            }
+            englishSheet.GetRow(craftAction.RowId)!.Name.RawString,
+            frenchSheet.GetRow(craftAction.RowId)!.Name.RawString,
+            germanSheet.GetRow(craftAction.RowId)!.Name.RawString,
+            japaneseSheet.GetRow(craftAction.RowId)!.Name.RawString
         );
     }
 }
