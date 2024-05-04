@@ -26,6 +26,7 @@ public static class InfrastructureModule
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<CraftAction>>()
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<ENpcResident>>()
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Item>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Mount>>()
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Status>>()
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Title>>()
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Trait>>();
@@ -41,6 +42,7 @@ public static class InfrastructureModule
                .AddSingleton<IContentTypeAdapter<CraftAction>, CraftActionAdapter>()
                .AddSingleton<IContentTypeAdapter<ENpcResident>, ENpcResidentAdapter>()
                .AddSingleton<IContentTypeAdapter<Item>, ItemAdapter>()
+               .AddSingleton<IContentTypeAdapter<Mount>, MountAdapter>()
                .AddSingleton<IContentTypeAdapter<Status>, StatusAdapter>()
                .AddSingleton<IContentTypeAdapter<Title>, TitleAdapter>()
                .AddSingleton<IContentTypeAdapter<Trait>, TraitAdapter>();

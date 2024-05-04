@@ -32,6 +32,7 @@ public class GameDataContentRepository(IEnumerable<ISearchByNameQuery> searhQuer
             searhQueries.SelectMany(searchQuery => searchQuery.Execute(searchName, luminaSearchLanguage))
                         .Distinct()
                         .ToList()
-                as IEnumerable<Content>);
+                as IEnumerable<Content>
+        );
     }
 }

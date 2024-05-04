@@ -6,6 +6,7 @@ public enum ContentType
     Action,
     Item,
     Minion,
+    Mount,
     Npc,
     Status,
     Title,
