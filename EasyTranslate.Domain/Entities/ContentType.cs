@@ -8,6 +8,7 @@ public enum ContentType
     Minion,
     Mount,
     Npc,
+    LeveQuest,
     Status,
     Title,
     Trait,
