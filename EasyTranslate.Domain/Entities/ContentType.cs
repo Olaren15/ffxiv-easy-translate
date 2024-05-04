@@ -4,6 +4,7 @@ public enum ContentType
 {
     Achievement,
     Action,
+    Emote,
     Item,
     Minion,
     Mount,
