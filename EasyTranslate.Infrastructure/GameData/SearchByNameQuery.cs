@@ -6,7 +6,8 @@ namespace EasyTranslate.Infrastructure.GameData;
 
 using Domain.Entities;
 
-public class SearchByNameQuery<T>(ExcelModule excelModule, IContentTypeAdapter<T> adapter) where T : ExcelRow
+public class SearchByNameQuery<T>(ExcelModule excelModule, IContentTypeAdapter<T> adapter)
+    : ISearchByNameQuery where T : ExcelRow
 {
     public IEnumerable<Content> Execute(string searchName, Lumina_Language searchLanguage)
     {
@@ -22,7 +23,7 @@ public class SearchByNameQuery<T>(ExcelModule excelModule, IContentTypeAdapter<T
                        excelModule.GetSheet<T>(Lumina_Language.Japanese)!
                    )
                )
-               .ToArray() // Bad iteration performance if we don't transform the results in an array
-               ?? Enumerable.Empty<Content>();
+               .ToList() // Bad iteration performance if we don't transform the results to a list
+               ?? [];
     }
 }

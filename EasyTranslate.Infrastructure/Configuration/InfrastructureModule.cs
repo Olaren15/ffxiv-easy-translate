@@ -19,13 +19,15 @@ public static class InfrastructureModule
     private static IServiceCollection AddQueries(this IServiceCollection serviceCollection)
     {
         return serviceCollection
-               .AddSingleton<SearchByNameQuery<Achievement>>()
-               .AddSingleton<SearchByNameQuery<Action>>()
-               .AddSingleton<SearchByNameQuery<CraftAction>>()
-               .AddSingleton<SearchByNameQuery<Item>>()
-               .AddSingleton<SearchByNameQuery<Status>>()
-               .AddSingleton<SearchByNameQuery<Title>>()
-               .AddSingleton<SearchByNameQuery<Trait>>();
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Achievement>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Action>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<BNpcName>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<CraftAction>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<ENpcResident>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Item>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Status>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Title>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Trait>>();
     }
 
     private static IServiceCollection AddAdapters(this IServiceCollection serviceCollection)
@@ -33,7 +35,9 @@ public static class InfrastructureModule
         return serviceCollection
                .AddSingleton<IContentTypeAdapter<Achievement>, AchievementAdapter>()
                .AddSingleton<IContentTypeAdapter<Action>, ActionAdapter>()
+               .AddSingleton<IContentTypeAdapter<BNpcName>, BNpcNameAdapter>()
                .AddSingleton<IContentTypeAdapter<CraftAction>, CraftActionAdapter>()
+               .AddSingleton<IContentTypeAdapter<ENpcResident>, ENpcResidentAdapter>()
                .AddSingleton<IContentTypeAdapter<Item>, ItemAdapter>()
                .AddSingleton<IContentTypeAdapter<Status>, StatusAdapter>()
                .AddSingleton<IContentTypeAdapter<Title>, TitleAdapter>()
