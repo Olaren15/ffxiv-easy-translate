@@ -30,6 +30,7 @@ public static class InfrastructureModule
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Item>>()
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Leve>>()
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Mount>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Quest>>()
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Status>>()
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Title>>()
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Trait>>();
@@ -49,6 +50,7 @@ public static class InfrastructureModule
                .AddSingleton<IContentTypeAdapter<Item>, ItemAdapter>()
                .AddSingleton<IContentTypeAdapter<Leve>, LeveAdapter>()
                .AddSingleton<IContentTypeAdapter<Mount>, MountAdapter>()
+               .AddSingleton<IContentTypeAdapter<Quest>, QuestAdapter>()
                .AddSingleton<IContentTypeAdapter<Status>, StatusAdapter>()
                .AddSingleton<IContentTypeAdapter<Title>, TitleAdapter>()
                .AddSingleton<IContentTypeAdapter<Trait>, TraitAdapter>();

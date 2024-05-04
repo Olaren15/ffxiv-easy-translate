@@ -11,6 +11,7 @@ public enum ContentType
     Mount,
     Npc,
     LeveQuest,
+    Quest,
     Status,
     Title,
     Trait,
