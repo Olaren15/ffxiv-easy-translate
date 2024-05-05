@@ -21,6 +21,7 @@ public class SearchContentByNameCommand(
         }
 
         var contentList = await contentRepository.SearchByName(searchName, searchLanguage, cancellationToken);
-        return sortContentByNameSimilarityCommand.Execute(searchName, searchLanguage, contentList);
+        return sortContentByNameSimilarityCommand.Execute(searchName, searchLanguage, contentList)
+                                                 .Take(100);
     }
 }

@@ -13,7 +13,8 @@ public class SearchByNameQuery<T>(ExcelModule excelModule, IContentTypeAdapter<T
     {
         return excelModule
                .GetSheet<T>(searchLanguage)
-               ?.Where(adapter.WhereClause(searchName))
+               ?.GetCachelessEnumerator()
+               .Where(adapter.WhereClause(searchName))
                .Take(100)
                .Select(
                    adapter.MapToContent(
