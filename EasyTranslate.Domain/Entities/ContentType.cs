@@ -6,6 +6,7 @@ public enum ContentType
     Action,
     Emote,
     Fate,
+    Instance,
     Item,
     LeveQuest,
     Minion,
