@@ -20,12 +20,6 @@ public class GameDataContentRepository(IEnumerable<ISearchByNameQuery> searhQuer
             _ => Lumina.Data.Language.English,
         };
 
-        /*
-         TODO: Achieve feature-parity with the previous XivApiContentRepository.
-         Missing fields:
-          ContentFinderCondition, Weather
-         */
-
         // TODO: Sort results by relevancy
         return Task.FromResult(
             searhQueries.SelectMany(searchQuery => searchQuery.Execute(searchName, luminaSearchLanguage))

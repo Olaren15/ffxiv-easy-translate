@@ -36,7 +36,8 @@ public static class InfrastructureModule
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Quest>>()
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Status>>()
                .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Title>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Trait>>();
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Trait>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Weather>>();
     }
 
     private static IServiceCollection AddAdapters(this IServiceCollection serviceCollection)
@@ -59,6 +60,7 @@ public static class InfrastructureModule
                .AddSingleton<IContentTypeAdapter<Quest>, QuestAdapter>()
                .AddSingleton<IContentTypeAdapter<Status>, StatusAdapter>()
                .AddSingleton<IContentTypeAdapter<Title>, TitleAdapter>()
-               .AddSingleton<IContentTypeAdapter<Trait>, TraitAdapter>();
+               .AddSingleton<IContentTypeAdapter<Trait>, TraitAdapter>()
+               .AddSingleton<IContentTypeAdapter<Weather>, WeatherAdapter>();
     }
 }
