@@ -6,6 +6,7 @@ using Lumina.Data.Files.Excel;
 using Lumina.Data.Structs.Excel;
 using Lumina.Excel;
 
+// TODO: Remove if / when this functionality gets merged into upstream Lumina
 public static class ExcelSheetExtension
 {
     public static IEnumerable<T> GetCachelessEnumerator<T>(this ExcelSheet<T> excelSheet) where T : ExcelRow
