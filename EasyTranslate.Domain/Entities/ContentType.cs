@@ -12,6 +12,7 @@ public enum ContentType
     Mount,
     Npc,
     Orchestrion,
+    Place,
     Quest,
     Status,
     Title,

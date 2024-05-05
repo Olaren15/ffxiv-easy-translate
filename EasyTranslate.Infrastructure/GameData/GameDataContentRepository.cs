@@ -23,7 +23,7 @@ public class GameDataContentRepository(IEnumerable<ISearchByNameQuery> searhQuer
         /*
          TODO: Achieve feature-parity with the previous XivApiContentRepository.
          Missing fields:
-          PlaceName, Weather
+          ContentFinderCondition, Weather
          */
 
         // TODO: Sort results by relevancy
