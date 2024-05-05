@@ -3,8 +3,21 @@
 public record Content(
     ContentType Type,
     uint? IconId,
-    string englishName,
-    string frenchName,
-    string germanName,
-    string japaneseName
-);
+    string EnglishName,
+    string FrenchName,
+    string GermanName,
+    string JapaneseName
+)
+{
+    public string NameForLanguage(Language language)
+    {
+        return language switch
+        {
+            Language.English => EnglishName,
+            Language.French => FrenchName,
+            Language.German => GermanName,
+            Language.Japanese => JapaneseName,
+            _ => throw new ArgumentOutOfRangeException(nameof(language), language, null),
+        };
+    }
+}

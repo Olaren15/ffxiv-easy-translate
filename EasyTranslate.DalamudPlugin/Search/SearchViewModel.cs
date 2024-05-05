@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Domain.Entities;
 using Settings;
-using UseCase.ItemSearch;
+using UseCase;
 
 public sealed class SearchViewModel(
     SearchContentByNameCommand searchContentByNameCommand,

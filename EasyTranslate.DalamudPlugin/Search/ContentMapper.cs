@@ -13,10 +13,10 @@ public class ContentMapper(ITextureProvider textureProvider)
             content.Type,
             content.IconId,
             content.IconId.HasValue ? textureProvider.GetIcon(content.IconId.Value) : null,
-            content.englishName,
-            content.frenchName,
-            content.germanName,
-            content.japaneseName
+            content.EnglishName,
+            content.FrenchName,
+            content.GermanName,
+            content.JapaneseName
         );
     }
 

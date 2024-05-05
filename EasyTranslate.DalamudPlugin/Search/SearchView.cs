@@ -129,7 +129,7 @@ public sealed class SearchView : Window, IDisposable
                     ImGui.Text($"{Strings.English}:\n{Strings.French}:\n{Strings.German}:\n{Strings.Japanese}:\n");
                     ImGui.SameLine();
                     ImGui.Text(
-                        $"{searchResult.englishName}\n{searchResult.frenchName}\n{searchResult.germanName}\n{searchResult.japaneseName}"
+                        $"{searchResult.EnglishName}\n{searchResult.FrenchName}\n{searchResult.GermanName}\n{searchResult.JapaneseName}"
                     );
                 }
 

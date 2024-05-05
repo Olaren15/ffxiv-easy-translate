@@ -1,9 +1,12 @@
-﻿namespace EasyTranslate.UseCase.ItemSearch;
+﻿namespace EasyTranslate.UseCase;
 
 using Domain.Entities;
 using Domain.Repositories;
 
-public class SearchContentByNameCommand(IContentRepository contentRepository)
+public class SearchContentByNameCommand(
+    IContentRepository contentRepository,
+    SortContentByNameSimilarityCommand sortContentByNameSimilarityCommand
+)
 {
     public async Task<IEnumerable<Content>> Execute(
         string searchName,
@@ -17,6 +20,7 @@ public class SearchContentByNameCommand(IContentRepository contentRepository)
             return Enumerable.Empty<Content>();
         }
 
-        return await contentRepository.SearchByName(searchName, searchLanguage, cancellationToken);
+        var contentList = await contentRepository.SearchByName(searchName, searchLanguage, cancellationToken);
+        return sortContentByNameSimilarityCommand.Execute(searchName, searchLanguage, contentList);
     }
 }

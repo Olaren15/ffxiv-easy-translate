@@ -3,8 +3,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using EasyTranslate.Domain.Entities;
 using EasyTranslate.Infrastructure.Configuration;
+using EasyTranslate.UseCase;
 using EasyTranslate.UseCase.Configuration;
-using EasyTranslate.UseCase.ItemSearch;
 using Lumina;
 using Microsoft.Extensions.DependencyInjection;
 

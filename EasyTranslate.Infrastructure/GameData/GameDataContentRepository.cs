@@ -20,7 +20,6 @@ public class GameDataContentRepository(IEnumerable<ISearchByNameQuery> searhQuer
             _ => Lumina.Data.Language.English,
         };
 
-        // TODO: Sort results by relevancy
         return Task.FromResult(
             searhQueries.SelectMany(searchQuery => searchQuery.Execute(searchName, luminaSearchLanguage))
                         .Distinct()
