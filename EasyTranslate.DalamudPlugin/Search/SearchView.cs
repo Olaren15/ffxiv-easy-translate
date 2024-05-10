@@ -6,10 +6,9 @@ using System.Numerics;
 using Dalamud.Interface;
 using Dalamud.Interface.Internal;
 using Dalamud.Interface.Windowing;
-using EasyTranslate.DalamudPlugin.Localisation;
-using EasyTranslate.DalamudPlugin.Resources;
-using EasyTranslate.Domain.Entities;
 using ImGuiNET;
+using Localisation;
+using Resources;
 
 public sealed class SearchView : Window, IDisposable
 {
@@ -130,9 +129,7 @@ public sealed class SearchView : Window, IDisposable
                     ImGui.Text($"{Strings.English}:\n{Strings.French}:\n{Strings.German}:\n{Strings.Japanese}:\n");
                     ImGui.SameLine();
                     ImGui.Text(
-                        $"{searchResult.LocalisedNames[Language.English]}\n{searchResult.LocalisedNames[Language.French]
-                        }\n{searchResult.LocalisedNames[Language.German]}\n{
-                            searchResult.LocalisedNames[Language.Japanese]}"
+                        $"{searchResult.EnglishName}\n{searchResult.FrenchName}\n{searchResult.GermanName}\n{searchResult.JapaneseName}"
                     );
                 }
 

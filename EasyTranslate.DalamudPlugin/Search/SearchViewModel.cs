@@ -4,24 +4,24 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using EasyTranslate.DalamudPlugin.Settings;
-using EasyTranslate.Domain.Entities;
-using EasyTranslate.UseCase.ItemSearch;
+using Domain.Entities;
+using Settings;
+using UseCase;
 
 public sealed class SearchViewModel(
-    SearchItemByNameCommand searchItemByNameCommand,
-    ItemMapper itemMapper,
+    SearchContentByNameCommand searchContentByNameCommand,
+    ContentMapper contentMapper,
     UserSettingsRepository userSettingsRepository
 ) : IDisposable
 {
-    private Task<IEnumerable<Item>>? currentSearchTask;
+    private Task<IEnumerable<Content>>? currentSearchTask;
     private CancellationTokenSource? searchCancellationToken;
-    private IEnumerable<PresentableItem>? searchResults;
+    private IEnumerable<PresentableContent>? searchResults;
 
     private Language SearchLanguage => userSettingsRepository.Get().DefaultSearchLanguage;
     public string SearchText { get; set; } = "";
 
-    public IEnumerable<PresentableItem>? SearchResults
+    public IEnumerable<PresentableContent>? SearchResults
     {
         get
         {
@@ -32,7 +32,7 @@ public sealed class SearchViewModel(
 
             if (currentSearchTask is { IsCompletedSuccessfully: true })
             {
-                searchResults = itemMapper.ConvertToPresentableItems(currentSearchTask.Result);
+                searchResults = contentMapper.ConvertToPresentableItems(currentSearchTask.Result);
 
                 searchCancellationToken?.Dispose();
                 searchCancellationToken = null;
@@ -59,11 +59,13 @@ public sealed class SearchViewModel(
     {
         searchResults = null;
         searchCancellationToken = new CancellationTokenSource();
-        currentSearchTask = searchItemByNameCommand.SearchItemByName(
-            SearchText,
-            SearchLanguage,
-            searchCancellationToken.Token
-        );
+        currentSearchTask = Task.Run(
+            () => searchContentByNameCommand.Execute(
+                SearchText,
+                SearchLanguage,
+                searchCancellationToken.Token
+            ),
+            searchCancellationToken.Token);
     }
 
     ~SearchViewModel()
