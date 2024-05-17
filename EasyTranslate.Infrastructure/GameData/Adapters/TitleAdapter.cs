@@ -1,36 +1,35 @@
 namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
 using Domain.Entities;
-using Lumina.Excel;
-using Lumina.Excel.GeneratedSheets2;
+using Sheets;
 using ContentType = Domain.Entities.ContentType;
 
-public class TitleAdapter : IContentTypeAdapter<Title>
+public class TitleAdapter : IContentTypeAdapter<TitleLite>
 {
-    public Func<Title, bool> WhereClause(string searchName)
+    public Func<TitleLite, bool> WhereClause(string searchName)
     {
         return title => title.Feminine.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase)
                         || title.Masculine.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<Title, Content> MapToContent(
-        ExcelSheet<Title> englishSheet,
-        ExcelSheet<Title> frenchSheet,
-        ExcelSheet<Title> germanSheet,
-        ExcelSheet<Title> japaneseSheet
+    public Func<TitleLite, Content> MapToContent(
+        TitleLite english,
+        TitleLite french,
+        TitleLite german,
+        TitleLite japanese
     )
     {
-        return title => new Content(
+        return _ => new Content(
             ContentType.Title,
             null,
-            FormatTitle(englishSheet.GetRow(title.RowId)!),
-            FormatTitle(frenchSheet.GetRow(title.RowId)!),
-            FormatTitle(germanSheet.GetRow(title.RowId)!),
-            FormatTitle(japaneseSheet.GetRow(title.RowId)!)
+            FormatTitle(english),
+            FormatTitle(french),
+            FormatTitle(german),
+            FormatTitle(japanese)
         );
     }
 
-    private static string FormatTitle(Title title)
+    private static string FormatTitle(TitleLite title)
     {
         return title.Masculine.RawString == title.Feminine.RawString
                    ? title.Feminine.RawString

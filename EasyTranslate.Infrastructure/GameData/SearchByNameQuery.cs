@@ -13,18 +13,17 @@ public class SearchByNameQuery<T>(ExcelModule excelModule, IContentTypeAdapter<T
     {
         return excelModule
                .GetSheet<T>(searchLanguage)
-               ?.GetCachelessEnumerator()
-               .Where(adapter.WhereClause(searchName))
+               ?.Where(adapter.WhereClause(searchName))
                .Take(100)
                .Select(
-                   adapter.MapToContent(
-                       excelModule.GetSheet<T>(Lumina_Language.English)!,
-                       excelModule.GetSheet<T>(Lumina_Language.French)!,
-                       excelModule.GetSheet<T>(Lumina_Language.German)!,
-                       excelModule.GetSheet<T>(Lumina_Language.Japanese)!
-                   )
+                   result =>
+                       adapter.MapToContent(
+                           excelModule.GetSheet<T>(Lumina_Language.English)!.GetRow(result.RowId)!,
+                           excelModule.GetSheet<T>(Lumina_Language.French)!.GetRow(result.RowId)!,
+                           excelModule.GetSheet<T>(Lumina_Language.German)!.GetRow(result.RowId)!,
+                           excelModule.GetSheet<T>(Lumina_Language.Japanese)!.GetRow(result.RowId)!
+                       ).Invoke(result)
                )
-               .ToList() // Bad iteration performance if we don't transform the results to a list
                ?? [];
     }
 }

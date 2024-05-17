@@ -1,31 +1,30 @@
 ﻿namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
 using Domain.Entities;
-using Lumina.Excel;
-using Lumina.Excel.GeneratedSheets2;
+using Sheets;
 using ContentType = Domain.Entities.ContentType;
 
-public class EmoteAdapter : IContentTypeAdapter<Emote>
+public class EmoteAdapter : IContentTypeAdapter<EmoteLite>
 {
-    public Func<Emote, bool> WhereClause(string searchName)
+    public Func<EmoteLite, bool> WhereClause(string searchName)
     {
         return emote => emote.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<Emote, Content> MapToContent(
-        ExcelSheet<Emote> englishSheet,
-        ExcelSheet<Emote> frenchSheet,
-        ExcelSheet<Emote> germanSheet,
-        ExcelSheet<Emote> japaneseSheet
+    public Func<EmoteLite, Content> MapToContent(
+        EmoteLite english,
+        EmoteLite french,
+        EmoteLite german,
+        EmoteLite japanese
     )
     {
         return emote => new Content(
             ContentType.Emote,
             emote.Icon,
-            englishSheet.GetRow(emote.RowId)!.Name.RawString,
-            frenchSheet.GetRow(emote.RowId)!.Name.RawString,
-            germanSheet.GetRow(emote.RowId)!.Name.RawString,
-            japaneseSheet.GetRow(emote.RowId)!.Name.RawString
+            english.Name.RawString,
+            french.Name.RawString,
+            german.Name.RawString,
+            japanese.Name.RawString
         );
     }
 }

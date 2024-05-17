@@ -1,31 +1,30 @@
 ﻿namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
 using Domain.Entities;
-using Lumina.Excel;
-using Lumina.Excel.GeneratedSheets2;
+using Sheets;
 using ContentType = Domain.Entities.ContentType;
 
-public class FateAdapter : IContentTypeAdapter<Fate>
+public class FateAdapter : IContentTypeAdapter<FateLite>
 {
-    public Func<Fate, bool> WhereClause(string searchName)
+    public Func<FateLite, bool> WhereClause(string searchName)
     {
         return fate => fate.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<Fate, Content> MapToContent(
-        ExcelSheet<Fate> englishSheet,
-        ExcelSheet<Fate> frenchSheet,
-        ExcelSheet<Fate> germanSheet,
-        ExcelSheet<Fate> japaneseSheet
+    public Func<FateLite, Content> MapToContent(
+        FateLite english,
+        FateLite french,
+        FateLite german,
+        FateLite japanese
     )
     {
         return fate => new Content(
             ContentType.Fate,
             fate.Icon,
-            englishSheet.GetRow(fate.RowId)!.Name.RawString,
-            frenchSheet.GetRow(fate.RowId)!.Name.RawString,
-            germanSheet.GetRow(fate.RowId)!.Name.RawString,
-            japaneseSheet.GetRow(fate.RowId)!.Name.RawString
+            english.Name.RawString,
+            french.Name.RawString,
+            german.Name.RawString,
+            japanese.Name.RawString
         );
     }
 }

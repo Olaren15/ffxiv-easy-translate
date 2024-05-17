@@ -1,30 +1,29 @@
 ﻿namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
 using Domain.Entities;
-using Lumina.Excel;
-using Lumina.Excel.GeneratedSheets2;
+using Sheets;
 using ContentType = Domain.Entities.ContentType;
 
-public class CompanionAdapter : IContentTypeAdapter<Companion>
+public class CompanionAdapter : IContentTypeAdapter<CompanionLite>
 {
-    public Func<Companion, bool> WhereClause(string searchName)
+    public Func<CompanionLite, bool> WhereClause(string searchName)
     {
         return minion => minion.Singular.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<Companion, Content> MapToContent(
-        ExcelSheet<Companion> englishSheet,
-        ExcelSheet<Companion> frenchSheet,
-        ExcelSheet<Companion> germanSheet,
-        ExcelSheet<Companion> japaneseSheet
+    public Func<CompanionLite, Content> MapToContent(
+        CompanionLite english,
+        CompanionLite french,
+        CompanionLite german,
+        CompanionLite japanese
     )
     {
         return minion => new Content(
             ContentType.Minion,
             minion.Icon,
-            englishSheet.GetRow(minion.RowId)!.Singular.RawString,
-            frenchSheet.GetRow(minion.RowId)!.Singular.RawString,
-            germanSheet.GetRow(minion.RowId)!.Singular.RawString,
-            japaneseSheet.GetRow(minion.RowId)!.Singular.RawString);
+            english.Singular.RawString,
+            french.Singular.RawString,
+            german.Singular.RawString,
+            japanese.Singular.RawString);
     }
 }

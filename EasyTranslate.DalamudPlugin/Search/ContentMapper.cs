@@ -20,8 +20,9 @@ public class ContentMapper(ITextureProvider textureProvider)
         );
     }
 
-    public IEnumerable<PresentableContent> ConvertToPresentableItems(IEnumerable<Content> items)
+    public PresentableContent[] ConvertToPresentableContents(IEnumerable<Content> items)
     {
-        return items.Select(ConvertToPresentableItem);
+        var mapped = items.Select(ConvertToPresentableItem);
+        return mapped as PresentableContent[] ?? mapped.ToArray();
     }
 }

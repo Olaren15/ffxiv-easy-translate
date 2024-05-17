@@ -1,31 +1,30 @@
 ﻿namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
 using Domain.Entities;
-using Lumina.Excel;
-using Lumina.Excel.GeneratedSheets2;
+using Sheets;
 using ContentType = Domain.Entities.ContentType;
 
-public class ContentFinderConditionAdapter : IContentTypeAdapter<ContentFinderCondition>
+public class ContentFinderConditionAdapter : IContentTypeAdapter<ContentFinderConditionLite>
 {
-    public Func<ContentFinderCondition, bool> WhereClause(string searchName)
+    public Func<ContentFinderConditionLite, bool> WhereClause(string searchName)
     {
         return content => content.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<ContentFinderCondition, Content> MapToContent(
-        ExcelSheet<ContentFinderCondition> englishSheet,
-        ExcelSheet<ContentFinderCondition> frenchSheet,
-        ExcelSheet<ContentFinderCondition> germanSheet,
-        ExcelSheet<ContentFinderCondition> japaneseSheet
+    public Func<ContentFinderConditionLite, Content> MapToContent(
+        ContentFinderConditionLite english,
+        ContentFinderConditionLite french,
+        ContentFinderConditionLite german,
+        ContentFinderConditionLite japanese
     )
     {
         return content => new Content(
             ContentType.Instance,
             content.ContentType.Value?.Icon,
-            englishSheet.GetRow(content.RowId)!.Name.RawString,
-            frenchSheet.GetRow(content.RowId)!.Name.RawString,
-            germanSheet.GetRow(content.RowId)!.Name.RawString,
-            japaneseSheet.GetRow(content.RowId)!.Name.RawString
+            english.Name.RawString,
+            french.Name.RawString,
+            german.Name.RawString,
+            japanese.Name.RawString
         );
     }
 }

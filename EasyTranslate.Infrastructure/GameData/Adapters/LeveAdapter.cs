@@ -1,33 +1,32 @@
 ﻿namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
 using Domain.Entities;
-using Lumina.Excel;
-using Lumina.Excel.GeneratedSheets2;
+using Sheets;
 using ContentType = Domain.Entities.ContentType;
 
-public class LeveAdapter : IContentTypeAdapter<Leve>
+public class LeveAdapter : IContentTypeAdapter<LeveLite>
 {
     private const uint LevequestIcon = 71241;
 
-    public Func<Leve, bool> WhereClause(string searchName)
+    public Func<LeveLite, bool> WhereClause(string searchName)
     {
         return leve => leve.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<Leve, Content> MapToContent(
-        ExcelSheet<Leve> englishSheet,
-        ExcelSheet<Leve> frenchSheet,
-        ExcelSheet<Leve> germanSheet,
-        ExcelSheet<Leve> japaneseSheet
+    public Func<LeveLite, Content> MapToContent(
+        LeveLite english,
+        LeveLite french,
+        LeveLite german,
+        LeveLite japanese
     )
     {
-        return leve => new Content(
+        return _ => new Content(
             ContentType.LeveQuest,
             LevequestIcon,
-            englishSheet.GetRow(leve.RowId)!.Name.RawString,
-            frenchSheet.GetRow(leve.RowId)!.Name.RawString,
-            germanSheet.GetRow(leve.RowId)!.Name.RawString,
-            japaneseSheet.GetRow(leve.RowId)!.Name.RawString
+            english.Name.RawString,
+            french.Name.RawString,
+            german.Name.RawString,
+            japanese.Name.RawString
         );
     }
 }

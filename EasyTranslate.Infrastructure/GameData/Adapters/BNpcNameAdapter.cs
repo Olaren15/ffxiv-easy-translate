@@ -1,31 +1,30 @@
 ﻿namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
 using Domain.Entities;
-using Lumina.Excel;
-using Lumina.Excel.GeneratedSheets2;
+using Sheets;
 using ContentType = Domain.Entities.ContentType;
 
-public class BNpcNameAdapter : IContentTypeAdapter<BNpcName>
+public class BNpcNameAdapter : IContentTypeAdapter<BNpcNameLite>
 {
-    public Func<BNpcName, bool> WhereClause(string searchName)
+    public Func<BNpcNameLite, bool> WhereClause(string searchName)
     {
         return npcName => npcName.Singular.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<BNpcName, Content> MapToContent(
-        ExcelSheet<BNpcName> englishSheet,
-        ExcelSheet<BNpcName> frenchSheet,
-        ExcelSheet<BNpcName> germanSheet,
-        ExcelSheet<BNpcName> japaneseSheet
+    public Func<BNpcNameLite, Content> MapToContent(
+        BNpcNameLite english,
+        BNpcNameLite french,
+        BNpcNameLite german,
+        BNpcNameLite japanese
     )
     {
-        return npcName => new Content(
+        return _ => new Content(
             ContentType.Npc,
             null,
-            englishSheet.GetRow(npcName.RowId)!.Singular.RawString,
-            frenchSheet.GetRow(npcName.RowId)!.Singular.RawString,
-            germanSheet.GetRow(npcName.RowId)!.Singular.RawString,
-            japaneseSheet.GetRow(npcName.RowId)!.Singular.RawString
+            english.Singular.RawString,
+            french.Singular.RawString,
+            german.Singular.RawString,
+            japanese.Singular.RawString
         );
     }
 }
