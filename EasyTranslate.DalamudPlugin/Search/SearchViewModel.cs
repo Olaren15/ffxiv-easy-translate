@@ -71,7 +71,8 @@ public sealed class SearchViewModel(
                                     searchCancellationToken.Token)
                                 .ContinueWith(
                                     searchResultsTask =>
-                                        contentMapper.ConvertToPresentableContents(searchResultsTask.Result));
+                                        contentMapper.ConvertToPresentableContents(searchResultsTask.Result),
+                                    searchCancellationToken.Token);
     }
 
     ~SearchViewModel()
