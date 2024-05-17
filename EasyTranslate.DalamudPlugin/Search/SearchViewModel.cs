@@ -1,7 +1,6 @@
 ﻿namespace EasyTranslate.DalamudPlugin.Search;
 
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Domain.Entities;
@@ -14,14 +13,14 @@ public sealed class SearchViewModel(
     UserSettingsRepository userSettingsRepository
 ) : IDisposable
 {
-    private Task<IEnumerable<Content>>? currentSearchTask;
+    private Task<PresentableContent[]>? currentSearchTask;
     private CancellationTokenSource? searchCancellationToken;
-    private IEnumerable<PresentableContent>? searchResults;
+    private PresentableContent[]? searchResults;
 
     private Language SearchLanguage => userSettingsRepository.Get().DefaultSearchLanguage;
     public string SearchText { get; set; } = "";
 
-    public IEnumerable<PresentableContent>? SearchResults
+    public PresentableContent[]? SearchResults
     {
         get
         {
@@ -32,7 +31,7 @@ public sealed class SearchViewModel(
 
             if (currentSearchTask is { IsCompletedSuccessfully: true })
             {
-                searchResults = contentMapper.ConvertToPresentableItems(currentSearchTask.Result);
+                searchResults = currentSearchTask.Result;
 
                 searchCancellationToken?.Dispose();
                 searchCancellationToken = null;
@@ -42,7 +41,9 @@ public sealed class SearchViewModel(
                 return searchResults;
             }
 
-            return null;
+            searchResults = null;
+
+            return searchResults;
         }
     }
 
@@ -51,7 +52,9 @@ public sealed class SearchViewModel(
     public void Dispose()
     {
         currentSearchTask?.Dispose();
+        currentSearchTask = null;
         searchCancellationToken?.Dispose();
+        searchCancellationToken = null;
         GC.SuppressFinalize(this);
     }
 
@@ -60,12 +63,16 @@ public sealed class SearchViewModel(
         searchResults = null;
         searchCancellationToken = new CancellationTokenSource();
         currentSearchTask = Task.Run(
-            () => searchContentByNameCommand.Execute(
-                SearchText,
-                SearchLanguage,
-                searchCancellationToken.Token
-            ),
-            searchCancellationToken.Token);
+                                    () => searchContentByNameCommand.Execute(
+                                        SearchText,
+                                        SearchLanguage,
+                                        searchCancellationToken.Token
+                                    ),
+                                    searchCancellationToken.Token)
+                                .ContinueWith(
+                                    searchResultsTask =>
+                                        contentMapper.ConvertToPresentableContents(searchResultsTask.Result),
+                                    searchCancellationToken.Token);
     }
 
     ~SearchViewModel()

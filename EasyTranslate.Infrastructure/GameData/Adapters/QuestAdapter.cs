@@ -1,33 +1,32 @@
 ﻿namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
 using Domain.Entities;
-using Lumina.Excel;
-using Lumina.Excel.GeneratedSheets2;
+using Sheets;
 using ContentType = Domain.Entities.ContentType;
 
-public class QuestAdapter : IContentTypeAdapter<Quest>
+public class QuestAdapter : IContentTypeAdapter<QuestLite>
 {
     private const uint QuestIcon = 71221;
 
-    public Func<Quest, bool> WhereClause(string searchName)
+    public Func<QuestLite, bool> WhereClause(string searchName)
     {
         return quest => quest.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<Quest, Content> MapToContent(
-        ExcelSheet<Quest> englishSheet,
-        ExcelSheet<Quest> frenchSheet,
-        ExcelSheet<Quest> germanSheet,
-        ExcelSheet<Quest> japaneseSheet
+    public Func<QuestLite, Content> MapToContent(
+        QuestLite english,
+        QuestLite french,
+        QuestLite german,
+        QuestLite japanese
     )
     {
-        return quest => new Content(
+        return _ => new Content(
             ContentType.Quest,
             QuestIcon,
-            englishSheet.GetRow(quest.RowId)!.Name.RawString,
-            frenchSheet.GetRow(quest.RowId)!.Name.RawString,
-            germanSheet.GetRow(quest.RowId)!.Name.RawString,
-            japaneseSheet.GetRow(quest.RowId)!.Name.RawString
+            english.Name.RawString,
+            french.Name.RawString,
+            german.Name.RawString,
+            japanese.Name.RawString
         );
     }
 }

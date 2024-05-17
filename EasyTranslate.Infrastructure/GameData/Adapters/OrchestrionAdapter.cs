@@ -1,33 +1,32 @@
 ﻿namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
 using Domain.Entities;
-using Lumina.Excel;
-using Lumina.Excel.GeneratedSheets2;
+using Sheets;
 using ContentType = Domain.Entities.ContentType;
 
-public class OrchestrionAdapter : IContentTypeAdapter<Orchestrion>
+public class OrchestrionAdapter : IContentTypeAdapter<OrchestrionLite>
 {
     private const uint MusicNoteIcon = 76406;
 
-    public Func<Orchestrion, bool> WhereClause(string searchName)
+    public Func<OrchestrionLite, bool> WhereClause(string searchName)
     {
         return orchestrion => orchestrion.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<Orchestrion, Content> MapToContent(
-        ExcelSheet<Orchestrion> englishSheet,
-        ExcelSheet<Orchestrion> frenchSheet,
-        ExcelSheet<Orchestrion> germanSheet,
-        ExcelSheet<Orchestrion> japaneseSheet
+    public Func<OrchestrionLite, Content> MapToContent(
+        OrchestrionLite english,
+        OrchestrionLite french,
+        OrchestrionLite german,
+        OrchestrionLite japanese
     )
     {
-        return orchestrion => new Content(
+        return _ => new Content(
             ContentType.Orchestrion,
             MusicNoteIcon,
-            englishSheet.GetRow(orchestrion.RowId)!.Name.RawString,
-            frenchSheet.GetRow(orchestrion.RowId)!.Name.RawString,
-            germanSheet.GetRow(orchestrion.RowId)!.Name.RawString,
-            japaneseSheet.GetRow(orchestrion.RowId)!.Name.RawString
+            english.Name.RawString,
+            french.Name.RawString,
+            german.Name.RawString,
+            japanese.Name.RawString
         );
     }
 }

@@ -1,7 +1,6 @@
 ﻿namespace EasyTranslate.DalamudPlugin.Search;
 
 using System;
-using System.Linq;
 using System.Numerics;
 using Dalamud.Interface;
 using Dalamud.Interface.Internal;
@@ -107,7 +106,7 @@ public sealed class SearchView : Window, IDisposable
 
         if (searchViewModel.SearchResults is not null)
         {
-            if (searchViewModel.SearchResults.Any())
+            if (searchViewModel.SearchResults.Length != 0)
             {
                 ImGui.BeginTable(
                     "SearchResults",

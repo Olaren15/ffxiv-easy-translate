@@ -3,7 +3,7 @@
 using Domain.Repositories;
 using GameData;
 using GameData.Adapters;
-using Lumina.Excel.GeneratedSheets2;
+using GameData.Sheets;
 using Microsoft.Extensions.DependencyInjection;
 
 public static class InfrastructureModule
@@ -19,48 +19,48 @@ public static class InfrastructureModule
     private static IServiceCollection AddQueries(this IServiceCollection serviceCollection)
     {
         return serviceCollection
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Achievement>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Action>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<BNpcName>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Companion>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<ContentFinderCondition>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<CraftAction>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Emote>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<ENpcResident>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Fate>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Item>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Leve>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Mount>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Orchestrion>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<PlaceName>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Quest>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Status>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Title>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Trait>>()
-               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<Weather>>();
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<AchievementLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<ActionLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<BNpcNameLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<CompanionLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<ContentFinderConditionLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<CraftActionLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<EmoteLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<ENpcResidentLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<FateLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<ItemLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<LeveLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<MountLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<OrchestrionLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<PlaceNameLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<QuestLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<StatusLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<TitleLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<TraitLite>>()
+               .AddSingleton<ISearchByNameQuery, SearchByNameQuery<WeatherLite>>();
     }
 
     private static IServiceCollection AddAdapters(this IServiceCollection serviceCollection)
     {
         return serviceCollection
-               .AddSingleton<IContentTypeAdapter<Achievement>, AchievementAdapter>()
-               .AddSingleton<IContentTypeAdapter<Action>, ActionAdapter>()
-               .AddSingleton<IContentTypeAdapter<BNpcName>, BNpcNameAdapter>()
-               .AddSingleton<IContentTypeAdapter<Companion>, CompanionAdapter>()
-               .AddSingleton<IContentTypeAdapter<ContentFinderCondition>, ContentFinderConditionAdapter>()
-               .AddSingleton<IContentTypeAdapter<CraftAction>, CraftActionAdapter>()
-               .AddSingleton<IContentTypeAdapter<Emote>, EmoteAdapter>()
-               .AddSingleton<IContentTypeAdapter<ENpcResident>, ENpcResidentAdapter>()
-               .AddSingleton<IContentTypeAdapter<Fate>, FateAdapter>()
-               .AddSingleton<IContentTypeAdapter<Item>, ItemAdapter>()
-               .AddSingleton<IContentTypeAdapter<Leve>, LeveAdapter>()
-               .AddSingleton<IContentTypeAdapter<Mount>, MountAdapter>()
-               .AddSingleton<IContentTypeAdapter<Orchestrion>, OrchestrionAdapter>()
-               .AddSingleton<IContentTypeAdapter<PlaceName>, PlaceNameAdapter>()
-               .AddSingleton<IContentTypeAdapter<Quest>, QuestAdapter>()
-               .AddSingleton<IContentTypeAdapter<Status>, StatusAdapter>()
-               .AddSingleton<IContentTypeAdapter<Title>, TitleAdapter>()
-               .AddSingleton<IContentTypeAdapter<Trait>, TraitAdapter>()
-               .AddSingleton<IContentTypeAdapter<Weather>, WeatherAdapter>();
+               .AddSingleton<IContentTypeAdapter<AchievementLite>, AchievementAdapter>()
+               .AddSingleton<IContentTypeAdapter<ActionLite>, ActionAdapter>()
+               .AddSingleton<IContentTypeAdapter<BNpcNameLite>, BNpcNameAdapter>()
+               .AddSingleton<IContentTypeAdapter<CompanionLite>, CompanionAdapter>()
+               .AddSingleton<IContentTypeAdapter<ContentFinderConditionLite>, ContentFinderConditionAdapter>()
+               .AddSingleton<IContentTypeAdapter<CraftActionLite>, CraftActionAdapter>()
+               .AddSingleton<IContentTypeAdapter<EmoteLite>, EmoteAdapter>()
+               .AddSingleton<IContentTypeAdapter<ENpcResidentLite>, ENpcResidentAdapter>()
+               .AddSingleton<IContentTypeAdapter<FateLite>, FateAdapter>()
+               .AddSingleton<IContentTypeAdapter<ItemLite>, ItemAdapter>()
+               .AddSingleton<IContentTypeAdapter<LeveLite>, LeveAdapter>()
+               .AddSingleton<IContentTypeAdapter<MountLite>, MountAdapter>()
+               .AddSingleton<IContentTypeAdapter<OrchestrionLite>, OrchestrionAdapter>()
+               .AddSingleton<IContentTypeAdapter<PlaceNameLite>, PlaceNameAdapter>()
+               .AddSingleton<IContentTypeAdapter<QuestLite>, QuestAdapter>()
+               .AddSingleton<IContentTypeAdapter<StatusLite>, StatusAdapter>()
+               .AddSingleton<IContentTypeAdapter<TitleLite>, TitleAdapter>()
+               .AddSingleton<IContentTypeAdapter<TraitLite>, TraitAdapter>()
+               .AddSingleton<IContentTypeAdapter<WeatherLite>, WeatherAdapter>();
     }
 }
