@@ -57,7 +57,7 @@
         <value>Icône</value>
     </data>
     <data name="Names" xml:space="preserve">
-        <value>Noms</value>
+        <value>Nom</value>
     </data>
     <data name="SearchWindowTitle" xml:space="preserve">
         <value>Recherche de traductions</value>
@@ -67,5 +67,59 @@
     </data>
     <data name="NoResults" xml:space="preserve">
         <value>Aucun résultats</value>
+    </data>
+    <data name="Type" xml:space="preserve">
+        <value>Type</value>
+    </data>
+    <data name="Achievement" xml:space="preserve">
+        <value>Haut fait</value>
+    </data>
+    <data name="Action" xml:space="preserve">
+        <value>Action</value>
+    </data>
+    <data name="Fate" xml:space="preserve">
+        <value>ALÉA</value>
+    </data>
+    <data name="Instance" xml:space="preserve">
+        <value>Instance</value>
+    </data>
+    <data name="Item" xml:space="preserve">
+        <value>Objet</value>
+    </data>
+    <data name="Npc" xml:space="preserve">
+        <value>PNJ</value>
+    </data>
+    <data name="Place" xml:space="preserve">
+        <value>Endroit</value>
+    </data>
+    <data name="Quest" xml:space="preserve">
+        <value>Quête</value>
+    </data>
+    <data name="Status" xml:space="preserve">
+        <value>Statut</value>
+    </data>
+    <data name="Title" xml:space="preserve">
+        <value>Titre</value>
+    </data>
+    <data name="Weather" xml:space="preserve">
+        <value>Météo</value>
+    </data>
+    <data name="LeveQuest" xml:space="preserve">
+        <value>Mandat</value>
+    </data>
+    <data name="Trait" xml:space="preserve">
+        <value>Trait</value>
+    </data>
+    <data name="Emote" xml:space="preserve">
+        <value>Emote</value>
+    </data>
+    <data name="Minion" xml:space="preserve">
+        <value>Mascotte</value>
+    </data>
+    <data name="Mount" xml:space="preserve">
+        <value>Monture</value>
+    </data>
+    <data name="Orchestrion" xml:space="preserve">
+        <value>Orchestrion</value>
     </data>
 </root>

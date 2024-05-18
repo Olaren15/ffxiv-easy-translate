@@ -63,7 +63,7 @@
         <value>Icon</value>
     </data>
     <data name="Names" xml:space="preserve">
-        <value>Names</value>
+        <value>Name</value>
     </data>
     <data name="SearchWindowTitle" xml:space="preserve">
         <value>Search translations</value>
@@ -73,5 +73,59 @@
     </data>
     <data name="NoResults" xml:space="preserve">
         <value>No results</value>
+    </data>
+    <data name="Type" xml:space="preserve">
+        <value>Type</value>
+    </data>
+    <data name="Achievement" xml:space="preserve">
+        <value>Achievement</value>
+    </data>
+    <data name="Action" xml:space="preserve">
+        <value>Action</value>
+    </data>
+    <data name="Emote" xml:space="preserve">
+        <value>Emote</value>
+    </data>
+    <data name="Fate" xml:space="preserve">
+        <value>Fate</value>
+    </data>
+    <data name="Instance" xml:space="preserve">
+        <value>Instance</value>
+    </data>
+    <data name="Item" xml:space="preserve">
+        <value>Item</value>
+    </data>
+    <data name="LeveQuest" xml:space="preserve">
+        <value>Levequest</value>
+    </data>
+    <data name="Minion" xml:space="preserve">
+        <value>Minion</value>
+    </data>
+    <data name="Npc" xml:space="preserve">
+        <value>NPC</value>
+    </data>
+    <data name="Orchestrion" xml:space="preserve">
+        <value>Orchestrion</value>
+    </data>
+    <data name="Place" xml:space="preserve">
+        <value>Place</value>
+    </data>
+    <data name="Quest" xml:space="preserve">
+        <value>Quest</value>
+    </data>
+    <data name="Status" xml:space="preserve">
+        <value>Status</value>
+    </data>
+    <data name="Title" xml:space="preserve">
+        <value>Title</value>
+    </data>
+    <data name="Trait" xml:space="preserve">
+        <value>Trait</value>
+    </data>
+    <data name="Weather" xml:space="preserve">
+        <value>Weather</value>
+    </data>
+    <data name="Mount" xml:space="preserve">
+        <value>Mount</value>
     </data>
 </root>
