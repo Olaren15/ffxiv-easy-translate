@@ -110,11 +110,12 @@ public sealed class SearchView : Window, IDisposable
             {
                 ImGui.BeginTable(
                     "SearchResults",
-                    2,
+                    3,
                     ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit
                 );
-                ImGui.TableSetupColumn(Strings.Icon);
-                ImGui.TableSetupColumn(Strings.Names);
+                ImGui.TableSetupColumn(Strings.Icon, ImGuiTableColumnFlags.WidthFixed);
+                ImGui.TableSetupColumn(Strings.Names, ImGuiTableColumnFlags.WidthStretch);
+                ImGui.TableSetupColumn(Strings.Type, ImGuiTableColumnFlags.WidthFixed);
                 ImGui.TableHeadersRow();
                 foreach (var searchResult in searchViewModel.SearchResults)
                 {
@@ -130,6 +131,11 @@ public sealed class SearchView : Window, IDisposable
                     ImGui.Text(
                         $"{searchResult.EnglishName}\n{searchResult.FrenchName}\n{searchResult.GermanName}\n{searchResult.JapaneseName}"
                     );
+
+                    ImGui.TableNextColumn();
+                    ImGui.Text(searchResult.Type.LocalisedName());
+                    ImGui.SameLine();
+                    ImGui.Text("  "); // Fake padding lol
                 }
 
                 ImGui.EndTable();
