@@ -8,15 +8,11 @@ You can open a search window by entering `/et` in the chat window. You will now 
 ![A search window displaying the translation search results for "popoto"](doc/search-popoto.png)
 
 You can also right-click an item in your inventory to open a search window with the item's name pre-populated!
+![A screenshot showcasing the context menu for searching an item's translations](doc/context-menu.png)
 
 ## How To Install
 
-> ⚠️ This plugin is currently under development and therefore is only available in Dalamud's testing repository. In order to use it, you will have to enable testing plugins. ⚠️
-
-1. Open the dalamud settings via the in-game UI or by entering `/xlsettings` in the chat window.
-2. Head over to the "Experimental" tab
-3. Check the "Get plugin testing builds" box
-4. EasyTranslate should now be available to install via the plugin installer (`/xlplugins`)
+EasyTranslate is available in the official dalamud repo. You can simply search for it in the Plugin Installer window.
 
 ## For developers
 
