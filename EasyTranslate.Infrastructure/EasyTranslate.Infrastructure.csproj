@@ -1,4 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="../Dalamud.Libs.targets"/>
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
@@ -8,15 +9,22 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Lumina" Version="3.16.0"/>
-        <PackageReference Include="Lumina.Excel" Version="6.5.2"/>
-        <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0"/>
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0"/>
-        <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0"/>
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\EasyTranslate.Domain\EasyTranslate.Domain.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="Lumina">
+            <HintPath>$(DalamudLibPath)\Lumina.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="Lumina.Excel">
+            <HintPath>$(DalamudLibPath)\Lumina.Excel.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
     </ItemGroup>
 
 </Project>

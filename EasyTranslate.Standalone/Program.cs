@@ -1,4 +1,5 @@
-﻿using System.Text.Encodings.Web;
+﻿using System.Text;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using EasyTranslate.Domain.Entities;
@@ -7,6 +8,8 @@ using EasyTranslate.UseCase;
 using EasyTranslate.UseCase.Configuration;
 using Lumina;
 using Microsoft.Extensions.DependencyInjection;
+
+Console.OutputEncoding = Encoding.UTF8;
 
 var gameDataPath = Environment.GetEnvironmentVariable("GAME_DATA_PATH");
 if (gameDataPath is null)
@@ -24,7 +27,7 @@ var serviceCollection = new ServiceCollection()
                         .AddInfrastructureServices()
                         .AddUseCaseServices()
                         .BuildServiceProvider();
-var searchByName = serviceCollection.GetService<SearchContentByNameCommand>()!;
+var searchByName = serviceCollection.GetService<SearchContentByNameUseCase>()!;
 
 var serializerOptions = new JsonSerializerOptions
 {

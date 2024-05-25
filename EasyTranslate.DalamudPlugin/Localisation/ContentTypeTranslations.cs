@@ -1,6 +1,6 @@
 ﻿namespace EasyTranslate.DalamudPlugin.Localisation;
 
-using System;
+using System.ComponentModel;
 using Domain.Entities;
 using Resources;
 
@@ -27,7 +27,7 @@ public static class ContentTypeTranslations
             ContentType.Title => Strings.Title,
             ContentType.Trait => Strings.Trait,
             ContentType.Weather => Strings.Weather,
-            _ => throw new ArgumentOutOfRangeException(nameof(contentType), contentType, null),
+            _ => throw new InvalidEnumArgumentException(nameof(contentType), (int)contentType, typeof(ContentType)),
         };
     }
 }

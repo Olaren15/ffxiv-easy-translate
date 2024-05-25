@@ -8,7 +8,7 @@ using Settings;
 using UseCase;
 
 public sealed class SearchViewModel(
-    SearchContentByNameCommand searchContentByNameCommand,
+    SearchContentByNameUseCase searchContentByNameUseCase,
     ContentMapper contentMapper,
     UserSettingsRepository userSettingsRepository
 ) : IDisposable
@@ -63,7 +63,7 @@ public sealed class SearchViewModel(
         searchResults = null;
         searchCancellationToken = new CancellationTokenSource();
         currentSearchTask = Task.Run(
-                                    () => searchContentByNameCommand.Execute(
+                                    () => searchContentByNameUseCase.Execute(
                                         SearchText,
                                         SearchLanguage,
                                         searchCancellationToken.Token
