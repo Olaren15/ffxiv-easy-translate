@@ -3,8 +3,6 @@ name: Dalamud plugin build
 on:
   push:
     branches: [ '*' ]
-  pull_request:
-    branches: [ "*" ]
 
 jobs:
   build:
@@ -25,6 +23,8 @@ jobs:
           unzip latest.zip -d $HOME/.xlcore/dalamud/Hooks/dev
       - name: Build
         run: dotnet build --no-restore --configuration Release --nologo
+      - name: Run tests
+        run: dotnet test --no-build --configuration Release --nologo
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4
         with:

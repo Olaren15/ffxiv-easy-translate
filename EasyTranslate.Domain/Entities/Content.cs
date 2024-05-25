@@ -1,5 +1,7 @@
 ﻿namespace EasyTranslate.Domain.Entities;
 
+using System.ComponentModel;
+
 public record Content(
     ContentType Type,
     uint? IconId,
@@ -17,7 +19,7 @@ public record Content(
             Language.French => FrenchName,
             Language.German => GermanName,
             Language.Japanese => JapaneseName,
-            _ => throw new ArgumentOutOfRangeException(nameof(language), language, null),
+            _ => throw new InvalidEnumArgumentException(nameof(language), (int)language, typeof(Language)),
         };
     }
 }
