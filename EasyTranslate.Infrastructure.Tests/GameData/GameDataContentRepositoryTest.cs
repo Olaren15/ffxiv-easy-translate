@@ -12,6 +12,7 @@ using Lumina_Language = Lumina.Data.Language;
 
 public class GameDataContentRepositoryTest
 {
+    private const string SearchName = "popoto";
     private static readonly Content Content1 = new(ContentType.Item, 25204, "Popoto", "Popoto", "Toffel", "ポポト");
 
     private static readonly Content Content2 = new(
@@ -29,6 +30,8 @@ public class GameDataContentRepositoryTest
         "Popping popoto",
         "Toffel-Tanz",
         "ポポトステップ");
+
+    private readonly CancellationToken fakeCancellationToken = CancellationToken.None;
 
     private readonly GameDataContentRepository gameDataContentRepository;
     private readonly Mock<ISearchByNameQuery> mockSearchQuery1;
@@ -53,16 +56,11 @@ public class GameDataContentRepositoryTest
     [Fact]
     public async Task ResultsFromManyQueries_SearchByName_CombinesResultsAndRemovesDuplicates()
     {
-        const string searchName = "popoto";
         const Language searchLanguage = Language.English;
         const Lumina_Language luminaLanguage = Lumina_Language.English;
-        var cancellationToken = CancellationToken.None;
-        mockSearchQuery1.Setup(query => query.Execute(searchName, luminaLanguage))
-                        .Returns([Content1, Content3]);
-        mockSearchQuery2.Setup(query => query.Execute(searchName, luminaLanguage)).Returns([Content2]);
-        mockSearchQuery3.Setup(query => query.Execute(searchName, luminaLanguage)).Returns([]);
+        GivenSearchNameAndLanguageQueriesWillReturn(SearchName, luminaLanguage, [Content1, Content3], [Content2], []);
 
-        var result = await gameDataContentRepository.SearchByName(searchName, searchLanguage, cancellationToken);
+        var result = await gameDataContentRepository.SearchByName(SearchName, searchLanguage, fakeCancellationToken);
 
         Assert.Equivalent(new List<Content> { Content1, Content2, Content3 }, result, true);
     }
@@ -70,16 +68,11 @@ public class GameDataContentRepositoryTest
     [Fact]
     public async Task NoResultsFromQueries_SearchByName_ReturnsEmptyEnumerable()
     {
-
-        const string searchName = "popoto";
         const Language searchLanguage = Language.English;
         const Lumina_Language luminaLanguage = Lumina_Language.English;
-        var cancellationToken = CancellationToken.None;
-        mockSearchQuery1.Setup(query => query.Execute(searchName, luminaLanguage)).Returns([]);
-        mockSearchQuery2.Setup(query => query.Execute(searchName, luminaLanguage)).Returns([]);
-        mockSearchQuery3.Setup(query => query.Execute(searchName, luminaLanguage)).Returns([]);
+        GivenSearchNameAndLanguageQueriesWillReturn(SearchName, luminaLanguage, [], [], []);
 
-        var result = await gameDataContentRepository.SearchByName(searchName, searchLanguage, cancellationToken);
+        var result = await gameDataContentRepository.SearchByName(SearchName, searchLanguage, fakeCancellationToken);
 
         Assert.Empty(result);
     }
@@ -94,18 +87,26 @@ public class GameDataContentRepositoryTest
         Lumina_Language luminaLanguage
     )
     {
-        const string searchName = "popoto";
-        var cancellationToken = CancellationToken.None;
-        mockSearchQuery1.Setup(query => query.Execute(searchName, luminaLanguage))
-                        .Returns([Content1, Content3]);
-        mockSearchQuery2.Setup(query => query.Execute(searchName, luminaLanguage)).Returns([Content2]);
-        mockSearchQuery3.Setup(query => query.Execute(searchName, luminaLanguage)).Returns([]);
+        GivenSearchNameAndLanguageQueriesWillReturn(SearchName, luminaLanguage, [Content1, Content3], [Content2], []);
 
-        var results = await gameDataContentRepository.SearchByName(searchName, searchLanguage, cancellationToken);
+        var results = await gameDataContentRepository.SearchByName(SearchName, searchLanguage, fakeCancellationToken);
 
         _ = results.ToList(); // Enumeration required to verify query execution
-        mockSearchQuery1.Verify(query => query.Execute(searchName, luminaLanguage));
-        mockSearchQuery2.Verify(query => query.Execute(searchName, luminaLanguage));
-        mockSearchQuery3.Verify(query => query.Execute(searchName, luminaLanguage));
+        mockSearchQuery1.Verify(query => query.Execute(SearchName, luminaLanguage));
+        mockSearchQuery2.Verify(query => query.Execute(SearchName, luminaLanguage));
+        mockSearchQuery3.Verify(query => query.Execute(SearchName, luminaLanguage));
+    }
+
+    private void GivenSearchNameAndLanguageQueriesWillReturn(
+        string searchName,
+        Lumina_Language searchLanguage,
+        IEnumerable<Content> query1Result,
+        IEnumerable<Content> query2Result,
+        IEnumerable<Content> query3Result
+    )
+    {
+        mockSearchQuery1.Setup(query => query.Execute(searchName, searchLanguage)).Returns(query1Result);
+        mockSearchQuery2.Setup(query => query.Execute(searchName, searchLanguage)).Returns(query2Result);
+        mockSearchQuery3.Setup(query => query.Execute(searchName, searchLanguage)).Returns(query3Result);
     }
 }
