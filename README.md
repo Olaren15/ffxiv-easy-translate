@@ -23,7 +23,7 @@ EasyTranslate assumes all the following prerequisites are met:
 * XIVLauncher, FINAL FANTASY XIV, and Dalamud have all been installed and the game has been run with Dalamud at least once.
 * XIVLauncher is installed to its default directories and configurations.
   * If a custom path is required for Dalamud's dev directory, it must be set with the `DALAMUD_HOME` environment variable.
-* A .NET Core 7 SDK has been installed and configured, or is otherwise available. (In most cases, the IDE will take care of this.)
+* A .NET Core 8 SDK has been installed and configured, or is otherwise available. (In most cases, the IDE will take care of this.)
 
 ### Building
 
@@ -34,9 +34,9 @@ EasyTranslate assumes all the following prerequisites are met:
 ### Activating in-game
 
 1. Launch the game and use `/xlsettings` in chat or `xlsettings` in the Dalamud Console to open up the Dalamud settings.
-    * In here, go to `Experimental`, and add the full path to the `SamplePlugin.dll` to the list of Dev Plugin Locations.
+    * In here, go to `Experimental`, and add the full path to the `EasyTranslate.DalamudPlugin.dll` to the list of Dev Plugin Locations.
 2. Next, use `/xlplugins` (chat) or `xlplugins` (console) to open up the Plugin Installer.
-    * In here, go to `Dev Tools > Installed Dev Plugins`, and the `SamplePlugin` should be visible. Enable it.
+    * In here, go to `Dev Tools > Installed Dev Plugins`, and the `Easy Translate` should be visible. Enable it.
 3. You should now be able to use `/et` (chat) or `et` (console)!
 
-Note that you only need to add it to the Dev Plugin Locations once (Step 1); it is preserved afterwards. You can disable, enable, or load your plugin on startup through the Plugin Installer.
+Note that you only need to add it to the Dev Plugin Locations once (Step 1); it is preserved afterward. You can disable, enable, or load your plugin on startup through the Plugin Installer.
