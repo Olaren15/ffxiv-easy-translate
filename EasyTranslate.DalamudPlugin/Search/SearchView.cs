@@ -1,22 +1,22 @@
-﻿namespace EasyTranslate.DalamudPlugin.Search;
-
-using System;
+﻿using System;
 using System.Numerics;
 using Dalamud.Interface;
 using Dalamud.Interface.Internal;
 using Dalamud.Interface.Windowing;
+using EasyTranslate.DalamudPlugin.Localisation;
+using EasyTranslate.DalamudPlugin.Resources;
 using ImGuiNET;
-using Localisation;
-using Resources;
+
+namespace EasyTranslate.DalamudPlugin.Search;
 
 public sealed class SearchView : Window, IDisposable
 {
     private const int MaxImageSize = 80;
-    private readonly SearchViewModel searchViewModel;
-    private readonly UiBuilder uiBuilder;
-    private readonly WindowSystem windowSystem;
+    private readonly SearchViewModel _searchViewModel;
+    private readonly UiBuilder _uiBuilder;
+    private readonly WindowSystem _windowSystem;
 
-    private bool windowJustOpened;
+    private bool _windowJustOpened;
 
     public SearchView(
         SearchViewModel searchViewModel,
@@ -25,39 +25,39 @@ public sealed class SearchView : Window, IDisposable
         LanguageSwitcher languageSwitcher
     ) : base(Strings.SearchWindowTitle)
     {
-        this.searchViewModel = searchViewModel;
-        this.uiBuilder = uiBuilder;
-        this.windowSystem = windowSystem;
+        _searchViewModel = searchViewModel;
+        _uiBuilder = uiBuilder;
+        _windowSystem = windowSystem;
 
-        this.windowSystem.AddWindow(this);
-        this.uiBuilder.OpenMainUi += Show;
+        _windowSystem.AddWindow(this);
+        _uiBuilder.OpenMainUi += Show;
         languageSwitcher.OnLanguageChangedEvent += (_, _) => WindowName = Strings.SearchWindowTitle;
 
         SizeConstraints = new WindowSizeConstraints
         {
             MinimumSize = new Vector2(300, 200),
-            MaximumSize = new Vector2(float.MaxValue, float.MaxValue),
+            MaximumSize = new Vector2(float.MaxValue, float.MaxValue)
         };
     }
 
     public void Dispose()
     {
-        windowSystem.RemoveWindow(this);
-        uiBuilder.OpenMainUi -= Show;
+        _windowSystem.RemoveWindow(this);
+        _uiBuilder.OpenMainUi -= Show;
         GC.SuppressFinalize(this);
     }
 
     public override void OnOpen()
     {
         base.OnOpen();
-        windowJustOpened = true;
+        _windowJustOpened = true;
     }
 
     public override void Draw()
     {
         DrawSearchBar();
         DrawSearchResults();
-        windowJustOpened = false;
+        _windowJustOpened = false;
     }
 
     public void Show()
@@ -68,88 +68,91 @@ public sealed class SearchView : Window, IDisposable
     public void ShowAndSearch(string searchText)
     {
         IsOpen = true;
-        searchViewModel.SearchText = searchText;
-        searchViewModel.ExecuteSearch();
+        _searchViewModel.SearchText = searchText;
+        _searchViewModel.ExecuteSearch();
     }
 
     private void DrawSearchBar()
     {
-        var searchText = searchViewModel.SearchText;
-        var enterPressed = ImGui.InputText(
+        string? searchText = _searchViewModel.SearchText;
+        bool enterPressed = ImGui.InputText(
             "",
             ref searchText,
             100,
             ImGuiInputTextFlags.EnterReturnsTrue | ImGuiInputTextFlags.AutoSelectAll
         );
-        searchViewModel.SearchText = searchText;
+        _searchViewModel.SearchText = searchText;
 
-        if (enterPressed || windowJustOpened)
+        if (enterPressed || _windowJustOpened)
         {
             ImGui.SetKeyboardFocusHere(-1);
         }
 
         ImGui.SameLine();
-        var searchButtonPressed = ImGui.Button(Strings.Search);
+        bool searchButtonPressed = ImGui.Button(Strings.Search);
 
         if (enterPressed || searchButtonPressed)
         {
-            searchViewModel.ExecuteSearch();
+            _searchViewModel.ExecuteSearch();
         }
     }
 
     private void DrawSearchResults()
     {
-        if (searchViewModel.SearchResultsAreLoading)
+        if (_searchViewModel.SearchResultsAreLoading)
         {
             ImGui.Text(Strings.Loading);
+            return;
         }
 
-        if (searchViewModel.SearchResults is not null)
+        if (_searchViewModel.SearchResults is null)
         {
-            if (searchViewModel.SearchResults.Length != 0)
+            return;
+        }
+
+        if (_searchViewModel.SearchResults.Length != 0)
+        {
+            ImGui.BeginTable(
+                "SearchResults",
+                3,
+                ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit
+            );
+            ImGui.TableSetupColumn(Strings.Icon, ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn(Strings.Names, ImGuiTableColumnFlags.WidthStretch);
+            ImGui.TableSetupColumn(Strings.Type, ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableHeadersRow();
+            foreach (PresentableContent searchResult in _searchViewModel.SearchResults)
             {
-                ImGui.BeginTable(
-                    "SearchResults",
-                    3,
-                    ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit
-                );
-                ImGui.TableSetupColumn(Strings.Icon, ImGuiTableColumnFlags.WidthFixed);
-                ImGui.TableSetupColumn(Strings.Names, ImGuiTableColumnFlags.WidthStretch);
-                ImGui.TableSetupColumn(Strings.Type, ImGuiTableColumnFlags.WidthFixed);
-                ImGui.TableHeadersRow();
-                foreach (var searchResult in searchViewModel.SearchResults)
+                ImGui.TableNextColumn();
+                if (searchResult.IconTexture is not null)
                 {
-                    ImGui.TableNextColumn();
-                    if (searchResult.IconTexture is not null)
-                    {
-                        ImGui.Image(searchResult.IconTexture.ImGuiHandle, CalculateImageSize(searchResult.IconTexture));
-                    }
-
-                    ImGui.TableNextColumn();
-                    ImGui.Text($"{Strings.English}:\n{Strings.French}:\n{Strings.German}:\n{Strings.Japanese}:\n");
-                    ImGui.SameLine();
-                    ImGui.Text(
-                        $"{searchResult.EnglishName}\n{searchResult.FrenchName}\n{searchResult.GermanName}\n{searchResult.JapaneseName}"
-                    );
-
-                    ImGui.TableNextColumn();
-                    ImGui.Text(searchResult.Type.LocalisedName());
-                    ImGui.SameLine();
-                    ImGui.Text("  "); // Fake padding lol
+                    ImGui.Image(searchResult.IconTexture.ImGuiHandle, CalculateImageSize(searchResult.IconTexture));
                 }
 
-                ImGui.EndTable();
+                ImGui.TableNextColumn();
+                ImGui.Text($"{Strings.English}:\n{Strings.French}:\n{Strings.German}:\n{Strings.Japanese}:\n");
+                ImGui.SameLine();
+                ImGui.Text(
+                    $"{searchResult.EnglishName}\n{searchResult.FrenchName}\n{searchResult.GermanName}\n{searchResult.JapaneseName}"
+                );
+
+                ImGui.TableNextColumn();
+                ImGui.Text(searchResult.Type.LocalisedName());
+                ImGui.SameLine();
+                ImGui.Text("  "); // Fake padding lol
             }
-            else
-            {
-                ImGui.Text(Strings.NoResults);
-            }
+
+            ImGui.EndTable();
+        }
+        else
+        {
+            ImGui.Text(Strings.NoResults);
         }
     }
 
     private static Vector2 CalculateImageSize(IDalamudTextureWrap image)
     {
-        var scaleRatio = Math.Min(MaxImageSize / (float)image.Width, MaxImageSize / (float)image.Height);
+        float scaleRatio = Math.Min(MaxImageSize / (float)image.Width, MaxImageSize / (float)image.Height);
         return new Vector2(image.Width * scaleRatio, image.Height * scaleRatio);
     }
 

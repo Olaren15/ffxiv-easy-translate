@@ -1,8 +1,8 @@
-﻿namespace EasyTranslate.UseCase;
+﻿using EasyTranslate.Domain.Comparers;
+using EasyTranslate.Domain.Entities;
+using EasyTranslate.Domain.Repositories;
 
-using Domain.Comparers;
-using Domain.Entities;
-using Domain.Repositories;
+namespace EasyTranslate.UseCase;
 
 public class SearchContentByNameUseCase(
     IContentRepository contentRepository,
@@ -21,12 +21,18 @@ public class SearchContentByNameUseCase(
             return [];
         }
 
-        var searchResults = await contentRepository.SearchByName(searchQuery, searchLanguage, cancellationToken);
+        IEnumerable<Content> searchResults = await contentRepository.SearchByName(
+            searchQuery,
+            searchLanguage,
+            cancellationToken
+        );
+
         return searchResults.OrderBy(
-                                content => nameComparer.Compare(
-                                    content.NameForLanguage(searchLanguage).ToUpperInvariant(),
-                                    searchQuery.ToUpperInvariant())
-                            )
-                            .Take(100);
+                content => nameComparer.Compare(
+                    content.NameForLanguage(searchLanguage).ToUpperInvariant(),
+                    searchQuery.ToUpperInvariant()
+                )
+            )
+            .Take(100);
     }
 }

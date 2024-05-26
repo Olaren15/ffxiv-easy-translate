@@ -1,8 +1,8 @@
-﻿namespace EasyTranslate.DalamudPlugin.Localisation;
+﻿using System.ComponentModel;
+using EasyTranslate.DalamudPlugin.Resources;
+using EasyTranslate.Domain.Entities;
 
-using System.ComponentModel;
-using Domain.Entities;
-using Resources;
+namespace EasyTranslate.DalamudPlugin.Localisation;
 
 public static class ContentTypeTranslations
 {
@@ -27,7 +27,7 @@ public static class ContentTypeTranslations
             ContentType.Title => Strings.Title,
             ContentType.Trait => Strings.Trait,
             ContentType.Weather => Strings.Weather,
-            _ => throw new InvalidEnumArgumentException(nameof(contentType), (int)contentType, typeof(ContentType)),
+            _ => throw new InvalidEnumArgumentException(nameof(contentType), (int)contentType, typeof(ContentType))
         };
     }
 }

@@ -1,35 +1,32 @@
-﻿namespace EasyTranslate.DalamudPlugin.Search;
-
-using System;
-using Attributes;
+﻿using System;
 using Dalamud.Game.Command;
 using Dalamud.Plugin.Services;
-using Resources;
+using EasyTranslate.DalamudPlugin.Attributes;
+using EasyTranslate.DalamudPlugin.Resources;
+
+namespace EasyTranslate.DalamudPlugin.Search;
 
 [EntryPoint]
 public sealed class OpenSearchCommand : IDisposable
 {
-    private readonly ICommandManager commandManager;
-    private readonly SearchView searchView;
+    private readonly ICommandManager _commandManager;
+    private readonly SearchView _searchView;
 
     public OpenSearchCommand(ICommandManager commandManager, SearchView searchView)
     {
-        this.commandManager = commandManager;
-        this.searchView = searchView;
+        _commandManager = commandManager;
+        _searchView = searchView;
         commandManager.AddHandler(
             Strings.SearchCommand,
-            new CommandInfo(HandleCommand)
-            {
-                HelpMessage = Strings.SearchCommandDescription,
-            }
+            new CommandInfo(HandleCommand) { HelpMessage = Strings.SearchCommandDescription }
         );
     }
 
     public void Dispose()
     {
-        if (commandManager.Commands.ContainsKey(Strings.SearchCommand))
+        if (_commandManager.Commands.ContainsKey(Strings.SearchCommand))
         {
-            commandManager.RemoveHandler(Strings.SearchCommand);
+            _commandManager.RemoveHandler(Strings.SearchCommand);
         }
 
         GC.SuppressFinalize(this);
@@ -39,11 +36,11 @@ public sealed class OpenSearchCommand : IDisposable
     {
         if (string.IsNullOrWhiteSpace(args))
         {
-            searchView.Show();
+            _searchView.Show();
         }
         else
         {
-            searchView.ShowAndSearch(args);
+            _searchView.ShowAndSearch(args);
         }
     }
 

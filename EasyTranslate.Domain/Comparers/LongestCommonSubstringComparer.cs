@@ -9,15 +9,15 @@ public class LongestCommonSubstringComparer : IStringSimilarityComparer
             return 0;
         }
 
-        var substringLengths = new int[a.Length, b.Length];
-        var maxLength = 0;
+        int[,] substringLengths = new int[a.Length, b.Length];
+        int maxLength = 0;
 
-        for (var i = 0; i < a.Length; i++)
+        for (int i = 0; i < a.Length; i++)
         {
-            for (var j = 0; j < b.Length; j++)
+            for (int j = 0; j < b.Length; j++)
             {
-                var previousLength = GetPreviousLength(substringLengths, i, j);
-                var currentLen = CalculateCurrentLength(a[i], b[j], previousLength);
+                int previousLength = GetPreviousLength(substringLengths, i, j);
+                int currentLen = CalculateCurrentLength(a[i], b[j], previousLength);
 
                 if (currentLen > maxLength)
                 {

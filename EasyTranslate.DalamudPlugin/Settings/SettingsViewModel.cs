@@ -1,6 +1,6 @@
-﻿namespace EasyTranslate.DalamudPlugin.Settings;
+﻿using EasyTranslate.Domain.Entities;
 
-using Domain.Entities;
+namespace EasyTranslate.DalamudPlugin.Settings;
 
 public class SettingsViewModel(UserSettingsRepository userSettingsRepository)
 {
@@ -9,11 +9,7 @@ public class SettingsViewModel(UserSettingsRepository userSettingsRepository)
     public void SetPreferredLanguage(Language language)
     {
         userSettingsRepository.Save(
-            new UserSettings
-            {
-                DefaultSearchLanguage = language,
-                Version = userSettingsRepository.Get().Version,
-            }
+            new UserSettings { DefaultSearchLanguage = language, Version = userSettingsRepository.Get().Version }
         );
     }
 }

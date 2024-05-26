@@ -1,19 +1,19 @@
-﻿namespace EasyTranslate.DalamudPlugin.Settings;
-
-using System;
+﻿using System;
 using System.Numerics;
 using Dalamud.Interface;
 using Dalamud.Interface.Windowing;
-using Domain.Entities;
+using EasyTranslate.DalamudPlugin.Localisation;
+using EasyTranslate.DalamudPlugin.Resources;
+using EasyTranslate.Domain.Entities;
 using ImGuiNET;
-using Localisation;
-using Resources;
+
+namespace EasyTranslate.DalamudPlugin.Settings;
 
 public sealed class SettingsView : Window, IDisposable
 {
-    private readonly SettingsViewModel settingsViewModel;
-    private readonly UiBuilder uiBuilder;
-    private readonly WindowSystem windowSystem;
+    private readonly SettingsViewModel _settingsViewModel;
+    private readonly UiBuilder _uiBuilder;
+    private readonly WindowSystem _windowSystem;
 
     public SettingsView(
         SettingsViewModel settingsViewModel,
@@ -22,25 +22,25 @@ public sealed class SettingsView : Window, IDisposable
         LanguageSwitcher languageSwitcher
     ) : base(Strings.SettingsWindowTitle)
     {
-        this.settingsViewModel = settingsViewModel;
-        this.uiBuilder = uiBuilder;
-        this.windowSystem = windowSystem;
+        _settingsViewModel = settingsViewModel;
+        _uiBuilder = uiBuilder;
+        _windowSystem = windowSystem;
 
-        this.windowSystem.AddWindow(this);
-        this.uiBuilder.OpenConfigUi += Show;
+        _windowSystem.AddWindow(this);
+        _uiBuilder.OpenConfigUi += Show;
         languageSwitcher.OnLanguageChangedEvent += (_, _) => WindowName = Strings.SettingsWindowTitle;
 
         SizeConstraints = new WindowSizeConstraints
         {
             MinimumSize = new Vector2(300, 200),
-            MaximumSize = new Vector2(float.MaxValue, float.MaxValue),
+            MaximumSize = new Vector2(float.MaxValue, float.MaxValue)
         };
     }
 
     public void Dispose()
     {
-        windowSystem.RemoveWindow(this);
-        uiBuilder.OpenConfigUi -= Show;
+        _windowSystem.RemoveWindow(this);
+        _uiBuilder.OpenConfigUi -= Show;
         GC.SuppressFinalize(this);
     }
 
@@ -48,26 +48,26 @@ public sealed class SettingsView : Window, IDisposable
     {
         ImGui.Text(Strings.ChooseSearchLanguage);
 
-        var currentLanguage = settingsViewModel.PreferredLanguage;
+        Language currentLanguage = _settingsViewModel.PreferredLanguage;
 
         if (ImGui.RadioButton(Strings.English, currentLanguage == Language.English))
         {
-            settingsViewModel.SetPreferredLanguage(Language.English);
+            _settingsViewModel.SetPreferredLanguage(Language.English);
         }
 
         if (ImGui.RadioButton(Strings.French, currentLanguage == Language.French))
         {
-            settingsViewModel.SetPreferredLanguage(Language.French);
+            _settingsViewModel.SetPreferredLanguage(Language.French);
         }
 
         if (ImGui.RadioButton(Strings.German, currentLanguage == Language.German))
         {
-            settingsViewModel.SetPreferredLanguage(Language.German);
+            _settingsViewModel.SetPreferredLanguage(Language.German);
         }
 
         if (ImGui.RadioButton(Strings.Japanese, currentLanguage == Language.Japanese))
         {
-            settingsViewModel.SetPreferredLanguage(Language.Japanese);
+            _settingsViewModel.SetPreferredLanguage(Language.Japanese);
         }
     }
 

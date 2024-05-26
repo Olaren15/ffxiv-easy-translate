@@ -1,4 +1,4 @@
-namespace EasyTranslate.Domain.Entities;
+﻿namespace EasyTranslate.Domain.Entities;
 
 public enum ContentType
 {
@@ -18,5 +18,5 @@ public enum ContentType
     Status,
     Title,
     Trait,
-    Weather,
+    Weather
 }

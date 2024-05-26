@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 Console.OutputEncoding = Encoding.UTF8;
 
-var gameDataPath = Environment.GetEnvironmentVariable("GAME_DATA_PATH");
+string? gameDataPath = Environment.GetEnvironmentVariable("GAME_DATA_PATH");
 if (gameDataPath is null)
 {
     Console.WriteLine(
@@ -20,26 +20,27 @@ if (gameDataPath is null)
     return;
 }
 
-var lumina = new GameData(gameDataPath);
+GameData lumina = new(gameDataPath);
 
-var serviceCollection = new ServiceCollection()
-                        .AddSingleton(lumina.Excel)
-                        .AddInfrastructureServices()
-                        .AddUseCaseServices()
-                        .BuildServiceProvider();
-var searchByName = serviceCollection.GetService<SearchContentByNameUseCase>()!;
+ServiceProvider serviceCollection = new ServiceCollection()
+    .AddSingleton(lumina.Excel)
+    .AddInfrastructureServices()
+    .AddUseCaseServices()
+    .BuildServiceProvider();
+SearchContentByNameUseCase searchByName = serviceCollection.GetService<SearchContentByNameUseCase>()!;
 
-var serializerOptions = new JsonSerializerOptions
+JsonSerializerOptions serializerOptions = new()
 {
-    WriteIndented = true, Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-    Converters = { new JsonStringEnumConverter() },
+    WriteIndented = true,
+    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+    Converters = { new JsonStringEnumConverter() }
 };
 
 while (true)
 {
     Console.Write("Search anything: ");
-    var search = Console.ReadLine() ?? "";
-    var results = await searchByName.Execute(search, Language.English);
+    string search = Console.ReadLine() ?? "";
+    IEnumerable<Content> results = await searchByName.Execute(search, Language.English);
 
     Console.WriteLine(JsonSerializer.Serialize(results, serializerOptions));
 }

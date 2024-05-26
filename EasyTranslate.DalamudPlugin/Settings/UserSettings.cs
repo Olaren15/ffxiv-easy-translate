@@ -1,12 +1,13 @@
-﻿namespace EasyTranslate.DalamudPlugin.Settings;
-
-using System;
+﻿using System;
 using Dalamud.Configuration;
-using Domain.Entities;
+using EasyTranslate.Domain.Entities;
+
+namespace EasyTranslate.DalamudPlugin.Settings;
 
 [Serializable]
 public class UserSettings : IPluginConfiguration
 {
     public Language DefaultSearchLanguage { get; set; }
+
     public int Version { get; set; }
 }

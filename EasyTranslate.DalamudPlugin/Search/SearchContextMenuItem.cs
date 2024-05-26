@@ -1,23 +1,22 @@
-namespace EasyTranslate.DalamudPlugin.Search;
-
-using System;
-using Attributes;
+﻿using System;
 using Dalamud.Game.Gui.ContextMenu;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Plugin.Services;
 using Dalamud.Utility;
-using Localisation;
+using EasyTranslate.DalamudPlugin.Attributes;
+using EasyTranslate.DalamudPlugin.Localisation;
+using EasyTranslate.DalamudPlugin.Resources;
 using Lumina.Excel;
 using Lumina.Excel.GeneratedSheets2;
-using Resources;
+
+namespace EasyTranslate.DalamudPlugin.Search;
 
 [EntryPoint]
 public sealed class SearchContextMenuItem
 {
-    private readonly IDataManager dataManager;
-    private readonly SearchView searchView;
-    private MenuItem menuItem;
+    private readonly IDataManager _dataManager;
+    private readonly SearchView _searchView;
 
     public SearchContextMenuItem(
         IDataManager dataManager,
@@ -26,10 +25,10 @@ public sealed class SearchContextMenuItem
         IContextMenu contextMenu
     )
     {
-        this.dataManager = dataManager;
-        this.searchView = searchView;
+        _dataManager = dataManager;
+        _searchView = searchView;
 
-        menuItem = CreateMenuItem();
+        MenuItem menuItem = CreateMenuItem();
         contextMenu.OnMenuOpened += args =>
         {
             if (args.MenuType == ContextMenuType.Inventory)
@@ -52,7 +51,7 @@ public sealed class SearchContextMenuItem
             Prefix = null,
             PrefixChar = 'T',
             PrefixColor = 1,
-            Priority = 10000,
+            Priority = 10000
         };
     }
 
@@ -64,7 +63,7 @@ public sealed class SearchContextMenuItem
             return;
         }
 
-        var itemId = (menuItemClickedArgs.Target as MenuTargetInventory)?.TargetItem?.ItemId;
+        uint? itemId = (menuItemClickedArgs.Target as MenuTargetInventory)?.TargetItem?.ItemId;
         if (itemId is null)
         {
             return;
@@ -74,12 +73,12 @@ public sealed class SearchContextMenuItem
         if (itemId >= 2000000)
         {
             // Event items are stuff in the key items tab of inventory afaik
-            item = dataManager.Excel.GetSheet<EventItem>()?.GetRow(itemId.Value);
+            item = _dataManager.Excel.GetSheet<EventItem>()?.GetRow(itemId.Value);
         }
         else
         {
             // Not sure why we modulo by 500000, but I stole the code from simple tweaks so i'll trust it lol
-            item = dataManager.Excel.GetSheet<Item>()?.GetRow(itemId.Value % 500000);
+            item = _dataManager.Excel.GetSheet<Item>()?.GetRow(itemId.Value % 500000);
         }
 
         if (item is null)
@@ -87,13 +86,13 @@ public sealed class SearchContextMenuItem
             return;
         }
 
-        var itemName = item switch
+        string itemName = item switch
         {
             Item item1 => item1.Name.ToDalamudString().TextValue,
             EventItem eventItem => eventItem.Name.ToDalamudString().TextValue,
-            _ => throw new InvalidOperationException(),
+            _ => throw new InvalidOperationException()
         };
 
-        searchView.ShowAndSearch(itemName);
+        _searchView.ShowAndSearch(itemName);
     }
 }

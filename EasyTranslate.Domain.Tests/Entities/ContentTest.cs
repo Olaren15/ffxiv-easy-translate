@@ -1,17 +1,17 @@
-﻿namespace EasyTranslate.Domain.Tests.Entities;
-
-using System.ComponentModel;
-using Domain.Entities;
+﻿using System.ComponentModel;
+using EasyTranslate.Domain.Entities;
 using Xunit;
+
+namespace EasyTranslate.Domain.Tests.Entities;
 
 public class ContentTest
 {
     [Fact]
     public void English_NameForLanguage_ReturnsEnglishName()
     {
-        var content = GivenContent();
+        Content content = GivenContent();
 
-        var result = content.NameForLanguage(Language.English);
+        string result = content.NameForLanguage(Language.English);
 
         Assert.Equal(content.EnglishName, result);
     }
@@ -19,9 +19,9 @@ public class ContentTest
     [Fact]
     public void French_NameForLanguage_ReturnsFrenchName()
     {
-        var content = GivenContent();
+        Content content = GivenContent();
 
-        var result = content.NameForLanguage(Language.French);
+        string result = content.NameForLanguage(Language.French);
 
         Assert.Equal(content.FrenchName, result);
     }
@@ -29,9 +29,9 @@ public class ContentTest
     [Fact]
     public void German_NameForLanguage_ReturnsGermanName()
     {
-        var content = GivenContent();
+        Content content = GivenContent();
 
-        var result = content.NameForLanguage(Language.German);
+        string result = content.NameForLanguage(Language.German);
 
         Assert.Equal(content.GermanName, result);
     }
@@ -39,9 +39,9 @@ public class ContentTest
     [Fact]
     public void Japanese_NameForLanguage_ReturnsJapaneseName()
     {
-        var content = GivenContent();
+        Content content = GivenContent();
 
-        var result = content.NameForLanguage(Language.Japanese);
+        string result = content.NameForLanguage(Language.Japanese);
 
         Assert.Equal(content.JapaneseName, result);
     }
@@ -49,7 +49,7 @@ public class ContentTest
     [Fact]
     public void UnknownLanguage_NameForLanguage_ThrowsArgumentOutOfRangeException()
     {
-        var content = GivenContent();
+        Content content = GivenContent();
 
         Assert.Throws<InvalidEnumArgumentException>(() => content.NameForLanguage((Language)100));
     }

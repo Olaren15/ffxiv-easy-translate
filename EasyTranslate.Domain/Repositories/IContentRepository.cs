@@ -1,6 +1,6 @@
-﻿namespace EasyTranslate.Domain.Repositories;
+﻿using EasyTranslate.Domain.Entities;
 
-using Entities;
+namespace EasyTranslate.Domain.Repositories;
 
 public interface IContentRepository
 {
