@@ -5,6 +5,9 @@
     "Description": "Search anything and get the translations in other languages. Use /et to open the ui",
     "ApplicableVersion": "any",
     "Tags": [
+        "utility",
+        "social",
+        "other",
         "translate",
         "translation",
         "english",
