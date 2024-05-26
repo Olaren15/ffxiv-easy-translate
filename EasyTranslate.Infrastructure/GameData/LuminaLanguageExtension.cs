@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel;
-using Lumina.Data;
+using EasyTranslate.Domain.Entities;
 
 namespace EasyTranslate.Infrastructure.GameData;
 
-using Lumina_Language = Language;
-using Language = Domain.Entities.Language;
+using Language = Language;
+using Lumina_Language = Lumina.Data.Language;
 
 internal static class LuminaLanguageExtension
 {

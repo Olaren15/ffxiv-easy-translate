@@ -1,4 +1,4 @@
-using EasyTranslate.Domain.Entities;
+﻿using EasyTranslate.Domain.Entities;
 using EasyTranslate.Infrastructure.GameData.Sheets;
 
 namespace EasyTranslate.Infrastructure.GameData.Adapters;

@@ -1,4 +1,4 @@
-using EasyTranslate.Domain.Entities;
+﻿using EasyTranslate.Domain.Entities;
 using ExcelModule = Lumina.Excel.ExcelModule;
 using ExcelRow = Lumina.Excel.ExcelRow;
 using Lumina_Language = Lumina.Data.Language;

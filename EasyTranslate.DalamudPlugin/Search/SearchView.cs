@@ -35,7 +35,8 @@ public sealed class SearchView : Window, IDisposable
 
         SizeConstraints = new WindowSizeConstraints
         {
-            MinimumSize = new Vector2(300, 200), MaximumSize = new Vector2(float.MaxValue, float.MaxValue)
+            MinimumSize = new Vector2(300, 200),
+            MaximumSize = new Vector2(float.MaxValue, float.MaxValue)
         };
     }
 

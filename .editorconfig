@@ -244,3 +244,6 @@ end_of_line = crlf
 [*.md]
 # Double trailing spaces can be used for BR tags, and other instances are enforced by Markdownlint
 trim_trailing_whitespace = false
+
+[*.yml]
+indent_size = 2

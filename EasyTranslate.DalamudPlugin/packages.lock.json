@@ -17,6 +17,12 @@
                     "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
                 }
             },
+            "SonarAnalyzer.CSharp": {
+                "type": "Direct",
+                "requested": "[9.25.1.91650, )",
+                "resolved": "9.25.1.91650",
+                "contentHash": "Z1/H8vGk2FZ8m6TK++A1Tn5npEw0L0ZNVAgf0aPI/nkq4mTER+enRZcgrkhdSo1mGbFDFgEh5ym/j3Onk6mROA=="
+            },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
                 "type": "Transitive",
                 "resolved": "8.0.0",

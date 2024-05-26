@@ -1,4 +1,4 @@
-name: Dalamud plugin build
+name: Build and Test
 
 on:
   push:

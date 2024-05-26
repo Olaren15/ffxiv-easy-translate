@@ -1,0 +1,20 @@
+﻿name: Check format
+
+on:
+  push:
+    paths:
+      - "*.cs"
+      - ".editorconfig"
+
+jobs:
+  check-format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.x.x
+      - name: Run dotnet format
+        run: dotnet format --verify-no-changes

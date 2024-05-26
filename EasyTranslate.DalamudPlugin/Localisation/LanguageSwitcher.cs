@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Globalization;
 using Dalamud.Plugin;
 using EasyTranslate.DalamudPlugin.Resources;

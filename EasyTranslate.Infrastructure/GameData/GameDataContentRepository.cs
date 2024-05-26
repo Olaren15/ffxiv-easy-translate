@@ -1,4 +1,4 @@
-using EasyTranslate.Domain.Entities;
+﻿using EasyTranslate.Domain.Entities;
 using EasyTranslate.Domain.Repositories;
 
 namespace EasyTranslate.Infrastructure.GameData;

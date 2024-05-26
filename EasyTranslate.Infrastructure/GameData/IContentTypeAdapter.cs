@@ -1,4 +1,4 @@
-using EasyTranslate.Domain.Entities;
+﻿using EasyTranslate.Domain.Entities;
 using Lumina.Excel;
 
 namespace EasyTranslate.Infrastructure.GameData;
