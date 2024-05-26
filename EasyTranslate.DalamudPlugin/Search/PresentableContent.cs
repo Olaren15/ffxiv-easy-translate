@@ -1,7 +1,7 @@
-﻿namespace EasyTranslate.DalamudPlugin.Search;
+﻿using Dalamud.Interface.Internal;
+using EasyTranslate.Domain.Entities;
 
-using Dalamud.Interface.Internal;
-using Domain.Entities;
+namespace EasyTranslate.DalamudPlugin.Search;
 
 public record PresentableContent(
     ContentType Type,

@@ -1,11 +1,11 @@
-﻿namespace EasyTranslate.Domain.Tests.Comparers;
-
-using Domain.Comparers;
+﻿using EasyTranslate.Domain.Comparers;
 using Xunit;
+
+namespace EasyTranslate.Domain.Tests.Comparers;
 
 public class LongestCommonSubstringComparerTest
 {
-    private readonly LongestCommonSubstringComparer longestCommonSubstringComparer = new();
+    private readonly LongestCommonSubstringComparer _longestCommonSubstringComparer = new();
 
     [Theory]
     [InlineData("")]
@@ -13,7 +13,7 @@ public class LongestCommonSubstringComparerTest
     [InlineData("This is a longer string")]
     public void EqualStrings_Compare_ReturnsZero(string value)
     {
-        var result = longestCommonSubstringComparer.Compare(value, value);
+        int result = _longestCommonSubstringComparer.Compare(value, value);
 
         Assert.Equal(0, result);
     }
@@ -37,7 +37,7 @@ public class LongestCommonSubstringComparerTest
         int expected
     )
     {
-        var result = longestCommonSubstringComparer.Compare(a, b);
+        int result = _longestCommonSubstringComparer.Compare(a, b);
 
         Assert.Equal(expected, result);
     }

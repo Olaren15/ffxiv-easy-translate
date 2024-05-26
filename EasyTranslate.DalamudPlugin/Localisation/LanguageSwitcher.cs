@@ -1,17 +1,17 @@
-namespace EasyTranslate.DalamudPlugin.Localisation;
-
 using System;
 using System.Globalization;
 using Dalamud.Plugin;
-using Resources;
+using EasyTranslate.DalamudPlugin.Resources;
+
+namespace EasyTranslate.DalamudPlugin.Localisation;
 
 public sealed class LanguageSwitcher : IDisposable
 {
-    private readonly DalamudPluginInterface pluginInterface;
+    private readonly DalamudPluginInterface _pluginInterface;
 
     public LanguageSwitcher(DalamudPluginInterface pluginInterface)
     {
-        this.pluginInterface = pluginInterface;
+        _pluginInterface = pluginInterface;
 
         LanguageChangedHandler(pluginInterface.UiLanguage);
         pluginInterface.LanguageChanged += LanguageChangedHandler;
@@ -19,7 +19,7 @@ public sealed class LanguageSwitcher : IDisposable
 
     public void Dispose()
     {
-        pluginInterface.LanguageChanged -= LanguageChangedHandler;
+        _pluginInterface.LanguageChanged -= LanguageChangedHandler;
         GC.SuppressFinalize(this);
     }
 

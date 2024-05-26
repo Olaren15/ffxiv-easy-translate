@@ -1,15 +1,15 @@
-﻿namespace EasyTranslate.UseCase.Tests;
-
-using Domain.Comparers;
-using Domain.Entities;
-using Domain.Repositories;
+﻿using EasyTranslate.Domain.Comparers;
+using EasyTranslate.Domain.Entities;
+using EasyTranslate.Domain.Repositories;
 using Moq;
+
+namespace EasyTranslate.UseCase.Tests;
 
 public class SearchContentByNameUseCaseTest
 {
-    private static readonly Content Content1 = new(ContentType.Item, 25204, "Popoto", "Popoto", "Toffel", "ポポト");
+    private static readonly Content s_content1 = new(ContentType.Item, 25204, "Popoto", "Popoto", "Toffel", "ポポト");
 
-    private static readonly Content Content2 = new(
+    private static readonly Content s_content2 = new(
         ContentType.Item,
         27455,
         "Popoto Set",
@@ -17,7 +17,7 @@ public class SearchContentByNameUseCaseTest
         "Toffel-Knollen",
         "ポポトの種芋");
 
-    private static readonly Content Content3 = new(
+    private static readonly Content s_content3 = new(
         ContentType.Emote,
         64371,
         "Popoto Step",
@@ -25,14 +25,14 @@ public class SearchContentByNameUseCaseTest
         "Toffel-Tanz",
         "ポポトステップ");
 
-    private readonly Mock<IContentRepository> mockContentRepository;
-    private readonly SearchContentByNameUseCase searchContentByNameUseCase;
+    private readonly Mock<IContentRepository> _mockContentRepository;
+    private readonly SearchContentByNameUseCase _searchContentByNameUseCase;
 
     public SearchContentByNameUseCaseTest()
     {
-        mockContentRepository = new Mock<IContentRepository>();
-        searchContentByNameUseCase = new SearchContentByNameUseCase(
-            mockContentRepository.Object,
+        _mockContentRepository = new Mock<IContentRepository>();
+        _searchContentByNameUseCase = new SearchContentByNameUseCase(
+            _mockContentRepository.Object,
             new LongestCommonSubstringComparer()
         );
     }
@@ -47,22 +47,26 @@ public class SearchContentByNameUseCaseTest
     public async Task SearchQueryEmpty_Execute_ReturnsEmptyEnumerable(Language searchLanguage)
     {
         const string searchQuery = "";
-        var cancellationToken = CancellationToken.None;
+        CancellationToken cancellationToken = CancellationToken.None;
 
-        var result = await searchContentByNameUseCase.Execute(searchQuery, searchLanguage, cancellationToken);
+        IEnumerable<Content> result = await _searchContentByNameUseCase.Execute(
+            searchQuery,
+            searchLanguage,
+            cancellationToken
+        );
 
         Assert.Empty(result);
-        mockContentRepository.VerifyNoOtherCalls();
+        _mockContentRepository.VerifyNoOtherCalls();
     }
 
     public static TheoryData<string, Language, Content[]> SearchQueries()
     {
         return new TheoryData<string, Language, Content[]>
         {
-            { "popoto", Language.English, [Content1, Content2, Content3] },
-            { "popoto", Language.French, [Content1, Content3, Content2] },
-            { "toffel", Language.German, [Content1, Content3, Content2] },
-            { "ポポト", Language.Japanese, [Content1, Content2, Content3] },
+            { "popoto", Language.English, [s_content1, s_content2, s_content3] },
+            { "popoto", Language.French, [s_content1, s_content3, s_content2] },
+            { "toffel", Language.German, [s_content1, s_content3, s_content2] },
+            { "ポポト", Language.Japanese, [s_content1, s_content2, s_content3] }
         };
     }
 
@@ -74,14 +78,18 @@ public class SearchContentByNameUseCaseTest
         Content[] expected
     )
     {
-        var cancellationToken = CancellationToken.None;
-        mockContentRepository.Setup(
-                                 repository => repository.SearchByName(searchQuery, searchLanguage, cancellationToken)
-                                                         .Result
-                             )
-                             .Returns([Content3, Content1, Content2]);
+        CancellationToken cancellationToken = CancellationToken.None;
+        _mockContentRepository.Setup(
+                repository => repository.SearchByName(searchQuery, searchLanguage, cancellationToken)
+                    .Result
+            )
+            .Returns([s_content3, s_content1, s_content2]);
 
-        var result = await searchContentByNameUseCase.Execute(searchQuery, searchLanguage, cancellationToken);
+        IEnumerable<Content> result = await _searchContentByNameUseCase.Execute(
+            searchQuery,
+            searchLanguage,
+            cancellationToken
+        );
 
         Assert.Equal(expected, result);
     }
@@ -91,27 +99,27 @@ public class SearchContentByNameUseCaseTest
     {
         const string searchQuery = "popoto";
         const Language searchLanguage = Language.English;
-        var cancellationToken = CancellationToken.None;
-        var searchResults = GenerateALotOfContent().ToList();
-        mockContentRepository.Setup(
-                                 repository => repository.SearchByName(searchQuery, searchLanguage, cancellationToken)
-                                                         .Result)
-                             .Returns(searchResults);
+        CancellationToken cancellationToken = CancellationToken.None;
+        List<Content> searchResults = GenerateALotOfContent().ToList();
+        _mockContentRepository.Setup(
+                repository => repository.SearchByName(searchQuery, searchLanguage, cancellationToken)
+                    .Result)
+            .Returns(searchResults);
 
-        var result = await searchContentByNameUseCase.Execute(searchQuery, searchLanguage, cancellationToken);
+        IEnumerable<Content> result = await _searchContentByNameUseCase.Execute(
+            searchQuery,
+            searchLanguage,
+            cancellationToken
+        );
 
         Assert.Equal(searchResults.Take(100), result);
     }
 
     private static IEnumerable<Content> GenerateALotOfContent()
     {
-        var baseContent = Content1;
+        Content baseContent = s_content1;
 
         return Enumerable.Range(0, 101)
-                         .Select(
-                             i => baseContent with
-                             {
-                                 EnglishName = baseContent.EnglishName + new string('o', i),
-                             });
+            .Select(i => baseContent with { EnglishName = baseContent.EnglishName + new string('o', i) });
     }
 }

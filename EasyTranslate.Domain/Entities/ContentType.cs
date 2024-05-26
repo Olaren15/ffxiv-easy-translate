@@ -18,5 +18,5 @@ public enum ContentType
     Status,
     Title,
     Trait,
-    Weather,
+    Weather
 }

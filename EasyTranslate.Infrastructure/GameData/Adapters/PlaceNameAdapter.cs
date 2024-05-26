@@ -1,8 +1,7 @@
-﻿namespace EasyTranslate.Infrastructure.GameData.Adapters;
+﻿using EasyTranslate.Domain.Entities;
+using EasyTranslate.Infrastructure.GameData.Sheets;
 
-using Domain.Entities;
-using Sheets;
-using ContentType = Domain.Entities.ContentType;
+namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
 public class PlaceNameAdapter : IContentTypeAdapter<PlaceNameLite>
 {

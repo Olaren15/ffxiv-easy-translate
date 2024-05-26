@@ -1,7 +1,9 @@
-﻿namespace EasyTranslate.Infrastructure.GameData;
-
-using Domain.Entities;
+﻿using EasyTranslate.Domain.Entities;
 using Language = Lumina.Data.Language;
+
+namespace EasyTranslate.Infrastructure.GameData;
+
+using Language = Language;
 
 public interface ISearchByNameQuery
 {

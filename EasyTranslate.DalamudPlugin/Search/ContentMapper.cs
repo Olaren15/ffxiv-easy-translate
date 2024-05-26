@@ -1,13 +1,13 @@
-﻿namespace EasyTranslate.DalamudPlugin.Search;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Dalamud.Plugin.Services;
-using Domain.Entities;
+using EasyTranslate.Domain.Entities;
+
+namespace EasyTranslate.DalamudPlugin.Search;
 
 public class ContentMapper(ITextureProvider textureProvider)
 {
-    public PresentableContent ConvertToPresentableItem(Content content)
+    private PresentableContent ConvertToPresentableItem(Content content)
     {
         return new PresentableContent(
             content.Type,
@@ -22,7 +22,7 @@ public class ContentMapper(ITextureProvider textureProvider)
 
     public PresentableContent[] ConvertToPresentableContents(IEnumerable<Content> items)
     {
-        var mapped = items.Select(ConvertToPresentableItem);
+        IEnumerable<PresentableContent> mapped = items.Select(ConvertToPresentableItem);
         return mapped as PresentableContent[] ?? mapped.ToArray();
     }
 }

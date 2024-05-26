@@ -1,8 +1,10 @@
-﻿namespace EasyTranslate.Infrastructure.GameData;
+﻿using System.ComponentModel;
+using Lumina.Data;
 
-using System.ComponentModel;
-using Domain.Entities;
-using Lumina_Language = Lumina.Data.Language;
+namespace EasyTranslate.Infrastructure.GameData;
+
+using Lumina_Language = Language;
+using Language = Domain.Entities.Language;
 
 internal static class LuminaLanguageExtension
 {
@@ -14,7 +16,8 @@ internal static class LuminaLanguageExtension
             Language.French => Lumina_Language.French,
             Language.German => Lumina_Language.German,
             Language.Japanese => Lumina_Language.Japanese,
-            _ => throw new InvalidEnumArgumentException(nameof(language), (int)language, typeof(Language)),
+            _ => throw new InvalidEnumArgumentException(nameof(language), (int)language,
+                typeof(Language))
         };
     }
 }

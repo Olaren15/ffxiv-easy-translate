@@ -1,7 +1,7 @@
-﻿namespace EasyTranslate.DalamudPlugin.Configuration;
-
-using Dalamud.IoC;
+﻿using Dalamud.IoC;
 using Dalamud.Plugin;
+
+namespace EasyTranslate.DalamudPlugin.Configuration;
 
 #pragma warning disable CS8618
 

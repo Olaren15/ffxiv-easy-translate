@@ -1,8 +1,7 @@
-namespace EasyTranslate.Infrastructure.GameData.Adapters;
+using EasyTranslate.Domain.Entities;
+using EasyTranslate.Infrastructure.GameData.Sheets;
 
-using Domain.Entities;
-using Sheets;
-using ContentType = Domain.Entities.ContentType;
+namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
 public class TitleAdapter : IContentTypeAdapter<TitleLite>
 {
@@ -32,7 +31,7 @@ public class TitleAdapter : IContentTypeAdapter<TitleLite>
     private static string FormatTitle(TitleLite title)
     {
         return title.Masculine.RawString == title.Feminine.RawString
-                   ? title.Feminine.RawString
-                   : $"{title.Masculine.RawString} / {title.Feminine.RawString}";
+            ? title.Feminine.RawString
+            : $"{title.Masculine.RawString} / {title.Feminine.RawString}";
     }
 }

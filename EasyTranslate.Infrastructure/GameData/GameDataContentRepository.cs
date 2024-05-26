@@ -1,7 +1,7 @@
-namespace EasyTranslate.Infrastructure.GameData;
+using EasyTranslate.Domain.Entities;
+using EasyTranslate.Domain.Repositories;
 
-using Domain.Entities;
-using Domain.Repositories;
+namespace EasyTranslate.Infrastructure.GameData;
 
 public class GameDataContentRepository(IEnumerable<ISearchByNameQuery> searhQueries) : IContentRepository
 {
@@ -13,7 +13,7 @@ public class GameDataContentRepository(IEnumerable<ISearchByNameQuery> searhQuer
     {
         return Task.FromResult(
             searhQueries.SelectMany(searchQuery => searchQuery.Execute(searchName, searchLanguage.ToLuminaLanguage()))
-                        .Distinct()
+                .Distinct()
         );
     }
 }
