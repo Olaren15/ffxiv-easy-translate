@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Authors>Olaren</Authors>
     <Company></Company>
-    <Version>2.1.0.0</Version>
+    <Version>2.1.1.0</Version>
     <Description>Search for FFXIV translations right from the game!</Description>
     <Copyright></Copyright>
     <PackageProjectUrl>https://github.com/Olaren15/ffxiv-easy-translate</PackageProjectUrl>
