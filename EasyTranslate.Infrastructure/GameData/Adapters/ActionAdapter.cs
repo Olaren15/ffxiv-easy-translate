@@ -23,7 +23,7 @@ public class ActionAdapter : IContentTypeAdapter<ActionLite>
             english.Name.RawString,
             french.Name.RawString,
             german.Name.RawString,
-            german.Name.RawString
+            japanese.Name.RawString
         );
     }
 }

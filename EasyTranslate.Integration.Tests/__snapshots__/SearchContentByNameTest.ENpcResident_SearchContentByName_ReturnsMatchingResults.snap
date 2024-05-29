@@ -1,0 +1,66 @@
+﻿[
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "G'raha Tia",
+    "FrenchName": "G'raha Tia",
+    "GermanName": "G'raha Tia",
+    "JapaneseName": "グ・ラハ・ティア"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "G'raha Tia",
+    "FrenchName": "voix de G'raha Tia",
+    "GermanName": "G'raha Tia",
+    "JapaneseName": "グ・ラハ・ティアの声"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "G'raha Tia",
+    "FrenchName": "",
+    "GermanName": "",
+    "JapaneseName": ""
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "G'raha Tia",
+    "FrenchName": "G'raha Tia",
+    "GermanName": "",
+    "JapaneseName": ""
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "wind-up G'raha Tia",
+    "FrenchName": "G'raha Tia miniature",
+    "GermanName": "G'raha Tia-Puppe",
+    "JapaneseName": "マメット・グ・ラハ"
+  },
+  {
+    "Type": "Minion",
+    "IconId": 0,
+    "EnglishName": "wind-up G'raha Tia",
+    "FrenchName": "G'raha Tia miniature",
+    "GermanName": "G'raha Tia-Puppe",
+    "JapaneseName": "マメット・グ・ラハ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 59706,
+    "EnglishName": "Wind-up G'raha Tia",
+    "FrenchName": "G'raha Tia miniature",
+    "GermanName": "G'raha Tia-Puppe",
+    "JapaneseName": "マメット・グ・ラハ"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "G'raha Tia's avatar",
+    "FrenchName": "avatar de G'raha Tia",
+    "GermanName": "G'raha Tia[p] an deiner Seite",
+    "JapaneseName": "グ・ラハ・ティアの幻体"
+  }
+]

@@ -1,0 +1,66 @@
+﻿[
+  {
+    "Type": "Status",
+    "IconId": 15020,
+    "EnglishName": "Vulnerability Up",
+    "FrenchName": "Vulnérabilité augmentée",
+    "GermanName": "Erhöhte Verwundbarkeit",
+    "JapaneseName": "被ダメージ上昇"
+  },
+  {
+    "Type": "Status",
+    "IconId": 17101,
+    "EnglishName": "Vulnerability Up",
+    "FrenchName": "Vulnérabilité augmentée",
+    "GermanName": "Erhöhte Verwundbarkeit",
+    "JapaneseName": "被ダメージ上昇"
+  },
+  {
+    "Type": "Status",
+    "IconId": 15057,
+    "EnglishName": "Magic Vulnerability Up",
+    "FrenchName": "Vulnérabilité magique augmentée",
+    "GermanName": "Erhöhte Magie-Verwundbarkeit",
+    "JapaneseName": "被魔法ダメージ増加"
+  },
+  {
+    "Type": "Status",
+    "IconId": 18021,
+    "EnglishName": "Magic Vulnerability Up",
+    "FrenchName": "Vulnérabilité magique augmentée",
+    "GermanName": "Erhöhte Magie-Verwundbarkeit",
+    "JapaneseName": "被魔法ダメージ増加"
+  },
+  {
+    "Type": "Status",
+    "IconId": 15057,
+    "EnglishName": "Magic Vulnerability Up",
+    "FrenchName": "Vulnérabilité magique augmentée",
+    "GermanName": "Erhöhte Magie-Verwundbarkeit",
+    "JapaneseName": "被魔法ダメージ上昇"
+  },
+  {
+    "Type": "Status",
+    "IconId": 15053,
+    "EnglishName": "Physical Vulnerability Up",
+    "FrenchName": "Vulnérabilité physique augmentée",
+    "GermanName": "Erhöhte physische Verwundbarkeit",
+    "JapaneseName": "被物理ダメージ増加"
+  },
+  {
+    "Type": "Status",
+    "IconId": 18001,
+    "EnglishName": "Physical Vulnerability Up",
+    "FrenchName": "Vulnérabilité physique augmentée",
+    "GermanName": "Erhöhte physische Verwundbarkeit",
+    "JapaneseName": "被物理ダメージ増加"
+  },
+  {
+    "Type": "Status",
+    "IconId": 15659,
+    "EnglishName": "Marked for Vulnerability Up",
+    "FrenchName": "Cible: Vulnérabilité physique augmentée",
+    "GermanName": "Erhöhte physische Verwundbarkeit",
+    "JapaneseName": "指定：被物理ダメージ増加"
+  }
+]

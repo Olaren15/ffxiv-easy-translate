@@ -1,0 +1,82 @@
+﻿[
+  {
+    "Type": "Instance",
+    "IconId": 61801,
+    "EnglishName": "Sastasha",
+    "FrenchName": "Sastasha",
+    "GermanName": "Sastasha",
+    "JapaneseName": "天然要害 サスタシャ浸食洞"
+  },
+  {
+    "Type": "Place",
+    "IconId": null,
+    "EnglishName": "Sastasha",
+    "FrenchName": "Sastasha",
+    "GermanName": "Sastasha-Höhle",
+    "JapaneseName": "サスタシャ浸食洞"
+  },
+  {
+    "Type": "Place",
+    "IconId": null,
+    "EnglishName": "Sastasha",
+    "FrenchName": "Sastasha",
+    "GermanName": "Sastasha",
+    "JapaneseName": "天然要害 サスタシャ浸食洞"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Sastasha pugil",
+    "FrenchName": "pugil de Sastasha",
+    "GermanName": "Sastasha-Pugil",
+    "JapaneseName": "サスタシャ・プギル"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Sastasha orobon",
+    "FrenchName": "orobon de Sastasha",
+    "GermanName": "Sastasha-Orobon",
+    "JapaneseName": "サスタシャ・オロボン"
+  },
+  {
+    "Type": "Instance",
+    "IconId": 61801,
+    "EnglishName": "Sastasha (Hard)",
+    "FrenchName": "Sastasha (brutal)",
+    "GermanName": "Sastasha (schwer)",
+    "JapaneseName": "逆襲要害 サスタシャ浸食洞 (Hard)"
+  },
+  {
+    "Type": "Place",
+    "IconId": null,
+    "EnglishName": "Sastasha (Hard)",
+    "FrenchName": "Sastasha (brutal)",
+    "GermanName": "Sastasha-Höhle (schwer)",
+    "JapaneseName": "サスタシャ浸食洞 (Hard)"
+  },
+  {
+    "Type": "Place",
+    "IconId": null,
+    "EnglishName": "Sastasha Seagrot",
+    "FrenchName": "Grotte marine de Sastasha",
+    "GermanName": "Sastasha-Höhle",
+    "JapaneseName": "浸食洞"
+  },
+  {
+    "Type": "Achievement",
+    "IconId": 1001,
+    "EnglishName": "Mapping the Realm: Sastasha",
+    "FrenchName": "Cartographe du continent : Sastasha",
+    "GermanName": "Kartograph: Sastasha",
+    "JapaneseName": "サスタシャ浸食洞を踏破せし者"
+  },
+  {
+    "Type": "Achievement",
+    "IconId": 1001,
+    "EnglishName": "Remapping the Realm: Sastasha",
+    "FrenchName": "Cartographe du continent : Sastasha (brutal)",
+    "GermanName": "Kartograph: Sastasha-Höhle (schwer)",
+    "JapaneseName": "サスタシャ浸食洞を再び踏破せし者"
+  }
+]

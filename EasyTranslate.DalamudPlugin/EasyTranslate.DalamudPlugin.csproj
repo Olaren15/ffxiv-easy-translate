@@ -15,6 +15,7 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <NeutralLanguage>en</NeutralLanguage>
     <LangVersion>12</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

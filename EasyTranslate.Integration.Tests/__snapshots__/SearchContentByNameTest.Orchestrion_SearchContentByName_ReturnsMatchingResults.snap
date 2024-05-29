@@ -1,0 +1,34 @@
+﻿[
+  {
+    "Type": "Orchestrion",
+    "IconId": 76406,
+    "EnglishName": "Pa-Paya",
+    "FrenchName": "Pa-Paya",
+    "GermanName": "Pa-Paya",
+    "JapaneseName": "Pa-Paya"
+  },
+  {
+    "Type": "Orchestrion",
+    "IconId": 76406,
+    "EnglishName": "Pa-Paya Demastered",
+    "FrenchName": "Pa-Paya Demastered",
+    "GermanName": "Pa-Paya Demastered",
+    "JapaneseName": "Pa-Paya Demastered"
+  },
+  {
+    "Type": "Item",
+    "IconId": 25945,
+    "EnglishName": "Pa-Paya Orchestrion Roll",
+    "FrenchName": "Rouleau “Pa-Paya”",
+    "GermanName": "Notenrolle von „Pa-Paya“",
+    "JapaneseName": "オーケストリオン譜:Pa-Paya"
+  },
+  {
+    "Type": "Item",
+    "IconId": 25945,
+    "EnglishName": "Pa-Paya Demastered Orchestrion Roll",
+    "FrenchName": "Rouleau “Pa-Paya Demastered”",
+    "GermanName": "Notenrolle von „Pa-Paya Demastered“",
+    "JapaneseName": "オーケストリオン譜:Pa-Paya Demastered"
+  }
+]

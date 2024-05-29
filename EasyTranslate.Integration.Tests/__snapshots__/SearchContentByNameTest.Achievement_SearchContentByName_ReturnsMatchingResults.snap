@@ -1,0 +1,50 @@
+﻿[
+  {
+    "Type": "Achievement",
+    "IconId": 60035,
+    "EnglishName": "For the Hoard I",
+    "FrenchName": "Exhumation profonde I",
+    "GermanName": "Mein Schatz I",
+    "JapaneseName": "埋もれた財宝：ランク1"
+  },
+  {
+    "Type": "Achievement",
+    "IconId": 60035,
+    "EnglishName": "For the Hoard V",
+    "FrenchName": "Exhumation profonde V",
+    "GermanName": "Mein Schatz V",
+    "JapaneseName": "埋もれた財宝：ランク5"
+  },
+  {
+    "Type": "Achievement",
+    "IconId": 60035,
+    "EnglishName": "For the Hoard II",
+    "FrenchName": "Exhumation profonde II",
+    "GermanName": "Mein Schatz II",
+    "JapaneseName": "埋もれた財宝：ランク2"
+  },
+  {
+    "Type": "Achievement",
+    "IconId": 60035,
+    "EnglishName": "For the Hoard IV",
+    "FrenchName": "Exhumation profonde IV",
+    "GermanName": "Mein Schatz IV",
+    "JapaneseName": "埋もれた財宝：ランク4"
+  },
+  {
+    "Type": "Achievement",
+    "IconId": 60035,
+    "EnglishName": "For the Hoard VI",
+    "FrenchName": "Exhumation profonde VI",
+    "GermanName": "Mein Schatz VI",
+    "JapaneseName": "埋もれた財宝：ランク6"
+  },
+  {
+    "Type": "Achievement",
+    "IconId": 60035,
+    "EnglishName": "For the Hoard III",
+    "FrenchName": "Exhumation profonde III",
+    "GermanName": "Mein Schatz III",
+    "JapaneseName": "埋もれた財宝：ランク3"
+  }
+]

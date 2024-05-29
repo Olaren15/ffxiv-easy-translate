@@ -1,0 +1,250 @@
+﻿[
+  {
+    "Type": "Item",
+    "IconId": 25204,
+    "EnglishName": "Popoto",
+    "FrenchName": "Popoto",
+    "GermanName": "Toffel",
+    "JapaneseName": "ポポト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 27455,
+    "EnglishName": "Popoto Set",
+    "FrenchName": "Tubercule de popoto",
+    "GermanName": "Toffel-Knollen",
+    "JapaneseName": "ポポトの種芋"
+  },
+  {
+    "Type": "Emote",
+    "IconId": 64371,
+    "EnglishName": "Popoto Step",
+    "FrenchName": "Popping popoto",
+    "GermanName": "Toffel-Tanz",
+    "JapaneseName": "ポポトステップ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 25204,
+    "EnglishName": "Wild Popoto",
+    "FrenchName": "Popoto sauvage",
+    "GermanName": "Wilde Toffel",
+    "JapaneseName": "ワイルドポポト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24022,
+    "EnglishName": "Popoto Soba",
+    "FrenchName": "Nouilles de sarrasin montagnardes",
+    "GermanName": "Toffel-Soba",
+    "JapaneseName": "とろろ蕎麦"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24164,
+    "EnglishName": "Popoto Salad",
+    "FrenchName": "Salade de popotos",
+    "GermanName": "Toffelsalat",
+    "JapaneseName": "ポポトサラダ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 25221,
+    "EnglishName": "Giant Popoto",
+    "FrenchName": "Popoto géante",
+    "GermanName": "Riesentoffel",
+    "JapaneseName": "ジャイアントポポト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 25204,
+    "EnglishName": "Russet Popoto",
+    "FrenchName": "Popoto brune",
+    "GermanName": "Ockertoffel",
+    "JapaneseName": "ラセットポポト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 25204,
+    "EnglishName": "Island Popoto",
+    "FrenchName": "Popoto exotique",
+    "GermanName": "Paradiestoffel",
+    "JapaneseName": "アイルポポト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 25221,
+    "EnglishName": "Dalamud Popoto",
+    "FrenchName": "Popoto de Dalamud",
+    "GermanName": "Dalamud-Toffel",
+    "JapaneseName": "ダラガブポポト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24457,
+    "EnglishName": "Mashed Popotoes",
+    "FrenchName": "Purée de popotos",
+    "GermanName": "Toffelbrei",
+    "JapaneseName": "マッシュポポト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24072,
+    "EnglishName": "Popoto Pancakes",
+    "FrenchName": "Crique",
+    "GermanName": "Toffelpuffer",
+    "JapaneseName": "ポポトパンケーキ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 25221,
+    "EnglishName": "Walker's Popoto",
+    "FrenchName": "Belle de Noscea",
+    "GermanName": "Roter Admiral",
+    "JapaneseName": "メークインポポト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 25227,
+    "EnglishName": "Mountain Popoto",
+    "FrenchName": "Popoto des montagnes",
+    "GermanName": "Bergtoffel",
+    "JapaneseName": "マウンテンポポト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24163,
+    "EnglishName": "Peppered Popotoes",
+    "FrenchName": "Popotos au poivre",
+    "GermanName": "Pfeffertoffel",
+    "JapaneseName": "ペッパーポポト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 23704,
+    "EnglishName": "Island Popoto Set",
+    "FrenchName": "Tubercules de popoto exotique",
+    "GermanName": "Paradiestoffel-Knollen",
+    "JapaneseName": "アイルポポトの種芋"
+  },
+  {
+    "Type": "Item",
+    "IconId": 27456,
+    "EnglishName": "Dalamud Popoto Set",
+    "FrenchName": "Tubercule de popoto de Dalamud",
+    "GermanName": "Dalamud-Toffelknollen",
+    "JapaneseName": "ダラガブポポトの種芋"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24112,
+    "EnglishName": "Popotoes au Gratin",
+    "FrenchName": "Gratin de popotos brunes",
+    "GermanName": "Ockertoffel-Gratin",
+    "JapaneseName": "ラセットポポトグラタン"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24114,
+    "EnglishName": "Chilled Popoto Soup",
+    "FrenchName": "Soupe de popotos glacée",
+    "GermanName": "Kalte Toffelsuppe",
+    "JapaneseName": "冷製ポポトスープ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 25236,
+    "EnglishName": "Island Sweet Popoto",
+    "FrenchName": "Popoto douce exotique",
+    "GermanName": "Paradiessüßtoffel",
+    "JapaneseName": "アイルスイートポポト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24164,
+    "EnglishName": "Twilight Popoto Salad",
+    "FrenchName": "Salade de popotos aux pommes",
+    "GermanName": "Toffelsalat mit Apfel",
+    "JapaneseName": "アップルポポトサラダ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24072,
+    "EnglishName": "Giant Popoto Pancakes",
+    "FrenchName": "Crique géante",
+    "GermanName": "Riesentoffelpuffer",
+    "JapaneseName": "ジャイアントポポトパンケーキ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24096,
+    "EnglishName": "Isleworks Sweet Popoto",
+    "FrenchName": "Popoto doux manufacturé",
+    "GermanName": "Atelier-Süßtoffel",
+    "JapaneseName": "開拓工房のスイートポポト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24164,
+    "EnglishName": "Isleworks Popoto Salad",
+    "FrenchName": "Salade de popotos manufacturée",
+    "GermanName": "Atelier-Toffelsalat",
+    "JapaneseName": "開拓工房のポポトサラダ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 23741,
+    "EnglishName": "Island Sweet Popoto Set",
+    "FrenchName": "Tubercules de popoto douce exotique",
+    "GermanName": "Paradiessüßtoffel-Knollen",
+    "JapaneseName": "アイルスイートポポトの種芋"
+  },
+  {
+    "Type": "Fate",
+    "IconId": 60721,
+    "EnglishName": "All Vine and No Popotoes",
+    "FrenchName": "Occlusion d'otyughs",
+    "GermanName": "Grenzschutz",
+    "JapaneseName": "オチュー狩り"
+  },
+  {
+    "Type": "Quest",
+    "IconId": 71221,
+    "EnglishName": "You Say Popoto, I Say...",
+    "FrenchName": "Le bonheur est dans la forêt",
+    "GermanName": "Die dolle Knolle",
+    "JapaneseName": "求めるは野生種の恩恵"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24225,
+    "EnglishName": "Isleworks Sweet Popoto Pie",
+    "FrenchName": "Tarte à la popoto douce exotique",
+    "GermanName": "Atelier-Süßtoffeltörtchen",
+    "JapaneseName": "アイル・スイートポポトタルト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24112,
+    "EnglishName": "Rarefied Popotoes au Gratin",
+    "FrenchName": "Gratin de popotos brunes collectionnable",
+    "GermanName": "Ockertoffel-Gratin (Sammlerstück)",
+    "JapaneseName": "収集用のラセットポポトグラタン"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24072,
+    "EnglishName": "Rarefied Giant Popoto Pancakes",
+    "FrenchName": "Crique géante collectionnable",
+    "GermanName": "Riesentoffelpuffer (Sammlerstück)",
+    "JapaneseName": "収集用のジャイアントポポトパンケーキ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26435,
+    "EnglishName": "Ballroom Etiquette - The Popoto Step",
+    "FrenchName": "L'Étiquette éorzéenne: Popping popoto",
+    "GermanName": "Ballsaal-Etikette: Toffel-Tanz",
+    "JapaneseName": "演技教本:ポポトステップ"
+  }
+]

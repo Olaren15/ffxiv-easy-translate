@@ -24,7 +24,7 @@ jobs:
       - name: Build
         run: dotnet build --no-restore --configuration Release --nologo
       - name: Run tests
-        run: dotnet test --no-build --configuration Release --nologo
+        run: dotnet test --filter FullyQualifiedName\!~EasyTranslate.Integration.Tests --no-build --configuration Release --nologo
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4
         with:

@@ -1,0 +1,90 @@
+﻿[
+  {
+    "Type": "Trait",
+    "IconId": 5185,
+    "EnglishName": "Maim and Mend",
+    "FrenchName": "Efficacité des actions augmentée",
+    "GermanName": "Verbesserte Kommandos",
+    "JapaneseName": "アクションダメージ・回復量アップ"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 5185,
+    "EnglishName": "Maim and Mend",
+    "FrenchName": "Efficacité éthérée augmentée",
+    "GermanName": "Verbesserte Kommandos",
+    "JapaneseName": "アクションダメージ・回復量アップ"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 6102,
+    "EnglishName": "Maim and Mend",
+    "FrenchName": "Efficacité des actions augmentée",
+    "GermanName": "Verbesserte Kommandos",
+    "JapaneseName": "アクションダメージ・回復量アップ"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 5185,
+    "EnglishName": "Maim and Mend",
+    "FrenchName": "Efficacité des actions augmentée",
+    "GermanName": "Hauen und Heilen",
+    "JapaneseName": "アクションダメージ・回復量アップ"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 5189,
+    "EnglishName": "Maim and Mend V",
+    "FrenchName": "Efficacité des actions augmentée V",
+    "GermanName": "Verbesserte Kommandos V",
+    "JapaneseName": "アクションダメージ・回復量アップV"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 5186,
+    "EnglishName": "Maim and Mend II",
+    "FrenchName": "Efficacité des actions augmentée II",
+    "GermanName": "Verbesserte Kommandos II",
+    "JapaneseName": "アクションダメージ・回復量アップII"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 5186,
+    "EnglishName": "Maim and Mend II",
+    "FrenchName": "Efficacité éthérée augmentée II",
+    "GermanName": "Verbesserte Kommandos II",
+    "JapaneseName": "アクションダメージ・回復量アップII"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 6103,
+    "EnglishName": "Maim and Mend II",
+    "FrenchName": "Efficacité des actions augmentée II",
+    "GermanName": "Verbesserte Kommandos II",
+    "JapaneseName": "アクションダメージ・回復量アップII"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 5186,
+    "EnglishName": "Maim and Mend II",
+    "FrenchName": "Efficacité des actions augmentée II",
+    "GermanName": "Hauen und Heilen II",
+    "JapaneseName": "アクションダメージ・回復量アップII"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 5188,
+    "EnglishName": "Maim and Mend IV",
+    "FrenchName": "Efficacité des actions augmentée IV",
+    "GermanName": "Verbesserte Kommandos IV",
+    "JapaneseName": "アクションダメージ・回復量アップIV"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 5187,
+    "EnglishName": "Maim and Mend III",
+    "FrenchName": "Efficacité des actions augmentée III",
+    "GermanName": "Verbesserte Kommandos III",
+    "JapaneseName": "アクションダメージ・回復量アップIII"
+  }
+]
