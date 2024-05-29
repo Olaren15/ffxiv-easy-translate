@@ -1,0 +1,26 @@
+﻿[
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "lesser panda",
+    "FrenchName": "petit panda roux",
+    "GermanName": "Rotpanda-Stofftier",
+    "JapaneseName": "レッサーパンダ"
+  },
+  {
+    "Type": "Minion",
+    "IconId": 0,
+    "EnglishName": "lesser panda",
+    "FrenchName": "petit panda roux",
+    "GermanName": "Rotpanda-Stofftier",
+    "JapaneseName": "レッサーパンダ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 59534,
+    "EnglishName": "Lesser Panda",
+    "FrenchName": "Petit panda roux",
+    "GermanName": "Rotpanda-Stofftier",
+    "JapaneseName": "レッサーパンダ"
+  }
+]

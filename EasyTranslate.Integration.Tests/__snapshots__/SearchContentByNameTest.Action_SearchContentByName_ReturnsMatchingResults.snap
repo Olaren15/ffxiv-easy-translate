@@ -1,0 +1,522 @@
+﻿[
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Cure",
+    "FrenchName": "Soin",
+    "GermanName": "Vita",
+    "JapaneseName": "ケアル"
+  },
+  {
+    "Type": "Action",
+    "IconId": 784,
+    "EnglishName": "Cure",
+    "FrenchName": "Soin",
+    "GermanName": "Vita",
+    "JapaneseName": "ケアル"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Cure V",
+    "FrenchName": "Téra Soin",
+    "GermanName": "Vigra",
+    "JapaneseName": "ケアルダ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 64629,
+    "EnglishName": "Cure L",
+    "FrenchName": "Évocation Logos : Soin",
+    "GermanName": "Logos-Vita",
+    "JapaneseName": "ロゴス・ケアル"
+  },
+  {
+    "Type": "Item",
+    "IconId": 27953,
+    "EnglishName": "Cure L",
+    "FrenchName": "Évocation Logos: Soin",
+    "GermanName": "Logos-Splitter des Vita",
+    "JapaneseName": "ロゴス・ケアル"
+  },
+  {
+    "Type": "Action",
+    "IconId": 406,
+    "EnglishName": "Cure II",
+    "FrenchName": "Extra Soin",
+    "GermanName": "Vitra",
+    "JapaneseName": "ケアルラ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Cure IV",
+    "FrenchName": "Giga Soin",
+    "GermanName": "Vitaka",
+    "JapaneseName": "ケアルジャ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Cure II",
+    "FrenchName": "Extra Soin",
+    "GermanName": "Vitra",
+    "JapaneseName": "ケアルラ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 3216,
+    "EnglishName": "Vercure",
+    "FrenchName": "VerSoin",
+    "GermanName": "Erzvita",
+    "JapaneseName": "ヴァルケアル"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Vercure",
+    "FrenchName": "VerSoin",
+    "GermanName": "Erzvita",
+    "JapaneseName": "ヴァルケアル"
+  },
+  {
+    "Type": "Action",
+    "IconId": 784,
+    "EnglishName": "Cure II",
+    "FrenchName": "Extra Soin",
+    "GermanName": "Vitra",
+    "JapaneseName": "ケアルラ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 784,
+    "EnglishName": "Vercure",
+    "FrenchName": "VerSoin",
+    "GermanName": "Erzvita",
+    "JapaneseName": "ヴァルケアル"
+  },
+  {
+    "Type": "Action",
+    "IconId": 64868,
+    "EnglishName": "Vercure",
+    "FrenchName": "VerSoin",
+    "GermanName": "Erzvita",
+    "JapaneseName": "ヴァルケアル"
+  },
+  {
+    "Type": "Action",
+    "IconId": 64816,
+    "EnglishName": "Cure II",
+    "FrenchName": "Extra Soin",
+    "GermanName": "Vitra",
+    "JapaneseName": "ケアルラ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 9274,
+    "EnglishName": "Cure II",
+    "FrenchName": "Extra Soin",
+    "GermanName": "Vitra",
+    "JapaneseName": "ケアルラ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 407,
+    "EnglishName": "Cure III",
+    "FrenchName": "Méga Soin",
+    "GermanName": "Vitaga",
+    "JapaneseName": "ケアルガ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Pom Cure",
+    "FrenchName": "Pompon soignant",
+    "GermanName": "Vitakupo",
+    "JapaneseName": "ポンポンケアル"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Cure III",
+    "FrenchName": "Méga Soin",
+    "GermanName": "Vitaga",
+    "JapaneseName": "ケアルガ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 3308,
+    "EnglishName": "Pom Cure",
+    "FrenchName": "Pompon soignant",
+    "GermanName": "Vitakupo",
+    "JapaneseName": "ポンポンケアル"
+  },
+  {
+    "Type": "Action",
+    "IconId": 9606,
+    "EnglishName": "Cure III",
+    "FrenchName": "Méga Soin",
+    "GermanName": "Vitaga",
+    "JapaneseName": "ケアルガ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 29288,
+    "EnglishName": "Curefish",
+    "FrenchName": "Guérisandre",
+    "GermanName": "Heilerfisch",
+    "JapaneseName": "エスナカブリ"
+  },
+  {
+    "Type": "LeveQuest",
+    "IconId": 71241,
+    "EnglishName": "The Cure",
+    "FrenchName": "Apprivoisement: mandragores curatives",
+    "GermanName": "Sprossen gegen alles",
+    "JapaneseName": "懐柔任務：輸出用のマンドラゴラ"
+  },
+  {
+    "Type": "Status",
+    "IconId": 10410,
+    "EnglishName": "Freecure",
+    "FrenchName": "Extra Soin amélioré",
+    "GermanName": "Vitra +",
+    "JapaneseName": "ケアルラ効果アップ"
+  },
+  {
+    "Type": "Status",
+    "IconId": 10411,
+    "EnglishName": "Overcure",
+    "FrenchName": "Méga Soin amélioré",
+    "GermanName": "Vitaga +",
+    "JapaneseName": "ケアルガ効果アップ"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 5330,
+    "EnglishName": "Freecure",
+    "FrenchName": "Soin amélioré",
+    "GermanName": "Verbessertes Vita",
+    "JapaneseName": "ケアル効果アップ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 64630,
+    "EnglishName": "Cure L II",
+    "FrenchName": "Évocation Logos : Extra Soin",
+    "GermanName": "Logos-Vitra",
+    "JapaneseName": "ロゴス・ケアルラ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 64682,
+    "EnglishName": "Lost Cure",
+    "FrenchName": "Soin oublié",
+    "GermanName": "Verschollene Vita",
+    "JapaneseName": "ロスト・ケアル"
+  },
+  {
+    "Type": "Item",
+    "IconId": 27953,
+    "EnglishName": "Cure L II",
+    "FrenchName": "Évocation Logos: Extra Soin",
+    "GermanName": "Logos-Splitter des Vitra",
+    "JapaneseName": "ロゴス・ケアルラ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 64682,
+    "EnglishName": "Lost Cure",
+    "FrenchName": "Soin oublié",
+    "GermanName": "Frontsplitter des verschollenen Vita",
+    "JapaneseName": "ロスト・ケアル"
+  },
+  {
+    "Type": "Action",
+    "IconId": 935,
+    "EnglishName": "Choco Cure",
+    "FrenchName": "Choco-soin",
+    "GermanName": "Chocobo-Vita",
+    "JapaneseName": "チョコケアル"
+  },
+  {
+    "Type": "Action",
+    "IconId": 64632,
+    "EnglishName": "Cure L III",
+    "FrenchName": "Évocation Logos : Méga Soin",
+    "GermanName": "Logos-Vitaga",
+    "JapaneseName": "ロゴス・ケアルガ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Vercure III",
+    "FrenchName": "VerMéga Soin",
+    "GermanName": "Erzvitaga",
+    "JapaneseName": "ヴァルケアルガ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 64683,
+    "EnglishName": "Lost Cure II",
+    "FrenchName": "Extra Soin oublié",
+    "GermanName": "Verschollene Vitra",
+    "JapaneseName": "ロスト・ケアルラ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 64685,
+    "EnglishName": "Lost Cure IV",
+    "FrenchName": "Giga Soin oublié",
+    "GermanName": "Verschollene Vitaka",
+    "JapaneseName": "ロスト・ケアルジャ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "True Cure II",
+    "FrenchName": "Extra Soin véritable",
+    "GermanName": "Vollkommenes Vitra",
+    "JapaneseName": "トゥルー・ケアルラ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 64756,
+    "EnglishName": "Variant Cure",
+    "FrenchName": "Soin embranché",
+    "GermanName": "Unstetes Vita",
+    "JapaneseName": "ヴァリアント・ケアル"
+  },
+  {
+    "Type": "Item",
+    "IconId": 64683,
+    "EnglishName": "Lost Cure II",
+    "FrenchName": "Extra Soin oublié",
+    "GermanName": "Frontsplitter des verschollenen Vitra",
+    "JapaneseName": "ロスト・ケアルラ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 64685,
+    "EnglishName": "Lost Cure IV",
+    "FrenchName": "Giga Soin oublié",
+    "GermanName": "Frontsplitter des verschollenen Vitaka",
+    "JapaneseName": "ロスト・ケアルジャ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Obscure Woods",
+    "FrenchName": "Forêt obscure",
+    "GermanName": "Finsterer Wald",
+    "JapaneseName": "暗黒森林"
+  },
+  {
+    "Type": "Action",
+    "IconId": 64684,
+    "EnglishName": "Lost Cure III",
+    "FrenchName": "Méga Soin oublié",
+    "GermanName": "Verschollene Vitaga",
+    "JapaneseName": "ロスト・ケアルガ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 64684,
+    "EnglishName": "Lost Cure III",
+    "FrenchName": "Méga Soin oublié",
+    "GermanName": "Frontsplitter des verschollenen Vitaga",
+    "JapaneseName": "ロスト・ケアルガ"
+  },
+  {
+    "Type": "LeveQuest",
+    "IconId": 71241,
+    "EnglishName": "The Only Cure",
+    "FrenchName": "Prélèvement: des tisanes pour les petits Ronsos",
+    "GermanName": "Fiebersenkende Kräuter",
+    "JapaneseName": "調査採集：ロンゾ族の熱病対策"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Ronkan Cure II",
+    "FrenchName": "Extra Soin ronka",
+    "GermanName": "Ronka-Vitra",
+    "JapaneseName": "ロンカ・ケアルラ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 64816,
+    "EnglishName": "Ronkan Cure II",
+    "FrenchName": "Extra Soin ronka",
+    "GermanName": "Ronka-Vitra",
+    "JapaneseName": "ロンカ・ケアルラ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 64753,
+    "EnglishName": "Lost Full Cure",
+    "FrenchName": "Maxi Soin oublié",
+    "GermanName": "Verschollene Erneuerung",
+    "JapaneseName": "ロスト・フルケア"
+  },
+  {
+    "Type": "Item",
+    "IconId": 64753,
+    "EnglishName": "Lost Full Cure",
+    "FrenchName": "Maxi Soin oublié",
+    "GermanName": "Frontsplitter des verschollenen Erneuerung",
+    "JapaneseName": "ロスト・フルケア"
+  },
+  {
+    "Type": "Status",
+    "IconId": 14985,
+    "EnglishName": "Cure III Ready",
+    "FrenchName": "Méga Soin préparé",
+    "GermanName": "Vitaga bereit",
+    "JapaneseName": "ケアルガ実行可"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Ronkan Cure III",
+    "FrenchName": "Méga Soin ronka",
+    "GermanName": "Ronka-Vitaga",
+    "JapaneseName": "ロンカ・ケアルガ"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Namazu procurer",
+    "FrenchName": "Namazu préposé aux offrandes",
+    "GermanName": "Namazuo-Opfergabenbeauftragt[a]",
+    "JapaneseName": "供物調達係のナマズオ"
+  },
+  {
+    "Type": "Quest",
+    "IconId": 71221,
+    "EnglishName": "A Pound of Cure",
+    "FrenchName": "Remède contre les bagarres",
+    "GermanName": "Aufruhr an der Feldscheune",
+    "JapaneseName": "拳の語らい"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Absolute Cure II",
+    "FrenchName": "Extra Soin absolu",
+    "GermanName": "Absolutes Vitra",
+    "JapaneseName": "アブソリュートケアルラ"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "dwarven procurer",
+    "FrenchName": "Nain responsable du ravitaillement",
+    "GermanName": "Nachschub-Zwerg",
+    "JapaneseName": "補充担当のドワーフ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 20036,
+    "EnglishName": "Obscure Logogram",
+    "FrenchName": "Éclat Logos de maître scelleur non identifié",
+    "GermanName": "Unprospektierter Logos-Splitter des Siegels",
+    "JapaneseName": "未鑑定ロゴスシャード:封印"
+  },
+  {
+    "Type": "Status",
+    "IconId": 16739,
+    "EnglishName": "Variant Cure Set",
+    "FrenchName": "Soin embranché",
+    "GermanName": "Flüchtige Macht: Unstetes Vita",
+    "JapaneseName": "ヴァリアント・ケアル設定"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Sanctified Cure II",
+    "FrenchName": "Extra Soin sanctifié",
+    "GermanName": "Gesegnetes Vitra",
+    "JapaneseName": "サンクティファイド・ケアルラ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Sanctified Cure II",
+    "FrenchName": "Soin sanctifié",
+    "GermanName": "Gesegnetes Vitra",
+    "JapaneseName": "サンクティファイド・ケアル"
+  },
+  {
+    "Type": "LeveQuest",
+    "IconId": 71241,
+    "EnglishName": "Cure for What Ails",
+    "FrenchName": "Grosse commande: jus de légume requinquant",
+    "GermanName": "Ein Schluck am Morgen vertreibt die Sorgen",
+    "JapaneseName": "大口依頼：朝食の一杯"
+  },
+  {
+    "Type": "Item",
+    "IconId": 30664,
+    "EnglishName": "Obscure Hyposkhesphyra",
+    "FrenchName": "Hyposkhesphyra obscure",
+    "GermanName": "Düster-Hyposkhesphyra",
+    "JapaneseName": "オブスキュア・イポスセスフィラ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 64816,
+    "EnglishName": "Cure II of the Seventh Dawn",
+    "FrenchName": "Extra Soin des Héritiers",
+    "GermanName": "Vitra der Morgenröte",
+    "JapaneseName": "サイオンズ・ケアルラ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Cure II of the Seventh Dawn",
+    "FrenchName": "Extra Soin des Héritiers",
+    "GermanName": "Vitra der Morgenröte",
+    "JapaneseName": "サイオンズ・ケアルラ"
+  },
+  {
+    "Type": "Instance",
+    "IconId": 61806,
+    "EnglishName": "the Borderland Ruins (Secure)",
+    "FrenchName": "les Ruines frontalières (annexion)",
+    "GermanName": "Äußere Ruinen (Sicherung)",
+    "JapaneseName": "外縁遺跡群 (制圧戦)"
+  },
+  {
+    "Type": "Fate",
+    "IconId": 60724,
+    "EnglishName": "Omicron Recall: Secure Connection",
+    "FrenchName": "Mémoire vive: pare-feu",
+    "GermanName": "Aus dem Speicher von BNpcName: Gefahrenabwehr",
+    "JapaneseName": "BNpcNameのメモリーより：BNpcName防衛"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26154,
+    "EnglishName": "Chocobo Training Manual - Choco Cure I",
+    "FrenchName": "Manuel de dressage: Choco-soin I",
+    "GermanName": "Dressurbuch - Chocobo-Vita I",
+    "JapaneseName": "チョコボ教本:チョコケアル"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26154,
+    "EnglishName": "Chocobo Training Manual - Choco Cure II",
+    "FrenchName": "Manuel de dressage: Choco-soin II",
+    "GermanName": "Dressurbuch - Chocobo-Vita II",
+    "JapaneseName": "チョコボ教本:チョコケアルII"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26154,
+    "EnglishName": "Chocobo Training Manual - Choco Cure III",
+    "FrenchName": "Manuel de dressage: Choco-soin III",
+    "GermanName": "Dressurbuch - Chocobo-Vita III",
+    "JapaneseName": "チョコボ教本:チョコケアルIII"
+  }
+]

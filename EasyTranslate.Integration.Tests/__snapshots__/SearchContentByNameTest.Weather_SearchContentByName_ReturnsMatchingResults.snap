@@ -1,0 +1,10 @@
+﻿[
+  {
+    "Type": "Weather",
+    "IconId": 60202,
+    "EnglishName": "Fair Skies",
+    "FrenchName": "Clair",
+    "GermanName": "Heiter",
+    "JapaneseName": "晴れ"
+  }
+]

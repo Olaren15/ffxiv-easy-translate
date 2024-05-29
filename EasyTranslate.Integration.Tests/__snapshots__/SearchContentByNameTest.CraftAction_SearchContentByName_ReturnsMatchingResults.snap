@@ -1,0 +1,130 @@
+﻿[
+  {
+    "Type": "Action",
+    "IconId": 1518,
+    "EnglishName": "Groundwork",
+    "FrenchName": "Travail préparatoire",
+    "GermanName": "Vorarbeit",
+    "JapaneseName": "下地作業"
+  },
+  {
+    "Type": "Action",
+    "IconId": 1568,
+    "EnglishName": "Groundwork",
+    "FrenchName": "Travail préparatoire",
+    "GermanName": "Vorarbeit",
+    "JapaneseName": "下地作業"
+  },
+  {
+    "Type": "Action",
+    "IconId": 1618,
+    "EnglishName": "Groundwork",
+    "FrenchName": "Travail préparatoire",
+    "GermanName": "Vorarbeit",
+    "JapaneseName": "下地作業"
+  },
+  {
+    "Type": "Action",
+    "IconId": 1667,
+    "EnglishName": "Groundwork",
+    "FrenchName": "Travail préparatoire",
+    "GermanName": "Vorarbeit",
+    "JapaneseName": "下地作業"
+  },
+  {
+    "Type": "Action",
+    "IconId": 1718,
+    "EnglishName": "Groundwork",
+    "FrenchName": "Travail préparatoire",
+    "GermanName": "Vorarbeit",
+    "JapaneseName": "下地作業"
+  },
+  {
+    "Type": "Action",
+    "IconId": 1767,
+    "EnglishName": "Groundwork",
+    "FrenchName": "Travail préparatoire",
+    "GermanName": "Vorarbeit",
+    "JapaneseName": "下地作業"
+  },
+  {
+    "Type": "Action",
+    "IconId": 1818,
+    "EnglishName": "Groundwork",
+    "FrenchName": "Travail préparatoire",
+    "GermanName": "Vorarbeit",
+    "JapaneseName": "下地作業"
+  },
+  {
+    "Type": "Action",
+    "IconId": 1867,
+    "EnglishName": "Groundwork",
+    "FrenchName": "Travail préparatoire",
+    "GermanName": "Vorarbeit",
+    "JapaneseName": "下地作業"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 6990,
+    "EnglishName": "Groundwork Mastery",
+    "FrenchName": "Maîtrise de Travail préparatoire",
+    "GermanName": "Meister der Vorarbeit",
+    "JapaneseName": "下地作業マスタリー"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 6991,
+    "EnglishName": "Groundwork Mastery",
+    "FrenchName": "Maîtrise de Travail préparatoire",
+    "GermanName": "Meister der Vorarbeit",
+    "JapaneseName": "下地作業マスタリー"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 6992,
+    "EnglishName": "Groundwork Mastery",
+    "FrenchName": "Maîtrise de Travail préparatoire",
+    "GermanName": "Meister der Vorarbeit",
+    "JapaneseName": "下地作業マスタリー"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 6993,
+    "EnglishName": "Groundwork Mastery",
+    "FrenchName": "Maîtrise de Travail préparatoire",
+    "GermanName": "Meister der Vorarbeit",
+    "JapaneseName": "下地作業マスタリー"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 6994,
+    "EnglishName": "Groundwork Mastery",
+    "FrenchName": "Maîtrise de Travail préparatoire",
+    "GermanName": "Meister der Vorarbeit",
+    "JapaneseName": "下地作業マスタリー"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 6995,
+    "EnglishName": "Groundwork Mastery",
+    "FrenchName": "Maîtrise de Travail préparatoire",
+    "GermanName": "Meister der Vorarbeit",
+    "JapaneseName": "下地作業マスタリー"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 6996,
+    "EnglishName": "Groundwork Mastery",
+    "FrenchName": "Maîtrise de Travail préparatoire",
+    "GermanName": "Meister der Vorarbeit",
+    "JapaneseName": "下地作業マスタリー"
+  },
+  {
+    "Type": "Trait",
+    "IconId": 6997,
+    "EnglishName": "Groundwork Mastery",
+    "FrenchName": "Maîtrise de Travail préparatoire",
+    "GermanName": "Meister der Vorarbeit",
+    "JapaneseName": "下地作業マスタリー"
+  }
+]

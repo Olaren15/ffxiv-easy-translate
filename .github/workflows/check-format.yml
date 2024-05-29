@@ -14,5 +14,7 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.x.x
+      - name: Restore dependencies
+        run: dotnet restore
       - name: Run dotnet format
-        run: dotnet format --verify-no-changes
+        run: dotnet format --no-restore --verify-no-changes

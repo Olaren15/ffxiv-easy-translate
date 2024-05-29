@@ -1,0 +1,106 @@
+﻿[
+  {
+    "Type": "Place",
+    "IconId": null,
+    "EnglishName": "Limsa Lominsa",
+    "FrenchName": "Limsa Lominsa",
+    "GermanName": "Limsa Lominsa",
+    "JapaneseName": "リムサ・ロミンサ"
+  },
+  {
+    "Type": "Place",
+    "IconId": null,
+    "EnglishName": "Limsa Lominsa",
+    "FrenchName": "Limsa Lominsa",
+    "GermanName": "Limsa Lominsa",
+    "JapaneseName": "リムサ・ロミンサ市街"
+  },
+  {
+    "Type": "Achievement",
+    "IconId": 62951,
+    "EnglishName": "Leaving Limsa Lominsa",
+    "FrenchName": "Le périple limséen",
+    "GermanName": "Das Meer ruft",
+    "JapaneseName": "リムサ・ロミンサからの旅立ち"
+  },
+  {
+    "Type": "Place",
+    "IconId": null,
+    "EnglishName": "Central Limsa Lominsa",
+    "FrenchName": "Centre de Limsa Lominsa",
+    "GermanName": "Limsa Lominsa - Zentrum",
+    "JapaneseName": "中央管区"
+  },
+  {
+    "Type": "Quest",
+    "IconId": 71221,
+    "EnglishName": "Coming to Limsa Lominsa",
+    "FrenchName": "Bienvenue à Limsa Lominsa",
+    "GermanName": "Willkommen in Limsa Lominsa",
+    "JapaneseName": "海の都リムサ・ロミンサへ"
+  },
+  {
+    "Type": "Place",
+    "IconId": null,
+    "EnglishName": "Limsa Lominsa Upper Decks",
+    "FrenchName": "Limsa Lominsa - Le Tillac",
+    "GermanName": "Obere Decks",
+    "JapaneseName": "リムサ・ロミンサ：上甲板層"
+  },
+  {
+    "Type": "Place",
+    "IconId": null,
+    "EnglishName": "Limsa Lominsa Lower Decks",
+    "FrenchName": "Limsa Lominsa - L'Entrepont",
+    "GermanName": "Untere Decks",
+    "JapaneseName": "リムサ・ロミンサ：下甲板層"
+  },
+  {
+    "Type": "Place",
+    "IconId": null,
+    "EnglishName": "Limsa Lominsa Aetheryte Plaza",
+    "FrenchName": "Place de l'Éthérite",
+    "GermanName": "Ätherytenplatz",
+    "JapaneseName": "エーテライト・プラザ"
+  },
+  {
+    "Type": "Quest",
+    "IconId": 71221,
+    "EnglishName": "Streets of Moonfire (Limsa Lominsa)",
+    "FrenchName": "Les Feux de la Mort ressuscités (Limsa Lominsa)",
+    "GermanName": "Feurige Abenteurer gesucht (Limsa Lominsa)",
+    "JapaneseName": "紅蓮祭と海都の冒険者"
+  },
+  {
+    "Type": "Quest",
+    "IconId": 71221,
+    "EnglishName": "All the Little Ladies (Limsa Lominsa)",
+    "FrenchName": "Pour le plaisir des dames (Limsa Lominsa)",
+    "GermanName": "Feste wollen gefeiert werden (Limsa Lominsa)",
+    "JapaneseName": "プリンセスデーの海都"
+  },
+  {
+    "Type": "Quest",
+    "IconId": 71221,
+    "EnglishName": "Egg-hunting We Will Go (Limsa Lominsa)",
+    "FrenchName": "Ouverture de la chasse aux Prœufs (Limsa Lominsa)",
+    "GermanName": "Die Wundereiersuche (Limsa)",
+    "JapaneseName": "エッグハント到来（海都）"
+  },
+  {
+    "Type": "Orchestrion",
+    "IconId": 76406,
+    "EnglishName": "Navigator's Glory - The Theme of Limsa Lominsa",
+    "FrenchName": "Navigator's Glory - The Theme of Limsa Lominsa",
+    "GermanName": "Navigator's Glory - The Theme of Limsa Lominsa",
+    "JapaneseName": "潮風の集う街"
+  },
+  {
+    "Type": "Item",
+    "IconId": 25945,
+    "EnglishName": "Navigator's Glory - The Theme of Limsa Lominsa Orchestrion Roll",
+    "FrenchName": "Rouleau “Navigator's Glory - The Theme of Limsa Lominsa”",
+    "GermanName": "Notenrolle von „Navigator's Glory - The Theme of Limsa Lominsa“",
+    "JapaneseName": "オーケストリオン譜:潮風の集う街"
+  }
+]

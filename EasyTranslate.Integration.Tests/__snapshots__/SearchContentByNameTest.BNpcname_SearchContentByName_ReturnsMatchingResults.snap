@@ -1,0 +1,138 @@
+﻿[
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "bhoot",
+    "FrenchName": "bhut",
+    "GermanName": "Bhut",
+    "JapaneseName": "ブフート"
+  },
+  {
+    "Type": "Fate",
+    "IconId": 60721,
+    "EnglishName": "Das Bhoot",
+    "FrenchName": "Le don du repos éternel",
+    "GermanName": "Und was sich reimt, ist Bhut",
+    "JapaneseName": "エクソシスト"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "polis bhoot",
+    "FrenchName": "bhut de l'Aquapole",
+    "GermanName": "Aquapolis-Bhut",
+    "JapaneseName": "アクアポリス・ブフート"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "gelid bhoot",
+    "FrenchName": "bhut glacial",
+    "GermanName": "eisig[a] Bhut",
+    "JapaneseName": "ジェリド・ブフート"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "guard bhoot",
+    "FrenchName": "bhut gardien",
+    "GermanName": "Wächter-Bhut",
+    "JapaneseName": "ガード・ブフート"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Pyros bhoot",
+    "FrenchName": "bhut Pyros",
+    "GermanName": "Pyros-Bhut",
+    "JapaneseName": "ピューロス・ブフート"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Mhachi bhoot",
+    "FrenchName": "bhut mhachois",
+    "GermanName": "Mhach-Bhut",
+    "JapaneseName": "マハ・ブフート"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "broken bhoot",
+    "FrenchName": "bhut écorché",
+    "GermanName": "Klippen-Bhut",
+    "JapaneseName": "ブロークン・ブフート"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "impure bhoot",
+    "FrenchName": "bhut impur",
+    "GermanName": "unrein[a] Bhut",
+    "JapaneseName": "インピュア・ブフート"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Zadnor bhoot",
+    "FrenchName": "bhut de Zadnor",
+    "GermanName": "Zadnor-Bhut",
+    "JapaneseName": "ザトゥノル・ブフート"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Orthos bhoot",
+    "FrenchName": "bhut Orthos",
+    "GermanName": "Orthos-Bhut",
+    "JapaneseName": "オルト・ブフート"
+  },
+  {
+    "Type": "Quest",
+    "IconId": 71221,
+    "EnglishName": " Bhoot Camps",
+    "FrenchName": " Les anges de l'insalubrité",
+    "GermanName": " Geisterstunde",
+    "JapaneseName": " 浮遊する布"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "horrific bhoot",
+    "FrenchName": "bhut horrifique",
+    "GermanName": "schrecklich[a] Bhut",
+    "JapaneseName": "ホリフィック・ブフート"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "duskfall bhoot",
+    "FrenchName": "bhut nocturne",
+    "GermanName": "Dämmer-Bhut",
+    "JapaneseName": "ナイト・ブフート"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "nightmare bhoot",
+    "FrenchName": "bhut du cauchemar",
+    "GermanName": "Albtraum-Bhut",
+    "JapaneseName": "ナイトメア・ブフート"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "deep palace bhoot",
+    "FrenchName": "bhut des profondeurs",
+    "GermanName": "Katakomben-Bhut",
+    "JapaneseName": "ディープパレス・ブフート"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "somnambulant bhoot",
+    "FrenchName": "bhut somnambule",
+    "GermanName": "Schlafwandler-Bhut",
+    "JapaneseName": "ソムナムブラント・ブフート"
+  }
+]

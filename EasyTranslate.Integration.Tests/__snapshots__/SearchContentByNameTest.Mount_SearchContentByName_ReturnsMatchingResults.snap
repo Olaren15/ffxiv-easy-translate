@@ -1,0 +1,18 @@
+﻿[
+  {
+    "Type": "Item",
+    "IconId": 26060,
+    "EnglishName": "Demi-Ozma",
+    "FrenchName": "Demi-Ozma",
+    "GermanName": "Demi-Yadis-Figur",
+    "JapaneseName": "デミオズマ"
+  },
+  {
+    "Type": "Mount",
+    "IconId": 4146,
+    "EnglishName": "Demi-Ozma",
+    "FrenchName": "demi-Ozma",
+    "GermanName": "Demi-Yadis",
+    "JapaneseName": "デミオズマ"
+  }
+]

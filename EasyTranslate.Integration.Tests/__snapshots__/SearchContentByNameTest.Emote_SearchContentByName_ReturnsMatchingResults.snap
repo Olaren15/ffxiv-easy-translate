@@ -1,0 +1,802 @@
+﻿[
+  {
+    "Type": "Action",
+    "IconId": 64199,
+    "EnglishName": "Pet",
+    "FrenchName": "Caresser",
+    "GermanName": "Streicheln",
+    "JapaneseName": "撫でる"
+  },
+  {
+    "Type": "Emote",
+    "IconId": 64067,
+    "EnglishName": "Pet",
+    "FrenchName": "Caresser",
+    "GermanName": "Streicheln",
+    "JapaneseName": "なでる"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petal",
+    "FrenchName": "Pétale",
+    "GermanName": "Blütenbad",
+    "JapaneseName": "ペタルシャワー"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Puppet",
+    "FrenchName": "憑依",
+    "GermanName": "Obsession",
+    "JapaneseName": "憑依"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Puppet",
+    "FrenchName": "Possession",
+    "GermanName": "Obsession",
+    "JapaneseName": "憑依"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petrai",
+    "FrenchName": "Pétra",
+    "GermanName": "Petrai",
+    "JapaneseName": "ペトゥライ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24053,
+    "EnglishName": "Crumpet",
+    "FrenchName": "Crumpet",
+    "GermanName": "Crumpet",
+    "JapaneseName": "クランペット"
+  },
+  {
+    "Type": "Place",
+    "IconId": null,
+    "EnglishName": "Parapet",
+    "FrenchName": "Parapet",
+    "GermanName": "Brustwehr",
+    "JapaneseName": "長城胸壁"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "okyupete",
+    "FrenchName": "ocypète",
+    "GermanName": "Okypete",
+    "JapaneseName": "オキュペテ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 21275,
+    "EnglishName": "Petalite",
+    "FrenchName": "Pétalite",
+    "GermanName": "Petalit",
+    "JapaneseName": "ペタライト"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Puppet 2P",
+    "FrenchName": "clone",
+    "GermanName": "2P: Spaltung",
+    "JapaneseName": "２Ｐ：分裂体"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "petalodus",
+    "FrenchName": "petalodus",
+    "GermanName": "Petalodus",
+    "JapaneseName": "ペタロドゥス"
+  },
+  {
+    "Type": "Item",
+    "IconId": 22615,
+    "EnglishName": "Saltpeter",
+    "FrenchName": "Salpêtre",
+    "GermanName": "Salpeter",
+    "JapaneseName": "硝石"
+  },
+  {
+    "Type": "Item",
+    "IconId": 51037,
+    "EnglishName": "Carpeting",
+    "FrenchName": "Carré de carpette",
+    "GermanName": "Teppichboden",
+    "JapaneseName": "カーペット"
+  },
+  {
+    "Type": "Item",
+    "IconId": 28443,
+    "EnglishName": "Petalfish",
+    "FrenchName": "Rose-pétale",
+    "GermanName": "Blütenblatt",
+    "JapaneseName": "ペタルフィッシュ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Snipethoom",
+    "FrenchName": "Tir précis",
+    "GermanName": "Fangschuss",
+    "JapaneseName": "狙撃"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petal Shot",
+    "FrenchName": "Tir de pétales",
+    "GermanName": "Blütenschuss",
+    "JapaneseName": "ペタルショット"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petro Eyes",
+    "FrenchName": "Pétriyeux",
+    "GermanName": "Petri-Augen",
+    "JapaneseName": "ペトロアイズ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petriburst",
+    "FrenchName": "Salve pétrifiante",
+    "GermanName": "Steinstoß",
+    "JapaneseName": "ペトリバースト"
+  },
+  {
+    "Type": "Fate",
+    "IconId": 60722,
+    "EnglishName": "Pet, Smart",
+    "FrenchName": "Défi: couchée, sale bête !",
+    "GermanName": "Blinde Wut",
+    "JapaneseName": "忠義の妖王「ムチャリンダ」"
+  },
+  {
+    "Type": "Item",
+    "IconId": 52029,
+    "EnglishName": "Red Carpet",
+    "FrenchName": "Tapis rouge",
+    "GermanName": "Roter Teppich",
+    "JapaneseName": "レッドカーペット"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petribreath",
+    "FrenchName": "Pétrihaleine",
+    "GermanName": "Petri-Atem",
+    "JapaneseName": "ペトロブレス"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Carpet Bomb",
+    "FrenchName": "Tapis de bombes",
+    "GermanName": "Flächenbombardement",
+    "JapaneseName": "絨毯爆撃"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "limpet bomb",
+    "FrenchName": "bombo collant",
+    "GermanName": "Haft-Bomber",
+    "JapaneseName": "リムペットボム"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "petrosphere",
+    "FrenchName": "pétrosphère",
+    "GermanName": "Petrosphäre[p] II",
+    "JapaneseName": "ペトロスフィアI"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "the Puppets",
+    "FrenchName": "sous-agglomérat de pantins",
+    "GermanName": "abgespalten[a] Klumpen",
+    "JapaneseName": "分裂シタ人形タチ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 29729,
+    "EnglishName": "Peteinosaur",
+    "FrenchName": "Peteinosaurus",
+    "GermanName": "Peteinosaurus",
+    "JapaneseName": "ペティノサウルス"
+  },
+  {
+    "Type": "Item",
+    "IconId": 29419,
+    "EnglishName": "Petal Shell",
+    "FrenchName": "Fleur-de-prunier",
+    "GermanName": "Pflaumenblüte",
+    "JapaneseName": "梅花貝"
+  },
+  {
+    "Type": "LeveQuest",
+    "IconId": 71241,
+    "EnglishName": "Puppet Show",
+    "FrenchName": "Récupération: écailles pour pantin",
+    "GermanName": "Nachwuchsförderung",
+    "JapaneseName": "獲得任務：標的用の竜鱗"
+  },
+  {
+    "Type": "Place",
+    "IconId": null,
+    "EnglishName": "The Parapet",
+    "FrenchName": "Château dimensionnel - toit",
+    "GermanName": "Dach",
+    "JapaneseName": "次元城：屋上"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petrifaction",
+    "FrenchName": "Pétrification",
+    "GermanName": "Versteinerung",
+    "JapaneseName": "ペトリファクション"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petriblaster",
+    "FrenchName": "Pétri électrochoc",
+    "GermanName": "Petri-Schlag",
+    "JapaneseName": "ペトリブラスター"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petal Shower",
+    "FrenchName": "Pluie de pétales",
+    "GermanName": "Blütenbad",
+    "JapaneseName": "ペタルシャワー"
+  },
+  {
+    "Type": "Action",
+    "IconId": 64751,
+    "EnglishName": "Lost Impetus",
+    "FrenchName": "Impulsion oubliée",
+    "GermanName": "Verschollener Impuls",
+    "JapaneseName": "ロスト・インペタス"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "carpet stain",
+    "FrenchName": "tache du tapis",
+    "GermanName": "Teppichschleimer",
+    "JapaneseName": "カーペット・ステイン"
+  },
+  {
+    "Type": "Item",
+    "IconId": 29610,
+    "EnglishName": "Magic Carpet",
+    "FrenchName": "Tapis volant",
+    "GermanName": "Dünengleiter",
+    "JapaneseName": "ホーリーカーペット"
+  },
+  {
+    "Type": "Item",
+    "IconId": 21477,
+    "EnglishName": "Raw Petalite",
+    "FrenchName": "Pétalite brute",
+    "GermanName": "Roh-Petalit",
+    "JapaneseName": "ペタライト原石"
+  },
+  {
+    "Type": "Item",
+    "IconId": 64751,
+    "EnglishName": "Lost Impetus",
+    "FrenchName": "Impulsion oubliée",
+    "GermanName": "Frontsplitter des verschollenen Impuls",
+    "JapaneseName": "ロスト・インペタス"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Perpetual Ray",
+    "FrenchName": "Rayon perpétuel",
+    "GermanName": "Perpetueller Strahl",
+    "JapaneseName": "パーペチュアルレイ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Sixth Trumpet",
+    "FrenchName": "Sonnerie de clairon",
+    "GermanName": "Himmlischer Ruf",
+    "JapaneseName": "進軍ラッパ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 3319,
+    "EnglishName": "Perpetual Ray",
+    "FrenchName": "Rayon perpétuel",
+    "GermanName": "Perpetueller Strahl",
+    "JapaneseName": "パーペチュアルレイ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Carpet Beater",
+    "FrenchName": "Tapette à tapis",
+    "GermanName": "Teppichklopfer",
+    "JapaneseName": "カーペットビーター"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Pliant Petals",
+    "FrenchName": "Cercle de floraison",
+    "GermanName": "Erwachte Blüte",
+    "JapaneseName": "咲き誇る大輪"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Petyr Winsome",
+    "FrenchName": "Petyr Winsome",
+    "GermanName": "Petyr Winsome",
+    "JapaneseName": "ピーター・ウィンソム"
+  },
+  {
+    "Type": "Item",
+    "IconId": 22402,
+    "EnglishName": "Petrified Log",
+    "FrenchName": "Rondin pétrifié",
+    "GermanName": "Silifizierter Stamm",
+    "JapaneseName": "珪化木"
+  },
+  {
+    "Type": "Item",
+    "IconId": 21267,
+    "EnglishName": "Petrified Orb",
+    "FrenchName": "Bille de bois pétrifié",
+    "GermanName": "Versteinerte Sphäre",
+    "JapaneseName": "珪化木丸玉"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26296,
+    "EnglishName": "Puppet's Coin",
+    "FrenchName": "Pièce rouillée des Pantins",
+    "GermanName": "Puppen-Münze",
+    "JapaneseName": "人形の古銭"
+  },
+  {
+    "Type": "Item",
+    "IconId": 51052,
+    "EnglishName": "Greige Carpet",
+    "FrenchName": "Moquette écru",
+    "GermanName": "Graubeiger Teppich",
+    "JapaneseName": "グレージュカーペット"
+  },
+  {
+    "Type": "Status",
+    "IconId": 15001,
+    "EnglishName": "Petrification",
+    "FrenchName": "Pétrification",
+    "GermanName": "Stein",
+    "JapaneseName": "石化"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petrifying Eye",
+    "FrenchName": "Œil pétrifiant",
+    "GermanName": "Steinauge",
+    "JapaneseName": "ペトリアイ"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petrattraction",
+    "FrenchName": "Attraction pétrifiante",
+    "GermanName": "Petrifikation",
+    "JapaneseName": "ペトリアトラクト"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petrified Peat",
+    "FrenchName": "Roulage de boue",
+    "GermanName": "Matschkuchen",
+    "JapaneseName": "泥団子作り"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "void trumpeter",
+    "FrenchName": "trompettiste du néant",
+    "GermanName": "Nichtstrompeter",
+    "JapaneseName": "ヴォイド・トランペッター"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "chimera poppet",
+    "FrenchName": "chimère en peluche",
+    "GermanName": "Chimären-Puppe",
+    "JapaneseName": "パペットキメラ"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "petite student",
+    "FrenchName": "étudiante lalafelle",
+    "GermanName": "klein[a] Student",
+    "JapaneseName": "小柄な魔法大学生"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "playful poppet",
+    "FrenchName": "garçon guilleret",
+    "GermanName": "fröhlich[a] Junge",
+    "JapaneseName": "星芒祭を楽しむ少年"
+  },
+  {
+    "Type": "Mount",
+    "IconId": 4144,
+    "EnglishName": "Eurekan petrel",
+    "FrenchName": "hirondelle d'Eurêka",
+    "GermanName": "Eureka-Schwalbe",
+    "JapaneseName": "エウレカスワロー"
+  },
+  {
+    "Type": "Quest",
+    "IconId": 71221,
+    "EnglishName": "Petalouda Hunt",
+    "FrenchName": "Chasse aux papillons",
+    "GermanName": "Ätherisch gekleidet",
+    "JapaneseName": "ペタルダは翻る"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Level 5 Petrify",
+    "FrenchName": "Pétrification niveau 5",
+    "GermanName": "Petrifikation Stufe 5",
+    "JapaneseName": "レベル5石化"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Level X Petrify",
+    "FrenchName": "Pétrification niveau X",
+    "GermanName": "Petrifikation Stufe X",
+    "JapaneseName": "レベルX石化"
+  },
+  {
+    "Type": "Action",
+    "IconId": 3282,
+    "EnglishName": "Level 5 Petrify",
+    "FrenchName": "Pétrification niveau 5",
+    "GermanName": "Petrifikation Stufe 5",
+    "JapaneseName": "レベル5石化"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Magitek Impetus",
+    "FrenchName": "Impulsion magitek",
+    "GermanName": "Magitek-Impuls",
+    "JapaneseName": "魔導インペタス"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Drifting Petals",
+    "FrenchName": "Pétales faillissants",
+    "GermanName": "Blütenblätterregen",
+    "JapaneseName": "落花流水の術"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "kyane petalouda",
+    "FrenchName": "cyanopétalouda",
+    "GermanName": "Kyane-Petalouda",
+    "JapaneseName": "キアネ・ペタルダ"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "magicked puppet",
+    "FrenchName": "soldat-mage des Thorne",
+    "GermanName": "magisch[a] Marionette",
+    "JapaneseName": "ソーン・マジックソルジャー"
+  },
+  {
+    "Type": "Item",
+    "IconId": 52022,
+    "EnglishName": "Magicked Carpet",
+    "FrenchName": "Tapis magique",
+    "GermanName": "Fliegender Teppich",
+    "JapaneseName": "マジックカーペット"
+  },
+  {
+    "Type": "Mount",
+    "IconId": 4147,
+    "EnglishName": "magicked carpet",
+    "FrenchName": "tapis magique",
+    "GermanName": "Fliegender Teppich",
+    "JapaneseName": "マジックカーペット"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petrifying Voice",
+    "FrenchName": "Voix pétrifiante",
+    "GermanName": "Steinruf ",
+    "JapaneseName": "産石の声"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "O Petals, Unfurl",
+    "FrenchName": "Prière d'éclosion",
+    "GermanName": "O Blüten, erwachet!",
+    "JapaneseName": "祈願：咲き誇れ"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "nightmare puppet",
+    "FrenchName": "poupée cauchemardesque",
+    "GermanName": "Albtraum-Puppe",
+    "JapaneseName": "ナイトメア・パペット"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "ktiseos okyupete",
+    "FrenchName": "ktiséos okyupète",
+    "GermanName": "Ktiseos-Okypete",
+    "JapaneseName": "キティセオス・オキュペテ"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "petit pteranodon",
+    "FrenchName": "ptiranodon",
+    "GermanName": "Pteranoknirps",
+    "JapaneseName": "プチラノドン"
+  },
+  {
+    "Type": "Minion",
+    "IconId": 0,
+    "EnglishName": "petit pteranodon",
+    "FrenchName": "ptiranodon",
+    "GermanName": "Pteranoknirps",
+    "JapaneseName": "プチラノドン"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "petrified pauper",
+    "FrenchName": "mendiant terrifié",
+    "GermanName": "ängstlich[a] Bettler",
+    "JapaneseName": "怯えた貧民"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "impetuous moogle",
+    "FrenchName": "Mog impatient",
+    "GermanName": "Träum-Mogry",
+    "JapaneseName": "まだまだモーグリ"
+  },
+  {
+    "Type": "Fate",
+    "IconId": 63914,
+    "EnglishName": "All Pets Are Off",
+    "FrenchName": "Belles plantes",
+    "GermanName": "Ungeheuerlich!",
+    "JapaneseName": "華麗なる珍獣使い"
+  },
+  {
+    "Type": "Item",
+    "IconId": 41134,
+    "EnglishName": "Wizard's Petasos",
+    "FrenchName": "Pétase du sorcier",
+    "GermanName": "Zauberer-Petasos",
+    "JapaneseName": "ウィザードペタソス"
+  },
+  {
+    "Type": "Item",
+    "IconId": 22615,
+    "EnglishName": "Coarse Saltpeter",
+    "FrenchName": "Salpêtre grossier",
+    "GermanName": "Rohsalpeter-Klumpen",
+    "JapaneseName": "粗硝石"
+  },
+  {
+    "Type": "Item",
+    "IconId": 59788,
+    "EnglishName": "Petit Pteranodon",
+    "FrenchName": "Ptiranodon",
+    "GermanName": "Pteranoknirps",
+    "JapaneseName": "プチラノドン"
+  },
+  {
+    "Type": "Item",
+    "IconId": 22418,
+    "EnglishName": "Wattle Petribark",
+    "FrenchName": "Écorce d'acacia durcie",
+    "GermanName": "Hartakazienrinde",
+    "JapaneseName": "ハードワットル樹皮"
+  },
+  {
+    "Type": "Item",
+    "IconId": 22210,
+    "EnglishName": "Petalouda Scales",
+    "FrenchName": "Écailles alaires de pétalouda",
+    "GermanName": "Flügelstaub einer Petalouda",
+    "JapaneseName": "ペタルダの鱗粉"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petrifying Shriek",
+    "FrenchName": "Cri pétrifiant",
+    "GermanName": "Steinschrei",
+    "JapaneseName": "産石の叫声"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "kokkine petalouda",
+    "FrenchName": "érythropétalouda",
+    "GermanName": "Kokkine-Petalouda",
+    "JapaneseName": "コーキネ・ペタルダ"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "impetuous warrior",
+    "FrenchName": "homme musculeux",
+    "GermanName": "muskulös[a] Mann",
+    "JapaneseName": "筋骨逞しい男"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "precocious poppet",
+    "FrenchName": "jeune demoiselle",
+    "GermanName": "modisch[a] Mädchen",
+    "JapaneseName": "おしゃまな少女"
+  },
+  {
+    "Type": "Item",
+    "IconId": 52030,
+    "EnglishName": "Carpet of Flowers",
+    "FrenchName": "Tapis à fleurs",
+    "GermanName": "Blumenteppich",
+    "JapaneseName": "フラワーラグ"
+  },
+  {
+    "Type": "LeveQuest",
+    "IconId": 71241,
+    "EnglishName": "Liquid Competence",
+    "FrenchName": "Fabrication: potions alchimiques améliorant la concentration",
+    "GermanName": "Konzentration im Glas",
+    "JapaneseName": "製作依頼：作業に集中する錬金薬"
+  },
+  {
+    "Type": "Status",
+    "IconId": 16603,
+    "EnglishName": "Poppet Resistance",
+    "FrenchName": "Immunité aux poupées",
+    "GermanName": "Puppen-Resistenz",
+    "JapaneseName": "ドール無効"
+  },
+  {
+    "Type": "Status",
+    "IconId": 15024,
+    "EnglishName": "Poppet Resistance",
+    "FrenchName": "Immunité aux poupées",
+    "GermanName": "Puppen-Resistenz",
+    "JapaneseName": "ドール無効"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Rheognosis Petrine",
+    "FrenchName": "Leonosis petros",
+    "GermanName": "Rheognose Petros",
+    "JapaneseName": "レーオノシス・ペトゥロス"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "potent petrosphere",
+    "FrenchName": "super pétrosphère",
+    "GermanName": "Petrosphäre[p] I",
+    "JapaneseName": "ペトロスフィアII"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "ianthine petalouda",
+    "FrenchName": "iodopétalouda",
+    "GermanName": "Ianthine-Petalouda",
+    "JapaneseName": "イアンティネ・ペタルダ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 41179,
+    "EnglishName": "Sorcerer's Petasos",
+    "FrenchName": "Pétase de l'ensorceleur",
+    "GermanName": "Hexenmeister-Petasos",
+    "JapaneseName": "ソーサラーペタソス"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26038,
+    "EnglishName": "Fae Gwiber Trumpet",
+    "FrenchName": "Cor dragon pixie",
+    "GermanName": "Pixie-Gwiber-Pfeife",
+    "JapaneseName": "ピクシーグイベルの魔笛"
+  },
+  {
+    "Type": "Item",
+    "IconId": 22613,
+    "EnglishName": "Splendid Saltpeter",
+    "FrenchName": "Soufre forestier",
+    "GermanName": "Dschungelschwefel",
+    "JapaneseName": "発掘隊向けの硫黄"
+  },
+  {
+    "Type": "Item",
+    "IconId": 41848,
+    "EnglishName": "Spaekona's Petasos",
+    "FrenchName": "Pétase de spaekona",
+    "GermanName": "Spaekona-Petasos",
+    "JapaneseName": "スピコナペタソス"
+  },
+  {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Prehistoric Trumpet",
+    "FrenchName": "Trompette préhistorique",
+    "GermanName": "Prähistorisches Tröten",
+    "JapaneseName": "先史の咆哮"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Mark II limpet bomb",
+    "FrenchName": "bombo collant évolué",
+    "GermanName": "brandneu[a] Haft-Bomber",
+    "JapaneseName": "新式リムペットボム"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "flame petty officer",
+    "FrenchName": "sous-officier des Immortels",
+    "GermanName": "Unteroffizier[p] der Legion",
+    "JapaneseName": "不滅隊の下士官"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "storm petty officer",
+    "FrenchName": "sous-officier du Maelstrom",
+    "GermanName": "Unteroffizier[p] des Mahlstroms",
+    "JapaneseName": "黒渦団の下士官"
+  }
+]

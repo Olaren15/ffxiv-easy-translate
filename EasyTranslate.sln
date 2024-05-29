@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTranslate.Domain.Tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTranslate.Infrastructure.Tests", "EasyTranslate.Infrastructure.Tests\EasyTranslate.Infrastructure.Tests.csproj", "{C8BDAB83-0DA6-4DA0-9938-3F27D19A55D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTranslate.Integration.Tests", "EasyTranslate.Integration.Tests\EasyTranslate.Integration.Tests.csproj", "{0D330F6B-E1A6-4C77-AFA8-E4F34443EB7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,10 @@ Global
 		{C8BDAB83-0DA6-4DA0-9938-3F27D19A55D6}.Debug|x64.Build.0 = Debug|Any CPU
 		{C8BDAB83-0DA6-4DA0-9938-3F27D19A55D6}.Release|x64.ActiveCfg = Release|Any CPU
 		{C8BDAB83-0DA6-4DA0-9938-3F27D19A55D6}.Release|x64.Build.0 = Release|Any CPU
+		{0D330F6B-E1A6-4C77-AFA8-E4F34443EB7C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0D330F6B-E1A6-4C77-AFA8-E4F34443EB7C}.Debug|x64.Build.0 = Debug|Any CPU
+		{0D330F6B-E1A6-4C77-AFA8-E4F34443EB7C}.Release|x64.ActiveCfg = Release|Any CPU
+		{0D330F6B-E1A6-4C77-AFA8-E4F34443EB7C}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
