@@ -2,7 +2,8 @@
     "Author": "Olaren",
     "Name": "Easy Translate",
     "Punchline": "Translate anything!",
-    "Description": "Search anything and get the translations in other languages. Use /et to open the ui",
+    "Description": "Search anything and get the translations in other languages.\nUse /et to open the ui or /et <search term> to search directly!",
+    "RepoUrl": "https://github.com/Olaren15/ffxiv-easy-translate",
     "ApplicableVersion": "any",
     "Tags": [
         "utility",
