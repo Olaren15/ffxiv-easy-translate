@@ -114,15 +114,23 @@ public sealed class SearchView : Window, IDisposable
         {
             ImGui.BeginTable(
                 "SearchResults",
-                3,
-                ImGuiTableFlags.Borders | ImGuiTableFlags.RowBg | ImGuiTableFlags.SizingFixedFit
+                4,
+                ImGuiTableFlags.Borders
+                | ImGuiTableFlags.RowBg
+                | ImGuiTableFlags.SizingFixedFit
+                | ImGuiTableFlags.ScrollY
             );
-            ImGui.TableSetupColumn(Strings.Icon, ImGuiTableColumnFlags.WidthFixed);
+
+            ImGui.TableSetupScrollFreeze(0, 1); // Make title row always visible
+            ImGui.TableSetupColumn(Strings.Icon, ImGuiTableColumnFlags.WidthFixed, MaxImageSize);
             ImGui.TableSetupColumn(Strings.Names, ImGuiTableColumnFlags.WidthStretch);
             ImGui.TableSetupColumn(Strings.Type, ImGuiTableColumnFlags.WidthFixed);
+            ImGui.TableSetupColumn(Strings.Actions, ImGuiTableColumnFlags.WidthFixed);
             ImGui.TableHeadersRow();
-            foreach (PresentableContent searchResult in _searchViewModel.SearchResults)
+
+            for (int i = 0; i < _searchViewModel.SearchResults.Length; i++)
             {
+                PresentableContent searchResult = _searchViewModel.SearchResults[i];
                 ImGui.TableNextColumn();
                 if (searchResult.IconTexture is not null)
                 {
@@ -140,6 +148,14 @@ public sealed class SearchView : Window, IDisposable
                 ImGui.Text(searchResult.Type.LocalisedName());
                 ImGui.SameLine();
                 ImGui.Text("  "); // Fake padding lol
+
+                ImGui.TableNextColumn();
+                if (ImGui.Button(Strings.Copy + $"##{i}")) // Hamburger menu
+                {
+                    ImGui.OpenPopup($"copy-{i}");
+                }
+
+                DrawCopyPopup(i);
             }
 
             ImGui.EndTable();
@@ -148,6 +164,38 @@ public sealed class SearchView : Window, IDisposable
         {
             ImGui.Text(Strings.NoResults);
         }
+    }
+
+    private void DrawCopyPopup(int i)
+    {
+        if (!ImGui.BeginPopup($"copy-{i}"))
+        {
+            return;
+        }
+
+        PresentableContent searchResult = _searchViewModel.SearchResults![i];
+
+        if (ImGui.Selectable(Strings.English))
+        {
+            ImGui.SetClipboardText(searchResult.EnglishName);
+        }
+
+        if (ImGui.Selectable(Strings.French))
+        {
+            ImGui.SetClipboardText(searchResult.FrenchName);
+        }
+
+        if (ImGui.Selectable(Strings.German))
+        {
+            ImGui.SetClipboardText(searchResult.GermanName);
+        }
+
+        if (ImGui.Selectable(Strings.Japanese))
+        {
+            ImGui.SetClipboardText(searchResult.JapaneseName);
+        }
+
+        ImGui.EndPopup();
     }
 
     private static Vector2 CalculateImageSize(IDalamudTextureWrap image)
