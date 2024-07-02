@@ -16,6 +16,6 @@ public class ContentFinderConditionLite : ExcelRow
     {
         base.PopulateData(parser, gameData, language);
         Name = parser.ReadOffset<SeString>(0)!;
-        ContentType = new LazyRow<ContentTypeLite>(gameData, parser.ReadOffset<byte>(110), language);
+        ContentType = new LazyRow<ContentTypeLite>(gameData, parser.ReadOffset<byte>(114), language);
     }
 }
