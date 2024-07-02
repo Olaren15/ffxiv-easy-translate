@@ -13,7 +13,7 @@ namespace EasyTranslate.DalamudPlugin.Configuration;
 
 public static class DalamudPluginModule
 {
-    public static ServiceProvider CreateServiceProvider(DalamudPluginInterface pluginInterface)
+    public static ServiceProvider CreateServiceProvider(IDalamudPluginInterface pluginInterface)
     {
         return new ServiceCollection()
             .AddDalamudServices(pluginInterface)
@@ -25,7 +25,7 @@ public static class DalamudPluginModule
 
     private static IServiceCollection AddDalamudServices(
         this IServiceCollection serviceCollection,
-        DalamudPluginInterface pluginInterface
+        IDalamudPluginInterface pluginInterface
     )
     {
         return serviceCollection
@@ -67,7 +67,7 @@ public static class DalamudPluginModule
         serviceCollection.AddSingleton(
             serviceProvider =>
             {
-                DalamudPluginInterface? pluginInterface = serviceProvider.GetService<DalamudPluginInterface>();
+                IDalamudPluginInterface? pluginInterface = serviceProvider.GetService<IDalamudPluginInterface>();
                 DalamudServiceWrapper<T> wrapper = new(pluginInterface!);
                 return wrapper.Service;
             }

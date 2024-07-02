@@ -1,4 +1,4 @@
-﻿using Dalamud;
+﻿using Dalamud.Game;
 using Dalamud.Game.Config;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
@@ -9,11 +9,11 @@ namespace EasyTranslate.DalamudPlugin.Settings;
 public class UserSettingsRepository
 {
     private readonly IGameConfig _gameConfig;
-    private readonly DalamudPluginInterface _pluginInterface;
+    private readonly IDalamudPluginInterface _pluginInterface;
 
     private UserSettings _userSettings;
 
-    public UserSettingsRepository(DalamudPluginInterface pluginInterface, IGameConfig gameConfig)
+    public UserSettingsRepository(IDalamudPluginInterface pluginInterface, IGameConfig gameConfig)
     {
         _gameConfig = gameConfig;
         _pluginInterface = pluginInterface;

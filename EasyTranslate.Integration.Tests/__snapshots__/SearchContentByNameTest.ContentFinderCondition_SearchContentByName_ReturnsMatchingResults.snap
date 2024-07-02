@@ -1,7 +1,7 @@
 ﻿[
   {
     "Type": "Instance",
-    "IconId": 61801,
+    "IconId": 61817,
     "EnglishName": "Sastasha",
     "FrenchName": "Sastasha",
     "GermanName": "Sastasha",
@@ -41,7 +41,7 @@
   },
   {
     "Type": "Instance",
-    "IconId": 61801,
+    "IconId": null,
     "EnglishName": "Sastasha (Hard)",
     "FrenchName": "Sastasha (brutal)",
     "GermanName": "Sastasha (schwer)",
