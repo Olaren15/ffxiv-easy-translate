@@ -12,12 +12,12 @@ namespace EasyTranslate.DalamudPlugin.Settings;
 public sealed class SettingsView : Window, IDisposable
 {
     private readonly SettingsViewModel _settingsViewModel;
-    private readonly UiBuilder _uiBuilder;
+    private readonly IUiBuilder _uiBuilder;
     private readonly WindowSystem _windowSystem;
 
     public SettingsView(
         SettingsViewModel settingsViewModel,
-        UiBuilder uiBuilder,
+        IUiBuilder uiBuilder,
         WindowSystem windowSystem,
         LanguageSwitcher languageSwitcher
     ) : base(Strings.SettingsWindowTitle)

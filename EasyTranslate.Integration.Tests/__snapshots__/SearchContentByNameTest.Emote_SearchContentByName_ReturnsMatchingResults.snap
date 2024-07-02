@@ -24,6 +24,22 @@
     "JapaneseName": "ペタルシャワー"
   },
   {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Petal",
+    "FrenchName": "Petal",
+    "GermanName": "Petal",
+    "JapaneseName": "ペタル"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Petra",
+    "FrenchName": "Petra",
+    "GermanName": "Petra",
+    "JapaneseName": "ペトラ"
+  },
+  {
     "Type": "Action",
     "IconId": 405,
     "EnglishName": "Puppet",
@@ -70,6 +86,14 @@
     "FrenchName": "ocypète",
     "GermanName": "Okypete",
     "JapaneseName": "オキュペテ"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Shepetto",
+    "FrenchName": "Shepetto",
+    "GermanName": "Shepetto",
+    "JapaneseName": "シェペット"
   },
   {
     "Type": "Item",
@@ -280,6 +304,14 @@
     "JapaneseName": "カーペット・ステイン"
   },
   {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "stray poppet",
+    "FrenchName": "peluche errante",
+    "GermanName": "mahrtastisch[a] Schauerschätzchen",
+    "JapaneseName": "ストレイ・パペット"
+  },
+  {
     "Type": "Item",
     "IconId": 29610,
     "EnglishName": "Magic Carpet",
@@ -342,6 +374,30 @@
     "FrenchName": "Cercle de floraison",
     "GermanName": "Erwachte Blüte",
     "JapaneseName": "咲き誇る大輪"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "petit punutiy",
+    "FrenchName": "petit punutiy",
+    "GermanName": "klein[a] Punutiy",
+    "JapaneseName": "ミニプヌティー"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "petit punutiy",
+    "FrenchName": "mini punutiy",
+    "GermanName": "Mini-Punutiy",
+    "JapaneseName": "プチプヌティー"
+  },
+  {
+    "Type": "Minion",
+    "IconId": 0,
+    "EnglishName": "petit punutiy",
+    "FrenchName": "mini punutiy",
+    "GermanName": "Mini-Punutiy",
+    "JapaneseName": "プチプヌティー"
   },
   {
     "Type": "Npc",
@@ -518,6 +574,14 @@
     "FrenchName": "soldat-mage des Thorne",
     "GermanName": "magisch[a] Marionette",
     "JapaneseName": "ソーン・マジックソルジャー"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "impetuous youth",
+    "FrenchName": "Hhetsarro perdu",
+    "GermanName": "ratlos[a] Hhetsarro ",
+    "JapaneseName": "途方に暮れたヘイザ・アロ族"
   },
   {
     "Type": "Item",
@@ -734,69 +798,5 @@
     "FrenchName": "iodopétalouda",
     "GermanName": "Ianthine-Petalouda",
     "JapaneseName": "イアンティネ・ペタルダ"
-  },
-  {
-    "Type": "Item",
-    "IconId": 41179,
-    "EnglishName": "Sorcerer's Petasos",
-    "FrenchName": "Pétase de l'ensorceleur",
-    "GermanName": "Hexenmeister-Petasos",
-    "JapaneseName": "ソーサラーペタソス"
-  },
-  {
-    "Type": "Item",
-    "IconId": 26038,
-    "EnglishName": "Fae Gwiber Trumpet",
-    "FrenchName": "Cor dragon pixie",
-    "GermanName": "Pixie-Gwiber-Pfeife",
-    "JapaneseName": "ピクシーグイベルの魔笛"
-  },
-  {
-    "Type": "Item",
-    "IconId": 22613,
-    "EnglishName": "Splendid Saltpeter",
-    "FrenchName": "Soufre forestier",
-    "GermanName": "Dschungelschwefel",
-    "JapaneseName": "発掘隊向けの硫黄"
-  },
-  {
-    "Type": "Item",
-    "IconId": 41848,
-    "EnglishName": "Spaekona's Petasos",
-    "FrenchName": "Pétase de spaekona",
-    "GermanName": "Spaekona-Petasos",
-    "JapaneseName": "スピコナペタソス"
-  },
-  {
-    "Type": "Action",
-    "IconId": 405,
-    "EnglishName": "Prehistoric Trumpet",
-    "FrenchName": "Trompette préhistorique",
-    "GermanName": "Prähistorisches Tröten",
-    "JapaneseName": "先史の咆哮"
-  },
-  {
-    "Type": "Npc",
-    "IconId": null,
-    "EnglishName": "Mark II limpet bomb",
-    "FrenchName": "bombo collant évolué",
-    "GermanName": "brandneu[a] Haft-Bomber",
-    "JapaneseName": "新式リムペットボム"
-  },
-  {
-    "Type": "Npc",
-    "IconId": null,
-    "EnglishName": "flame petty officer",
-    "FrenchName": "sous-officier des Immortels",
-    "GermanName": "Unteroffizier[p] der Legion",
-    "JapaneseName": "不滅隊の下士官"
-  },
-  {
-    "Type": "Npc",
-    "IconId": null,
-    "EnglishName": "storm petty officer",
-    "FrenchName": "sous-officier du Maelstrom",
-    "GermanName": "Unteroffizier[p] des Mahlstroms",
-    "JapaneseName": "黒渦団の下士官"
   }
 ]

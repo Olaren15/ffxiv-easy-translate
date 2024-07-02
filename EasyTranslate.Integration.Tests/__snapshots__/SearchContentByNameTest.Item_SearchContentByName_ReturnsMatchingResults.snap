@@ -56,6 +56,14 @@
     "JapaneseName": "ジャイアントポポト"
   },
   {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "flying popoto",
+    "FrenchName": "popoto volante",
+    "GermanName": "Flugtoffel",
+    "JapaneseName": "フライングポポト"
+  },
+  {
     "Type": "Item",
     "IconId": 25204,
     "EnglishName": "Russet Popoto",
@@ -70,6 +78,14 @@
     "FrenchName": "Popoto exotique",
     "GermanName": "Paradiestoffel",
     "JapaneseName": "アイルポポト"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "popoto peddler",
+    "FrenchName": "vendeuse de popotos",
+    "GermanName": "Toffel-Verkäuferin",
+    "JapaneseName": "ポポト売りのペルペル族"
   },
   {
     "Type": "Item",
@@ -128,6 +144,22 @@
     "JapaneseName": "アイルポポトの種芋"
   },
   {
+    "Type": "Quest",
+    "IconId": 71221,
+    "EnglishName": " Death by Popoto",
+    "FrenchName": " Aux grands maux les grands remèdes",
+    "GermanName": " Toffelabwehr",
+    "JapaneseName": " なめずに撒いて"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "wild flying popoto",
+    "FrenchName": "popoto volante primitive",
+    "GermanName": "wild[a] Flugtoffel",
+    "JapaneseName": "ワイルダー・フライングポポト"
+  },
+  {
     "Type": "Item",
     "IconId": 27456,
     "EnglishName": "Dalamud Popoto Set",
@@ -179,7 +211,7 @@
     "Type": "Item",
     "IconId": 24096,
     "EnglishName": "Isleworks Sweet Popoto",
-    "FrenchName": "Popoto doux manufacturé",
+    "FrenchName": "Popoto douce manufacturée",
     "GermanName": "Atelier-Süßtoffel",
     "JapaneseName": "開拓工房のスイートポポト"
   },
@@ -214,6 +246,14 @@
     "FrenchName": "Le bonheur est dans la forêt",
     "GermanName": "Die dolle Knolle",
     "JapaneseName": "求めるは野生種の恩恵"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "territorial flying popoto",
+    "FrenchName": "popoto volante territoriale",
+    "GermanName": "hinterhältig[a] Flugtoffel",
+    "JapaneseName": "テリトリアル・フライングポポト"
   },
   {
     "Type": "Item",
