@@ -151,12 +151,17 @@ public sealed class SearchView : Window, IDisposable
                 ImGui.Text("  "); // Fake padding lol
 
                 ImGui.TableNextColumn();
-                if (ImGui.Button(Strings.Copy + $"##{i}")) // Hamburger menu
+                if (ImGui.Button(Strings.Copy + $"##{i}"))
                 {
                     ImGui.OpenPopup($"copy-{i}");
                 }
 
-                DrawCopyPopup(i);
+                if (ImGui.BeginPopup($"copy-{i}"))
+                {
+                    DrawCopyPopup(searchResult);
+                }
+
+                ImGui.EndPopup();
             }
 
             ImGui.EndTable();
@@ -167,15 +172,8 @@ public sealed class SearchView : Window, IDisposable
         }
     }
 
-    private void DrawCopyPopup(int i)
+    private static void DrawCopyPopup(PresentableContent searchResult)
     {
-        if (!ImGui.BeginPopup($"copy-{i}"))
-        {
-            return;
-        }
-
-        PresentableContent searchResult = _searchViewModel.SearchResults![i];
-
         if (ImGui.Selectable(Strings.English))
         {
             ImGui.SetClipboardText(searchResult.EnglishName);
@@ -195,8 +193,6 @@ public sealed class SearchView : Window, IDisposable
         {
             ImGui.SetClipboardText(searchResult.JapaneseName);
         }
-
-        ImGui.EndPopup();
     }
 
     private static Vector2 CalculateImageSize(IDalamudTextureWrap image)
