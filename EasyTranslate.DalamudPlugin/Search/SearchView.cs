@@ -159,9 +159,8 @@ public sealed class SearchView : Window, IDisposable
                 if (ImGui.BeginPopup($"copy-{i}"))
                 {
                     DrawCopyPopup(searchResult);
+                    ImGui.EndPopup();
                 }
-
-                ImGui.EndPopup();
             }
 
             ImGui.EndTable();
