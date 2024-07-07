@@ -128,4 +128,7 @@
   <data name="Copy" xml:space="preserve">
     <value>Copier</value>
   </data>
+  <data name="ClassJob" xml:space="preserve">
+    <value>Classe / Job</value>
+  </data>
 </root>

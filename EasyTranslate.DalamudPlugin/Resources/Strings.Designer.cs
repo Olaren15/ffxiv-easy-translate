@@ -96,6 +96,15 @@ namespace EasyTranslate.DalamudPlugin.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Class / Job.
+        /// </summary>
+        internal static string ClassJob {
+            get {
+                return ResourceManager.GetString("ClassJob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy.
         /// </summary>
         internal static string Copy {

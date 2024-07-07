@@ -12,6 +12,7 @@ public static class ContentTypeTranslations
         {
             ContentType.Achievement => Strings.Achievement,
             ContentType.Action => Strings.Action,
+            ContentType.ClassJob => Strings.ClassJob,
             ContentType.Emote => Strings.Emote,
             ContentType.Fate => Strings.Fate,
             ContentType.Instance => Strings.Instance,
