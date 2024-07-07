@@ -122,4 +122,10 @@
   <data name="Orchestrion" xml:space="preserve">
       <value>Orchestrion</value>
   </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copier</value>
+  </data>
 </root>

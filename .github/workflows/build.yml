@@ -2,7 +2,7 @@ name: Build and Test
 
 on:
   push:
-    branches: [ '*' ]
+    branches: [ '**' ]
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
         run: dotnet restore
       - name: Download Dalamud
         run: |
-          wget https://goatcorp.github.io/dalamud-distrib/stg/latest.zip
+          wget https://goatcorp.github.io/dalamud-distrib/latest.zip
           mkdir -p $HOME/.xlcore/dalamud/Hooks/dev
           unzip latest.zip -d $HOME/.xlcore/dalamud/Hooks/dev
       - name: Build

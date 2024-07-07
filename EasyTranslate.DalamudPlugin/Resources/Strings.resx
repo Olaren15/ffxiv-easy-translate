@@ -128,4 +128,10 @@
   <data name="Mount" xml:space="preserve">
       <value>Mount</value>
   </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
 </root>
