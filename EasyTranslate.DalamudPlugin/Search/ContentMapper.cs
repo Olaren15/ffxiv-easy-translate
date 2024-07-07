@@ -12,7 +12,7 @@ public class ContentMapper(ITextureProvider textureProvider)
         return new PresentableContent(
             content.Type,
             content.IconId,
-            content.IconId.HasValue ? textureProvider.GetIcon(content.IconId.Value) : null,
+            content.IconId.HasValue ? textureProvider.GetFromGameIcon(content.IconId.Value) : null,
             content.EnglishName,
             content.FrenchName,
             content.GermanName,

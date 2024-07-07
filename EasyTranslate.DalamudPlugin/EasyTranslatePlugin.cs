@@ -3,7 +3,6 @@ using System.Linq;
 using System.Reflection;
 using Dalamud.Interface;
 using Dalamud.Interface.Windowing;
-using Dalamud.IoC;
 using Dalamud.Plugin;
 using EasyTranslate.DalamudPlugin.Attributes;
 using EasyTranslate.DalamudPlugin.Configuration;
@@ -15,14 +14,14 @@ namespace EasyTranslate.DalamudPlugin;
 public sealed class EasyTranslatePlugin : IDalamudPlugin
 {
     private readonly ServiceProvider _serviceProvider;
-    private readonly UiBuilder _uiBuilder;
+    private readonly IUiBuilder _uiBuilder;
     private readonly WindowSystem _windowSystem;
 
-    public EasyTranslatePlugin([RequiredVersion("1.0")] DalamudPluginInterface pluginInterface)
+    public EasyTranslatePlugin(IDalamudPluginInterface pluginInterface)
     {
         _serviceProvider = DalamudPluginModule.CreateServiceProvider(pluginInterface);
         _windowSystem = _serviceProvider.GetService<WindowSystem>()!;
-        _uiBuilder = _serviceProvider.GetService<UiBuilder>()!;
+        _uiBuilder = _serviceProvider.GetService<IUiBuilder>()!;
 
         _uiBuilder.Draw += _windowSystem.Draw;
 

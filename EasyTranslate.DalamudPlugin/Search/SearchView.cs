@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Numerics;
 using Dalamud.Interface;
-using Dalamud.Interface.Internal;
+using Dalamud.Interface.Textures.TextureWraps;
 using Dalamud.Interface.Windowing;
 using EasyTranslate.DalamudPlugin.Localisation;
 using EasyTranslate.DalamudPlugin.Resources;
@@ -13,14 +13,14 @@ public sealed class SearchView : Window, IDisposable
 {
     private const int MaxImageSize = 80;
     private readonly SearchViewModel _searchViewModel;
-    private readonly UiBuilder _uiBuilder;
+    private readonly IUiBuilder _uiBuilder;
     private readonly WindowSystem _windowSystem;
 
     private bool _windowJustOpened;
 
     public SearchView(
         SearchViewModel searchViewModel,
-        UiBuilder uiBuilder,
+        IUiBuilder uiBuilder,
         WindowSystem windowSystem,
         LanguageSwitcher languageSwitcher
     ) : base(Strings.SearchWindowTitle)
@@ -134,7 +134,8 @@ public sealed class SearchView : Window, IDisposable
                 ImGui.TableNextColumn();
                 if (searchResult.IconTexture is not null)
                 {
-                    ImGui.Image(searchResult.IconTexture.ImGuiHandle, CalculateImageSize(searchResult.IconTexture));
+                    IDalamudTextureWrap textureWrap = searchResult.IconTexture.GetWrapOrEmpty();
+                    ImGui.Image(textureWrap.ImGuiHandle, CalculateImageSize(textureWrap));
                 }
 
                 ImGui.TableNextColumn();

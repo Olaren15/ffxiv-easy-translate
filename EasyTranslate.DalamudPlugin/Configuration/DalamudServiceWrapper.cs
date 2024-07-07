@@ -7,12 +7,10 @@ namespace EasyTranslate.DalamudPlugin.Configuration;
 
 public class DalamudServiceWrapper<T>
 {
-    public DalamudServiceWrapper(DalamudPluginInterface pluginInterface)
+    public DalamudServiceWrapper(IDalamudPluginInterface pluginInterface)
     {
         pluginInterface.Inject(this);
     }
 
-    [PluginService]
-    [RequiredVersion("1.0")]
-    public T Service { get; init; }
+    [PluginService] public T Service { get; init; }
 }

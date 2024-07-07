@@ -7,9 +7,9 @@ namespace EasyTranslate.DalamudPlugin.Localisation;
 
 public sealed class LanguageSwitcher : IDisposable
 {
-    private readonly DalamudPluginInterface _pluginInterface;
+    private readonly IDalamudPluginInterface _pluginInterface;
 
-    public LanguageSwitcher(DalamudPluginInterface pluginInterface)
+    public LanguageSwitcher(IDalamudPluginInterface pluginInterface)
     {
         _pluginInterface = pluginInterface;
 

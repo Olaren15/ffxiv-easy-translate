@@ -55,7 +55,7 @@ public sealed class SearchContextMenuItem
         };
     }
 
-    private void SearchTranslations(MenuItemClickedArgs menuItemClickedArgs)
+    private void SearchTranslations(IMenuItemClickedArgs menuItemClickedArgs)
     {
         if (menuItemClickedArgs.MenuType != ContextMenuType.Inventory)
         {
