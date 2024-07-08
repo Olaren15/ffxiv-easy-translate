@@ -1,0 +1,226 @@
+﻿[
+  {
+    "Type": "ClassJob",
+    "IconId": 62127,
+    "EnglishName": "summoner",
+    "FrenchName": "invocateur",
+    "GermanName": "Beschwörer",
+    "JapaneseName": "召喚士"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Joi summoner",
+    "FrenchName": "kuchiyose-ninja isolationniste",
+    "GermanName": "geisterflüsternd[a] Ninja",
+    "JapaneseName": "攘夷派の口寄忍者"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "dark summoner",
+    "FrenchName": "invocateur ténébreux",
+    "GermanName": "unbekannt[a] Beschwörer",
+    "JapaneseName": "黒い召喚士"
+  },
+  {
+    "Type": "Title",
+    "IconId": null,
+    "EnglishName": "Makai Summoner",
+    "FrenchName": "Invocateur Makai / Invocatrice Makai",
+    "GermanName": "Makai-Beschwörer / Makai-Beschwörerin",
+    "JapaneseName": "Makai Summoner"
+  },
+  {
+    "Type": "Achievement",
+    "IconId": 26010,
+    "EnglishName": "Soul Summoner I",
+    "FrenchName": "Modèle d'excellence de l'invocateur",
+    "GermanName": "Seelenbeschwörer",
+    "JapaneseName": "正道の召喚士"
+  },
+  {
+    "Type": "Item",
+    "IconId": 41180,
+    "EnglishName": "Summoner's Horn",
+    "FrenchName": "Corne de l'invocateur",
+    "GermanName": "Beschwörer-Horn",
+    "JapaneseName": "サマナーホーン"
+  },
+  {
+    "Type": "Achievement",
+    "IconId": 26010,
+    "EnglishName": "Soul Summoner II",
+    "FrenchName": "Invocateur consacré",
+    "GermanName": "Seelenbeschwörer II",
+    "JapaneseName": "龍神の召喚士"
+  },
+  {
+    "Type": "Achievement",
+    "IconId": 26010,
+    "EnglishName": "Soul Summoner IV",
+    "FrenchName": "Maître invocateur",
+    "GermanName": "Seelenbeschwörer IV",
+    "JapaneseName": "先達の召喚士"
+  },
+  {
+    "Type": "Achievement",
+    "IconId": 26010,
+    "EnglishName": "Soul Summoner III",
+    "FrenchName": "Invocateur illustre",
+    "GermanName": "Seelenbeschwörer III",
+    "JapaneseName": "最強の召喚士"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "spectral summoner",
+    "FrenchName": "invocatrice spectrale",
+    "GermanName": "Phantom-Beschwörer",
+    "JapaneseName": "幻光の召喚士"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "ebon-clad summoner",
+    "FrenchName": "invocateur vêtu de noir",
+    "GermanName": "schwarz gekleidet[a] Beschwörer",
+    "JapaneseName": "黒法衣の召喚士"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "High Summoner Sari",
+    "FrenchName": "grand invocateur Sari",
+    "GermanName": "[t] groß[a] Sari",
+    "JapaneseName": "大召喚士サリ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 43632,
+    "EnglishName": "Summoner's Doublet",
+    "FrenchName": "Doublet de l'invocateur",
+    "GermanName": "Beschwörer-Wams",
+    "JapaneseName": "サマナーダブレット"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "off-center summoner",
+    "FrenchName": "invocateur mystérieux",
+    "GermanName": "geheimnisvoll[a] Beschwörer",
+    "JapaneseName": "謎めいた召喚士"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26010,
+    "EnglishName": "Soul of the Summoner",
+    "FrenchName": "Cristal d'invocateur",
+    "GermanName": "Beschwörer-Kristall",
+    "JapaneseName": "召喚士の証"
+  },
+  {
+    "Type": "Item",
+    "IconId": 44212,
+    "EnglishName": "Summoner's Ringbands",
+    "FrenchName": "Brassières de l'invocateur",
+    "GermanName": "Beschwörer-Ringbänder",
+    "JapaneseName": "サマナーバンド"
+  },
+  {
+    "Type": "Item",
+    "IconId": 45369,
+    "EnglishName": "Summoner's Waistclout",
+    "FrenchName": "Demi-guêtres de l'invocateur",
+    "GermanName": "Beschwörer-Lendentuch",
+    "JapaneseName": "サマナーウェストクラウト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 46369,
+    "EnglishName": "Summoner's Thighboots",
+    "FrenchName": "Pigaches de l'invocateur",
+    "GermanName": "Beschwörer-Kniestiefel",
+    "JapaneseName": "サマナーサイブーツ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 43739,
+    "EnglishName": "High Summoner's Dress",
+    "FrenchName": "Robe de grande invocatrice",
+    "GermanName": "Robe des Hohen Mediums",
+    "JapaneseName": "ハイサマナー・ドレス"
+  },
+  {
+    "Type": "Item",
+    "IconId": 46665,
+    "EnglishName": "High Summoner's Boots",
+    "FrenchName": "Bottes de grande invocatrice",
+    "GermanName": "Stiefel des Hohen Mediums",
+    "JapaneseName": "ハイサマナー・ブーツ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26625,
+    "EnglishName": "Summoner Framer's Kit",
+    "FrenchName": "L'Art du portrait: invocateur",
+    "GermanName": "Portraitmaterial (Beschwörer)",
+    "JapaneseName": "ポートレート教材:召喚士"
+  },
+  {
+    "Type": "Quest",
+    "IconId": 71221,
+    "EnglishName": "Shadowing the Summoner",
+    "FrenchName": "À la poursuite d'une ombre",
+    "GermanName": "Auf Tristans Spuren",
+    "JapaneseName": "黒き召喚士の影"
+  },
+  {
+    "Type": "Item",
+    "IconId": 44490,
+    "EnglishName": "High Summoner's Armlets",
+    "FrenchName": "Manches cloches de grande invocatrice",
+    "GermanName": "Armreife des Hohen Mediums",
+    "JapaneseName": "ハイサマナー・アームレット"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26509,
+    "EnglishName": "Summoner's Attire Coffer (IL 90)",
+    "FrenchName": "Coffre d'équipement de l'invocateur [NvObj 90]",
+    "GermanName": "Beschwörer-Ausrüstungsset (G.-St. 90)",
+    "JapaneseName": "サマナーチェスト【ILv90】"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26410,
+    "EnglishName": "Tales of Adventure: One Summoner's Journey I",
+    "FrenchName": "“Contes d'aventures: Périple d'un invocateur I”",
+    "GermanName": "Abenteuergeschichten: Reise eines Beschwörers I",
+    "JapaneseName": "召喚士の冒険録:蒼天編"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26410,
+    "EnglishName": "Tales of Adventure: One Summoner's Journey II",
+    "FrenchName": "“Contes d'aventures: Périple d'un invocateur II”",
+    "GermanName": "Abenteuergeschichten: Reise eines Beschwörers II",
+    "JapaneseName": "召喚士の冒険録:紅蓮編"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26410,
+    "EnglishName": "Tales of Adventure: One Summoner's Journey IV",
+    "FrenchName": "“Contes d'aventures: Périple d'un invocateur IV”",
+    "GermanName": "Abenteuergeschichten: Reise eines Beschwörers IV",
+    "JapaneseName": "召喚士の冒険録:暁月編"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26410,
+    "EnglishName": "Tales of Adventure: One Summoner's Journey III",
+    "FrenchName": "“Contes d'aventures: Périple d'un invocateur III”",
+    "GermanName": "Abenteuergeschichten: Reise eines Beschwörers III",
+    "JapaneseName": "召喚士の冒険録:漆黒編"
+  }
+]

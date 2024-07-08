@@ -69,6 +69,14 @@ public class SearchContentByNameTest
     }
 
     [Fact]
+    public async Task ClassJob_SearchContentByName_ReturnsMatchingResults()
+    {
+        IEnumerable<Content> results = await _searchContentByNameUseCase.Execute("summoner", Language.English);
+
+        Snapshot.Match(results.ToList());
+    }
+
+    [Fact]
     public async Task Companion_SearchContentByName_ReturnsMatchingResults()
     {
         IEnumerable<Content> results = await _searchContentByNameUseCase.Execute(
