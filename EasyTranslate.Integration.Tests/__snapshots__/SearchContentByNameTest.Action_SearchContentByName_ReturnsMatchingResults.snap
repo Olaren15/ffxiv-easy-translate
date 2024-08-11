@@ -457,6 +457,14 @@
   },
   {
     "Type": "Item",
+    "IconId": 24353,
+    "EnglishName": "Salt-cured Antelope",
+    "FrenchName": "Viande d'antilope salée",
+    "GermanName": "Antilopen-Pökelfleisch",
+    "JapaneseName": "アンテロープの塩漬け肉"
+  },
+  {
+    "Type": "Item",
     "IconId": 30664,
     "EnglishName": "Obscure Hyposkhesphyra",
     "FrenchName": "Hyposkhesphyra obscure",

@@ -132,6 +132,17 @@ public class SearchContentByNameTest
     }
 
     [Fact]
+    public async Task EventItemLite_SearchContentByName_ReturnsMatchingResults()
+    {
+        IEnumerable<Content> results = await _searchContentByNameUseCase.Execute(
+            "Ulan's note",
+            Language.English
+        );
+
+        Snapshot.Match(results.ToList());
+    }
+
+    [Fact]
     public async Task Fate_SearchContentByName_ReturnsMatchingResults()
     {
         IEnumerable<Content> results = await _searchContentByNameUseCase.Execute(

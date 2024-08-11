@@ -225,6 +225,14 @@
   },
   {
     "Type": "Item",
+    "IconId": 25453,
+    "EnglishName": "Flying Popoto Repellent",
+    "FrenchName": "Répulsif anti popotos volantes",
+    "GermanName": "Flugtoffel-Abwehrmittel",
+    "JapaneseName": "フライングポポト避けの苦汁"
+  },
+  {
+    "Type": "Item",
     "IconId": 23741,
     "EnglishName": "Island Sweet Popoto Set",
     "FrenchName": "Tubercules de popoto douce exotique",
