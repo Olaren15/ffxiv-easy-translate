@@ -233,6 +233,14 @@
   },
   {
     "Type": "Item",
+    "IconId": 59403,
+    "EnglishName": "Limpet Bomb",
+    "FrenchName": "Bombo collant",
+    "GermanName": "Haft-Bomber",
+    "JapaneseName": "リムペットボム"
+  },
+  {
+    "Type": "Item",
     "IconId": 29729,
     "EnglishName": "Peteinosaur",
     "FrenchName": "Peteinosaurus",
@@ -409,6 +417,14 @@
   },
   {
     "Type": "Item",
+    "IconId": 22627,
+    "EnglishName": "Kedtrap Petal",
+    "FrenchName": "Pétale de piège-poux",
+    "GermanName": "Fiegenfallen-Blüte",
+    "JapaneseName": "妖花の花弁"
+  },
+  {
+    "Type": "Item",
     "IconId": 22402,
     "EnglishName": "Petrified Log",
     "FrenchName": "Rondin pétrifié",
@@ -580,8 +596,16 @@
     "IconId": null,
     "EnglishName": "impetuous youth",
     "FrenchName": "Hhetsarro perdu",
-    "GermanName": "ratlos[a] Hhetsarro ",
+    "GermanName": "ratlos[a] Hhetsarro",
     "JapaneseName": "途方に暮れたヘイザ・アロ族"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26151,
+    "EnglishName": "Signed Petition",
+    "FrenchName": "Pétition signée",
+    "GermanName": "Linienflug-Petition",
+    "JapaneseName": "ハイウィンド飛空社宛の嘆願書"
   },
   {
     "Type": "Item",
@@ -662,6 +686,22 @@
     "FrenchName": "Mog impatient",
     "GermanName": "Träum-Mogry",
     "JapaneseName": "まだまだモーグリ"
+  },
+  {
+    "Type": "Item",
+    "IconId": 21261,
+    "EnglishName": "Limpet Bomb Core",
+    "FrenchName": "Noyau de bombo collant",
+    "GermanName": "Haft-Bomber-Essenz",
+    "JapaneseName": "リムペットボムの心核"
+  },
+  {
+    "Type": "Item",
+    "IconId": 22251,
+    "EnglishName": "Witchweed Petals",
+    "FrenchName": "Pétale d'herbe des sorcières",
+    "GermanName": "Hexenkraut-Blüte",
+    "JapaneseName": "ウィッチウィードの巨大な花弁"
   },
   {
     "Type": "Fate",
@@ -758,45 +798,5 @@
     "FrenchName": "Fabrication: potions alchimiques améliorant la concentration",
     "GermanName": "Konzentration im Glas",
     "JapaneseName": "製作依頼：作業に集中する錬金薬"
-  },
-  {
-    "Type": "Status",
-    "IconId": 16603,
-    "EnglishName": "Poppet Resistance",
-    "FrenchName": "Immunité aux poupées",
-    "GermanName": "Puppen-Resistenz",
-    "JapaneseName": "ドール無効"
-  },
-  {
-    "Type": "Status",
-    "IconId": 15024,
-    "EnglishName": "Poppet Resistance",
-    "FrenchName": "Immunité aux poupées",
-    "GermanName": "Puppen-Resistenz",
-    "JapaneseName": "ドール無効"
-  },
-  {
-    "Type": "Action",
-    "IconId": 405,
-    "EnglishName": "Rheognosis Petrine",
-    "FrenchName": "Leonosis petros",
-    "GermanName": "Rheognose Petros",
-    "JapaneseName": "レーオノシス・ペトゥロス"
-  },
-  {
-    "Type": "Npc",
-    "IconId": null,
-    "EnglishName": "potent petrosphere",
-    "FrenchName": "super pétrosphère",
-    "GermanName": "Petrosphäre[p] I",
-    "JapaneseName": "ペトロスフィアII"
-  },
-  {
-    "Type": "Npc",
-    "IconId": null,
-    "EnglishName": "ianthine petalouda",
-    "FrenchName": "iodopétalouda",
-    "GermanName": "Ianthine-Petalouda",
-    "JapaneseName": "イアンティネ・ペタルダ"
   }
 ]
