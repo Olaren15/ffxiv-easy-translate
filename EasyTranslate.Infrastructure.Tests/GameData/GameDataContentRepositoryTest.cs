@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using EasyTranslate.Domain.Entities;
 using EasyTranslate.Infrastructure.GameData;
+using Lumina.Excel;
 using Moq;
 using Xunit;
 
@@ -36,6 +37,7 @@ public class GameDataContentRepositoryTest
     private readonly CancellationToken _fakeCancellationToken = CancellationToken.None;
 
     private readonly GameDataContentRepository _gameDataContentRepository;
+    private readonly Mock<ExcelModule> _mockExcelModule;
     private readonly Mock<ISearchByNameQuery> _mockSearchQuery1;
     private readonly Mock<ISearchByNameQuery> _mockSearchQuery2;
     private readonly Mock<ISearchByNameQuery> _mockSearchQuery3;
@@ -45,12 +47,17 @@ public class GameDataContentRepositoryTest
         _mockSearchQuery1 = new Mock<ISearchByNameQuery>();
         _mockSearchQuery2 = new Mock<ISearchByNameQuery>();
         _mockSearchQuery3 = new Mock<ISearchByNameQuery>();
+        _mockExcelModule = new Mock<ExcelModule>();
 
         _gameDataContentRepository = new GameDataContentRepository(
             new List<ISearchByNameQuery>
             {
-                _mockSearchQuery1.Object, _mockSearchQuery2.Object, _mockSearchQuery3.Object
-            });
+                _mockSearchQuery1.Object,
+                _mockSearchQuery2.Object,
+                _mockSearchQuery3.Object
+            },
+            _mockExcelModule.Object
+        );
     }
 
     [Fact]
@@ -72,7 +79,12 @@ public class GameDataContentRepositoryTest
             _fakeCancellationToken
         );
 
-        Assert.Equivalent(new List<Content> { _content1, _content2, _content3 }, result, true);
+        Assert.Equivalent(new List<Content>
+        {
+            _content1,
+            _content2,
+            _content3
+        }, result, true);
     }
 
     [Fact]

@@ -9,4 +9,6 @@ public interface IContentRepository
         Language searchLanguage,
         CancellationToken cancellationToken
     );
+
+    public Task<string?> GetItemName(uint itemId, Language searchLanguage, CancellationToken cancellationToken);
 }

@@ -8,6 +8,7 @@ public static class UseCaseModule
     public static IServiceCollection AddUseCaseServices(this IServiceCollection serviceCollection)
     {
         return serviceCollection.AddSingleton<SearchContentByNameUseCase>()
+            .AddSingleton<GetItemNameUseCase>()
             .AddSingleton<IStringSimilarityComparer, LongestCommonSubstringComparer>();
     }
 }
