@@ -3,7 +3,7 @@ using Lumina.Excel;
 
 namespace EasyTranslate.Infrastructure.GameData;
 
-public interface IContentTypeAdapter<in T> where T : ExcelRow
+public interface IContentTypeAdapter<in T> where T : struct, IExcelRow<T>
 {
     public Func<T, bool> WhereClause(string searchName);
 

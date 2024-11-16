@@ -1,29 +1,30 @@
 ﻿using EasyTranslate.Domain.Entities;
-using EasyTranslate.Infrastructure.GameData.Sheets;
+using Lumina.Excel.Sheets;
+using ContentType = EasyTranslate.Domain.Entities.ContentType;
 
 namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
-public class WeatherAdapter : IContentTypeAdapter<WeatherLite>
+public class WeatherAdapter : IContentTypeAdapter<Weather>
 {
-    public Func<WeatherLite, bool> WhereClause(string searchName)
+    public Func<Weather, bool> WhereClause(string searchName)
     {
-        return weather => weather.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
+        return weather => weather.Name.ExtractText().Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<WeatherLite, Content> MapToContent(
-        WeatherLite english,
-        WeatherLite french,
-        WeatherLite german,
-        WeatherLite japanese
+    public Func<Weather, Content> MapToContent(
+        Weather english,
+        Weather french,
+        Weather german,
+        Weather japanese
     )
     {
         return weather => new Content(
             ContentType.Weather,
             (uint)weather.Icon,
-            english.Name.RawString,
-            french.Name.RawString,
-            german.Name.RawString,
-            japanese.Name.RawString
+            english.Name.ExtractText(),
+            french.Name.ExtractText(),
+            german.Name.ExtractText(),
+            japanese.Name.ExtractText()
         );
     }
 }

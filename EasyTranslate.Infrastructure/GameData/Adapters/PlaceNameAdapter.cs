@@ -1,29 +1,30 @@
 ﻿using EasyTranslate.Domain.Entities;
-using EasyTranslate.Infrastructure.GameData.Sheets;
+using Lumina.Excel.Sheets;
+using ContentType = EasyTranslate.Domain.Entities.ContentType;
 
 namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
-public class PlaceNameAdapter : IContentTypeAdapter<PlaceNameLite>
+public class PlaceNameAdapter : IContentTypeAdapter<PlaceName>
 {
-    public Func<PlaceNameLite, bool> WhereClause(string searchName)
+    public Func<PlaceName, bool> WhereClause(string searchName)
     {
-        return placeName => placeName.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
+        return placeName => placeName.Name.ExtractText().Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<PlaceNameLite, Content> MapToContent(
-        PlaceNameLite english,
-        PlaceNameLite french,
-        PlaceNameLite german,
-        PlaceNameLite japanese
+    public Func<PlaceName, Content> MapToContent(
+        PlaceName english,
+        PlaceName french,
+        PlaceName german,
+        PlaceName japanese
     )
     {
         return _ => new Content(
             ContentType.Place,
             null,
-            english.Name.RawString,
-            french.Name.RawString,
-            german.Name.RawString,
-            japanese.Name.RawString
+            english.Name.ExtractText(),
+            french.Name.ExtractText(),
+            german.Name.ExtractText(),
+            japanese.Name.ExtractText()
         );
     }
 }

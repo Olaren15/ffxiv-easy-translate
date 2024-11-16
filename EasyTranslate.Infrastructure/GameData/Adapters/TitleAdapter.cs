@@ -1,21 +1,22 @@
 ﻿using EasyTranslate.Domain.Entities;
-using EasyTranslate.Infrastructure.GameData.Sheets;
+using Lumina.Excel.Sheets;
+using ContentType = EasyTranslate.Domain.Entities.ContentType;
 
 namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
-public class TitleAdapter : IContentTypeAdapter<TitleLite>
+public class TitleAdapter : IContentTypeAdapter<Title>
 {
-    public Func<TitleLite, bool> WhereClause(string searchName)
+    public Func<Title, bool> WhereClause(string searchName)
     {
-        return title => title.Feminine.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase)
-                        || title.Masculine.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
+        return title => title.Feminine.ExtractText().Contains(searchName, StringComparison.OrdinalIgnoreCase)
+                        || title.Masculine.ExtractText().Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<TitleLite, Content> MapToContent(
-        TitleLite english,
-        TitleLite french,
-        TitleLite german,
-        TitleLite japanese
+    public Func<Title, Content> MapToContent(
+        Title english,
+        Title french,
+        Title german,
+        Title japanese
     )
     {
         return _ => new Content(
@@ -28,10 +29,10 @@ public class TitleAdapter : IContentTypeAdapter<TitleLite>
         );
     }
 
-    private static string FormatTitle(TitleLite title)
+    private static string FormatTitle(Title title)
     {
-        return title.Masculine.RawString == title.Feminine.RawString
-            ? title.Feminine.RawString
-            : $"{title.Masculine.RawString} / {title.Feminine.RawString}";
+        string masculine = title.Masculine.ExtractText();
+        string feminine = title.Feminine.ExtractText();
+        return masculine == feminine ? feminine : $"{masculine} / {feminine}";
     }
 }

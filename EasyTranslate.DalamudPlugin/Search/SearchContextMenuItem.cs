@@ -1,14 +1,11 @@
-﻿using System;
-using Dalamud.Game.Gui.ContextMenu;
+﻿using Dalamud.Game.Gui.ContextMenu;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Game.Text.SeStringHandling.Payloads;
 using Dalamud.Plugin.Services;
-using Dalamud.Utility;
 using EasyTranslate.DalamudPlugin.Attributes;
 using EasyTranslate.DalamudPlugin.Localisation;
 using EasyTranslate.DalamudPlugin.Resources;
-using Lumina.Excel;
-using Lumina.Excel.GeneratedSheets2;
+using Lumina.Excel.Sheets;
 
 namespace EasyTranslate.DalamudPlugin.Search;
 
@@ -69,29 +66,17 @@ public sealed class SearchContextMenuItem
             return;
         }
 
-        ExcelRow? item;
+        string itemName;
         if (itemId >= 2000000)
         {
             // Event items are stuff in the key items tab of inventory afaik
-            item = _dataManager.Excel.GetSheet<EventItem>()?.GetRow(itemId.Value);
+            itemName = _dataManager.Excel.GetSheet<EventItem>().GetRow(itemId.Value).Name.ExtractText();
         }
         else
         {
-            // Not sure why we modulo by 500000, but I stole the code from simple tweaks so i'll trust it lol
-            item = _dataManager.Excel.GetSheet<Item>()?.GetRow(itemId.Value % 500000);
+            // Modulo by 500000 to remove Hq/Colletable status from id
+            itemName = _dataManager.Excel.GetSheet<Item>().GetRow(itemId.Value % 500000).Name.ExtractText();
         }
-
-        if (item is null)
-        {
-            return;
-        }
-
-        string itemName = item switch
-        {
-            Item item1 => item1.Name.ToDalamudString().TextValue,
-            EventItem eventItem => eventItem.Name.ToDalamudString().TextValue,
-            _ => throw new InvalidOperationException()
-        };
 
         _searchView.ShowAndSearch(itemName);
     }

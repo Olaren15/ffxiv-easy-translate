@@ -163,9 +163,17 @@
     "Type": "Item",
     "IconId": 26625,
     "EnglishName": "Summoner Framer's Kit",
-    "FrenchName": "L'Art du portrait: invocateur",
+    "FrenchName": "L'Art du portrait : invocateur",
     "GermanName": "Portraitmaterial (Beschwörer)",
     "JapaneseName": "ポートレート教材:召喚士"
+  },
+  {
+    "Type": "Item",
+    "IconId": 43739,
+    "EnglishName": "High Summoner's Attire",
+    "FrenchName": "Tenue de grande invocatrice",
+    "GermanName": "Kleidungsset des Hohen Mediums",
+    "JapaneseName": "ハイサマナーアタイア"
   },
   {
     "Type": "Quest",
@@ -195,7 +203,7 @@
     "Type": "Item",
     "IconId": 26410,
     "EnglishName": "Tales of Adventure: One Summoner's Journey I",
-    "FrenchName": "“Contes d'aventures: Périple d'un invocateur I”",
+    "FrenchName": "“Contes d'aventures : Périple d'un invocateur I”",
     "GermanName": "Abenteuergeschichten: Reise eines Beschwörers I",
     "JapaneseName": "召喚士の冒険録:蒼天編"
   },
@@ -203,7 +211,7 @@
     "Type": "Item",
     "IconId": 26410,
     "EnglishName": "Tales of Adventure: One Summoner's Journey II",
-    "FrenchName": "“Contes d'aventures: Périple d'un invocateur II”",
+    "FrenchName": "“Contes d'aventures : Périple d'un invocateur II”",
     "GermanName": "Abenteuergeschichten: Reise eines Beschwörers II",
     "JapaneseName": "召喚士の冒険録:紅蓮編"
   },
@@ -211,7 +219,7 @@
     "Type": "Item",
     "IconId": 26410,
     "EnglishName": "Tales of Adventure: One Summoner's Journey IV",
-    "FrenchName": "“Contes d'aventures: Périple d'un invocateur IV”",
+    "FrenchName": "“Contes d'aventures : Périple d'un invocateur IV”",
     "GermanName": "Abenteuergeschichten: Reise eines Beschwörers IV",
     "JapaneseName": "召喚士の冒険録:暁月編"
   },
@@ -219,7 +227,7 @@
     "Type": "Item",
     "IconId": 26410,
     "EnglishName": "Tales of Adventure: One Summoner's Journey III",
-    "FrenchName": "“Contes d'aventures: Périple d'un invocateur III”",
+    "FrenchName": "“Contes d'aventures : Périple d'un invocateur III”",
     "GermanName": "Abenteuergeschichten: Reise eines Beschwörers III",
     "JapaneseName": "召喚士の冒険録:漆黒編"
   }
