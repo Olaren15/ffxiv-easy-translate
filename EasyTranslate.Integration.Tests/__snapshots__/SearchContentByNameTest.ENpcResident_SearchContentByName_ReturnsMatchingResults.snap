@@ -41,7 +41,7 @@
   },
   {
     "Type": "Minion",
-    "IconId": 0,
+    "IconId": 4706,
     "EnglishName": "wind-up G'raha Tia",
     "FrenchName": "G'raha Tia miniature",
     "GermanName": "G'raha Tia-Puppe",
@@ -62,5 +62,13 @@
     "FrenchName": "avatar de G'raha Tia",
     "GermanName": "G'raha Tia[p] an deiner Seite",
     "JapaneseName": "グ・ラハ・ティアの幻体"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26161,
+    "EnglishName": "Maxims of Mahjong - G'raha Tia",
+    "FrenchName": "L'Art du mahjong : G'raha Tia",
+    "GermanName": "G'raha Tias Mahjong-Weisheiten",
+    "JapaneseName": "麻雀金言集:グ・ラハ・ティア"
   }
 ]

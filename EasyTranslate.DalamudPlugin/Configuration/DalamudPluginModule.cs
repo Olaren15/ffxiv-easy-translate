@@ -37,6 +37,7 @@ public static class DalamudPluginModule
             .AddDalamudService<IGameConfig>()
             .AddDalamudService<IContextMenu>()
             .AddDalamudService<IDataManager>()
+            .AddDalamudService<IPluginLog>()
             .AddSingleton<ExcelModule>(serviceProvider => serviceProvider.GetService<IDataManager>()!.Excel);
     }
 

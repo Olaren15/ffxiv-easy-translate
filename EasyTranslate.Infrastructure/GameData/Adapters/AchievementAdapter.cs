@@ -1,29 +1,30 @@
 ﻿using EasyTranslate.Domain.Entities;
-using EasyTranslate.Infrastructure.GameData.Sheets;
+using Lumina.Excel.Sheets;
+using ContentType = EasyTranslate.Domain.Entities.ContentType;
 
 namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
-public class AchievementAdapter : IContentTypeAdapter<AchievementLite>
+public class AchievementAdapter : IContentTypeAdapter<Achievement>
 {
-    public Func<AchievementLite, bool> WhereClause(string searchName)
+    public Func<Achievement, bool> WhereClause(string searchName)
     {
-        return achievement => achievement.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
+        return achievement => achievement.Name.ExtractText().Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<AchievementLite, Content> MapToContent(
-        AchievementLite english,
-        AchievementLite french,
-        AchievementLite german,
-        AchievementLite japanese
+    public Func<Achievement, Content> MapToContent(
+        Achievement english,
+        Achievement french,
+        Achievement german,
+        Achievement japanese
     )
     {
         return achievement => new Content(
             ContentType.Achievement,
             achievement.Icon,
-            english.Name.RawString,
-            french.Name.RawString,
-            german.Name.RawString,
-            japanese.Name.RawString
+            english.Name.ExtractText(),
+            french.Name.ExtractText(),
+            german.Name.ExtractText(),
+            japanese.Name.ExtractText()
         );
     }
 }

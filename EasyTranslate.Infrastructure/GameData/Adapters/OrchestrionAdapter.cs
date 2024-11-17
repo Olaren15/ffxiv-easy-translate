@@ -1,31 +1,32 @@
 ﻿using EasyTranslate.Domain.Entities;
-using EasyTranslate.Infrastructure.GameData.Sheets;
+using Lumina.Excel.Sheets;
+using ContentType = EasyTranslate.Domain.Entities.ContentType;
 
 namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
-public class OrchestrionAdapter : IContentTypeAdapter<OrchestrionLite>
+public class OrchestrionAdapter : IContentTypeAdapter<Orchestrion>
 {
-    private const uint MusicNoteIcon = 76406;
+    private const uint MusicNoteIcon = 230206;
 
-    public Func<OrchestrionLite, bool> WhereClause(string searchName)
+    public Func<Orchestrion, bool> WhereClause(string searchName)
     {
-        return orchestrion => orchestrion.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
+        return orchestrion => orchestrion.Name.ExtractText().Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<OrchestrionLite, Content> MapToContent(
-        OrchestrionLite english,
-        OrchestrionLite french,
-        OrchestrionLite german,
-        OrchestrionLite japanese
+    public Func<Orchestrion, Content> MapToContent(
+        Orchestrion english,
+        Orchestrion french,
+        Orchestrion german,
+        Orchestrion japanese
     )
     {
         return _ => new Content(
             ContentType.Orchestrion,
             MusicNoteIcon,
-            english.Name.RawString,
-            french.Name.RawString,
-            german.Name.RawString,
-            japanese.Name.RawString
+            english.Name.ExtractText(),
+            french.Name.ExtractText(),
+            german.Name.ExtractText(),
+            japanese.Name.ExtractText()
         );
     }
 }

@@ -56,6 +56,14 @@
     "JapaneseName": "ジャイアントポポト"
   },
   {
+    "Type": "Item",
+    "IconId": 53497,
+    "EnglishName": "Popoto Chips",
+    "FrenchName": "Popotos chips",
+    "GermanName": "Frittierte Toffelscheiben",
+    "JapaneseName": "ポポトチップス"
+  },
+  {
     "Type": "Npc",
     "IconId": null,
     "EnglishName": "flying popoto",
@@ -291,7 +299,7 @@
     "Type": "Item",
     "IconId": 26435,
     "EnglishName": "Ballroom Etiquette - The Popoto Step",
-    "FrenchName": "L'Étiquette éorzéenne: Popping popoto",
+    "FrenchName": "L'Étiquette éorzéenne : Popping popoto",
     "GermanName": "Ballsaal-Etikette: Toffel-Tanz",
     "JapaneseName": "演技教本:ポポトステップ"
   }

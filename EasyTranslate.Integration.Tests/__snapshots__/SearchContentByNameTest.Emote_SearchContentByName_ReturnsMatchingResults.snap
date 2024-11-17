@@ -179,7 +179,7 @@
     "Type": "Fate",
     "IconId": 60722,
     "EnglishName": "Pet, Smart",
-    "FrenchName": "Défi: couchée, sale bête !",
+    "FrenchName": "Défi : couchée, sale bête !",
     "GermanName": "Blinde Wut",
     "JapaneseName": "忠義の妖王「ムチャリンダ」"
   },
@@ -259,7 +259,7 @@
     "Type": "LeveQuest",
     "IconId": 71241,
     "EnglishName": "Puppet Show",
-    "FrenchName": "Récupération: écailles pour pantin",
+    "FrenchName": "Récupération : écailles pour pantin",
     "GermanName": "Nachwuchsförderung",
     "JapaneseName": "獲得任務：標的用の竜鱗"
   },
@@ -401,7 +401,7 @@
   },
   {
     "Type": "Minion",
-    "IconId": 0,
+    "IconId": 4907,
     "EnglishName": "petit punutiy",
     "FrenchName": "mini punutiy",
     "GermanName": "Mini-Punutiy",
@@ -457,7 +457,7 @@
   },
   {
     "Type": "Status",
-    "IconId": 15001,
+    "IconId": 215001,
     "EnglishName": "Petrification",
     "FrenchName": "Pétrification",
     "GermanName": "Stein",
@@ -640,6 +640,14 @@
     "JapaneseName": "祈願：咲き誇れ"
   },
   {
+    "Type": "Action",
+    "IconId": 405,
+    "EnglishName": "Petrifying Light",
+    "FrenchName": "Lueur pétrifiante",
+    "GermanName": "Versteinerndes Licht",
+    "JapaneseName": "石化の光"
+  },
+  {
     "Type": "Npc",
     "IconId": null,
     "EnglishName": "nightmare puppet",
@@ -665,7 +673,7 @@
   },
   {
     "Type": "Minion",
-    "IconId": 0,
+    "IconId": 4788,
     "EnglishName": "petit pteranodon",
     "FrenchName": "ptiranodon",
     "GermanName": "Pteranoknirps",
@@ -790,13 +798,5 @@
     "FrenchName": "Tapis à fleurs",
     "GermanName": "Blumenteppich",
     "JapaneseName": "フラワーラグ"
-  },
-  {
-    "Type": "LeveQuest",
-    "IconId": 71241,
-    "EnglishName": "Liquid Competence",
-    "FrenchName": "Fabrication: potions alchimiques améliorant la concentration",
-    "GermanName": "Konzentration im Glas",
-    "JapaneseName": "製作依頼：作業に集中する錬金薬"
   }
 ]

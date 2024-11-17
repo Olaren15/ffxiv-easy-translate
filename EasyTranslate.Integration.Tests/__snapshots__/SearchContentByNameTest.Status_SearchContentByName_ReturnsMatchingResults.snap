@@ -1,7 +1,7 @@
 ﻿[
   {
     "Type": "Status",
-    "IconId": 15020,
+    "IconId": 215020,
     "EnglishName": "Vulnerability Up",
     "FrenchName": "Vulnérabilité augmentée",
     "GermanName": "Erhöhte Verwundbarkeit",
@@ -9,7 +9,7 @@
   },
   {
     "Type": "Status",
-    "IconId": 17101,
+    "IconId": 217101,
     "EnglishName": "Vulnerability Up",
     "FrenchName": "Vulnérabilité augmentée",
     "GermanName": "Erhöhte Verwundbarkeit",
@@ -17,7 +17,7 @@
   },
   {
     "Type": "Status",
-    "IconId": 15057,
+    "IconId": 215057,
     "EnglishName": "Magic Vulnerability Up",
     "FrenchName": "Vulnérabilité magique augmentée",
     "GermanName": "Erhöhte Magie-Verwundbarkeit",
@@ -25,7 +25,7 @@
   },
   {
     "Type": "Status",
-    "IconId": 18021,
+    "IconId": 218021,
     "EnglishName": "Magic Vulnerability Up",
     "FrenchName": "Vulnérabilité magique augmentée",
     "GermanName": "Erhöhte Magie-Verwundbarkeit",
@@ -33,7 +33,7 @@
   },
   {
     "Type": "Status",
-    "IconId": 15057,
+    "IconId": 215057,
     "EnglishName": "Magic Vulnerability Up",
     "FrenchName": "Vulnérabilité magique augmentée",
     "GermanName": "Erhöhte Magie-Verwundbarkeit",
@@ -41,7 +41,7 @@
   },
   {
     "Type": "Status",
-    "IconId": 15053,
+    "IconId": 215053,
     "EnglishName": "Physical Vulnerability Up",
     "FrenchName": "Vulnérabilité physique augmentée",
     "GermanName": "Erhöhte physische Verwundbarkeit",
@@ -49,7 +49,7 @@
   },
   {
     "Type": "Status",
-    "IconId": 18001,
+    "IconId": 218001,
     "EnglishName": "Physical Vulnerability Up",
     "FrenchName": "Vulnérabilité physique augmentée",
     "GermanName": "Erhöhte physische Verwundbarkeit",
@@ -57,9 +57,9 @@
   },
   {
     "Type": "Status",
-    "IconId": 15659,
+    "IconId": 215659,
     "EnglishName": "Marked for Vulnerability Up",
-    "FrenchName": "Cible: Vulnérabilité physique augmentée",
+    "FrenchName": "Cible : Vulnérabilité physique augmentée",
     "GermanName": "Erhöhte physische Verwundbarkeit",
     "JapaneseName": "指定：被物理ダメージ増加"
   }

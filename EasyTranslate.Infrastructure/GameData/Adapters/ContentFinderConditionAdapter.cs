@@ -1,29 +1,30 @@
 ﻿using EasyTranslate.Domain.Entities;
-using EasyTranslate.Infrastructure.GameData.Sheets;
+using Lumina.Excel.Sheets;
+using ContentType = EasyTranslate.Domain.Entities.ContentType;
 
 namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
-public class ContentFinderConditionAdapter : IContentTypeAdapter<ContentFinderConditionLite>
+public class ContentFinderConditionAdapter : IContentTypeAdapter<ContentFinderCondition>
 {
-    public Func<ContentFinderConditionLite, bool> WhereClause(string searchName)
+    public Func<ContentFinderCondition, bool> WhereClause(string searchName)
     {
-        return content => content.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
+        return content => content.Name.ExtractText().Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<ContentFinderConditionLite, Content> MapToContent(
-        ContentFinderConditionLite english,
-        ContentFinderConditionLite french,
-        ContentFinderConditionLite german,
-        ContentFinderConditionLite japanese
+    public Func<ContentFinderCondition, Content> MapToContent(
+        ContentFinderCondition english,
+        ContentFinderCondition french,
+        ContentFinderCondition german,
+        ContentFinderCondition japanese
     )
     {
         return content => new Content(
             ContentType.Instance,
-            content.ContentType.Value?.Icon,
-            english.Name.RawString,
-            french.Name.RawString,
-            german.Name.RawString,
-            japanese.Name.RawString
+            content.ContentType.Value.Icon,
+            english.Name.ExtractText(),
+            french.Name.ExtractText(),
+            german.Name.ExtractText(),
+            japanese.Name.ExtractText()
         );
     }
 }

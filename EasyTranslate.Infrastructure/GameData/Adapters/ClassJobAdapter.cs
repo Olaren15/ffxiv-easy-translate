@@ -1,28 +1,29 @@
 ﻿using EasyTranslate.Domain.Entities;
-using EasyTranslate.Infrastructure.GameData.Sheets;
+using Lumina.Excel.Sheets;
+using ContentType = EasyTranslate.Domain.Entities.ContentType;
 
 namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
-public class ClassJobAdapter : IContentTypeAdapter<ClassJobLite>
+public class ClassJobAdapter : IContentTypeAdapter<ClassJob>
 {
     private const uint BaseJobIconId = 62100;
 
-    public Func<ClassJobLite, bool> WhereClause(string searchName)
+    public Func<ClassJob, bool> WhereClause(string searchName)
     {
         return classJob => classJob.RowId != 0 && // Filter out Adventurer
-                           classJob.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
+                           classJob.Name.ExtractText().Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<ClassJobLite, Content> MapToContent(ClassJobLite english, ClassJobLite french, ClassJobLite german,
-        ClassJobLite japanese)
+    public Func<ClassJob, Content> MapToContent(ClassJob english, ClassJob french, ClassJob german,
+        ClassJob japanese)
     {
         return classJob => new Content(
             ContentType.ClassJob,
             BaseJobIconId + classJob.RowId,
-            english.Name.RawString,
-            french.Name.RawString,
-            german.Name.RawString,
-            japanese.Name.RawString
+            english.Name.ExtractText(),
+            french.Name.ExtractText(),
+            german.Name.ExtractText(),
+            japanese.Name.ExtractText()
         );
     }
 }

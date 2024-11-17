@@ -1,25 +1,26 @@
 ﻿using EasyTranslate.Domain.Entities;
-using EasyTranslate.Infrastructure.GameData.Sheets;
+using Lumina.Excel.Sheets;
+using ContentType = EasyTranslate.Domain.Entities.ContentType;
 
 namespace EasyTranslate.Infrastructure.GameData.Adapters;
 
-public class EventItemAdapter : IContentTypeAdapter<EventItemLite>
+public class EventItemAdapter : IContentTypeAdapter<EventItem>
 {
-    public Func<EventItemLite, bool> WhereClause(string searchName)
+    public Func<EventItem, bool> WhereClause(string searchName)
     {
-        return item => item.Name.RawString.Contains(searchName, StringComparison.OrdinalIgnoreCase);
+        return item => item.Name.ExtractText().Contains(searchName, StringComparison.OrdinalIgnoreCase);
     }
 
-    public Func<EventItemLite, Content> MapToContent(EventItemLite english, EventItemLite french, EventItemLite german,
-        EventItemLite japanese)
+    public Func<EventItem, Content> MapToContent(EventItem english, EventItem french, EventItem german,
+        EventItem japanese)
     {
         return item => new Content(
             ContentType.Item,
             item.Icon,
-            english.Name.RawString,
-            french.Name.RawString,
-            german.Name.RawString,
+            english.Name.ExtractText(),
+            french.Name.ExtractText(),
+            german.Name.ExtractText(),
             // The Name field is always empty in japanese
-            japanese.Singular.RawString);
+            japanese.Singular.ExtractText());
     }
 }
