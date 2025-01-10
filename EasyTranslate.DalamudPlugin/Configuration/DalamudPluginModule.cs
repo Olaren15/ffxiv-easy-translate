@@ -54,7 +54,8 @@ public static class DalamudPluginModule
             .AddSingleton<OpenSettingsCommand>()
             .AddSingleton<SettingsView>()
             .AddTransient<SettingsViewModel>()
-            .AddSingleton<SearchContextMenuItem>();
+            .AddSingleton<SearchContextMenuItem>()
+            .AddSingleton<LanguageUtils>();
     }
 
     private static IServiceCollection AddExisting<T>(this IServiceCollection serviceCollection, T service)

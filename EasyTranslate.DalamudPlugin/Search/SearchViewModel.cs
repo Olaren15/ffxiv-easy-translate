@@ -7,19 +7,30 @@ using EasyTranslate.UseCase;
 
 namespace EasyTranslate.DalamudPlugin.Search;
 
-public sealed class SearchViewModel(
-    SearchContentByNameUseCase searchContentByNameUseCase,
-    ContentMapper contentMapper,
-    UserSettingsRepository userSettingsRepository
-) : IDisposable
+public sealed class SearchViewModel : IDisposable
 {
+    private readonly ContentMapper _contentMapper;
+    private readonly SearchContentByNameUseCase _searchContentByNameUseCase;
+
     private Task<PresentableContent[]>? _currentSearchTask;
     private CancellationTokenSource? _searchCancellationToken;
     private PresentableContent[]? _searchResults;
 
-    private Language SearchLanguage => userSettingsRepository.Get().DefaultSearchLanguage;
+    public SearchViewModel(
+        SearchContentByNameUseCase searchContentByNameUseCase,
+        ContentMapper contentMapper,
+        UserSettingsRepository userSettingsRepository)
+    {
+        _searchContentByNameUseCase = searchContentByNameUseCase;
+        _contentMapper = contentMapper;
 
+        SearchLanguage = userSettingsRepository.Get().DefaultSearchLanguage;
+        userSettingsRepository.OnSearchLanguageChanged += (_, newLanguage) => SearchLanguage = newLanguage;
+    }
+
+    public Language SearchLanguage { get; set; }
     public string SearchText { get; set; } = "";
+    public bool ShowAdvancedSearch { get; set; }
 
     public PresentableContent[]? SearchResults
     {
@@ -64,7 +75,7 @@ public sealed class SearchViewModel(
         _searchResults = null;
         _searchCancellationToken = new CancellationTokenSource();
         _currentSearchTask = Task.Run(
-                () => searchContentByNameUseCase.Execute(
+                () => _searchContentByNameUseCase.Execute(
                     SearchText,
                     SearchLanguage,
                     _searchCancellationToken.Token
@@ -73,7 +84,7 @@ public sealed class SearchViewModel(
             )
             .ContinueWith(
                 searchResultsTask =>
-                    contentMapper.ConvertToPresentableContents(searchResultsTask.Result),
+                    _contentMapper.ConvertToPresentableContents(searchResultsTask.Result),
                 _searchCancellationToken.Token
             );
     }

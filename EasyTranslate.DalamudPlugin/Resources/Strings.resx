@@ -35,8 +35,8 @@
   <data name="SettingsCommandDescription" xml:space="preserve">
       <value>Open the settings window</value>
   </data>
-  <data name="ChooseSearchLanguage" xml:space="preserve">
-      <value>Choose your search language:</value>
+  <data name="ChooseDefaultSearchLanguage" xml:space="preserve">
+    <value>Choose your default search language:</value>
   </data>
   <data name="English" xml:space="preserve">
       <value>English</value>
@@ -136,5 +136,14 @@
   </data>
   <data name="ClassJob" xml:space="preserve">
     <value>Class / Job</value>
+  </data>
+  <data name="ShowAdvancedSearchOptions" xml:space="preserve">
+    <value>Show advanced search options</value>
+  </data>
+  <data name="HideAdvancedSearchOptions" xml:space="preserve">
+    <value>Hide advanced search options</value>
+  </data>
+  <data name="SearchLanguage" xml:space="preserve">
+    <value>Search language</value>
   </data>
 </root>

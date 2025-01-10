@@ -78,6 +78,6 @@ public sealed class SearchContextMenuItem
             itemName = _dataManager.Excel.GetSheet<Item>().GetRow(itemId.Value % 500000).Name.ExtractText();
         }
 
-        _searchView.ShowAndSearch(itemName);
+        _searchView.ShowAndSearchWithGameLanguage(itemName);
     }
 }
