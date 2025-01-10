@@ -5,6 +5,7 @@ using Dalamud.Interface.Textures.TextureWraps;
 using Dalamud.Interface.Windowing;
 using EasyTranslate.DalamudPlugin.Localisation;
 using EasyTranslate.DalamudPlugin.Resources;
+using EasyTranslate.Domain.Entities;
 using ImGuiNET;
 
 namespace EasyTranslate.DalamudPlugin.Search;
@@ -12,6 +13,7 @@ namespace EasyTranslate.DalamudPlugin.Search;
 public sealed class SearchView : Window, IDisposable
 {
     private const int MaxImageSize = 80;
+    private readonly LanguageUtils _languageUtils;
     private readonly SearchViewModel _searchViewModel;
     private readonly IUiBuilder _uiBuilder;
     private readonly WindowSystem _windowSystem;
@@ -22,12 +24,14 @@ public sealed class SearchView : Window, IDisposable
         SearchViewModel searchViewModel,
         IUiBuilder uiBuilder,
         WindowSystem windowSystem,
-        LanguageSwitcher languageSwitcher
+        LanguageSwitcher languageSwitcher,
+        LanguageUtils languageUtils
     ) : base(Strings.SearchWindowTitle)
     {
         _searchViewModel = searchViewModel;
         _uiBuilder = uiBuilder;
         _windowSystem = windowSystem;
+        _languageUtils = languageUtils;
 
         _windowSystem.AddWindow(this);
         _uiBuilder.OpenMainUi += Show;
@@ -35,8 +39,7 @@ public sealed class SearchView : Window, IDisposable
 
         SizeConstraints = new WindowSizeConstraints
         {
-            MinimumSize = new Vector2(300, 200),
-            MaximumSize = new Vector2(float.MaxValue, float.MaxValue)
+            MinimumSize = new Vector2(300, 200), MaximumSize = new Vector2(float.MaxValue, float.MaxValue)
         };
     }
 
@@ -72,6 +75,14 @@ public sealed class SearchView : Window, IDisposable
         _searchViewModel.ExecuteSearch();
     }
 
+    public void ShowAndSearchWithGameLanguage(string searchText)
+    {
+        IsOpen = true;
+        _searchViewModel.SearchText = searchText;
+        _searchViewModel.SearchLanguage = _languageUtils.GetGameLanguage();
+        _searchViewModel.ExecuteSearch();
+    }
+
     private void DrawSearchBar()
     {
         string? searchText = _searchViewModel.SearchText;
@@ -89,11 +100,60 @@ public sealed class SearchView : Window, IDisposable
         }
 
         ImGui.SameLine();
+        ImGui.PushFont(UiBuilder.IconFont);
+        if (ImGui.Button(FontAwesomeIcon.Cog.ToIconString()))
+        {
+            _searchViewModel.ShowAdvancedSearch = !_searchViewModel.ShowAdvancedSearch;
+        }
+
+        ImGui.PopFont();
+        if (ImGui.IsItemHovered())
+        {
+            string text = _searchViewModel.ShowAdvancedSearch
+                ? Strings.HideAdvancedSearchOptions
+                : Strings.ShowAdvancedSearchOptions;
+            ImGui.SetTooltip(text);
+        }
+
+        ImGui.SameLine();
         bool searchButtonPressed = ImGui.Button(Strings.Search);
 
         if (enterPressed || searchButtonPressed)
         {
             _searchViewModel.ExecuteSearch();
+        }
+
+        if (_searchViewModel.ShowAdvancedSearch)
+        {
+            ImGui.Text(Strings.SearchLanguage);
+
+            bool isEnglishActive = _searchViewModel.SearchLanguage == Language.English;
+            ImGui.SameLine();
+            if (ImGui.RadioButton(Strings.English, isEnglishActive) && !isEnglishActive)
+            {
+                _searchViewModel.SearchLanguage = Language.English;
+            }
+
+            bool isFrenchActive = _searchViewModel.SearchLanguage == Language.French;
+            ImGui.SameLine();
+            if (ImGui.RadioButton(Strings.French, isFrenchActive) && !isFrenchActive)
+            {
+                _searchViewModel.SearchLanguage = Language.French;
+            }
+
+            bool isGermanActive = _searchViewModel.SearchLanguage == Language.German;
+            ImGui.SameLine();
+            if (ImGui.RadioButton(Strings.German, isGermanActive) && !isGermanActive)
+            {
+                _searchViewModel.SearchLanguage = Language.German;
+            }
+
+            bool isJapaneseActive = _searchViewModel.SearchLanguage == Language.Japanese;
+            ImGui.SameLine();
+            if (ImGui.RadioButton(Strings.Japanese, isJapaneseActive) && !isJapaneseActive)
+            {
+                _searchViewModel.SearchLanguage = Language.Japanese;
+            }
         }
     }
 

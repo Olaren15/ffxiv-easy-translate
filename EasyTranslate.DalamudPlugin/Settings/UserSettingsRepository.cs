@@ -1,21 +1,20 @@
-﻿using Dalamud.Game;
-using Dalamud.Game.Config;
+﻿using System;
 using Dalamud.Plugin;
-using Dalamud.Plugin.Services;
+using EasyTranslate.DalamudPlugin.Localisation;
 using EasyTranslate.Domain.Entities;
 
 namespace EasyTranslate.DalamudPlugin.Settings;
 
 public class UserSettingsRepository
 {
-    private readonly IGameConfig _gameConfig;
+    private readonly LanguageUtils _languageUtils;
     private readonly IDalamudPluginInterface _pluginInterface;
 
     private UserSettings _userSettings;
 
-    public UserSettingsRepository(IDalamudPluginInterface pluginInterface, IGameConfig gameConfig)
+    public UserSettingsRepository(IDalamudPluginInterface pluginInterface, LanguageUtils languageUtil)
     {
-        _gameConfig = gameConfig;
+        _languageUtils = languageUtil;
         _pluginInterface = pluginInterface;
         _userSettings = _pluginInterface.GetPluginConfig() as UserSettings ?? CreateDefaultUserPreferences();
     }
@@ -29,25 +28,14 @@ public class UserSettingsRepository
     {
         _userSettings = newSettings;
         _pluginInterface.SavePluginConfig(_userSettings);
+        OnSearchLanguageChanged?.Invoke(this, newSettings.DefaultSearchLanguage);
     }
+
+    public event EventHandler<Language>? OnSearchLanguageChanged;
 
     private UserSettings CreateDefaultUserPreferences()
     {
-        bool success = _gameConfig.TryGet(SystemConfigOption.Language, out uint gameLanguageCode);
-        ClientLanguage gameLanguage = success ? (ClientLanguage)gameLanguageCode : ClientLanguage.English;
-
-        UserSettings newPreferences = new()
-        {
-            Version = 1,
-            DefaultSearchLanguage = gameLanguage switch
-            {
-                ClientLanguage.Japanese => Language.Japanese,
-                ClientLanguage.English => Language.English,
-                ClientLanguage.German => Language.German,
-                ClientLanguage.French => Language.French,
-                _ => Language.English
-            }
-        };
+        UserSettings newPreferences = new() { Version = 1, DefaultSearchLanguage = _languageUtils.GetGameLanguage() };
         Save(newPreferences);
 
         return newPreferences;

@@ -87,11 +87,11 @@ namespace EasyTranslate.DalamudPlugin.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose your search language:.
+        ///   Looks up a localized string similar to Choose your default search language:.
         /// </summary>
-        internal static string ChooseSearchLanguage {
+        internal static string ChooseDefaultSearchLanguage {
             get {
-                return ResourceManager.GetString("ChooseSearchLanguage", resourceCulture);
+                return ResourceManager.GetString("ChooseDefaultSearchLanguage", resourceCulture);
             }
         }
         
@@ -155,6 +155,15 @@ namespace EasyTranslate.DalamudPlugin.Resources {
         internal static string German {
             get {
                 return ResourceManager.GetString("German", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide advanced search options.
+        /// </summary>
+        internal static string HideAdvancedSearchOptions {
+            get {
+                return ResourceManager.GetString("HideAdvancedSearchOptions", resourceCulture);
             }
         }
         
@@ -312,6 +321,15 @@ namespace EasyTranslate.DalamudPlugin.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search language.
+        /// </summary>
+        internal static string SearchLanguage {
+            get {
+                return ResourceManager.GetString("SearchLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Search translations.
         /// </summary>
         internal static string SearchTranslations {
@@ -353,6 +371,15 @@ namespace EasyTranslate.DalamudPlugin.Resources {
         internal static string SettingsWindowTitle {
             get {
                 return ResourceManager.GetString("SettingsWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show advanced search options.
+        /// </summary>
+        internal static string ShowAdvancedSearchOptions {
+            get {
+                return ResourceManager.GetString("ShowAdvancedSearchOptions", resourceCulture);
             }
         }
         

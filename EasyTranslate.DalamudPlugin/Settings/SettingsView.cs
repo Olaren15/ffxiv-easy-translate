@@ -32,8 +32,7 @@ public sealed class SettingsView : Window, IDisposable
 
         SizeConstraints = new WindowSizeConstraints
         {
-            MinimumSize = new Vector2(300, 200),
-            MaximumSize = new Vector2(float.MaxValue, float.MaxValue)
+            MinimumSize = new Vector2(300, 200), MaximumSize = new Vector2(float.MaxValue, float.MaxValue)
         };
     }
 
@@ -46,26 +45,29 @@ public sealed class SettingsView : Window, IDisposable
 
     public override void Draw()
     {
-        ImGui.Text(Strings.ChooseSearchLanguage);
+        ImGui.Text(Strings.ChooseDefaultSearchLanguage);
 
-        Language currentLanguage = _settingsViewModel.PreferredLanguage;
 
-        if (ImGui.RadioButton(Strings.English, currentLanguage == Language.English))
+        bool isEnglishActive = _settingsViewModel.PreferredLanguage == Language.English;
+        if (ImGui.RadioButton(Strings.English, isEnglishActive) && !isEnglishActive)
         {
             _settingsViewModel.SetPreferredLanguage(Language.English);
         }
 
-        if (ImGui.RadioButton(Strings.French, currentLanguage == Language.French))
+        bool isFrenchActive = _settingsViewModel.PreferredLanguage == Language.French;
+        if (ImGui.RadioButton(Strings.French, isFrenchActive) && !isFrenchActive)
         {
             _settingsViewModel.SetPreferredLanguage(Language.French);
         }
 
-        if (ImGui.RadioButton(Strings.German, currentLanguage == Language.German))
+        bool isGermanActive = _settingsViewModel.PreferredLanguage == Language.German;
+        if (ImGui.RadioButton(Strings.German, isGermanActive) && !isGermanActive)
         {
             _settingsViewModel.SetPreferredLanguage(Language.German);
         }
 
-        if (ImGui.RadioButton(Strings.Japanese, currentLanguage == Language.Japanese))
+        bool isJapaneseActive = _settingsViewModel.PreferredLanguage == Language.Japanese;
+        if (ImGui.RadioButton(Strings.Japanese, isJapaneseActive) && !isJapaneseActive)
         {
             _settingsViewModel.SetPreferredLanguage(Language.Japanese);
         }

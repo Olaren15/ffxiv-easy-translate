@@ -29,8 +29,8 @@
   <data name="SettingsCommandDescription" xml:space="preserve">
       <value>Affiche la fenêtre de paramètres</value>
   </data>
-  <data name="ChooseSearchLanguage" xml:space="preserve">
-      <value>Sélectionnez votre langue de recherche</value>
+  <data name="ChooseDefaultSearchLanguage" xml:space="preserve">
+    <value>Sélectionnez votre langue de recherche par défaut</value>
   </data>
   <data name="English" xml:space="preserve">
       <value>Anglais</value>
@@ -130,5 +130,14 @@
   </data>
   <data name="ClassJob" xml:space="preserve">
     <value>Classe / Job</value>
+  </data>
+  <data name="ShowAdvancedSearchOptions" xml:space="preserve">
+    <value>Afficher les options de recherche avancée</value>
+  </data>
+  <data name="HideAdvancedSearchOptions" xml:space="preserve">
+    <value>Cacher les options de recherche avancée</value>
+  </data>
+  <data name="SearchLanguage" xml:space="preserve">
+    <value>Langue de recherche</value>
   </data>
 </root>
