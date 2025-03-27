@@ -200,6 +200,14 @@
     "JapaneseName": "アイルスイートポポト"
   },
   {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "uncanny flying popoto",
+    "FrenchName": "popoto volante ?",
+    "GermanName": "Flugtoffel[p]?",
+    "JapaneseName": "フライングポポト？"
+  },
+  {
     "Type": "Item",
     "IconId": 24164,
     "EnglishName": "Twilight Popoto Salad",

@@ -193,6 +193,14 @@
   },
   {
     "Type": "Item",
+    "IconId": 53503,
+    "EnglishName": "Summoner Display Crystal",
+    "FrenchName": "Trophée en cristal d'invocateur",
+    "GermanName": "Beschwörer-Tischkristall",
+    "JapaneseName": "クリスタルトロフィー:召喚士"
+  },
+  {
+    "Type": "Item",
     "IconId": 26509,
     "EnglishName": "Summoner's Attire Coffer (IL 90)",
     "FrenchName": "Coffre d'équipement de l'invocateur [NvObj 90]",

@@ -395,7 +395,7 @@
     "Type": "Npc",
     "IconId": null,
     "EnglishName": "petit punutiy",
-    "FrenchName": "mini punutiy",
+    "FrenchName": "mini-punutiy",
     "GermanName": "Mini-Punutiy",
     "JapaneseName": "プチプヌティー"
   },
@@ -403,7 +403,7 @@
     "Type": "Minion",
     "IconId": 4907,
     "EnglishName": "petit punutiy",
-    "FrenchName": "mini punutiy",
+    "FrenchName": "mini-punutiy",
     "GermanName": "Mini-Punutiy",
     "JapaneseName": "プチプヌティー"
   },
