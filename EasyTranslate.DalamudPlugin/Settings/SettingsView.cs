@@ -5,7 +5,7 @@ using Dalamud.Interface.Windowing;
 using EasyTranslate.DalamudPlugin.Localisation;
 using EasyTranslate.DalamudPlugin.Resources;
 using EasyTranslate.Domain.Entities;
-using ImGuiNET;
+using Dalamud.Bindings.ImGui;
 
 namespace EasyTranslate.DalamudPlugin.Settings;
 
