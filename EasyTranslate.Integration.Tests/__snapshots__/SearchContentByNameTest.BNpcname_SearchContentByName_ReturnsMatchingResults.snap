@@ -50,6 +50,14 @@
   {
     "Type": "Npc",
     "IconId": null,
+    "EnglishName": "tower bhoot",
+    "FrenchName": "bhut de la Tour",
+    "GermanName": "Turm-Bhut",
+    "JapaneseName": "タワー・ブフート"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
     "EnglishName": "Mhachi bhoot",
     "FrenchName": "bhut mhachois",
     "GermanName": "Mhach-Bhut",

@@ -80,6 +80,14 @@
     "JapaneseName": "幻光の召喚士"
   },
   {
+    "Type": "Item",
+    "IconId": 43632,
+    "EnglishName": "Summoner's Attire",
+    "FrenchName": "Tenue de l'invocateur",
+    "GermanName": "Beschwörer-Kleidungsset",
+    "JapaneseName": "サマナーアタイア"
+  },
+  {
     "Type": "Npc",
     "IconId": null,
     "EnglishName": "ebon-clad summoner",

@@ -1,4 +1,5 @@
-﻿using EasyTranslate.Domain.Entities;
+﻿using System.Collections.Generic;
+using EasyTranslate.Domain.Entities;
 using Language = Lumina.Data.Language;
 
 namespace EasyTranslate.Infrastructure.GameData;

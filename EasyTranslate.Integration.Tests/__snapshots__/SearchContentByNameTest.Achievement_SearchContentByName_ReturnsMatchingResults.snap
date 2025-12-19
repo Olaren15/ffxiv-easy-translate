@@ -46,5 +46,13 @@
     "FrenchName": "Exhumation profonde III",
     "GermanName": "Mein Schatz III",
     "JapaneseName": "埋もれた財宝：ランク3"
+  },
+  {
+    "Type": "Achievement",
+    "IconId": 60035,
+    "EnglishName": "For the Hoard VII",
+    "FrenchName": "Exhumation profonde VII",
+    "GermanName": "Mein Schatz VII",
+    "JapaneseName": "埋もれた財宝：ランク7"
   }
 ]

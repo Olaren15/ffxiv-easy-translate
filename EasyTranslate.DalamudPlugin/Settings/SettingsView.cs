@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Numerics;
+using Dalamud.Bindings.ImGui;
 using Dalamud.Interface;
 using Dalamud.Interface.Windowing;
 using EasyTranslate.DalamudPlugin.Localisation;
 using EasyTranslate.DalamudPlugin.Resources;
 using EasyTranslate.Domain.Entities;
-using ImGuiNET;
 
 namespace EasyTranslate.DalamudPlugin.Settings;
 

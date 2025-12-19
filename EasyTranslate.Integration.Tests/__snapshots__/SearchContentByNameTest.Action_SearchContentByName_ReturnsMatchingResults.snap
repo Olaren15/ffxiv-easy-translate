@@ -248,6 +248,22 @@
     "JapaneseName": "ロゴス・ケアルガ"
   },
   {
+    "Type": "Item",
+    "IconId": 24334,
+    "EnglishName": "Cured Fish",
+    "FrenchName": "Poisson fumé pour conservation",
+    "GermanName": "Haltbarer Räucherfisch",
+    "JapaneseName": "保存食用の燻製魚"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24353,
+    "EnglishName": "Cured Meat",
+    "FrenchName": "Viande fumée pour conservation",
+    "GermanName": "Haltbares Räucherfleisch",
+    "JapaneseName": "保存食用の燻製肉"
+  },
+  {
     "Type": "Action",
     "IconId": 405,
     "EnglishName": "Vercure III",
@@ -411,7 +427,7 @@
     "Type": "Npc",
     "IconId": null,
     "EnglishName": "dwarven procurer",
-    "FrenchName": "Nain responsable du ra­vi­tail­le­ment",
+    "FrenchName": "Nain responsable du ravitaillement",
     "GermanName": "Nachschub-Zwerg",
     "JapaneseName": "補充担当のドワーフ"
   },
@@ -430,6 +446,14 @@
     "FrenchName": "Soin embranché",
     "GermanName": "Flüchtige Macht: Unstetes Vita",
     "JapaneseName": "ヴァリアント・ケアル設定"
+  },
+  {
+    "Type": "Fate",
+    "IconId": 60858,
+    "EnglishName": "Power Procurement",
+    "FrenchName": "Première préparation du réseau",
+    "GermanName": "Energiespeicheranlage: Bauunterstützung I",
+    "JapaneseName": "第一次エネルギー集積施設工事"
   },
   {
     "Type": "Action",
@@ -465,6 +489,14 @@
   },
   {
     "Type": "Item",
+    "IconId": 22031,
+    "EnglishName": "Cured Survey Leather",
+    "FrenchName": "Cuir tanné pour l'exploration cosmique",
+    "GermanName": "Gegerbtes Erkunder-Leder",
+    "JapaneseName": "惑星探索用のなめし革"
+  },
+  {
+    "Type": "Item",
     "IconId": 30664,
     "EnglishName": "Obscure Hyposkhesphyra",
     "FrenchName": "Hyposkhesphyra obscure",
@@ -486,6 +518,14 @@
     "FrenchName": "Extra Soin des Héritiers",
     "GermanName": "Vitra der Morgenröte",
     "JapaneseName": "サイオンズ・ケアルラ"
+  },
+  {
+    "Type": "Fate",
+    "IconId": 60858,
+    "EnglishName": "Additional Power Procurement",
+    "FrenchName": "Seconde préparation du réseau",
+    "GermanName": "Energiespeicheranlage: Bauunterstützung II",
+    "JapaneseName": "第二次エネルギー集積施設工事"
   },
   {
     "Type": "Instance",
@@ -510,6 +550,14 @@
     "FrenchName": "Manuel de dressage : Choco-soin I",
     "GermanName": "Dressurbuch - Chocobo-Vita I",
     "JapaneseName": "チョコボ教本:チョコケアル"
+  },
+  {
+    "Type": "Item",
+    "IconId": 26625,
+    "EnglishName": "Borderland Ruins (Secure) Framer's Kit",
+    "FrenchName": "L'Art du portrait : Ruines frontalières (annexion)",
+    "GermanName": "Portraitmaterial (Äußere Ruinen (Sicherung))",
+    "JapaneseName": "ポートレート教材:外縁遺跡群 (制圧戦)"
   },
   {
     "Type": "Item",

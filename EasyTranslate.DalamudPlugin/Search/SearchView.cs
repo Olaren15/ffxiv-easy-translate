@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Numerics;
+using Dalamud.Bindings.ImGui;
 using Dalamud.Interface;
 using Dalamud.Interface.Textures.TextureWraps;
 using Dalamud.Interface.Windowing;
 using EasyTranslate.DalamudPlugin.Localisation;
 using EasyTranslate.DalamudPlugin.Resources;
 using EasyTranslate.Domain.Entities;
-using ImGuiNET;
 
 namespace EasyTranslate.DalamudPlugin.Search;
 
@@ -196,7 +196,7 @@ public sealed class SearchView : Window, IDisposable
                 if (searchResult.IconTexture is not null)
                 {
                     IDalamudTextureWrap textureWrap = searchResult.IconTexture.GetWrapOrEmpty();
-                    ImGui.Image(textureWrap.ImGuiHandle, CalculateImageSize(textureWrap));
+                    ImGui.Image(textureWrap.Handle, CalculateImageSize(textureWrap));
                 }
 
                 ImGui.TableNextColumn();

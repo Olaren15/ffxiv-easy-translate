@@ -1,7 +1,7 @@
 ﻿[
   {
     "Type": "Action",
-    "IconId": 64199,
+    "IconId": 19839,
     "EnglishName": "Pet",
     "FrenchName": "Caresser",
     "GermanName": "Streicheln",
@@ -9,7 +9,7 @@
   },
   {
     "Type": "Emote",
-    "IconId": 64067,
+    "IconId": 246267,
     "EnglishName": "Pet",
     "FrenchName": "Caresser",
     "GermanName": "Streicheln",
@@ -90,6 +90,14 @@
   {
     "Type": "Npc",
     "IconId": null,
+    "EnglishName": "petrifog",
+    "FrenchName": "brouillard pétrifiant",
+    "GermanName": "Petrismog",
+    "JapaneseName": "ペトリスモッグ"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
     "EnglishName": "Shepetto",
     "FrenchName": "Shepetto",
     "GermanName": "Shepetto",
@@ -142,6 +150,14 @@
     "FrenchName": "Rose-pétale",
     "GermanName": "Blütenblatt",
     "JapaneseName": "ペタルフィッシュ"
+  },
+  {
+    "Type": "Mount",
+    "IconId": 4308,
+    "EnglishName": "petalodus",
+    "FrenchName": "petalodus",
+    "GermanName": "Petalodus",
+    "JapaneseName": "ペタロドゥス"
   },
   {
     "Type": "Action",
@@ -506,6 +522,14 @@
   {
     "Type": "Npc",
     "IconId": null,
+    "EnglishName": "invoked poppet",
+    "FrenchName": "poupée invoquée",
+    "GermanName": "gerufen[a] Puppe",
+    "JapaneseName": "インヴォークド・パペット"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
     "EnglishName": "petite student",
     "FrenchName": "étudiante lalafelle",
     "GermanName": "klein[a] Student",
@@ -594,6 +618,14 @@
   {
     "Type": "Npc",
     "IconId": null,
+    "EnglishName": "vampette fatale",
+    "FrenchName": "chauve-souris fatale",
+    "GermanName": "fatal[a] Fledermaus",
+    "JapaneseName": "ファタールバット"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
     "EnglishName": "impetuous youth",
     "FrenchName": "Hhetsarro perdu",
     "GermanName": "ratlos[a] Hhetsarro",
@@ -672,6 +704,22 @@
     "JapaneseName": "プチラノドン"
   },
   {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "Nymian petalodus",
+    "FrenchName": "petalodus de Nym",
+    "GermanName": "nymeisch[a] Petalodus",
+    "JapaneseName": "ニーム・ペタロドゥス"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "tower petroglyph",
+    "FrenchName": "pétroglyphe de la Tour",
+    "GermanName": "Blut-Petroglyphe",
+    "JapaneseName": "タワー・ペトログリフ"
+  },
+  {
     "Type": "Minion",
     "IconId": 4788,
     "EnglishName": "petit pteranodon",
@@ -694,6 +742,14 @@
     "FrenchName": "Mog impatient",
     "GermanName": "Träum-Mogry",
     "JapaneseName": "まだまだモーグリ"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "petrified patron",
+    "FrenchName": "visiteur apeuré",
+    "GermanName": "bibbernd[a] Besucher",
+    "JapaneseName": "怯えている訪問客"
   },
   {
     "Type": "Item",
@@ -742,61 +798,5 @@
     "FrenchName": "Ptiranodon",
     "GermanName": "Pteranoknirps",
     "JapaneseName": "プチラノドン"
-  },
-  {
-    "Type": "Item",
-    "IconId": 22418,
-    "EnglishName": "Wattle Petribark",
-    "FrenchName": "Écorce d'acacia durcie",
-    "GermanName": "Hartakazienrinde",
-    "JapaneseName": "ハードワットル樹皮"
-  },
-  {
-    "Type": "Item",
-    "IconId": 22210,
-    "EnglishName": "Petalouda Scales",
-    "FrenchName": "Écailles alaires de pétalouda",
-    "GermanName": "Flügelstaub einer Petalouda",
-    "JapaneseName": "ペタルダの鱗粉"
-  },
-  {
-    "Type": "Action",
-    "IconId": 405,
-    "EnglishName": "Petrifying Shriek",
-    "FrenchName": "Cri pétrifiant",
-    "GermanName": "Steinschrei",
-    "JapaneseName": "産石の叫声"
-  },
-  {
-    "Type": "Npc",
-    "IconId": null,
-    "EnglishName": "kokkine petalouda",
-    "FrenchName": "érythropétalouda",
-    "GermanName": "Kokkine-Petalouda",
-    "JapaneseName": "コーキネ・ペタルダ"
-  },
-  {
-    "Type": "Npc",
-    "IconId": null,
-    "EnglishName": "impetuous warrior",
-    "FrenchName": "homme musculeux",
-    "GermanName": "muskulös[a] Mann",
-    "JapaneseName": "筋骨逞しい男"
-  },
-  {
-    "Type": "Npc",
-    "IconId": null,
-    "EnglishName": "precocious poppet",
-    "FrenchName": "jeune demoiselle",
-    "GermanName": "modisch[a] Mädchen",
-    "JapaneseName": "おしゃまな少女"
-  },
-  {
-    "Type": "Item",
-    "IconId": 52030,
-    "EnglishName": "Carpet of Flowers",
-    "FrenchName": "Tapis à fleurs",
-    "GermanName": "Blumenteppich",
-    "JapaneseName": "フラワーラグ"
   }
 ]

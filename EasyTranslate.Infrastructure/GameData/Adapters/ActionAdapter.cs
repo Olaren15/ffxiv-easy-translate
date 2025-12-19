@@ -1,4 +1,5 @@
-﻿using EasyTranslate.Domain.Entities;
+﻿using System;
+using EasyTranslate.Domain.Entities;
 using Action = Lumina.Excel.Sheets.Action;
 
 namespace EasyTranslate.Infrastructure.GameData.Adapters;

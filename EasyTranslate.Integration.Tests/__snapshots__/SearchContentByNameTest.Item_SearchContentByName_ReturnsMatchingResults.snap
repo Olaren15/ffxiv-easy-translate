@@ -17,7 +17,7 @@
   },
   {
     "Type": "Emote",
-    "IconId": 64371,
+    "IconId": 246346,
     "EnglishName": "Popoto Step",
     "FrenchName": "Popping popoto",
     "GermanName": "Toffel-Tanz",
@@ -88,6 +88,14 @@
     "JapaneseName": "アイルポポト"
   },
   {
+    "Type": "Item",
+    "IconId": 24119,
+    "EnglishName": "Popoto Potage",
+    "FrenchName": "Potage aux popotos sèches",
+    "GermanName": "Warme Toffelsuppe",
+    "JapaneseName": "ポポトポタージュ"
+  },
+  {
     "Type": "Npc",
     "IconId": null,
     "EnglishName": "popoto peddler",
@@ -134,6 +142,14 @@
     "FrenchName": "Popoto des montagnes",
     "GermanName": "Bergtoffel",
     "JapaneseName": "マウンテンポポト"
+  },
+  {
+    "Type": "Item",
+    "IconId": 25227,
+    "EnglishName": "Rock-fist Popoto",
+    "FrenchName": "Popoto sèche",
+    "GermanName": "Fausttoffel",
+    "JapaneseName": "げんこつポポト"
   },
   {
     "Type": "Item",
@@ -256,12 +272,28 @@
     "JapaneseName": "アイルスイートポポトの種芋"
   },
   {
+    "Type": "Item",
+    "IconId": 24109,
+    "EnglishName": "Rock-fisted Popoto Stew",
+    "FrenchName": "Râgout aux popotos sèches",
+    "GermanName": "Fausttoffel-Eintopf",
+    "JapaneseName": "げんこつポポトのシチュー"
+  },
+  {
     "Type": "Fate",
     "IconId": 60721,
     "EnglishName": "All Vine and No Popotoes",
     "FrenchName": "Occlusion d'otyughs",
     "GermanName": "Grenzschutz",
     "JapaneseName": "オチュー狩り"
+  },
+  {
+    "Type": "Item",
+    "IconId": 24164,
+    "EnglishName": "Rock-fisted Popoto Salad",
+    "FrenchName": "Salade de popotos sèches",
+    "GermanName": "Fausttoffel-Salat",
+    "JapaneseName": "げんこつポポトのサラダ"
   },
   {
     "Type": "Quest",
