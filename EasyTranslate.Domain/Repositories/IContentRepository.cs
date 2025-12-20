@@ -1,4 +1,7 @@
-﻿using EasyTranslate.Domain.Entities;
+﻿using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using EasyTranslate.Domain.Entities;
 
 namespace EasyTranslate.Domain.Repositories;
 

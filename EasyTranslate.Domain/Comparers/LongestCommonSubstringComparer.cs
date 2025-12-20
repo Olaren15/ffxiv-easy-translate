@@ -1,4 +1,6 @@
-﻿namespace EasyTranslate.Domain.Comparers;
+﻿using System;
+
+namespace EasyTranslate.Domain.Comparers;
 
 public class LongestCommonSubstringComparer : IStringSimilarityComparer
 {
