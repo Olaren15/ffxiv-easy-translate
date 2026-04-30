@@ -8,6 +8,7 @@ You can open a search window by entering `/et` in the chat window. You will now 
 ![A search window displaying the translation search results for "popoto"](doc/search-popoto.png)
 
 You can also right-click an item in your inventory to open a search window with the item's name pre-populated!
+
 ![A screenshot showcasing the context menu for searching an item's translations](doc/context-menu.png)
 
 ## How To Install
@@ -23,11 +24,11 @@ EasyTranslate assumes all the following prerequisites are met:
 * XIVLauncher, FINAL FANTASY XIV, and Dalamud have all been installed and the game has been run with Dalamud at least once.
 * XIVLauncher is installed to its default directories and configurations.
   * If a custom path is required for Dalamud's dev directory, it must be set with the `DALAMUD_HOME` environment variable.
-* A .NET Core 8 SDK has been installed and configured, or is otherwise available. (In most cases, the IDE will take care of this.)
+* A .NET Core 10 SDK has been installed and configured, or is otherwise available. (In most cases, the IDE will take care of this.)
 
 ### Building
 
-1. Open up `EasyTranslate.sln` in your C# editor of choice (likely [Visual Studio 2022](https://visualstudio.microsoft.com) or [JetBrains Rider](https://www.jetbrains.com/rider/)).
+1. Open up `EasyTranslate.sln` in your C# editor of choice (likely [Visual Studio](https://visualstudio.microsoft.com) or [JetBrains Rider](https://www.jetbrains.com/rider/)).
 2. Build the solution. By default, this will build a `Debug` build, but you can switch to `Release` in your IDE.
 3. The resulting plugin can be found at `EasyTranslate/bin/x64/Debug/SamplePlugin.dll` (or `Release` if appropriate.)
 

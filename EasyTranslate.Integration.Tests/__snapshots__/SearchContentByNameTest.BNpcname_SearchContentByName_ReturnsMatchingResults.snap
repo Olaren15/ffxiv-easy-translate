@@ -96,6 +96,14 @@
     "JapaneseName": "オルト・ブフート"
   },
   {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "assault bhoot",
+    "FrenchName": "Assault Bhoot",
+    "GermanName": "Angreifer-Bhut",
+    "JapaneseName": "Assault Bhoot"
+  },
+  {
     "Type": "Quest",
     "IconId": 71221,
     "EnglishName": " Bhoot Camps",

@@ -336,6 +336,14 @@
     "JapaneseName": "ストレイ・パペット"
   },
   {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "stone puppet",
+    "FrenchName": "golem rocailleux",
+    "GermanName": "Felsgolem",
+    "JapaneseName": "硬岩の人形"
+  },
+  {
     "Type": "Item",
     "IconId": 29610,
     "EnglishName": "Magic Carpet",
@@ -414,6 +422,14 @@
     "FrenchName": "mini-punutiy",
     "GermanName": "Mini-Punutiy",
     "JapaneseName": "プチプヌティー"
+  },
+  {
+    "Type": "Npc",
+    "IconId": null,
+    "EnglishName": "flying carpet",
+    "FrenchName": "tapis magique",
+    "GermanName": "magisch[a] Teppich",
+    "JapaneseName": "魔法の絨毯"
   },
   {
     "Type": "Minion",
@@ -782,21 +798,5 @@
     "FrenchName": "Pétase du sorcier",
     "GermanName": "Zauberer-Petasos",
     "JapaneseName": "ウィザードペタソス"
-  },
-  {
-    "Type": "Item",
-    "IconId": 22615,
-    "EnglishName": "Coarse Saltpeter",
-    "FrenchName": "Salpêtre grossier",
-    "GermanName": "Rohsalpeter-Klumpen",
-    "JapaneseName": "粗硝石"
-  },
-  {
-    "Type": "Item",
-    "IconId": 59788,
-    "EnglishName": "Petit Pteranodon",
-    "FrenchName": "Ptiranodon",
-    "GermanName": "Pteranoknirps",
-    "JapaneseName": "プチラノドン"
   }
 ]

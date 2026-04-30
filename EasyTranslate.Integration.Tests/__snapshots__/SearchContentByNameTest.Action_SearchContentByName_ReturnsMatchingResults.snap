@@ -440,6 +440,14 @@
     "JapaneseName": "未鑑定ロゴスシャード:封印"
   },
   {
+    "Type": "Place",
+    "IconId": null,
+    "EnglishName": "Secure Test Site",
+    "FrenchName": "Site d'essai sécurisé",
+    "GermanName": "Waffentestgelände",
+    "JapaneseName": "兵器試験場"
+  },
+  {
     "Type": "Status",
     "IconId": 216739,
     "EnglishName": "Variant Cure Set",
